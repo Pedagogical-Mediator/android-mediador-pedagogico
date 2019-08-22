@@ -42,7 +42,6 @@ class LoginActivity : BaseActivity() {
         binding.passwordInput.observeChanges(viewModel::onPasswordChanged)
         binding.facebookButton.setOnClickListener(viewModel::onFacebookButtonClicked)
         binding.googleButton.setOnClickListener(viewModel::onGoogleButtonClicked)
-        binding.recoverPasswordButton.setOnClickListener(viewModel::onRecoverPasswordClicked)
         binding.registerButton.setOnClickListener(viewModel::onSignUpClicked)
         binding.submitButton.setOnClickListener(viewModel::onSubmitClicked)
     }

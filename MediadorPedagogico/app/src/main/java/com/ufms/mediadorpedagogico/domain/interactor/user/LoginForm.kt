@@ -16,6 +16,5 @@ class LoginForm {
             if (email == null) addField(InvalidFieldsException.EMAIL)
             if (password == null) addField(InvalidFieldsException.PASSWORD)
         }
-
     }
 }

@@ -2,7 +2,6 @@ package com.ufms.mediadorpedagogico.presentation.signup
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ufms.mediadorpedagogico.domain.boundary.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.interactor.user.SignUp
@@ -10,6 +9,7 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.SignUpForm
 import com.ufms.mediadorpedagogico.presentation.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
+import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import io.reactivex.rxkotlin.subscribeBy
 import java.io.File
 

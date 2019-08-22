@@ -8,7 +8,6 @@ class Fields : HashMap<String, String?>() {
     }
 
     companion object {
-
         fun with(key: String, value: String?): Fields {
             return Fields().and(key, value)
         }

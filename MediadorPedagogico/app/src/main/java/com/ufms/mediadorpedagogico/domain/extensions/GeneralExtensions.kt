@@ -1,7 +1,7 @@
 package com.ufms.mediadorpedagogico.domain.extensions
 
-
 infix fun <T> Boolean.then(element: T): T? = if (this) element else null
+
 infix fun Boolean.thenDo(function: () -> Unit) {
     if (this) function.invoke()
 }

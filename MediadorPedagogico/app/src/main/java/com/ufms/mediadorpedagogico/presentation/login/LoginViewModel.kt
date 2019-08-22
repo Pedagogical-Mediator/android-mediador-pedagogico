@@ -2,18 +2,16 @@ package com.ufms.mediadorpedagogico.presentation.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ufms.mediadorpedagogico.domain.boundary.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.interactor.user.LoginForm
 import com.ufms.mediadorpedagogico.domain.interactor.user.SignIn
-import com.ufms.mediadorpedagogico.presentation.password.RecoverPasswordNavData
 import com.ufms.mediadorpedagogico.presentation.signup.SignUpNavData
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
+import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
-
 
 class LoginViewModel(
     private val signIn: SignIn,
@@ -43,10 +41,6 @@ class LoginViewModel(
     fun onFacebookButtonClicked() {}
 
     fun onGoogleButtonClicked() {}
-
-    fun onRecoverPasswordClicked() {
-        goTo(RecoverPasswordNavData())
-    }
 
     fun onSignUpClicked() {
         goTo(SignUpNavData())

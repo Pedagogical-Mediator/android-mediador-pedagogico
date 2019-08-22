@@ -52,12 +52,8 @@ fun AlertDialog.Builder.setNegativeButton(buttonText: String?, onClick: (() -> U
         onClick?.let { { _: DialogInterface, _: Int -> it() } }
     )
 
-fun Context.shortToast(@StringRes messageId: Int) = shortToast(getString(messageId))
-
 fun Context.shortToast(message: String) =
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-
-fun Context.longToast(@StringRes messageId: Int) = longToast(getString(messageId))
 
 fun Context.longToast(message: String) =
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
@@ -89,7 +85,6 @@ fun Context.unregisterLocalReceiver(broadcastReceiver: BroadcastReceiver) {
 
 //Open browser
 fun Context.openBrowser(url: String) {
-
     val formattedUrl = if (URLUtil.isHttpUrl(url) || URLUtil.isHttpsUrl(url)) {
         url
     } else {

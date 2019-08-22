@@ -22,6 +22,4 @@ interface StringsProvider {
     val activityRecoverPasswordSuccess: String
 
     fun errorUnprocessable(errors: String): String
-
-
 }
