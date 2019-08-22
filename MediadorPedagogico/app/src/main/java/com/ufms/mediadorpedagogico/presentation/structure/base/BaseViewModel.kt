@@ -3,13 +3,14 @@ package com.ufms.mediadorpedagogico.presentation.structure.base
 import androidx.lifecycle.*
 import com.ufms.mediadorpedagogico.presentation.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.structure.navigation.NavData
-import com.ufms.mediadorpedagogico.presentation.structure.sl.ServiceLocator
 import com.ufms.mediadorpedagogico.presentation.util.ErrorHandler
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.DialogData
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import io.reactivex.disposables.CompositeDisposable
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
-open class BaseViewModel : LifecycleObserver, ViewModel() {
+open class BaseViewModel : LifecycleObserver, KoinComponent, ViewModel() {
     val goTo: LiveData<Event<NavData>> get() = goToLiveData
     val dialog: LiveData<Event<DialogData>> get() = dialogLiveData
     val toast: LiveData<Event<String>> get() = toastLiveData
@@ -19,7 +20,7 @@ open class BaseViewModel : LifecycleObserver, ViewModel() {
     private val dialogLiveData = MutableLiveData<Event<DialogData>>()
     private val placeholderLiveData = MutableLiveData<Placeholder>()
     private val toastLiveData = MutableLiveData<Event<String>>()
-    private val errorHandler = ServiceLocator.getInstance().get(ErrorHandler::class.java)
+    private val errorHandler: ErrorHandler by inject()
 
     protected val disposables: CompositeDisposable = CompositeDisposable()
 

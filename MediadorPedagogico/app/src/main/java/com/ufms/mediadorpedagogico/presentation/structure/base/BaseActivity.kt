@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ufms.mediadorpedagogico.presentation.structure.navigation.NavData
 import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
-import com.ufms.mediadorpedagogico.presentation.structure.sl.ServiceLocator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.extensions.showDialog
@@ -13,7 +12,6 @@ import com.ufms.mediadorpedagogico.presentation.util.viewmodels.DialogData
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    abstract val sl: ServiceLocator
     abstract val baseViewModel: BaseViewModel
 
     private var dialog: Dialog? = null

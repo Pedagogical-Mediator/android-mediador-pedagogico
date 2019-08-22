@@ -9,34 +9,32 @@ import com.google.android.material.textfield.TextInputLayout
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityRegisterBinding
+import com.ufms.mediadorpedagogico.domain.boundary.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
-import com.ufms.mediadorpedagogico.presentation.structure.sl.ServiceLocator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.mask.InputMask
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
+import org.koin.android.ext.android.inject
 
 class SignUpActivity : BaseActivity() {
 
-    override val sl: ServiceLocator get() = ServiceLocator.getInstance(this.applicationContext)
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var viewModel: SignUpViewModel
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var rxPermissions: RxPermissions
-    private val schedulerProvider by lazy { sl.schedulerProvider }
-
+    private val viewModel: SignUpViewModel by inject()
+    private val schedulerProvider: SchedulerProvider by inject()
     private var avatarDisposable: Disposable? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register)
-        viewModel = sl.get(SignUpViewModel::class.java)
         lifecycle.addObserver(viewModel)
         setupUi()
         rxPermissions = RxPermissions(this)

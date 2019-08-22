@@ -10,23 +10,20 @@ import com.ufms.mediadorpedagogico.domain.extensions.then
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
-import com.ufms.mediadorpedagogico.presentation.structure.sl.ServiceLocator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeChanges
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
+import org.koin.android.ext.android.inject
 
 class LoginActivity : BaseActivity() {
 
-
-    override val sl: ServiceLocator get() = ServiceLocator.getInstance(this.applicationContext)
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel: LoginViewModel by inject()
     private lateinit var binding: ActivityLoginBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        viewModel = sl.get(LoginViewModel::class.java)
         lifecycle.addObserver(viewModel)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         setupUi()

@@ -4,18 +4,16 @@ import android.os.Bundle
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
-import com.ufms.mediadorpedagogico.presentation.structure.sl.ServiceLocator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import org.koin.android.ext.android.inject
 
 class SplashActivity : BaseActivity() {
 
-    override val sl: ServiceLocator get() = ServiceLocator.getInstance(this.applicationContext)
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var viewModel: SplashViewModel
+    private val viewModel: SplashViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        viewModel = sl.get(SplashViewModel::class.java)
         lifecycle.addObserver(viewModel)
         super.onCreate(savedInstanceState)
     }
