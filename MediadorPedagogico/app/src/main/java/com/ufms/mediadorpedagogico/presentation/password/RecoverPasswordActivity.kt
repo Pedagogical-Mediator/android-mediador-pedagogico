@@ -10,20 +10,17 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityRecoverPasswordBinding
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
-import com.ufms.mediadorpedagogico.presentation.structure.sl.ServiceLocator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
+import org.koin.android.ext.android.inject
 
 class RecoverPasswordActivity : BaseActivity() {
-    override val sl: ServiceLocator get() = ServiceLocator.getInstance(this.applicationContext)
     override val baseViewModel: BaseViewModel get() = viewModel
 
-
     private lateinit var binding: ActivityRecoverPasswordBinding
-    private lateinit var viewModel: RecoverPasswordViewModel
+    private val viewModel: RecoverPasswordViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        viewModel = sl.get(RecoverPasswordViewModel::class.java)
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_recover_password)
         binding.submitButton.setOnClickListener { viewModel.onSubmitButtonClick() }
