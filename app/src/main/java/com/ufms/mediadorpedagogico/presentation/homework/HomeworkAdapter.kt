@@ -2,6 +2,7 @@ package com.ufms.mediadorpedagogico.presentation.homework
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ufms.mediadorpedagogico.domain.entity.Homework
 
 class HomeworkAdapter(
     private val onItemClickedCallback: (Homework) -> Unit
@@ -16,7 +17,7 @@ class HomeworkAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val homework = homeworkList[position]
-        (holder as? HomeworkViewHolder)?.setupBinding(homework as Homework)
+        (holder as? HomeworkViewHolder)?.setupBinding(homework)
     }
 
     fun setItems(homeworkList: List<Homework>) {

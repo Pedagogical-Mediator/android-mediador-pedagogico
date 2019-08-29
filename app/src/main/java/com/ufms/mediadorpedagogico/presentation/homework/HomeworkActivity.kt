@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkBinding
 import com.ufms.mediadorpedagogico.databinding.ActivityRegisterBinding
@@ -26,7 +27,7 @@ class HomeworkActivity : BaseActivity() {
     private val viewModel: HomeworkViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_register)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_homework)
         lifecycle.addObserver(viewModel)
         setupUi()
         setupAdapter()
@@ -47,7 +48,7 @@ class HomeworkActivity : BaseActivity() {
     private fun setupRecycler() {
         with(binding.recyclerViewHomework) {
             layoutManager = LinearLayoutManager(this@HomeworkActivity)
-            adapter = transactionsAdapter
+            adapter = homeworkAdapter
         }
     }
 
@@ -57,7 +58,7 @@ class HomeworkActivity : BaseActivity() {
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
-        placeholder?.let { binding.includedLoading.placeholder = it }
+//        placeholder?.let { binding.includedLoading.placeholder = it }
     }
 
     companion object {

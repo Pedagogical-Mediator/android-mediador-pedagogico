@@ -23,11 +23,7 @@
                 android:configChanges="keyboardHidden|orientation|screenSize"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionbar.Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -47,7 +43,13 @@
                 android:name=".presentation.homework.HomeworkActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
                 android:label="@string/activity_homework_label"
-                android:screenOrientation="portrait" />
+                android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
                 android:name=".presentation.signup.SignUpActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
