@@ -28,7 +28,7 @@ class HomeworkViewModel(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        getHomework.execute(1)
+        getHomework.execute(0)
             .defaultPlaceholders(this::setPlaceholder)
             .defaultSched(schedulerProvider)
             .subscribeBy(this::onFailure, this::onSuccess)
@@ -43,6 +43,7 @@ class HomeworkViewModel(
     }
 
     private fun onSuccess(content: HomeworkContent) {
+        val a= ""
         // TODO atualiaz rlive data
     }
 }

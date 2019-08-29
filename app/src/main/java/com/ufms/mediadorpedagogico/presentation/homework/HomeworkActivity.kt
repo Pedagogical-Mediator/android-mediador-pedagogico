@@ -12,7 +12,6 @@ import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setupToolbar
-import com.ufms.mediadorpedagogico.presentation.util.extensions.showHomeButton
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import io.reactivex.disposables.Disposable
@@ -32,7 +31,6 @@ class HomeworkActivity : BaseActivity() {
         setupUi()
         setupAdapter()
         setupRecycler()
-        showHomeButton()
         super.onCreate(savedInstanceState)
     }
 

@@ -29,7 +29,7 @@ interface ApiService {
     @POST("users/recover_password")
     fun sendPasswordRecovery(@Field("email") email: String): Single<Response<Void>>
 
-    @GET("aulas/{page}")
-    fun getListOfHomework(@Path("page") pageNumber: Int): Single<Response<ApiHomeworkContent>>
+    @GET("aulas")
+    fun getListOfHomework(@Query("page") pageNumber: Int): Single<Response<ApiHomeworkContent>>
 
 }
