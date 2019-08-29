@@ -7,139 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4182d384-6e34-4365-9903-cb89e0affa62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/ufms/mediadorpedagogico/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiClient.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiErrorsFormatter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/AuthInterceptor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/RequestException.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiError.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiImage.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiUser.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/Fields.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/mapper/Mapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/repository/DefaultUserRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/storage/PreferencesCache.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/UserRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/Cache.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/Logger.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/StringsProvider.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/entity/User.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/extensions/GeneralExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/extensions/RxExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/FormFields.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/GetPersistedUser.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/InvalidFieldsException.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/LoginForm.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/RecoverPassword.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignIn.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignUp.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignUpForm.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/AppTemplateSlimApplication.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/dashboard/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/landing/SplashActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/landing/SplashViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/login/LoginActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/login/LoginViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/signup/SignUpActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/signup/SignUpNavData.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/signup/SignUpViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/arch/Event.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/arch/EventObserver.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/base/BaseActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/base/BaseViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/ApplicationModule.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/InteractorModule.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/RepositoryModule.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/ViewModelModule.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/navigation/NavData.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/navigation/Navigator.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/sl/InstanceNotFoundException.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/ErrorHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/SimpleTextWatcher.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ActivityExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ContextExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/Extensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/LiveDataExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/PlaceholderExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ViewExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/mask/BaseMaskTextChangedListener.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/mask/InputMask.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/mask/MaskTextChangedListener.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/mask/MultiMaskTextChangedListener.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/mask/TextMasker.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/AndroidLogger.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/AndroidStringProvider.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/LoginAction.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/SchedulerProvider.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/viewmodels/DialogData.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/viewmodels/Placeholder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/img_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/img_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/img_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/img_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/img_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_photo_32dp_white.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_facebook_20dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_google_20dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_logo_96dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/selector_button_accent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/selector_button_facebook.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/selector_button_google.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/selector_button_light.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shape_bg_avatar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/splash.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_recover_password.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/loading_placeholder.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_send.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/ids.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/ufms/mediadorpedagogico/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/test/java/com/ufms/mediadorpedagogico/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/test/java/com/ufms/mediadorpedagogico/ExampleUnitTest.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +31,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -244,23 +115,32 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
+      <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="MediadorPedagogico" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="MediadorPedagogico" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MediadorPedagogico" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MediadorPedagogico" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MediadorPedagogico" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MediadorPedagogico" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MediadorPedagogico" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -345,7 +225,7 @@
     <frame x="306" y="83" width="1479" height="841" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2282533" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19272977" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -372,27 +252,9 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/landing/SplashActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#58#429#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/landing/SplashActivity.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/password/RecoverPasswordActivity.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/base/BaseActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#65#621#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/base/BaseActivity.kt" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-core/2.0.1/fb8806444773bba5ca3903a43c6b49bdf95a31d4/koin-core-2.0.1-sources.jar!/org/koin/core/KoinComponent.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -400,351 +262,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/base/BaseViewModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="e#65#570#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiClient.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiErrorsFormatter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="e#56#174#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/AuthInterceptor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-383">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/RequestException.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1176">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiError.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiImage.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiUser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/Fields.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/mapper/Mapper.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/repository/DefaultUserRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-215">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/storage/PreferencesCache.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/Cache.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/Logger.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/StringsProvider.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/UserRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/entity/User.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/extensions/GeneralExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/FormFields.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1344">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/GetPersistedUser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/InvalidFieldsException.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/LoginForm.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/RecoverPassword.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignIn.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignUp.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignUpForm.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/dashboard/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ActivityExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2016" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ContextExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/Extensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-404">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/LiveDataExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/PlaceholderExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#66#269#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ViewExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/LoginAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/base/BaseViewModel.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiClient.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiErrorsFormatter.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/ApiService.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/AuthInterceptor.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/client/RequestException.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiError.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiImage.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/ApiUser.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/entity/Fields.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/mapper/Mapper.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/remote/repository/DefaultUserRepository.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/data/storage/PreferencesCache.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/Cache.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/Logger.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/StringsProvider.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/UserRepository.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/entity/User.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/extensions/GeneralExtensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/FormFields.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/GetPersistedUser.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/InvalidFieldsException.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/LoginForm.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/RecoverPassword.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignIn.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignUp.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/interactor/user/SignUpForm.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/dashboard/MainActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ActivityExtensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ContextExtensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/Extensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/LiveDataExtensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/PlaceholderExtensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/extensions/ViewExtensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/LoginAction.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/boundary/resources/SchedulerProvider.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/extensions/RxExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-          <folding>
-            <element signature="e#55#345#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/login/LoginViewModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#56#885#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/signup/SignUpActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
-          <folding>
-            <element signature="e#57#1224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/signup/SignUpViewModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#57#784#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/SchedulerProvider.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="e#65#193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/ApplicationModule.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#78#865#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/ViewModelModule.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="e#78#523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/login/LoginActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#56#857#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/domain/extensions/RxExtensions.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/login/LoginViewModel.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/signup/SignUpActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/signup/SignUpViewModel.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/util/resources/SchedulerProvider.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/ApplicationModule.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/structure/dependecyinjector/ViewModelModule.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ufms/mediadorpedagogico/presentation/login/LoginActivity.kt" />
     <entry file="file://$USER_HOME$/.gradle/gradle.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/build.gradle" />
   </component>
 </project>

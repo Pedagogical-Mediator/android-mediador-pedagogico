@@ -50,4 +50,5 @@
     <string name="global_send">Enviar</string>
     <string name="global_pick_avatar_using">Escolher imagem usando:</string>
     <string name="activity_sign_up">Criar Conta</string>
+    <string name="activity_homework_label">Sala de aula invertida</string>
 </resources>

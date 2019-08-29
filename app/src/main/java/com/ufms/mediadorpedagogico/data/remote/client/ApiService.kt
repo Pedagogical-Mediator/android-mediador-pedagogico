@@ -1,13 +1,11 @@
 package com.ufms.mediadorpedagogico.data.remote.client
 
+import com.ufms.mediadorpedagogico.data.remote.entity.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
 import io.reactivex.Single
 import okhttp3.RequestBody
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -30,4 +28,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("users/recover_password")
     fun sendPasswordRecovery(@Field("email") email: String): Single<Response<Void>>
+
+    @GET("aulas/{page}")
+    fun getListOfHomework(@Path("page") pageNumber: Int): Single<Response<ApiHomeworkContent>>
+
 }

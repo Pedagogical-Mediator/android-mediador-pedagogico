@@ -38,7 +38,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiRelease\""
-            buildConfigField "String", "API_VERSION", "\"$rootProject.ext.apiVersion\""
             resValue "string", "app_name", rootProject.ext.appName
         }
 
@@ -46,14 +45,12 @@ android {
             initWith(buildTypes.release)
             applicationIdSuffix ".staging"
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiStaging\""
-            buildConfigField "String", "API_VERSION", "\"$rootProject.ext.apiVersion\""
             resValue "string", "app_name", "\"$rootProject.ext.appName [staging]\""
         }
 
         debug {
             applicationIdSuffix ".debug"
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiStaging\""
-            buildConfigField "String", "API_VERSION", "\"$rootProject.ext.apiVersion\""
             resValue "string", "app_name", "\"$rootProject.ext.appName [debug]\""
         }
     }

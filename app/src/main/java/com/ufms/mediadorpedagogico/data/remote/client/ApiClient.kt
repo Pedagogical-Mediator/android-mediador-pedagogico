@@ -3,6 +3,7 @@ package com.ufms.mediadorpedagogico.data.remote.client
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.ufms.mediadorpedagogico.BuildConfig
+import com.ufms.mediadorpedagogico.data.remote.entity.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -23,7 +24,7 @@ import java.text.DateFormat
 object ApiClient {
 
     private const val PLATFORM_CONSTANT = "android"
-    private const val apiEndpoint = BuildConfig.API_ENDPOINT + BuildConfig.API_VERSION
+    private const val apiEndpoint = BuildConfig.API_ENDPOINT
     private lateinit var retrofit: Retrofit
     private lateinit var authInterceptor: AuthInterceptor
     private var apiServiceSingleton: ApiService? = null
@@ -45,6 +46,10 @@ object ApiClient {
 
     fun sendPasswordRecovery(email: String): Completable {
         return justVerifyErrors(apiServices.sendPasswordRecovery(email))
+    }
+
+    fun getListOfHomework(pageNumber: Int): Single<ApiHomeworkContent> {
+        return makeRequest(apiServices.getListOfHomework(pageNumber))
     }
 
     /**

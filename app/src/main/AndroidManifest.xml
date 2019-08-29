@@ -44,9 +44,9 @@
                 android:windowSoftInputMode="adjustPan" />
 
         <activity
-                android:name=".presentation.password.RecoverPasswordActivity"
+                android:name=".presentation.homework.HomeworkActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
-                android:label="@string/activity_recover_password"
+                android:label="@string/activity_homework_label"
                 android:screenOrientation="portrait" />
         <activity
                 android:name=".presentation.signup.SignUpActivity"
