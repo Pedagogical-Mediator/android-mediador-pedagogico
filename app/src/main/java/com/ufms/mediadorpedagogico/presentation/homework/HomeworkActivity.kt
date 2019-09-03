@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkBinding
 import com.ufms.mediadorpedagogico.databinding.ActivityRegisterBinding
+import com.ufms.mediadorpedagogico.domain.entity.Homework
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setupToolbar
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
@@ -37,6 +40,8 @@ class HomeworkActivity : BaseActivity() {
     override fun subscribeUi() {
         super.subscribeUi()
         viewModel.placeholder.observe(this, ::onNextPlaceholder)
+        viewModel.homeworkContent.observeEvent(this, ::onHomeworkContentLoaded)
+        viewModel.noContentReturned.observeEvent(this, ::onNoContentReturned)
     }
 
     private fun setupAdapter() {
@@ -47,6 +52,16 @@ class HomeworkActivity : BaseActivity() {
         with(binding.recyclerViewHomework) {
             layoutManager = LinearLayoutManager(this@HomeworkActivity)
             adapter = homeworkAdapter
+        }
+    }
+
+    private fun onHomeworkContentLoaded(homeworkContent: List<Homework>?) {
+        homeworkContent?.run(homeworkAdapter::setItems)
+    }
+
+    private fun onNoContentReturned(noContentReturned: Boolean?) {
+        noContentReturned?.let {
+            binding.includedPlaceholderNoResults.root.setVisible(true)
         }
     }
 

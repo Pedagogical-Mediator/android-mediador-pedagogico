@@ -61,8 +61,7 @@
                     android:layout_height="wrap_content" android:fontFamily="@font/carter_one"/>
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_homework"
+        <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toBottomOf="@id/linear_layout_customized_search"
@@ -70,6 +69,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_margin="8dp">
-        </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_homework"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <include
+                android:id="@+id/included_placeholder_no_results"
+                layout="@layout/no_results_placeholder" />
+        </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

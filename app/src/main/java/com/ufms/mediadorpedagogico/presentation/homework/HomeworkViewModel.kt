@@ -20,11 +20,15 @@ class HomeworkViewModel(
     private val getHomework: GetHomework
 ) : BaseViewModel() {
 
-    val errors: LiveData<Event<InvalidFieldsException>> get() = errorsLiveData
-    val goToHomeworkdDetails: LiveData<Boolean> get() = goToHomeworkdDetailsLiveData
+    val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
+    val goToHomeworkdDetails: LiveData<Boolean> get() = _goToHomeworkdDetails
+    val homeworkContent: LiveData<Event<List<Homework>>> get() = _homeworkContent
+    val noContentReturned: LiveData<Event<Boolean>> get() = _noContentReturned
 
-    private val errorsLiveData: MutableLiveData<Event<InvalidFieldsException>> = MutableLiveData()
-    private val goToHomeworkdDetailsLiveData: MutableLiveData<Boolean> = MutableLiveData()
+    private val _errors: MutableLiveData<Event<InvalidFieldsException>> = MutableLiveData()
+    private val _goToHomeworkdDetails: MutableLiveData<Boolean> = MutableLiveData()
+    private val _homeworkContent: MutableLiveData<Event<List<Homework>>> = MutableLiveData()
+    private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
@@ -43,7 +47,12 @@ class HomeworkViewModel(
     }
 
     private fun onSuccess(content: HomeworkContent) {
-        val a= ""
-        // TODO atualiaz rlive data
+        content.content?.run {
+            if (isEmpty()) {
+                _noContentReturned.value = Event(true)
+            } else {
+                _homeworkContent.value = Event(this)
+            }
+        }
     }
 }

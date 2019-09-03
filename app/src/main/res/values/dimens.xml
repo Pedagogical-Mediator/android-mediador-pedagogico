@@ -2,6 +2,19 @@
 <resources>
     <dimen name="button_corner">8dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_large_horizontal_margin">24dp</dimen>
-    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_large_horizontal_margin">16dp</dimen>
+    <dimen name="line">1dp</dimen>
+    <dimen name="semi_tiny">2dp</dimen>
+    <dimen name="tiny">4dp</dimen>
+    <dimen name="small">8dp</dimen>
+    <dimen name="normal">16dp</dimen>
+    <dimen name="semi_big">20dp</dimen>
+    <dimen name="big">24dp</dimen>
+    <dimen name="semi_large">32dp</dimen>
+    <dimen name="large">40dp</dimen>
+    <dimen name="semi_huge">48dp</dimen>
+    <dimen name="huge">56dp</dimen>
+    <dimen name="xhuge">64dp</dimen>
+    <dimen name="xxhuge">72dp</dimen>
 </resources>
