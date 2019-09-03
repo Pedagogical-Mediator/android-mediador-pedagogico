@@ -25,6 +25,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.ufms.mediadorpedagogico"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -111,5 +112,10 @@ dependencies {
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
 
     // Testing
-    testCompile "org.koin:koin-test:$koinVersion"
+    androidTestImplementation "org.koin:koin-test:$koinVersion"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
 }

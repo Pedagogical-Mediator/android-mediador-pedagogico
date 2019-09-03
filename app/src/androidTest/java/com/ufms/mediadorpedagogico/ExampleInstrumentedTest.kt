@@ -1,12 +1,23 @@
 package com.ufms.mediadorpedagogico
 
-import androidx.test.InstrumentationRegistry
+import androidx.recyclerview.widget.RecyclerView
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.filters.LargeTest
+import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-
+import com.ufms.mediadorpedagogico.domain.entity.Homework
+import com.ufms.mediadorpedagogico.presentation.homework.HomeworkActivity
+import com.ufms.mediadorpedagogico.presentation.homework.HomeworkViewHolder
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -14,11 +25,51 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
+@LargeTest
 class ExampleInstrumentedTest {
+
+    @get:Rule
+    val activityRule = ActivityTestRule(HomeworkActivity::class.java)
+
     @Test
-    fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.ufms.mediadorpedagogico", appContext.packageName)
+    fun listHasItems () {
+        var counter = 0
+        if (counter < 5) {
+            try {
+                Thread.sleep(1000)
+                onView(withId(R.id.recycler_view_homework)).perform(
+                    RecyclerViewActions.actionOnItemAtPosition<HomeworkViewHolder>(
+                        0,
+                        click()
+                    )
+                ).check(matches(isDisplayed()))
+            } catch (e: Exception) {
+                counter++
+            }
+        }
+    }
+
+    @Test
+    fun listHasMoreThan10Items () {
+        //TODO continuar depois de carregamento dinâmico funcionar
+        var counter = 0
+        if (counter < 5) {
+            try {
+                Thread.sleep(1000)
+                onView(withId(R.id.recycler_view_homework)).perform(
+                    RecyclerViewActions.actionOnItemAtPosition<HomeworkViewHolder>(
+                        0,
+                        click()
+                    )
+                ).check(matches(isDisplayed()))
+            } catch (e: Exception) {
+                counter++
+            }
+        }
+    }
+
+    private fun getRVcount(): Int {
+        val recyclerView = activityRule.activity.findViewById(R.id.recycler_view_homework) as RecyclerView
+        return recyclerView.adapter!!.itemCount
     }
 }

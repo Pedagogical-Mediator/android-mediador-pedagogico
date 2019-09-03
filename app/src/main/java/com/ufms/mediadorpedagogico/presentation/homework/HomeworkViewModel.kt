@@ -29,10 +29,15 @@ class HomeworkViewModel(
     private val _goToHomeworkdDetails: MutableLiveData<Boolean> = MutableLiveData()
     private val _homeworkContent: MutableLiveData<Event<List<Homework>>> = MutableLiveData()
     private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
+    private var pageNumber = 0
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        getHomework.execute(0)
+        loadMoreHomework()
+    }
+
+    fun loadMoreHomework() {
+        getHomework.execute(pageNumber)
             .defaultPlaceholders(this::setPlaceholder)
             .defaultSched(schedulerProvider)
             .subscribeBy(this::onFailure, this::onSuccess)
@@ -54,5 +59,6 @@ class HomeworkViewModel(
                 _homeworkContent.value = Event(this)
             }
         }
+        pageNumber++
     }
 }

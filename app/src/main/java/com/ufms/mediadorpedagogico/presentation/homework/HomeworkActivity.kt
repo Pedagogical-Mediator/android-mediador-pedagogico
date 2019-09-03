@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkBinding
 import com.ufms.mediadorpedagogico.databinding.ActivityRegisterBinding
@@ -25,7 +26,7 @@ class HomeworkActivity : BaseActivity() {
     override val baseViewModel: BaseViewModel get() = viewModel
 
     private lateinit var binding: ActivityHomeworkBinding
-    private lateinit var homeworkAdapter: HomeworkAdapter
+    lateinit var homeworkAdapter: HomeworkAdapter
     private val viewModel: HomeworkViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +53,25 @@ class HomeworkActivity : BaseActivity() {
         with(binding.recyclerViewHomework) {
             layoutManager = LinearLayoutManager(this@HomeworkActivity)
             adapter = homeworkAdapter
+            addOnScrollListener(setLoadMoreNoticesOnScroll())
         }
+    }
+
+    private fun setLoadMoreNoticesOnScroll(): RecyclerView.OnScrollListener {
+        return object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                with(binding.recyclerViewHomework) {
+                    val totalItemCount = layoutManager?.itemCount
+                    var lastVisibleItem = (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
+                    lastVisibleItem = lastVisibleItem?.run { this + 1}
+                    if (totalItemCount == lastVisibleItem) {
+                        viewModel.loadMoreHomework()
+                    }
+                }
+            }
+        }
+
     }
 
     private fun onHomeworkContentLoaded(homeworkContent: List<Homework>?) {
