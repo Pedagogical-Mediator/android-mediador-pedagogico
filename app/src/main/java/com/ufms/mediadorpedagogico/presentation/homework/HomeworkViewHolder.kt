@@ -19,7 +19,7 @@ class HomeworkViewHolder(
             homework.run {
                 textViewTitle.text = title
                 textViewDescription.text = description
-                textViewDate.text = id.toString()
+                textViewDate.text = createdAt
                 constraintLayoutItem.setOnClickListener { onItemClickedCallback.invoke(this) }
             }
         }

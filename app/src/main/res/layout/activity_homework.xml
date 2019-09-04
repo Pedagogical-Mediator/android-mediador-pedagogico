@@ -17,58 +17,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linear_layout_customized_toolbar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="@color/primary"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:paddingTop="8dp"
-            android:paddingStart="16dp"
-            android:paddingBottom="8dp"
-            android:layout_height="72dp">
-
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:src="@mipmap/ic_student_with_hat_round"
-            />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/carter_one"
-                android:layout_marginStart="16dp"
-                android:layout_gravity="center_vertical"
-                android:textSize="24sp"
-                android:textColor="@color/white"
-                android:text="Sala de Aula Invertida"/>
-        </LinearLayout>
+        <include
+            android:id="@+id/toolbar_customized"
+            layout="@layout/toolbar_customized"/>
 
         <LinearLayout
             android:id="@+id/linear_layout_customized_search"
-            app:layout_constraintTop_toBottomOf="@id/linear_layout_customized_toolbar"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_customized"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="36dp"
+            android:layout_marginStart="@dimen/normal"
+            android:layout_marginTop="@dimen/normal"
+            android:layout_marginEnd="@dimen/semi_large"
             android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/image_view_search"
-                android:src="@android:drawable/ic_menu_search"
+                android:src="@drawable/ic_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <EditText
                 android:id="@+id/edit_text_search"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="@dimen/small"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:fontFamily="@font/carter_one"/>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carter_one"/>
         </LinearLayout>
 
         <FrameLayout
@@ -78,13 +55,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="8dp">
+            android:layout_margin="@dimen/small">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_homework"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="50dp"
+                android:paddingBottom="@dimen/semi_huge"
                 android:clipToPadding="false">
             </androidx.recyclerview.widget.RecyclerView>
 

@@ -49,6 +49,7 @@ class HomeworkViewModel(
 
     private fun onFailure(throwable: Throwable) {
         setDialog(throwable)
+        _noContentReturned.value = Event(true)
     }
 
     private fun onSuccess(content: HomeworkContent) {

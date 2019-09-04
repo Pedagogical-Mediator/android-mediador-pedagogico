@@ -12,10 +12,7 @@ import com.ufms.mediadorpedagogico.databinding.ActivityRegisterBinding
 import com.ufms.mediadorpedagogico.domain.entity.Homework
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setupToolbar
+import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import io.reactivex.disposables.Disposable
@@ -26,13 +23,14 @@ class HomeworkActivity : BaseActivity() {
     override val baseViewModel: BaseViewModel get() = viewModel
 
     lateinit var homeworkAdapter: HomeworkAdapter
-    var moreHomeworksToBeLoaded = true
-    var isLoadingMoreHomework = false
+    private var moreHomeworksToBeLoaded = true
+    private var isLoadingMoreHomework = false
     private lateinit var binding: ActivityHomeworkBinding
     private val viewModel: HomeworkViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_homework)
+        setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_homework_label))
         lifecycle.addObserver(viewModel)
         setupUi()
         setupAdapter()
@@ -92,8 +90,7 @@ class HomeworkActivity : BaseActivity() {
     }
 
     private fun setupUi() {
-        with(binding) {
-        }
+        //TODO botar click
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

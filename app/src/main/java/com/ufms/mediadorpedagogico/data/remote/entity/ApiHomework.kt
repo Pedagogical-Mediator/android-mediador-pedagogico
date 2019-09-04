@@ -9,14 +9,16 @@ data class ApiHomework(
     @SerializedName("id") val id: Int?,
     @SerializedName("titulo") val title: String?,
     @SerializedName("descricao") val description: String?,
-    @SerializedName("homeworkLinks") val homeworkLinks: List<ApiHomeworkLink>?
+    @SerializedName("homeworkLinks") val homeworkLinks: List<ApiHomeworkLink>?,
+    @SerializedName("dataDeCriacao") val createdAt: String
 ) : Serializable {
     object ApiHomeworkToHomework : Mapper<ApiHomework, Homework>() {
         override fun transform(t: ApiHomework) = Homework(
             id = t.id,
             title = t.title,
             description = t.description,
-            homeworkLinks = t.homeworkLinks?.let(ApiHomeworkLink.ApiHomeworkLinkToHomeworkLink::transform)
+            homeworkLinks = t.homeworkLinks?.let(ApiHomeworkLink.ApiHomeworkLinkToHomeworkLink::transform),
+            createdAt = t.createdAt
         )
     }
 }
