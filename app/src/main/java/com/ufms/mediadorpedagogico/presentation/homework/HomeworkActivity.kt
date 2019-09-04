@@ -25,8 +25,10 @@ class HomeworkActivity : BaseActivity() {
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var binding: ActivityHomeworkBinding
     lateinit var homeworkAdapter: HomeworkAdapter
+    var moreHomeworksToBeLoaded = true
+    var isLoadingMoreHomework = false
+    private lateinit var binding: ActivityHomeworkBinding
     private val viewModel: HomeworkViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,22 +67,27 @@ class HomeworkActivity : BaseActivity() {
                     val totalItemCount = layoutManager?.itemCount
                     var lastVisibleItem = (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
                     lastVisibleItem = lastVisibleItem?.run { this + 1}
-                    if (totalItemCount == lastVisibleItem) {
+                    if (totalItemCount == lastVisibleItem && moreHomeworksToBeLoaded && !isLoadingMoreHomework) {
+                        isLoadingMoreHomework = true
                         viewModel.loadMoreHomework()
                     }
                 }
             }
         }
-
     }
 
     private fun onHomeworkContentLoaded(homeworkContent: List<Homework>?) {
         homeworkContent?.run(homeworkAdapter::setItems)
+        isLoadingMoreHomework = false
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
-            binding.includedPlaceholderNoResults.root.setVisible(true)
+            if (homeworkAdapter.itemCount == 0) {
+                binding.includedPlaceholderNoResults.root.setVisible(true)
+            } else {
+                moreHomeworksToBeLoaded = false
+            }
         }
     }
 
@@ -90,7 +97,7 @@ class HomeworkActivity : BaseActivity() {
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
-//        placeholder?.let { binding.includedLoading.placeholder = it }
+        placeholder?.let { binding.placeholder = it }
     }
 
     companion object {

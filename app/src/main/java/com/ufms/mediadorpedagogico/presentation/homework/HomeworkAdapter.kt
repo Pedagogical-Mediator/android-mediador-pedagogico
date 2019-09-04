@@ -8,7 +8,7 @@ class HomeworkAdapter(
     private val onItemClickedCallback: (Homework) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var homeworkList: List<Homework> = listOf()
+    private var homeworkList: ArrayList<Homework> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         HomeworkViewHolder.inflate(parent, ::onItemClicked)
@@ -21,7 +21,7 @@ class HomeworkAdapter(
     }
 
     fun setItems(homeworkList: List<Homework>) {
-        this.homeworkList = homeworkList
+        this.homeworkList.addAll(homeworkList)
         notifyDataSetChanged()
     }
 
