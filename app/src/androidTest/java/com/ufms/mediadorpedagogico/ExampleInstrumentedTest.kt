@@ -33,20 +33,13 @@ class ExampleInstrumentedTest {
 
     @Test
     fun listHasItems () {
-        var counter = 0
-        if (counter < 5) {
-            try {
-                Thread.sleep(1000)
-                onView(withId(R.id.recycler_view_homework)).perform(
-                    RecyclerViewActions.actionOnItemAtPosition<HomeworkViewHolder>(
-                        0,
-                        click()
-                    )
-                ).check(matches(isDisplayed()))
-            } catch (e: Exception) {
-                counter++
-            }
-        }
+        Thread.sleep(5000)
+        onView(withId(R.id.recycler_view_homework)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<HomeworkViewHolder>(
+                0,
+                click()
+            )
+        ).check(matches(isDisplayed()))
     }
 
     @Test

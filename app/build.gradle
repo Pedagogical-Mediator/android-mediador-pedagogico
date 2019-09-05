@@ -96,17 +96,11 @@ dependencies {
     // LiveData + ViewModel
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 
-    //Shimmer
-    implementation 'com.facebook.shimmer:shimmer:0.4.0'
-
     // easy image
     implementation 'com.github.jkwiecien:EasyImage:2.0.3'
 
     //rx permissions
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
-
-    //Stetho
-    implementation 'com.facebook.stetho:stetho:1.5.1'
 
     implementation "org.koin:koin-core:$koinVersion"
     implementation "org.koin:koin-android-viewmodel:$koinVersion"

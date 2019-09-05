@@ -1,7 +1,6 @@
 package com.ufms.mediadorpedagogico.presentation
 
 import androidx.multidex.MultiDexApplication
-import com.facebook.stetho.Stetho
 import com.ufms.mediadorpedagogico.presentation.structure.dependecyinjector.applicationModule
 import com.ufms.mediadorpedagogico.presentation.structure.dependecyinjector.interactorModule
 import com.ufms.mediadorpedagogico.presentation.structure.dependecyinjector.repositoryModule
@@ -14,7 +13,6 @@ class AppTemplateSlimApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        Stetho.initializeWithDefaults(this)
         startKoin {
             androidLogger()
             androidContext(this@AppTemplateSlimApplication)
