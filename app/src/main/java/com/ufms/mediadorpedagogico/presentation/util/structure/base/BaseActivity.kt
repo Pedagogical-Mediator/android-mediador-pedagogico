@@ -2,6 +2,7 @@ package com.ufms.mediadorpedagogico.presentation.util.structure.base
 
 import android.app.Dialog
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavData
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
@@ -30,6 +31,16 @@ abstract class BaseActivity : AppCompatActivity() {
     private fun onNextToast(text: String?) {
         text?.let {
             shortToast(it)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when (item?.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

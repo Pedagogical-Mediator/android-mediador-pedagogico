@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="placeholder"
+            type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder"/>
+
+        <variable name="homeworkDetails" type="com.ufms.mediadorpedagogico.domain.entity.Homework"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_customized"
+            layout="@layout/toolbar_customized"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_view"
+                android:layout_marginStart="@dimen/semi_tiny"
+                android:layout_marginEnd="@dimen/semi_tiny"
+                android:layout_marginBottom="@dimen/semi_tiny"
+                android:layout_marginTop="@dimen/tiny"
+                android:padding="@dimen/normal"
+                android:orientation="vertical"
+                tools:context="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsActivity">
+
+                <TextView
+                    android:id="@+id/text_view_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    tools:text="TITULO"
+                    android:text="@{homeworkDetails.title}"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line"
+                    android:background="@color/black"
+                    android:layout_marginTop="@dimen/tiny"/>
+
+                <TextView
+                    android:id="@+id/text_view_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/big"
+                    tools:text="DESCRIPTION"
+                    android:text="@{homeworkDetails.description}"/>
+
+                <ImageView
+                    android:id="@+id/image_view_resource"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/big"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
+

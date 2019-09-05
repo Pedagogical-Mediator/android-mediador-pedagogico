@@ -10,10 +10,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-import com.ufms.mediadorpedagogico.domain.entity.Homework
-import com.ufms.mediadorpedagogico.presentation.homework.HomeworkActivity
-import com.ufms.mediadorpedagogico.presentation.homework.HomeworkViewHolder
-import org.junit.Before
+import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListActivity
+import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewHolder
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -29,13 +27,13 @@ import org.junit.runner.RunWith
 class ExampleInstrumentedTest {
 
     @get:Rule
-    val activityRule = ActivityTestRule(HomeworkActivity::class.java)
+    val activityRule = ActivityTestRule(HomeworkListActivity::class.java)
 
     @Test
     fun listHasItems () {
         Thread.sleep(5000)
         onView(withId(R.id.recycler_view_homework)).perform(
-            RecyclerViewActions.actionOnItemAtPosition<HomeworkViewHolder>(
+            RecyclerViewActions.actionOnItemAtPosition<HomeworkListViewHolder>(
                 0,
                 click()
             )
@@ -50,7 +48,7 @@ class ExampleInstrumentedTest {
             try {
                 Thread.sleep(1000)
                 onView(withId(R.id.recycler_view_homework)).perform(
-                    RecyclerViewActions.actionOnItemAtPosition<HomeworkViewHolder>(
+                    RecyclerViewActions.actionOnItemAtPosition<HomeworkListViewHolder>(
                         0,
                         click()
                     )

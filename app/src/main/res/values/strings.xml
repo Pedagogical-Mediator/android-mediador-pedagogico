@@ -11,12 +11,21 @@
     <string name="global_not_found">Nenhum resultado encontrado</string>
 
     <string name="error_title">Oops!</string>
-    <string name="error_unknown">Não foi possível completar a operação. Tente novamente mais tarde. Se o problema persistir entre em contato conosco.</string>
-    <string name="error_network">Não foi possível completar a operação. Verifique sua conexão e tente novamente.</string>
-    <string name="error_unprocessable">Não foi possível completar a operação. Os seguintes problemas foram encontrados:\n\n%s</string>
-    <string name="error_unauthorized_login_now">Não foi possível completar a operação. Sua sessão expirou. Por favor faça login novamente.</string>
+    <string name="error_unknown">Não foi possível completar a operação. Tente novamente mais tarde. Se o problema
+        persistir entre em contato conosco.
+    </string>
+    <string name="error_network">Não foi possível completar a operação. Verifique sua conexão e tente novamente.
+    </string>
+    <string name="error_unprocessable">Não foi possível completar a operação. Os seguintes problemas foram
+        encontrados:\n\n%s
+    </string>
+    <string name="error_unauthorized_login_now">Não foi possível completar a operação. Sua sessão expirou. Por favor
+        faça login novamente.
+    </string>
     <string name="error_not_found">Não encontrado</string>
-    <string name="error_server_internal">Não foi possível completar a operação. Tente novamente mais tarde. Se o problema persistir entre em contato conosco.</string>
+    <string name="error_server_internal">Não foi possível completar a operação. Tente novamente mais tarde. Se o
+        problema persistir entre em contato conosco.
+    </string>
     <string name="error_timeout">Tempo expirado. Por favor, tente novamente.</string>
 
     <string name="activity_login_error">Email ou senha errados.</string>
@@ -52,10 +61,16 @@
     <string name="activity_recover_password">Recuperar senha</string>
     <string name="activity_recover_password_inform_email">Informe o seu email para recuperar sua senha</string>
     <string name="activity_recover_password_send">Enviar</string>
-    <string name="activity_recover_password_success">Verifique a sua caixa de entrada e siga as instruções do email para recuperar sua senha.</string>
+    <string name="activity_recover_password_success">Verifique a sua caixa de entrada e siga as instruções do email para
+        recuperar sua senha.
+    </string>
 
-    <string name="error_facebook_sdk">O Facebook não nos devolveu nenhuma informação para realizar o login. Por favor, tente novamente.</string>
-    <string name="error_facebook_denied_permissions">É necessário aceitar todas as permissões no Facebook para realizar o login. Por favor, tente novamente.</string>
+    <string name="error_facebook_sdk">O Facebook não nos devolveu nenhuma informação para realizar o login. Por favor,
+        tente novamente.
+    </string>
+    <string name="error_facebook_denied_permissions">É necessário aceitar todas as permissões no Facebook para realizar
+        o login. Por favor, tente novamente.
+    </string>
 
     <string name="error_invalid_email">Email Inválido</string>
     <string name="error_invalid_password">Senha Inválida</string>

@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.homework
+package com.ufms.mediadorpedagogico.presentation.homework.list
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
@@ -6,16 +6,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.domain.entity.Homework
 import com.ufms.mediadorpedagogico.domain.entity.HomeworkContent
+import com.ufms.mediadorpedagogico.domain.entity.HomeworkType
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
+import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsNavData
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import io.reactivex.rxkotlin.subscribeBy
 
-class HomeworkViewModel(
+class HomeworkListViewModel(
     private val schedulerProvider: SchedulerProvider,
     private val getHomework: GetHomework
 ) : BaseViewModel() {
@@ -44,7 +46,7 @@ class HomeworkViewModel(
     }
 
     fun setupOnItemClicked(homework: Homework) {
-        //TODO GOTO details passando como bundle o homework
+        goTo(HomeworkDetailsNavData(homework))
     }
 
     private fun onFailure(throwable: Throwable) {

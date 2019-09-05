@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.homework
+package com.ufms.mediadorpedagogico.presentation.homework.list
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkBinding
+import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkListBinding
 import com.ufms.mediadorpedagogico.domain.entity.Homework
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
@@ -15,18 +15,18 @@ import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class HomeworkActivity : BaseActivity() {
+class HomeworkListActivity : BaseActivity() {
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    lateinit var homeworkAdapter: HomeworkAdapter
+    lateinit var homeworkListAdapter: HomeworkListAdapter
     private var moreHomeworksToBeLoaded = true
     private var isLoadingMoreHomework = false
-    private lateinit var binding: ActivityHomeworkBinding
-    private val viewModel: HomeworkViewModel by inject()
+    private lateinit var binding: ActivityHomeworkListBinding
+    private val viewModel: HomeworkListViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_homework)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_homework_list)
         setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_homework_label))
         lifecycle.addObserver(viewModel)
         setupUi()
@@ -37,19 +37,21 @@ class HomeworkActivity : BaseActivity() {
 
     override fun subscribeUi() {
         super.subscribeUi()
-        viewModel.placeholder.observe(this, ::onNextPlaceholder)
-        viewModel.homeworkContent.observeEvent(this, ::onHomeworkContentLoaded)
-        viewModel.noContentReturned.observeEvent(this, ::onNoContentReturned)
+        with(viewModel) {
+            placeholder.observe(this@HomeworkListActivity, ::onNextPlaceholder)
+            homeworkContent.observeEvent(this@HomeworkListActivity, ::onHomeworkContentLoaded)
+            noContentReturned.observeEvent(this@HomeworkListActivity, ::onNoContentReturned)
+        }
     }
 
     private fun setupAdapter() {
-        homeworkAdapter = HomeworkAdapter(viewModel::setupOnItemClicked)
+        homeworkListAdapter = HomeworkListAdapter(viewModel::setupOnItemClicked)
     }
 
     private fun setupRecycler() {
         with(binding.recyclerViewHomework) {
-            layoutManager = LinearLayoutManager(this@HomeworkActivity)
-            adapter = homeworkAdapter
+            layoutManager = LinearLayoutManager(this@HomeworkListActivity)
+            adapter = homeworkListAdapter
             addOnScrollListener(setLoadMoreNoticesOnScroll())
         }
     }
@@ -72,13 +74,13 @@ class HomeworkActivity : BaseActivity() {
     }
 
     private fun onHomeworkContentLoaded(homeworkContent: List<Homework>?) {
-        homeworkContent?.run(homeworkAdapter::setItems)
+        homeworkContent?.run(homeworkListAdapter::setItems)
         isLoadingMoreHomework = false
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
-            if (homeworkAdapter.itemCount == 0) {
+            if (homeworkListAdapter.itemCount == 0) {
                 binding.includedPlaceholderNoResults.root.setVisible(true)
             } else {
                 moreHomeworksToBeLoaded = false
@@ -96,7 +98,7 @@ class HomeworkActivity : BaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            return Intent(context, HomeworkActivity::class.java)
+            return Intent(context, HomeworkListActivity::class.java)
         }
     }
 }

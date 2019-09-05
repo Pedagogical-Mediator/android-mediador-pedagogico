@@ -1,20 +1,19 @@
-package com.ufms.mediadorpedagogico.presentation.homework
+package com.ufms.mediadorpedagogico.presentation.homework.details
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ItemListHomeworkBinding
-import com.ufms.mediadorpedagogico.domain.entity.Homework
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setString
+import com.ufms.mediadorpedagogico.databinding.ItemListHomeworkDetailsBinding
+import com.ufms.mediadorpedagogico.domain.entity.HomeworkLink
 
-class HomeworkViewHolder(
-    private var binding: ItemListHomeworkBinding,
-    private val onItemClickedCallback: (Homework) -> Unit)
+class HomeworkDetailsViewHolder(
+        private var binding: ItemListHomeworkDetailsBinding
+)
     : RecyclerView.ViewHolder(binding.root) {
 
-    fun setupBinding(homework: Homework) {
+    fun setupBinding(link: HomeworkLink) {
         with(binding) {
             homework.run {
                 textViewTitle.text = title
@@ -38,12 +37,14 @@ class HomeworkViewHolder(
     }
 
     companion object {
-        fun inflate(parent: ViewGroup?, onItemClickedCallback: (Homework) -> Unit) = HomeworkViewHolder(
-            DataBindingUtil.inflate(
-                LayoutInflater.from(parent?.context),
-                R.layout.item_list_homework,
-                parent,
-                false), onItemClickedCallback
-        )
+        fun inflate(parent: ViewGroup?) =
+                HomeworkDetailsViewHolder(
+                        DataBindingUtil.inflate(
+                                LayoutInflater.from(parent?.context),
+                                R.layout.item_list_homework,
+                                parent,
+                                false
+                        )
+                )
     }
 }
