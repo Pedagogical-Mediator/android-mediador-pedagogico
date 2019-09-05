@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkDetailsBinding
 import com.ufms.mediadorpedagogico.domain.entity.Homework
+import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.DividerItemDecorator
+import com.ufms.mediadorpedagogico.presentation.util.extensions.drawableCompat
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedToolbar
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
@@ -51,6 +53,9 @@ class HomeworkDetailsActivity : BaseActivity() {
         with(binding.recyclerViewLink) {
             layoutManager = LinearLayoutManager(this@HomeworkDetailsActivity)
             adapter = homeworkDetailsAdapter
+            drawableCompat(R.drawable.recycler_view_divider)?.run {
+                addItemDecoration(DividerItemDecorator(this))
+            }
         }
     }
 

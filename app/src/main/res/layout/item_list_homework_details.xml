@@ -12,15 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="@dimen/large"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginBottom="@dimen/small"
         android:orientation="vertical">
 
         <TextView
+            style="@style/TextLabelDescriptionBlackBold"
             android:id="@+id/text_view_link_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content" />
 
         <TextView
+            style="@style/TextLabelDescriptionBlackNormal"
             android:id="@+id/text_view_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

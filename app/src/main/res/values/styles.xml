@@ -77,6 +77,9 @@
     -->
 
 
+    <!--
+        TITLES
+    -->
     <style name="TextLabelTitleBlackSemiBIg" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/work_sans_semibold</item>
@@ -85,6 +88,21 @@
     <style name="TextLabelTitleBlackBig" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">24sp</item>
         <item name="android:fontFamily">@font/work_sans_semibold</item>
+    </style>
+
+    <!--
+        NORMAL TEXTS
+    -->
+
+    <style name="TextLabelDescriptionBlackNormal" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/work_sans</item>
+    </style>
+
+    <style name="TextLabelDescriptionBlackBold" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/work_sans</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 
