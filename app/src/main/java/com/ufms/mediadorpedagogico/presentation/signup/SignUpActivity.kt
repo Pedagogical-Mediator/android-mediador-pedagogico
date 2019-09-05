@@ -11,9 +11,9 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityRegisterBinding
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
-import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.mask.InputMask
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider

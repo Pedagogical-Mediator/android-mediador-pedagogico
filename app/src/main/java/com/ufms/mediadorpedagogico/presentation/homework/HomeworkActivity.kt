@@ -8,14 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkBinding
-import com.ufms.mediadorpedagogico.databinding.ActivityRegisterBinding
 import com.ufms.mediadorpedagogico.domain.entity.Homework
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
-import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
-import io.reactivex.disposables.Disposable
 import org.koin.android.ext.android.inject
 
 class HomeworkActivity : BaseActivity() {

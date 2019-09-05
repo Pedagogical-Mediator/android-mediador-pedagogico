@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.structure.dependecyinjector
+package com.ufms.mediadorpedagogico.presentation.util.structure.dependecyinjector
 
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
 import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser

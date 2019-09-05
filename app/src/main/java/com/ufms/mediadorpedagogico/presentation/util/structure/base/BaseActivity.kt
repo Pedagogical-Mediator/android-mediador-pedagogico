@@ -1,10 +1,10 @@
-package com.ufms.mediadorpedagogico.presentation.structure.base
+package com.ufms.mediadorpedagogico.presentation.util.structure.base
 
 import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.ufms.mediadorpedagogico.presentation.structure.navigation.NavData
-import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavData
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.extensions.showDialog

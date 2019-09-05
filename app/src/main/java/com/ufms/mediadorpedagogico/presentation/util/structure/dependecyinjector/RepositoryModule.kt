@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.structure.dependecyinjector
+package com.ufms.mediadorpedagogico.presentation.util.structure.dependecyinjector
 
 import com.ufms.mediadorpedagogico.data.remote.repository.DefaultHomeworkRepository
 import com.ufms.mediadorpedagogico.data.remote.repository.DefaultUserRepository

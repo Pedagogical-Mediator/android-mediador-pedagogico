@@ -7,7 +7,7 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.interactor.user.LoginForm
 import com.ufms.mediadorpedagogico.domain.interactor.user.SignIn
 import com.ufms.mediadorpedagogico.presentation.signup.SignUpNavData
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import io.reactivex.disposables.Disposable

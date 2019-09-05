@@ -4,7 +4,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultMutableLiveData
 
 class SplashViewModel(

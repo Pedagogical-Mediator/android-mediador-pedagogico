@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.structure.arch
+package com.ufms.mediadorpedagogico.presentation.util.structure.arch
 
 import androidx.lifecycle.Observer
 

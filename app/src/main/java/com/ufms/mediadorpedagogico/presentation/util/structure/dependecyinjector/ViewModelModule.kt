@@ -1,10 +1,10 @@
-package com.ufms.mediadorpedagogico.presentation.structure.dependecyinjector
+package com.ufms.mediadorpedagogico.presentation.util.structure.dependecyinjector
 
 import com.ufms.mediadorpedagogico.presentation.homework.HomeworkViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
 import com.ufms.mediadorpedagogico.presentation.login.LoginViewModel
 import com.ufms.mediadorpedagogico.presentation.signup.SignUpViewModel
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

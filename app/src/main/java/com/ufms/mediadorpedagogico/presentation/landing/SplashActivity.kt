@@ -1,9 +1,9 @@
 package com.ufms.mediadorpedagogico.presentation.landing
 
 import android.os.Bundle
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
-import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import org.koin.android.ext.android.inject
 

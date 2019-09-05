@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.structure.navigation
+package com.ufms.mediadorpedagogico.presentation.util.structure.navigation
 
 import android.content.Context
 import com.ufms.mediadorpedagogico.presentation.dashboard.MainActivity

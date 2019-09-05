@@ -1,8 +1,8 @@
-package com.ufms.mediadorpedagogico.presentation.structure.base
+package com.ufms.mediadorpedagogico.presentation.util.structure.base
 
 import androidx.lifecycle.*
-import com.ufms.mediadorpedagogico.presentation.structure.arch.Event
-import com.ufms.mediadorpedagogico.presentation.structure.navigation.NavData
+import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavData
 import com.ufms.mediadorpedagogico.presentation.util.ErrorHandler
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.DialogData
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder

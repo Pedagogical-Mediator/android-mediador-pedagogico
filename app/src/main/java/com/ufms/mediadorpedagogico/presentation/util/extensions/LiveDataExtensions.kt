@@ -4,8 +4,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
-import com.ufms.mediadorpedagogico.presentation.structure.arch.Event
-import com.ufms.mediadorpedagogico.presentation.structure.arch.EventObserver
+import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
+import com.ufms.mediadorpedagogico.presentation.util.structure.arch.EventObserver
 
 fun <T> defaultMutableLiveData(t: T?): MutableLiveData<T> {
     val liveData = MutableLiveData<T>()
