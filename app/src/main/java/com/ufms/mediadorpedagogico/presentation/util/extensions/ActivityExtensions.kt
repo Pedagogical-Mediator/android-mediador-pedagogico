@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import com.ufms.mediadorpedagogico.R
+import com.ufms.mediadorpedagogico.databinding.ToolbarCustomizedBinding
 import io.reactivex.Single
 import io.reactivex.SingleEmitter
 import pl.aprilapps.easyphotopicker.Constants
@@ -113,6 +114,14 @@ private fun AppCompatActivity.setupToolbarWithTitle(toolbar: Toolbar?, title: St
         setDisplayHomeAsUpEnabled(showHome)
         setDisplayShowHomeEnabled(showHome)
     }
+}
+
+//Toolbar
+fun AppCompatActivity.setupCustomizedToolbar(includedToolbarViewBinding: ToolbarCustomizedBinding, showHome: Boolean = true, title: String? = null) {
+    if (title != null) {
+        includedToolbarViewBinding.toolbarTitle.text = title
+    }
+    setupToolbar(includedToolbarViewBinding.toolbar, showHome)
 }
 
 //SoftKeyboard

@@ -2,35 +2,46 @@
 
     <!-- themes -->
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--<item name="colorPrimary">@color/primary</item>-->
+        <!--<item name="colorPrimaryDark">@color/primary_dark</item>-->
+        <!--<item name="colorAccent">@color/accent</item>-->
+        <!--<item name="buttonStyle">@style/Button</item>-->
+        <!--<item name="colorControlNormal">@color/controlNormal</item>-->
+        <!--<item name="android:windowBackground">@color/lightWindowBg</item>-->
+    <!--</style>-->
+
+    <!--<style name="AppTheme.NoActionbar">-->
+        <!--<item name="windowActionBar">false</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+    <!--</style>-->
+    <!---->
+    <!--<style name="AppThemeSecondary" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--<item name="colorPrimary">@color/black</item>-->
+        <!--<item name="colorPrimaryDark">@color/black</item>-->
+        <!--<item name="colorAccent">@color/black</item>-->
+        <!--<item name="colorControlNormal">@color/controlNormal</item>-->
+        <!--<item name="android:windowBackground">@color/lightWindowBg</item>-->
+    <!--</style>-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
-        <item name="buttonStyle">@style/Button</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorControlNormal">@color/controlNormal</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">@color/lightWindowBg</item>
+    </style>
+
+    <style name="AppThemeSecondary" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/primary</item>
         <item name="colorControlNormal">@color/controlNormal</item>
         <item name="android:windowBackground">@color/lightWindowBg</item>
     </style>
 
-    <style name="AppTheme.NoActionbar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
     <style name="AppbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-
-    <style name="AppTheme.NoActionbar.TranslucentStatusBar">
-        <!-- written in v21 -->
-    </style>
-
-    <style name="AppTheme.NoActionbar.Splash">
-        <item name="android:windowBackground">@drawable/splash</item>
-    </style>
-
-    <style name="AppTheme.NoActionbar.TranslucentStatusBar.Login">
-        <item name="colorControlNormal">@color/controlNormalLogin</item>
-    </style>
-
 
     <!-- styles -->
 
@@ -59,5 +70,17 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorLightTextPrimary</item>
     </style>
+
+
+    <!--
+        HERE STARTS MY LEGACY
+    -->
+
+
+    <style name="TextLabelItemRecyclerTitleBlack" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/work_sans_semibold</item>
+    </style>
+
 
 </resources>

@@ -9,6 +9,7 @@ import android.text.Editable
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.ViewDataBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.ufms.mediadorpedagogico.R
@@ -160,3 +161,6 @@ private fun placeholderOptions(placeholder: Drawable? = null): RequestOptions {
     placeholder?.let { requestOptions.placeholder(it).error(it) }
     return requestOptions
 }
+
+
+fun ViewDataBinding.setString(resourceId: Int, vararg strings: String) = root.context.getString(resourceId, strings).toString()

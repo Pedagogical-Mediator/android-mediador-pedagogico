@@ -25,6 +25,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.ufms.mediadorpedagogico"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -38,7 +39,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiRelease\""
-            buildConfigField "String", "API_VERSION", "\"$rootProject.ext.apiVersion\""
             resValue "string", "app_name", rootProject.ext.appName
         }
 
@@ -46,14 +46,12 @@ android {
             initWith(buildTypes.release)
             applicationIdSuffix ".staging"
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiStaging\""
-            buildConfigField "String", "API_VERSION", "\"$rootProject.ext.apiVersion\""
             resValue "string", "app_name", "\"$rootProject.ext.appName [staging]\""
         }
 
         debug {
             applicationIdSuffix ".debug"
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiStaging\""
-            buildConfigField "String", "API_VERSION", "\"$rootProject.ext.apiVersion\""
             resValue "string", "app_name", "\"$rootProject.ext.appName [debug]\""
         }
     }
@@ -98,21 +96,20 @@ dependencies {
     // LiveData + ViewModel
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 
-    //Shimmer
-    implementation 'com.facebook.shimmer:shimmer:0.4.0'
-
     // easy image
     implementation 'com.github.jkwiecien:EasyImage:2.0.3'
 
     //rx permissions
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
 
-    //Stetho
-    implementation 'com.facebook.stetho:stetho:1.5.1'
-
     implementation "org.koin:koin-core:$koinVersion"
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
 
     // Testing
-    testCompile "org.koin:koin-test:$koinVersion"
+    androidTestImplementation "org.koin:koin-test:$koinVersion"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
 }
