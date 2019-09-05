@@ -5,16 +5,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkDetailsBinding
-import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkListBinding
 import com.ufms.mediadorpedagogico.domain.entity.Homework
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedToolbar
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
-import com.ufms.mediadorpedagogico.presentation.util.extensions.*
-import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -24,7 +21,7 @@ class HomeworkDetailsActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeworkDetailsBinding
     private val viewModel: HomeworkDetailsViewModel by viewModel { parametersOf(homeworkDetails) }
-    lateinit var homeworkListAdapter: HomeworkListAdapter
+    lateinit var homeworkDetailsAdapter: HomeworkDetailsAdapter
 
     private val homeworkDetails by lazy {
         (intent.extras?.getSerializable(HOMEWORK_KEY) as? Homework)
@@ -34,28 +31,34 @@ class HomeworkDetailsActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_homework_details)
         setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_homework_label))
         lifecycle.addObserver(viewModel)
-        setupUi()
+        setupAdapter()
+        setupRecycler()
         super.onCreate(savedInstanceState)
     }
 
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@HomeworkDetailsActivity, ::onNextPlaceholder)
             homeworkContent.observeEvent(this@HomeworkDetailsActivity, ::onHomeworkDetailsReceived)
         }
     }
 
+    private fun setupAdapter() {
+        homeworkDetailsAdapter = HomeworkDetailsAdapter()
+    }
+
+    private fun setupRecycler() {
+        with(binding.recyclerViewLink) {
+            layoutManager = LinearLayoutManager(this@HomeworkDetailsActivity)
+            adapter = homeworkDetailsAdapter
+        }
+    }
+
     private fun onHomeworkDetailsReceived(homeworkDetails: Homework?) {
-        binding.homeworkDetails = homeworkDetails
-    }
-
-    private fun setupUi() {
-        //TODO botar click
-    }
-
-    private fun onNextPlaceholder(placeholder: Placeholder?) {
-        placeholder?.let { binding.placeholder = it }
+        homeworkDetails?.run {
+            binding.homeworkDetails = this
+            homeworkDetailsAdapter.setItems(homeworkLinks)
+        }
     }
 
     companion object {

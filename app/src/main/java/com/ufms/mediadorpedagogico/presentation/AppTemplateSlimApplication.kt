@@ -16,7 +16,7 @@ class AppTemplateSlimApplication : MultiDexApplication() {
         startKoin {
             androidLogger()
             androidContext(this@AppTemplateSlimApplication)
-            modules(listOf(interactorModule, repositoryModule ,applicationModule, viewModelModule))
+            modules(listOf(interactorModule, repositoryModule, applicationModule, viewModelModule))
         }
     }
 }

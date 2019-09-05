@@ -7,6 +7,6 @@ import okhttp3.ResponseBody
 object ApiErrorsFormatter {
     fun deserialize(responseBody: ResponseBody?): ApiError? {
         return Gson()
-            .fromJson(responseBody?.string(), ApiError::class.java)
+                .fromJson(responseBody?.string(), ApiError::class.java)
     }
 }

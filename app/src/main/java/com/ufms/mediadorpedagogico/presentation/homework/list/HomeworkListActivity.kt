@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkListBinding
 import com.ufms.mediadorpedagogico.domain.entity.Homework
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedToolbar
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
-import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
@@ -63,7 +66,7 @@ class HomeworkListActivity : BaseActivity() {
                 with(binding.recyclerViewHomework) {
                     val totalItemCount = layoutManager?.itemCount
                     var lastVisibleItem = (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
-                    lastVisibleItem = lastVisibleItem?.run { this + 1}
+                    lastVisibleItem = lastVisibleItem?.run { this + 1 }
                     if (totalItemCount == lastVisibleItem && moreHomeworksToBeLoaded && !isLoadingMoreHomework) {
                         isLoadingMoreHomework = true
                         viewModel.loadMoreHomework()

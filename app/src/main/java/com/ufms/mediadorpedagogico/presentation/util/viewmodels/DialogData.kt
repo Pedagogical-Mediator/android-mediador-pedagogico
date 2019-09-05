@@ -44,12 +44,12 @@ class DialogData(
         }
 
         fun error(
-            strings: StringsProvider,
-            message: String,
-            confirmButtonText: String? = null,
-            onConfirm: (() -> Unit)? = null,
-            onDismiss: (() -> Unit)? = null,
-            cancelable: Boolean? = true
+                strings: StringsProvider,
+                message: String,
+                confirmButtonText: String? = null,
+                onConfirm: (() -> Unit)? = null,
+                onDismiss: (() -> Unit)? = null,
+                cancelable: Boolean? = true
         ): DialogData {
             return DialogData(
                     strings.errorTitle,

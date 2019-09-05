@@ -9,8 +9,8 @@ import com.ufms.mediadorpedagogico.databinding.ItemListHomeworkBinding
 import com.ufms.mediadorpedagogico.domain.entity.Homework
 
 class HomeworkListViewHolder(
-    private var binding: ItemListHomeworkBinding,
-    private val onItemClickedCallback: (Homework) -> Unit)
+        private var binding: ItemListHomeworkBinding,
+        private val onItemClickedCallback: (Homework) -> Unit)
     : RecyclerView.ViewHolder(binding.root) {
 
     fun setupBinding(homework: Homework) {
@@ -38,13 +38,13 @@ class HomeworkListViewHolder(
 
     companion object {
         fun inflate(parent: ViewGroup?, onItemClickedCallback: (Homework) -> Unit) =
-            HomeworkListViewHolder(
-                DataBindingUtil.inflate(
-                    LayoutInflater.from(parent?.context),
-                    R.layout.item_list_homework,
-                    parent,
-                    false
-                ), onItemClickedCallback
-            )
+                HomeworkListViewHolder(
+                        DataBindingUtil.inflate(
+                                LayoutInflater.from(parent?.context),
+                                R.layout.item_list_homework,
+                                parent,
+                                false
+                        ), onItemClickedCallback
+                )
     }
 }

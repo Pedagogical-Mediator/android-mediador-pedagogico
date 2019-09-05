@@ -10,28 +10,13 @@ import com.ufms.mediadorpedagogico.domain.entity.HomeworkLink
 
 class HomeworkDetailsViewHolder(
         private var binding: ItemListHomeworkDetailsBinding
-)
-    : RecyclerView.ViewHolder(binding.root) {
+) : RecyclerView.ViewHolder(binding.root) {
 
     fun setupBinding(link: HomeworkLink) {
         with(binding) {
-            homework.run {
-                textViewTitle.text = title
-                textViewDescription.text = description
-                textViewDate.text = createdAt
-                constraintLayoutItem.setOnClickListener { onItemClickedCallback.invoke(this) }
-            }
-        }
-        with(binding) {
-            homework.description?.let {
-                if (it.length > 50) {
-                    textViewDescription.text = root.context.getString(R.string.activity_homework_summarize_template, it.slice(0..50))
-                }
-            }
-            homework.title?.let {
-                if (it.length > 50) {
-                    textViewTitle.text = root.context.getString(R.string.activity_homework_summarize_template, it.slice(0..50))
-                }
+            link.run {
+                textViewLinkName.text = link.linkType.toString()
+                textViewLink.text = link.link.toString()
             }
         }
     }
@@ -41,7 +26,7 @@ class HomeworkDetailsViewHolder(
                 HomeworkDetailsViewHolder(
                         DataBindingUtil.inflate(
                                 LayoutInflater.from(parent?.context),
-                                R.layout.item_list_homework,
+                                R.layout.item_list_homework_details,
                                 parent,
                                 false
                         )

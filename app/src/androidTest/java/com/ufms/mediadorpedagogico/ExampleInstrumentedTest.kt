@@ -30,28 +30,28 @@ class ExampleInstrumentedTest {
     val activityRule = ActivityTestRule(HomeworkListActivity::class.java)
 
     @Test
-    fun listHasItems () {
+    fun listHasItems() {
         Thread.sleep(5000)
         onView(withId(R.id.recycler_view_homework)).perform(
-            RecyclerViewActions.actionOnItemAtPosition<HomeworkListViewHolder>(
-                0,
-                click()
-            )
+                RecyclerViewActions.actionOnItemAtPosition<HomeworkListViewHolder>(
+                        0,
+                        click()
+                )
         ).check(matches(isDisplayed()))
     }
 
     @Test
-    fun listHasMoreThan10Items () {
+    fun listHasMoreThan10Items() {
         //TODO continuar depois de carregamento dinâmico funcionar
         var counter = 0
         if (counter < 5) {
             try {
                 Thread.sleep(1000)
                 onView(withId(R.id.recycler_view_homework)).perform(
-                    RecyclerViewActions.actionOnItemAtPosition<HomeworkListViewHolder>(
-                        0,
-                        click()
-                    )
+                        RecyclerViewActions.actionOnItemAtPosition<HomeworkListViewHolder>(
+                                0,
+                                click()
+                        )
                 ).check(matches(isDisplayed()))
             } catch (e: Exception) {
                 counter++

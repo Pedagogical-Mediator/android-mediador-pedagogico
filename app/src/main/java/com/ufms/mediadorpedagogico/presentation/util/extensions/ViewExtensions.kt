@@ -1,17 +1,17 @@
 package com.ufms.mediadorpedagogico.presentation.util.extensions
 
 import android.graphics.drawable.Drawable
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import com.google.android.material.textfield.TextInputLayout
-import androidx.core.content.ContextCompat
 import android.text.Editable
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 import androidx.databinding.ViewDataBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.textfield.TextInputLayout
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.presentation.util.SimpleTextWatcher
 import io.reactivex.disposables.Disposable
@@ -63,7 +63,6 @@ fun TextView.observeChanges(callback: (String) -> Unit): Disposable? {
 fun View.setOnClickListener(callback: () -> Unit) {
     this.setOnClickListener { callback.invoke() }
 }
-
 
 
 // views

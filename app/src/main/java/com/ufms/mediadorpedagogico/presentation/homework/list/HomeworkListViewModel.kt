@@ -6,20 +6,19 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.domain.entity.Homework
 import com.ufms.mediadorpedagogico.domain.entity.HomeworkContent
-import com.ufms.mediadorpedagogico.domain.entity.HomeworkType
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsNavData
-import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
+import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import io.reactivex.rxkotlin.subscribeBy
 
 class HomeworkListViewModel(
-    private val schedulerProvider: SchedulerProvider,
-    private val getHomework: GetHomework
+        private val schedulerProvider: SchedulerProvider,
+        private val getHomework: GetHomework
 ) : BaseViewModel() {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
@@ -40,9 +39,9 @@ class HomeworkListViewModel(
 
     fun loadMoreHomework() {
         getHomework.execute(pageNumber)
-            .defaultPlaceholders(this::setPlaceholder)
-            .defaultSched(schedulerProvider)
-            .subscribeBy(this::onFailure, this::onSuccess)
+                .defaultPlaceholders(this::setPlaceholder)
+                .defaultSched(schedulerProvider)
+                .subscribeBy(this::onFailure, this::onSuccess)
     }
 
     fun setupOnItemClicked(homework: Homework) {

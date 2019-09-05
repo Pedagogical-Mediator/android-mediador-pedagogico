@@ -5,7 +5,7 @@ import com.ufms.mediadorpedagogico.domain.boundary.resources.Cache
 import com.ufms.mediadorpedagogico.domain.entity.User
 
 class GetPersistedUser(
-    private val cache: Cache
+        private val cache: Cache
 ) {
     fun execute(): User? {
         return try {

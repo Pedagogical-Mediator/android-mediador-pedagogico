@@ -1,14 +1,13 @@
 package com.ufms.mediadorpedagogico.data.remote.client
 
-import java.io.IOException
-
 import okhttp3.ResponseBody
+import java.io.IOException
 import java.net.SocketTimeoutException
 
 class RequestException private constructor(val errorCode: Int?,
-    val errorMessage: String?,
-    val errorType: ErrorType,
-    val throwable: Throwable?) : Exception() {
+                                           val errorMessage: String?,
+                                           val errorType: ErrorType,
+                                           val throwable: Throwable?) : Exception() {
 
     companion object {
         fun httpError(errorCode: Int, errorBody: ResponseBody? = null): RequestException {
