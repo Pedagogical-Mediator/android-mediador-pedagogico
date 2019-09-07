@@ -1,91 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/toolbar_main_screen"
-        layout="@layout/toolbar_main_screen"/>
+    <data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        <import type="android.view.View" />
+
+        <variable
+            name="placeholder"
+            type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder" />
+    </data>
+
+    <FrameLayout
         android:layout_height="match_parent"
-        android:padding="@dimen/normal"
-        tools:context=".presentation.dashboard.MainActivity">
+        android:layout_width="match_parent">
 
         <LinearLayout
-            android:id="@+id/card_view_notice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@drawable/image_shape"
-                    android:src="@mipmap/ic_notice"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
+            <include
+                android:id="@+id/toolbar_main_screen"
+                layout="@layout/toolbar_main_screen"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                tools:text="Avisos" />
-        </LinearLayout>
+                android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:id="@+id/card_view_homework"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/image_shape"
-                android:src="@mipmap/ic_homework" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            app:layout_constraintStart_toEndOf="@id/card_view_notice"
-            app:layout_constraintEnd_toStartOf="@id/card_view_news"
-            app:layout_constraintTop_toBottomOf="@id/card_view_homework"
-            tools:text="Sala de aula invertida" />
-
-        <LinearLayout
-            android:id="@+id/card_view_news"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/large"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/image_shape"
-                android:src="@mipmap/ic_news" />
-
-            <TextView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                tools:text="Notícias" />
+                android:layout_height="match_parent"
+                android:padding="@dimen/normal"
+                tools:context=".presentation.dashboard.MainActivity">
+
+                <LinearLayout
+                    android:id="@+id/card_view_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:backgroundTint="@color/notice_button_background"
+                        android:background="@drawable/image_shape"
+                        android:src="@mipmap/ic_notice" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        tools:text="Avisos" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card_view_homework"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:backgroundTint="@color/homework_button_background"
+                        android:background="@drawable/image_shape"
+                        android:src="@mipmap/ic_homework" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/card_view_news"
+                    app:layout_constraintStart_toEndOf="@id/card_view_notice"
+                    app:layout_constraintTop_toBottomOf="@id/card_view_homework"
+                    tools:text="Sala de aula invertida" />
+
+                <LinearLayout
+                    android:id="@+id/card_view_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/image_shape"
+                        android:backgroundTint="@color/news_button_background"
+                        android:src="@mipmap/ic_news" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        tools:text="Notícias" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+
+        <include
+            tools:visibility="gone"
+            android:id="@+id/loading_placeholder"
+            layout="@layout/loading_placeholder" />
+
+        <include
+            tools:visibility="gone"
+            android:id="@+id/included_placeholder_no_results"
+            layout="@layout/no_results_placeholder" />
+    </FrameLayout>
+</layout>

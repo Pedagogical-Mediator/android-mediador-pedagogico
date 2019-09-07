@@ -1,6 +1,7 @@
 package com.ufms.mediadorpedagogico.presentation.util.structure.dependecyinjector
 
 import com.ufms.mediadorpedagogico.domain.entity.Homework
+import com.ufms.mediadorpedagogico.presentation.dashboard.MainViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
@@ -12,6 +13,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { BaseViewModel() }
+    viewModel { MainViewModel(get()) }
     viewModel { SignUpViewModel(get(), get()) }
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get(), get()) }
