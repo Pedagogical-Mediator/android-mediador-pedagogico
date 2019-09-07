@@ -6,13 +6,13 @@ import com.ufms.mediadorpedagogico.domain.entity.HomeworkLink
 import java.io.Serializable
 
 data class ApiHomeworkLink(
-        @SerializedName("tipoDeLink") val linkType: Int?,
-        @SerializedName("link") val link: String?
+    @SerializedName("nome") val name: String?,
+    @SerializedName("link") val link: String?
 ) : Serializable {
     object ApiHomeworkLinkToHomeworkLink : Mapper<ApiHomeworkLink, HomeworkLink>() {
         override fun transform(t: ApiHomeworkLink) = HomeworkLink(
-                linkType = t.linkType,
-                link = t.link
+            name = t.name,
+            link = t.link
         )
     }
 }

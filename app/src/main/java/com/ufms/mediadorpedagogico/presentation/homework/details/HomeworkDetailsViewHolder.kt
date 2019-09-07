@@ -15,8 +15,8 @@ class HomeworkDetailsViewHolder(
     fun setupBinding(link: HomeworkLink) {
         with(binding) {
             link.run {
-                textViewLinkName.text = link.linkType.toString()
-                textViewLink.text = link.link.toString()
+                textViewLinkName.text = link.name
+                textViewLink.text = link.link
             }
         }
     }

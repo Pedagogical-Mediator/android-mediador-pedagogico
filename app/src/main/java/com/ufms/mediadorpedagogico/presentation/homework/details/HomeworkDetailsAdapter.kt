@@ -9,7 +9,7 @@ class HomeworkDetailsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var homeworkLinkList: ArrayList<HomeworkLink> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
-            HomeworkDetailsViewHolder.inflate(parent)
+        HomeworkDetailsViewHolder.inflate(parent)
 
     override fun getItemCount() = homeworkLinkList.size
 
