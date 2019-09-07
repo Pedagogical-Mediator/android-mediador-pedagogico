@@ -52,7 +52,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/card_view_notice"
+                        android:background="@drawable/card_view_clickable"
                         android:backgroundTint="@color/notice_button_background"
                         android:src="@mipmap/ic_notice" />
 
@@ -79,7 +79,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/card_view_notice"
+                        android:background="@drawable/card_view_clickable"
                         android:backgroundTint="@color/homework_button_background"
                         android:src="@mipmap/ic_homework" />
                 </LinearLayout>
@@ -109,7 +109,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/card_view_notice"
+                        android:background="@drawable/card_view_clickable"
                         android:backgroundTint="@color/news_button_background"
                         android:src="@mipmap/ic_news" />
 

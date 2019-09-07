@@ -15,7 +15,7 @@
                 android:layout_height="88dp"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="@drawable/card_view_notice">
+                android:background="@drawable/card_view_clickable">
 
             <ImageView
                     android:layout_width="80dp"
