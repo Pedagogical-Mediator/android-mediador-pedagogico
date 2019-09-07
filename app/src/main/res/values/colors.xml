@@ -36,5 +36,7 @@
     <color name="avatarBg">@color/gray9D</color>
     <color name="avatarLabel">@color/gray66</color>
     <color name="lightWindowBg">@color/white</color>
+    <color name="notice_button_background">#FFD035</color>
+
 
 </resources>
