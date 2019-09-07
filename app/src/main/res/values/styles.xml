@@ -90,6 +90,11 @@
         <item name="android:fontFamily">@font/work_sans_semibold</item>
     </style>
 
+    <style name="TextLabelWhateverBoldMainLabel" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/whateverbold</item>
+    </style>
+
     <!--
         NORMAL TEXTS
     -->

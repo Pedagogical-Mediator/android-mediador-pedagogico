@@ -82,4 +82,17 @@
 
     <string name="activity_homework_label">Sala de aula invertida</string>
     <string name="activity_homework_summarize_template">%s ...</string>
+
+
+
+
+
+
+
+    <!--
+        MAIN ACTIVITY
+    -->
+    <string name="activity_main_notice">Avisos</string>
+    <string name="activity_main_homework">Sala de Aula Invertida</string>
+    <string name="activity_main_news">Notícias</string>
 </resources>
