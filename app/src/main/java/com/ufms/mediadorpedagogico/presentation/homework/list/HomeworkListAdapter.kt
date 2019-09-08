@@ -5,16 +5,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.domain.entity.Homework
 
 class HomeworkListAdapter(
-        private val onItemClickedCallback: (Homework) -> Unit
+    private val onItemClickedCallback: (Homework) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var homeworkList: ArrayList<Homework> = arrayListOf()
+    var homeworkList: ArrayList<Homework> = arrayListOf()
+    val listGet get() = homeworkList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
-            HomeworkListViewHolder.inflate(
-                    parent,
-                    ::onItemClicked
-            )
+        HomeworkListViewHolder.inflate(
+            parent,
+            ::onItemClicked
+        )
 
     override fun getItemCount() = homeworkList.size
 
@@ -26,6 +27,10 @@ class HomeworkListAdapter(
     fun setItems(homeworkList: List<Homework>) {
         this.homeworkList.addAll(homeworkList)
         notifyDataSetChanged()
+    }
+
+    fun removeAll() {
+        this.homeworkList = arrayListOf()
     }
 
     private fun onItemClicked(homework: Homework?) {

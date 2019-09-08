@@ -25,7 +25,7 @@ class HomeworkListActivity : BaseActivity() {
     lateinit var homeworkListAdapter: HomeworkListAdapter
     private var moreHomeworksToBeLoaded = true
     private var isLoadingMoreHomework = false
-    private lateinit var binding: ActivityHomeworkListBinding
+    lateinit var binding: ActivityHomeworkListBinding
     private val viewModel: HomeworkListViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,7 +81,7 @@ class HomeworkListActivity : BaseActivity() {
         isLoadingMoreHomework = false
     }
 
-    private fun onNoContentReturned(noContentReturned: Boolean?) {
+    fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
             if (homeworkListAdapter.itemCount == 0) {
                 binding.includedPlaceholderNoResults.root.setVisible(true)

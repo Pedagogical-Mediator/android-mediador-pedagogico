@@ -10,7 +10,6 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 
 class HomeworkDetailsViewModel(
-        private val schedulerProvider: SchedulerProvider,
         private val homework: Homework
 ) : BaseViewModel() {
 
@@ -21,13 +20,5 @@ class HomeworkDetailsViewModel(
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
         _homeworkContent.value = Event(homework)
-    }
-
-    fun setupOnItemClicked(homework: Homework) {
-        //TODO GOTO details passando como bundle o homework
-    }
-
-    private fun onFailure(throwable: Throwable) {
-        setDialog(throwable)
     }
 }
