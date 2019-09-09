@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="link"
+            type="com.ufms.mediadorpedagogico.domain.entity.HomeworkLink" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/large"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginBottom="@dimen/small"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextLabelDescriptionBlackBold"
+            android:id="@+id/text_view_link_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/TextLabelDescriptionBlackNormal"
+            android:id="@+id/text_view_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web" />
+    </LinearLayout>
+</layout>

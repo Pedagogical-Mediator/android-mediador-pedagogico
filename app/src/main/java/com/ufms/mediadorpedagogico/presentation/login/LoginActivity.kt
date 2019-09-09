@@ -2,17 +2,17 @@ package com.ufms.mediadorpedagogico.presentation.login
 
 import android.content.Context
 import android.content.Intent
-import androidx.databinding.DataBindingUtil
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityLoginBinding
 import com.ufms.mediadorpedagogico.domain.extensions.then
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseActivity
-import com.ufms.mediadorpedagogico.presentation.structure.base.BaseViewModel
-import com.ufms.mediadorpedagogico.presentation.structure.navigation.Navigator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeChanges
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
 import org.koin.android.ext.android.inject
 
 class LoginActivity : BaseActivity() {

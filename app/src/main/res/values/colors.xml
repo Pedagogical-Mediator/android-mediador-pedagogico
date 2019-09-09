@@ -36,5 +36,9 @@
     <color name="avatarBg">@color/gray9D</color>
     <color name="avatarLabel">@color/gray66</color>
     <color name="lightWindowBg">@color/white</color>
+    <color name="notice_button_background">#FFD035</color>
+    <color name="homework_button_background">#4147C7</color>
+    <color name="news_button_background">#00A69B</color>
+
 
 </resources>

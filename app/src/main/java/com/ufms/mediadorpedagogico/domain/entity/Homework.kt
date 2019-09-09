@@ -7,5 +7,6 @@ data class Homework(
     var title: String? = null,
     var description: String? = null,
     var homeworkLinks: List<HomeworkLink>? = null,
-    var createdAt: String? = null
+    var createdAt: String? = null,
+    var imageBase64: String? = "sasaa"
 ) : Serializable

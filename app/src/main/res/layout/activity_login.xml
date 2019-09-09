@@ -145,8 +145,8 @@
                     android:id="@+id/password_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:passwordToggleEnabled="true"
-                    android:textColorHint="@color/colorLightHint">
+                    android:textColorHint="@color/colorLightHint"
+                    app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"

@@ -115,8 +115,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:passwordToggleEnabled="true"
-                    android:textColorHint="@color/colorDarkHint">
+                    android:textColorHint="@color/colorDarkHint"
+                    app:passwordToggleEnabled="true">
 
                     <EditText
                         android:id="@+id/password_edit_text"
@@ -134,8 +134,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:passwordToggleEnabled="true"
-                    android:textColorHint="@color/colorDarkHint">
+                    android:textColorHint="@color/colorDarkHint"
+                    app:passwordToggleEnabled="true">
 
                     <EditText
                         android:id="@+id/password_confirmation_edit_text"

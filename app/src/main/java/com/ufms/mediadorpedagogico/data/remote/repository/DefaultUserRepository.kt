@@ -25,15 +25,15 @@ class DefaultUserRepository(private val cache: Cache) : UserRepository {
 
     override fun signUp(user: SignUp.Fields): Single<User> {
         return ApiClient.signUp(
-            Fields.with("name", user.name)
-                .and("email", user.email)
-                .and("phone_number", user.phoneNumber)
-                .and("cpf", user.cpf)
-                .and("password", user.password)
-                .and("avatar", user.avatar)
+                Fields.with("name", user.name)
+                        .and("email", user.email)
+                        .and("phone_number", user.phoneNumber)
+                        .and("cpf", user.cpf)
+                        .and("password", user.password)
+                        .and("avatar", user.avatar)
         )
-            .map(({ ApiUser.ApiUserToUserMapper.transform(it) }))
-            .doOnSuccess(({ this.cacheUser(it) }))
+                .map(({ ApiUser.ApiUserToUserMapper.transform(it) }))
+                .doOnSuccess(({ this.cacheUser(it) }))
     }
 
     override fun sendPasswordRecovery(email: String): Completable {

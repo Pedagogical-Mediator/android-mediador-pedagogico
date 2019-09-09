@@ -8,9 +8,9 @@ import com.ufms.mediadorpedagogico.presentation.util.viewmodels.DialogData
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 
 class ErrorHandler constructor(
-    private val strings: StringsProvider,
-    private val logger: Logger,
-    private val loginAction: LoginAction
+        private val strings: StringsProvider,
+        private val logger: Logger,
+        private val loginAction: LoginAction
 ) {
 
 

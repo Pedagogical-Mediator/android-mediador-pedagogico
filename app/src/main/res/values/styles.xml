@@ -3,25 +3,25 @@
     <!-- themes -->
 
     <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
-        <!--<item name="colorPrimary">@color/primary</item>-->
-        <!--<item name="colorPrimaryDark">@color/primary_dark</item>-->
-        <!--<item name="colorAccent">@color/accent</item>-->
-        <!--<item name="buttonStyle">@style/Button</item>-->
-        <!--<item name="colorControlNormal">@color/controlNormal</item>-->
-        <!--<item name="android:windowBackground">@color/lightWindowBg</item>-->
+    <!--<item name="colorPrimary">@color/primary</item>-->
+    <!--<item name="colorPrimaryDark">@color/primary_dark</item>-->
+    <!--<item name="colorAccent">@color/accent</item>-->
+    <!--<item name="buttonStyle">@style/Button</item>-->
+    <!--<item name="colorControlNormal">@color/controlNormal</item>-->
+    <!--<item name="android:windowBackground">@color/lightWindowBg</item>-->
     <!--</style>-->
 
     <!--<style name="AppTheme.NoActionbar">-->
-        <!--<item name="windowActionBar">false</item>-->
-        <!--<item name="windowNoTitle">true</item>-->
+    <!--<item name="windowActionBar">false</item>-->
+    <!--<item name="windowNoTitle">true</item>-->
     <!--</style>-->
     <!---->
     <!--<style name="AppThemeSecondary" parent="Theme.AppCompat.Light.NoActionBar">-->
-        <!--<item name="colorPrimary">@color/black</item>-->
-        <!--<item name="colorPrimaryDark">@color/black</item>-->
-        <!--<item name="colorAccent">@color/black</item>-->
-        <!--<item name="colorControlNormal">@color/controlNormal</item>-->
-        <!--<item name="android:windowBackground">@color/lightWindowBg</item>-->
+    <!--<item name="colorPrimary">@color/black</item>-->
+    <!--<item name="colorPrimaryDark">@color/black</item>-->
+    <!--<item name="colorAccent">@color/black</item>-->
+    <!--<item name="colorControlNormal">@color/controlNormal</item>-->
+    <!--<item name="android:windowBackground">@color/lightWindowBg</item>-->
     <!--</style>-->
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -77,10 +77,42 @@
     -->
 
 
-    <style name="TextLabelItemRecyclerTitleBlack" parent="TextAppearance.AppCompat.Title">
+    <!--
+        TITLES
+    -->
+    <style name="TextLabelTitleBlackSemiBIg" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/work_sans_semibold</item>
     </style>
 
+    <style name="TextLabelTitleBlackBig" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/work_sans_semibold</item>
+    </style>
+
+    <style name="TextLabelWhateverBoldMainLabel" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/whateverbold</item>
+    </style>
+
+    <!--
+        NORMAL TEXTS
+    -->
+
+    <style name="TextLabelDescriptionBlackNormal" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/work_sans</item>
+    </style>
+
+    <style name="TextLabelDescriptionBlackBold" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/work_sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <!--
+        ACTIVITY ALL DETAILS
+    -->
 
 </resources>
