@@ -8,6 +8,7 @@ import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewMo
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
 import com.ufms.mediadorpedagogico.presentation.login.LoginViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsViewModel
+import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewModel
 import com.ufms.mediadorpedagogico.presentation.signup.SignUpViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.viewmodel.dsl.viewModel

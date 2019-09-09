@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ItemListHomeworkBinding
+import com.ufms.mediadorpedagogico.databinding.ItemListResourceBinding
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 
 class HomeworkListViewHolder(
-    private var binding: ItemListHomeworkBinding,
+    private var binding: ItemListResourceBinding,
     private val onItemClickedCallback: (Homework) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -26,13 +26,13 @@ class HomeworkListViewHolder(
             homework.description?.let {
                 if (it.length > 50) {
                     textViewDescription.text =
-                        root.context.getString(R.string.activity_homework_summarize_template, it.slice(0..50))
+                        root.context.getString(R.string.summarize_three_dots_template, it.slice(0..50))
                 }
             }
             homework.title?.let {
                 if (it.length > 50) {
                     textViewTitle.text =
-                        root.context.getString(R.string.activity_homework_summarize_template, it.slice(0..50))
+                        root.context.getString(R.string.summarize_three_dots_template, it.slice(0..50))
                 }
             }
         }
@@ -43,7 +43,7 @@ class HomeworkListViewHolder(
             HomeworkListViewHolder(
                 DataBindingUtil.inflate(
                     LayoutInflater.from(parent?.context),
-                    R.layout.item_list_homework,
+                    R.layout.item_list_resource,
                     parent,
                     false
                 ), onItemClickedCallback

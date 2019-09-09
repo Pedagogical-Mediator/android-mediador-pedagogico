@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityNoticeDetailsBinding
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
-import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.DividerItemDecorator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.drawableCompat
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
@@ -18,6 +17,7 @@ import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedT
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class NoticeDetailsActivity : BaseActivity() {

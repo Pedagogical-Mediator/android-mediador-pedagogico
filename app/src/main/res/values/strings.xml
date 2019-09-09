@@ -81,7 +81,8 @@
     <string name="activity_sign_up">Criar Conta</string>
 
     <string name="activity_homework_label">Sala de aula invertida</string>
-    <string name="activity_homework_summarize_template">%s ...</string>
+    <string name="activity_notice_label">Avisos</string>
+    <string name="summarize_three_dots_template">%s ...</string>
 
 
     <!--

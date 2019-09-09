@@ -53,6 +53,7 @@
                 android:label="@string/activity_sign_up"
                 android:screenOrientation="portrait"/>
         <activity android:name=".presentation.notice.details.NoticeDetailsActivity"/>
+        <activity android:name=".presentation.notice.list.NoticeListActivity"/>
 
         <meta-data
                 android:name="preloaded_fonts"

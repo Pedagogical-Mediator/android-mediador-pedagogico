@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.Intent
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavData
 
-class HomeworkListNavData : NavData {
+class NoticeListNavData : NavData {
     override fun createIntent(context: Context): Intent {
-        return HomeworkListActivity.createIntent(context)
+        return NoticeListActivity.createIntent(context)
     }
 }

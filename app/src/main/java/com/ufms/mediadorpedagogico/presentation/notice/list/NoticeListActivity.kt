@@ -7,8 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkListBinding
-import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
+import com.ufms.mediadorpedagogico.databinding.ActivityNoticeListBinding
+import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
@@ -18,19 +18,19 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewMode
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class HomeworkListActivity : BaseActivity() {
+class NoticeListActivity : BaseActivity() {
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    lateinit var homeworkListAdapter: HomeworkListAdapter
-    private var moreHomeworksToBeLoaded = true
-    private var isLoadingMoreHomework = false
-    lateinit var binding: ActivityHomeworkListBinding
-    private val viewModel: HomeworkListViewModel by inject()
+    lateinit var noticeListAdapter: NoticeListAdapter
+    private var moreNoticesToBeLoaded = true
+    private var isLoadingMoreNotice = false
+    lateinit var binding: ActivityNoticeListBinding
+    private val viewModel: NoticeListViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_homework_list)
-        setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_homework_label))
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_notice_list)
+        setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_notice_label))
         lifecycle.addObserver(viewModel)
         setupUi()
         setupAdapter()
@@ -41,20 +41,20 @@ class HomeworkListActivity : BaseActivity() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@HomeworkListActivity, ::onNextPlaceholder)
-            homeworkContent.observeEvent(this@HomeworkListActivity, ::onHomeworkContentLoaded)
-            noContentReturned.observeEvent(this@HomeworkListActivity, ::onNoContentReturned)
+            placeholder.observe(this@NoticeListActivity, ::onNextPlaceholder)
+            noticeContent.observeEvent(this@NoticeListActivity, ::onNoticeContentLoaded)
+            noContentReturned.observeEvent(this@NoticeListActivity, ::onNoContentReturned)
         }
     }
 
     private fun setupAdapter() {
-        homeworkListAdapter = HomeworkListAdapter(viewModel::setupOnItemClicked)
+        noticeListAdapter = NoticeListAdapter(viewModel::setupOnItemClicked)
     }
 
     private fun setupRecycler() {
-        with(binding.recyclerViewHomework) {
-            layoutManager = LinearLayoutManager(this@HomeworkListActivity)
-            adapter = homeworkListAdapter
+        with(binding.recyclerViewNotice) {
+            layoutManager = LinearLayoutManager(this@NoticeListActivity)
+            adapter = noticeListAdapter
             addOnScrollListener(setLoadMoreNoticesOnScroll())
         }
     }
@@ -63,30 +63,30 @@ class HomeworkListActivity : BaseActivity() {
         return object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                with(binding.recyclerViewHomework) {
+                with(binding.recyclerViewNotice) {
                     val totalItemCount = layoutManager?.itemCount
                     var lastVisibleItem = (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
                     lastVisibleItem = lastVisibleItem?.run { this + 1 }
-                    if (totalItemCount == lastVisibleItem && moreHomeworksToBeLoaded && !isLoadingMoreHomework) {
-                        isLoadingMoreHomework = true
-                        viewModel.loadMoreHomework()
+                    if (totalItemCount == lastVisibleItem && moreNoticesToBeLoaded && !isLoadingMoreNotice) {
+                        isLoadingMoreNotice = true
+                        viewModel.loadMoreNotice()
                     }
                 }
             }
         }
     }
 
-    private fun onHomeworkContentLoaded(homeworkContent: List<Homework>?) {
-        homeworkContent?.run(homeworkListAdapter::setItems)
-        isLoadingMoreHomework = false
+    private fun onNoticeContentLoaded(noticeContent: List<Notice>?) {
+        noticeContent?.run(noticeListAdapter::setItems)
+        isLoadingMoreNotice = false
     }
 
     fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
-            if (homeworkListAdapter.itemCount == 0) {
+            if (noticeListAdapter.itemCount == 0) {
                 binding.includedPlaceholderNoResults.root.setVisible(true)
             } else {
-                moreHomeworksToBeLoaded = false
+                moreNoticesToBeLoaded = false
             }
         }
     }
@@ -101,7 +101,7 @@ class HomeworkListActivity : BaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            return Intent(context, HomeworkListActivity::class.java)
+            return Intent(context, NoticeListActivity::class.java)
         }
     }
 }

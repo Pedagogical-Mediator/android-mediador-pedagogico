@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ItemListHomeworkDetailsBinding
+import com.ufms.mediadorpedagogico.databinding.ItemListLinkBinding
 import com.ufms.mediadorpedagogico.domain.entity.Link
 
 class HomeworkDetailsViewHolder(
-    private var binding: ItemListHomeworkDetailsBinding
+    private var binding: ItemListLinkBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun setupBinding(link: Link) {
@@ -26,7 +26,7 @@ class HomeworkDetailsViewHolder(
             HomeworkDetailsViewHolder(
                 DataBindingUtil.inflate(
                     LayoutInflater.from(parent?.context),
-                    R.layout.item_list_homework_details,
+                    R.layout.item_list_link,
                     parent,
                     false
                 )
