@@ -10,13 +10,17 @@ class SignUpForm {
     var passwordConfirmation: String? = null
     var avatarPath: String? = null
 
-    fun useForm(action: (email: String,
-                         password: String,
-                         name: String,
-                         cpf: String,
-                         phone: String,
-                         confirmationPassword: String,
-                         avatarPath: String?) -> Unit): InvalidFieldsException? {
+    fun useForm(
+        action: (
+            email: String,
+            password: String,
+            name: String,
+            cpf: String,
+            phone: String,
+            confirmationPassword: String,
+            avatarPath: String?
+        ) -> Unit
+    ): InvalidFieldsException? {
         email?.let { email ->
             password?.let { password ->
                 passwordConfirmation?.let { confirmationPassword ->

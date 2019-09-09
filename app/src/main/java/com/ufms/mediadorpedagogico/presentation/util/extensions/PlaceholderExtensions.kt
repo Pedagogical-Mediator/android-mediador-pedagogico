@@ -7,9 +7,13 @@ import io.reactivex.Single
 
 
 fun <T> Single<T>.defaultPlaceholders(placeholderPlacerAction: (Placeholder) -> (Unit)): Single<T> {
-    return this.defaultConsumers({ placeholderPlacerAction(Placeholder.Loading()) }, { placeholderPlacerAction(Placeholder.HideAll) })
+    return this.defaultConsumers(
+        { placeholderPlacerAction(Placeholder.Loading()) },
+        { placeholderPlacerAction(Placeholder.HideAll) })
 }
 
 fun <T> Observable<T>.defaultPlaceholders(placeholderPlacerAction: (Placeholder) -> (Unit)): Observable<T> {
-    return this.defaultConsumers({ placeholderPlacerAction(Placeholder.Loading()) }, { placeholderPlacerAction(Placeholder.HideAll) })
+    return this.defaultConsumers(
+        { placeholderPlacerAction(Placeholder.Loading()) },
+        { placeholderPlacerAction(Placeholder.HideAll) })
 }

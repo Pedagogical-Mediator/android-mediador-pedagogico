@@ -80,11 +80,11 @@ class SignUpActivity : BaseActivity() {
     private fun handleResult(requestCode: Int, resultCode: Int, data: Intent?) {
         avatarDisposable?.dispose()
         avatarDisposable = handleEasyImageResult(requestCode, resultCode, data)
-                .defaultSched(schedulerProvider)
-                .subscribeBy(viewModel::onImagePickerFailure) { file ->
-                    viewModel.onImagePickerSuccess(file)
-                    binding.uploadImage.circleCrop(file.absolutePath, R.drawable.ic_add_photo_32dp_white)
-                }
+            .defaultSched(schedulerProvider)
+            .subscribeBy(viewModel::onImagePickerFailure) { file ->
+                viewModel.onImagePickerSuccess(file)
+                binding.uploadImage.circleCrop(file.absolutePath, R.drawable.ic_add_photo_32dp_white)
+            }
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
@@ -95,8 +95,8 @@ class SignUpActivity : BaseActivity() {
         shouldRequest?.let { condition ->
             if (condition) {
                 rxPermissions.request(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
                 ).subscribe { granted ->
                     if (granted) startEasyImageActivity()
                 }

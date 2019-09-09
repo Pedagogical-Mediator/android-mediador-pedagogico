@@ -8,7 +8,7 @@ import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultMutableLi
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 
 class SplashViewModel(
-        private val getPersistedUser: GetPersistedUser
+    private val getPersistedUser: GetPersistedUser
 ) : BaseViewModel() {
 
     val goToMain: LiveData<Boolean> get() = goToMainLiveData

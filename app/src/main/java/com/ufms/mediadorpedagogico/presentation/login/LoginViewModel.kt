@@ -14,8 +14,8 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
 
 class LoginViewModel(
-        private val signIn: SignIn,
-        private val schedulerProvider: SchedulerProvider
+    private val signIn: SignIn,
+    private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
     val showEmailFieldError: LiveData<Boolean> get() = showEmailFieldErrorLiveData
@@ -53,13 +53,13 @@ class LoginViewModel(
     private fun submit(email: String, password: String) {
         signInDisposable?.dispose()
         signInDisposable = signIn.default(email, password, null)
-                .defaultPlaceholders(this::setPlaceholder)
-                .defaultSched(schedulerProvider)
-                .subscribeBy(this::onFailure) {
-                    showEmailFieldErrorLiveData.value = false
-                    showPasswordFieldErrorLiveData.value = false
-                    goToMainLiveData.value = true
-                }
+            .defaultPlaceholders(this::setPlaceholder)
+            .defaultSched(schedulerProvider)
+            .subscribeBy(this::onFailure) {
+                showEmailFieldErrorLiveData.value = false
+                showPasswordFieldErrorLiveData.value = false
+                goToMainLiveData.value = true
+            }
     }
 
     private fun onFailure(throwable: Throwable) {

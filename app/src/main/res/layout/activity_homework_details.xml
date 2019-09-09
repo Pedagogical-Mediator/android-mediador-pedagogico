@@ -12,7 +12,7 @@
 
         <variable
                 name="homeworkDetails"
-                type="com.ufms.mediadorpedagogico.domain.entity.Homework"/>
+                type="com.ufms.mediadorpedagogico.domain.entity.homework.Homework"/>
     </data>
 
     <LinearLayout

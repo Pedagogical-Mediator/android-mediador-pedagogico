@@ -41,7 +41,7 @@
         <item name="android:windowBackground">@color/lightWindowBg</item>
     </style>
 
-    <style name="AppbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <!-- styles -->
 

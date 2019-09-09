@@ -15,7 +15,7 @@ object PreferencesCache : Cache {
 
     fun init(context: Context): Cache {
         sharedPreferences = context.getSharedPreferences(
-                PREFS_NAME, Context.MODE_PRIVATE
+            PREFS_NAME, Context.MODE_PRIVATE
         )
         return this
     }

@@ -1,137 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
-        <import type="android.view.View" />
+        <import type="android.view.View"/>
 
         <variable
-            name="placeholder"
-            type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder" />
+                name="placeholder"
+                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder"/>
     </data>
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/white_alpha30">
-
-            <include
-                android:id="@+id/toolbar_main_screen"
-                layout="@layout/toolbar_main_screen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line"
-                android:layout_marginTop="@dimen/tiny"
-                android:background="@color/black"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/normal"
-                tools:context=".presentation.dashboard.MainActivity">
+                android:orientation="vertical"
+                android:background="@color/white_alpha30">
+
+            <include
+                    android:id="@+id/toolbar_main_screen"
+                    layout="@layout/toolbar_main_screen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line"
+                    android:layout_marginTop="@dimen/tiny"
+                    android:background="@color/black"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/normal"
+                    tools:context=".presentation.dashboard.MainActivity">
 
                 <LinearLayout
-                    android:id="@+id/card_view_notice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                        android:id="@+id/card_view_notice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/card_view_clickable"
-                        android:backgroundTint="@color/notice_button_background"
-                        android:src="@mipmap/ic_notice" />
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/card_view_clickable"
+                            android:backgroundTint="@color/notice_button_background"
+                            android:src="@mipmap/ic_notice"/>
 
                     <TextView
-                        style="@style/TextLabelWhateverBoldMainLabel"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/activity_main_notice"
-                        tools:text="Avisos" />
+                            style="@style/TextLabelWhateverBoldMainLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/activity_main_notice"
+                            tools:text="Avisos"/>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/card_view_homework"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                        android:id="@+id/card_view_homework"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/card_view_clickable"
-                        android:backgroundTint="@color/homework_button_background"
-                        android:src="@mipmap/ic_homework" />
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/card_view_clickable"
+                            android:backgroundTint="@color/homework_button_background"
+                            android:src="@mipmap/ic_homework"/>
                 </LinearLayout>
 
                 <TextView
-                    style="@style/TextLabelWhateverBoldMainLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="@string/activity_main_homework"
-                    app:layout_constraintEnd_toStartOf="@id/card_view_news"
-                    app:layout_constraintStart_toEndOf="@id/card_view_notice"
-                    app:layout_constraintTop_toBottomOf="@id/card_view_homework"
-                    tools:text="Sala de aula invertida" />
-
-                <LinearLayout
-                    android:id="@+id/card_view_news"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/large"
-                    android:orientation="vertical"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/card_view_clickable"
-                        android:backgroundTint="@color/news_button_background"
-                        android:src="@mipmap/ic_news" />
-
-                    <TextView
                         style="@style/TextLabelWhateverBoldMainLabel"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="@string/activity_main_news"
-                        tools:text="Notícias" />
+                        android:text="@string/activity_main_homework"
+                        app:layout_constraintEnd_toStartOf="@id/card_view_news"
+                        app:layout_constraintStart_toEndOf="@id/card_view_notice"
+                        app:layout_constraintTop_toBottomOf="@id/card_view_homework"
+                        tools:text="Sala de aula invertida"/>
+
+                <LinearLayout
+                        android:id="@+id/card_view_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/large"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/card_view_clickable"
+                            android:backgroundTint="@color/news_button_background"
+                            android:src="@mipmap/ic_news"/>
+
+                    <TextView
+                            style="@style/TextLabelWhateverBoldMainLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/activity_main_news"
+                            tools:text="Notícias"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
         <include
-            android:id="@+id/loading_placeholder"
-            layout="@layout/loading_placeholder"
-            tools:visibility="gone" />
+                android:id="@+id/loading_placeholder"
+                layout="@layout/loading_placeholder"
+                tools:visibility="gone"/>
 
         <include
-            android:id="@+id/included_placeholder_no_results"
-            layout="@layout/no_results_placeholder"
-            tools:visibility="gone" />
+                android:id="@+id/included_placeholder_no_results"
+                layout="@layout/no_results_placeholder"
+                tools:visibility="gone"/>
     </FrameLayout>
 </layout>

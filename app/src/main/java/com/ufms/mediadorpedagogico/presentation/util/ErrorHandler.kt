@@ -8,9 +8,9 @@ import com.ufms.mediadorpedagogico.presentation.util.viewmodels.DialogData
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 
 class ErrorHandler constructor(
-        private val strings: StringsProvider,
-        private val logger: Logger,
-        private val loginAction: LoginAction
+    private val strings: StringsProvider,
+    private val logger: Logger,
+    private val loginAction: LoginAction
 ) {
 
 
@@ -32,11 +32,14 @@ class ErrorHandler constructor(
             exception.isHttpError() -> when (RequestException.HttpError.getErrorForCode(exception.errorCode)) {
                 RequestException.HttpError.NOT_FOUND -> httpErrorData(strings.errorNotFound, tryAgainAction)
                 RequestException.HttpError.TIMEOUT -> timeoutErrorData(tryAgainAction)
-                RequestException.HttpError.INTERNAL_SERVER_ERROR -> httpErrorData(strings.errorServerInternal, tryAgainAction)
+                RequestException.HttpError.INTERNAL_SERVER_ERROR -> httpErrorData(
+                    strings.errorServerInternal,
+                    tryAgainAction
+                )
                 else -> httpErrorData(
-                        exception.errorMessage
-                                ?: exception.message
-                                ?: strings.errorUnknown, null
+                    exception.errorMessage
+                        ?: exception.message
+                        ?: strings.errorUnknown, null
                 )
             }
             else -> unexpectedErrorData(tryAgainAction)
@@ -85,7 +88,7 @@ class ErrorHandler constructor(
     }
 
     fun getDialogData(
-            throwable: Throwable, retryAction: (() -> Unit)?, onDismiss: (() -> Unit)? = null
+        throwable: Throwable, retryAction: (() -> Unit)?, onDismiss: (() -> Unit)? = null
     ): DialogData {
         val data = getPlaceholder(throwable, retryAction)
         return if (data.message == null) {

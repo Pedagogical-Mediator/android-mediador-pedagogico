@@ -4,7 +4,10 @@ import android.widget.EditText
 import com.ufms.mediadorpedagogico.presentation.util.SimpleTextWatcher
 
 
-abstract class BaseMaskTextChangedListener @JvmOverloads constructor(private val editText: EditText, private val reversed: Boolean = false) : SimpleTextWatcher() {
+abstract class BaseMaskTextChangedListener @JvmOverloads constructor(
+    private val editText: EditText,
+    private val reversed: Boolean = false
+) : SimpleTextWatcher() {
     private var isUpdating: Boolean = false
     private var oldText: String? = null
     protected val textMasker = TextMasker()

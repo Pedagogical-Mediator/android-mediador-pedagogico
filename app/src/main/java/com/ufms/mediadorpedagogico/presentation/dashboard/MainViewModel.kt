@@ -11,7 +11,7 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 
 class MainViewModel(
-        private val schedulerProvider: SchedulerProvider
+    private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors

@@ -90,20 +90,20 @@ fun ImageView.load(url: String, rounded: Boolean?, @DrawableRes placeholderRes: 
 }
 
 fun ImageView.load(
-        url: String, @DrawableRes placeholderRes: Int?,
-        rounded: Boolean?,
-        centerCrop: Boolean?
+    url: String, @DrawableRes placeholderRes: Int?,
+    rounded: Boolean?,
+    centerCrop: Boolean?
 ) {
     val placeholder =
-            if (placeholderRes == null) null else ContextCompat.getDrawable(context, placeholderRes)
+        if (placeholderRes == null) null else ContextCompat.getDrawable(context, placeholderRes)
     load(url, placeholder, rounded, centerCrop)
 }
 
 fun ImageView.load(
-        url: String,
-        placeholderDrawable: Drawable?,
-        rounded: Boolean?,
-        centerCrop: Boolean?
+    url: String,
+    placeholderDrawable: Drawable?,
+    rounded: Boolean?,
+    centerCrop: Boolean?
 ) {
     val requestOptions = RequestOptions()
     if (placeholderDrawable != null) {
@@ -162,4 +162,5 @@ private fun placeholderOptions(placeholder: Drawable? = null): RequestOptions {
 }
 
 
-fun ViewDataBinding.setString(resourceId: Int, vararg strings: String) = root.context.getString(resourceId, strings).toString()
+fun ViewDataBinding.setString(resourceId: Int, vararg strings: String) =
+    root.context.getString(resourceId, strings).toString()
