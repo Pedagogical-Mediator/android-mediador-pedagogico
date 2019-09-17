@@ -2,7 +2,7 @@ package com.ufms.mediadorpedagogico.presentation.homework.list
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ufms.mediadorpedagogico.domain.entity.Homework
+import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 
 class HomeworkListAdapter(
     private val onItemClickedCallback: (Homework) -> Unit

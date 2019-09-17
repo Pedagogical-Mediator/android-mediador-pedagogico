@@ -5,24 +5,19 @@ import android.net.wifi.WifiManager
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import androidx.test.filters.LargeTest
-import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-import androidx.test.runner.AndroidJUnitRunner
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListActivity
-import com.ufms.mediadorpedagogico.presentation.util.extensions.hideSoftKeyboard
 import junit.framework.AssertionFailedError
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers
 import org.hamcrest.TypeSafeMatcher
-import org.junit.*
+import org.junit.After
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Test
 import org.junit.runner.RunWith
 
 

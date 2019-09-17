@@ -38,18 +38,20 @@ fun File.scaleImageDown(width: Int, height: Int) {
     val cropped: Bitmap
     cropped = if (original.width >= original.height) {
         Bitmap.createBitmap(
-                original,
-                original.width / 2 - original.height / 2,
-                0,
-                original.height,
-                original.height)
+            original,
+            original.width / 2 - original.height / 2,
+            0,
+            original.height,
+            original.height
+        )
     } else {
         Bitmap.createBitmap(
-                original,
-                0,
-                original.height / 2 - original.width / 2,
-                original.width,
-                original.width)
+            original,
+            0,
+            original.height / 2 - original.width / 2,
+            original.width,
+            original.width
+        )
     }
     val rescaled = Bitmap.createScaledBitmap(cropped, width, height, false)
     val outputStream = BufferedOutputStream(FileOutputStream(this))

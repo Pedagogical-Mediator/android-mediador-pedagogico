@@ -6,12 +6,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListNavData
+import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListNavData
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 
 class MainViewModel(
-        private val schedulerProvider: SchedulerProvider
+    private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
@@ -32,5 +33,9 @@ class MainViewModel(
 
     fun goToHomework() {
         goTo(HomeworkListNavData())
+    }
+
+    fun goToNotice() {
+        goTo(NoticeListNavData())
     }
 }

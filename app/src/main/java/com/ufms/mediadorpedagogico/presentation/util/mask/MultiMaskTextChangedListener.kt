@@ -4,7 +4,8 @@ import android.widget.EditText
 import java.util.*
 
 
-class MultiMaskTextChangedListener(editText: EditText, reversed: Boolean, vararg masks: String) : BaseMaskTextChangedListener(editText, reversed) {
+class MultiMaskTextChangedListener(editText: EditText, reversed: Boolean, vararg masks: String) :
+    BaseMaskTextChangedListener(editText, reversed) {
 
     private lateinit var masks: MutableList<Pair<Int, String>>
 

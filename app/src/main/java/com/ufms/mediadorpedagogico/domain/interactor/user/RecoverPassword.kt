@@ -4,7 +4,7 @@ import com.ufms.mediadorpedagogico.domain.boundary.UserRepository
 import io.reactivex.Completable
 
 class RecoverPassword constructor(
-        private val repository: UserRepository
+    private val repository: UserRepository
 ) {
     fun execute(email: String): Completable {
         val formFields = FormFields().withEmail(email)

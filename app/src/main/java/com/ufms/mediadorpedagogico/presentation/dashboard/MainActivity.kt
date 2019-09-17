@@ -40,6 +40,7 @@ class MainActivity : BaseActivity() {
     private fun setupUi() {
         with(binding) {
             cardViewHomework.setOnClickListener(viewModel::goToHomework)
+            cardViewNotice.setOnClickListener(viewModel::goToNotice)
         }
     }
 

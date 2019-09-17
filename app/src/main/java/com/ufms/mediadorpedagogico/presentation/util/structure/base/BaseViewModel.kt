@@ -41,7 +41,7 @@ open class BaseViewModel : LifecycleObserver, KoinComponent, ViewModel() {
     }
 
     fun setDialog(
-            throwable: Throwable, retryAction: (() -> Unit)? = null, onDismiss: (() -> Unit)? = null
+        throwable: Throwable, retryAction: (() -> Unit)? = null, onDismiss: (() -> Unit)? = null
     ) {
         setDialog(errorHandler.getDialogData(throwable, retryAction, onDismiss))
     }

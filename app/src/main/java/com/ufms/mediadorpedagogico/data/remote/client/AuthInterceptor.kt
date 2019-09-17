@@ -42,8 +42,8 @@ class AuthInterceptor : Interceptor {
     }
 
     private fun getTokenFromCache() =
-            PreferencesCache.get<String>(HEADER_TOKEN, String::class.java)
+        PreferencesCache.get<String>(HEADER_TOKEN, String::class.java)
 
     private fun getClientFromCache() =
-            PreferencesCache.get<String>(HEADER_EMAIL, String::class.java)
+        PreferencesCache.get<String>(HEADER_EMAIL, String::class.java)
 }

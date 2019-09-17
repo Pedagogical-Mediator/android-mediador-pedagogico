@@ -14,8 +14,8 @@ import io.reactivex.rxkotlin.subscribeBy
 import java.io.File
 
 class SignUpViewModel(
-        private val signUp: SignUp,
-        private val schedulerProvider: SchedulerProvider
+    private val signUp: SignUp,
+    private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = errorsLiveData
@@ -60,22 +60,24 @@ class SignUpViewModel(
         requestPermissionLiveData.value = Event(true)
     }
 
-    private fun submit(email: String,
-                       password: String,
-                       name: String,
-                       cpf: String,
-                       phone: String,
-                       confirmationPassword: String,
-                       avatarPath: String?) {
+    private fun submit(
+        email: String,
+        password: String,
+        name: String,
+        cpf: String,
+        phone: String,
+        confirmationPassword: String,
+        avatarPath: String?
+    ) {
         SignUp.Fields(name, email, phone, cpf, password, confirmationPassword, avatarPath)
-                .let { fields ->
-                    signUp.execute(fields)
-                            .defaultSched(schedulerProvider)
-                            .defaultPlaceholders(this::setPlaceholder)
-                            .subscribeBy(this::onFailure) {
-                                goToMainLiveData.value = true
-                            }.also { disposables.add(it) }
-                }
+            .let { fields ->
+                signUp.execute(fields)
+                    .defaultSched(schedulerProvider)
+                    .defaultPlaceholders(this::setPlaceholder)
+                    .subscribeBy(this::onFailure) {
+                        goToMainLiveData.value = true
+                    }.also { disposables.add(it) }
+            }
     }
 
     fun onImagePickerSuccess(file: File) {
