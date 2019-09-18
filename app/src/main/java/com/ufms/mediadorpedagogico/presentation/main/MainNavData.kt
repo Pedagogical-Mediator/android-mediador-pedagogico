@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.dashboard
+package com.ufms.mediadorpedagogico.presentation.main
 
 import android.content.Context
 import android.content.Intent

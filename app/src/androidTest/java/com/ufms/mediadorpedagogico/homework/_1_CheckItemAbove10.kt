@@ -8,7 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.runner.AndroidJUnit4
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.presentation.dashboard.TEST_HOMEWORK_PER_REQUEST
+import com.ufms.mediadorpedagogico.presentation.main.TEST_HOMEWORK_PER_REQUEST
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewHolder
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.Test

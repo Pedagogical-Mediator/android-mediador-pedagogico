@@ -32,17 +32,14 @@ class LoginActivity : BaseActivity() {
 
     override fun subscribeUi() {
         super.subscribeUi()
-        viewModel.showEmailFieldError.observe(this, this::onNextEmailError)
-        viewModel.showPasswordFieldError.observe(this, this::onNextPasswordError)
+        viewModel.showGroupFieldError.observe(this, this::onNextGroupError)
+        viewModel.showNameFieldError.observe(this, this::onNextNameError)
         viewModel.goToMain.observe(this, this::onNextGoToMain)
     }
 
     private fun setupUi() {
-        binding.emailInput.observeChanges(viewModel::onEmailChanged)
-        binding.passwordInput.observeChanges(viewModel::onPasswordChanged)
-        binding.facebookButton.setOnClickListener(viewModel::onFacebookButtonClicked)
-        binding.googleButton.setOnClickListener(viewModel::onGoogleButtonClicked)
-        binding.registerButton.setOnClickListener(viewModel::onSignUpClicked)
+        binding.groupInput.observeChanges(viewModel::onClassKeyChanged)
+        binding.nameInput.observeChanges(viewModel::onNameChanged)
         binding.submitButton.setOnClickListener(viewModel::onSubmitClicked)
     }
 
@@ -50,15 +47,15 @@ class LoginActivity : BaseActivity() {
         shouldGo?.let { Navigator.goToMain(this, true) }
     }
 
-    private fun onNextEmailError(shouldShowError: Boolean?) {
+    private fun onNextGroupError(shouldShowError: Boolean?) {
         shouldShowError?.let {
-            binding.emailInput.error = it then getString(R.string.error_invalid_email)
+            binding.groupInput.error = it then getString(R.string.error_invalid_group)
         }
     }
 
-    private fun onNextPasswordError(shouldShowError: Boolean?) {
+    private fun onNextNameError(shouldShowError: Boolean?) {
         shouldShowError?.let {
-            binding.passwordInput.error = it then getString(R.string.error_invalid_password)
+            binding.nameInput.error = it then getString(R.string.error_invalid_name)
 
         }
     }

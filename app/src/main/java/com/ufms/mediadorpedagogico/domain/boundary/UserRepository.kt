@@ -10,10 +10,6 @@ interface UserRepository {
         const val CURRENT_USER = "CURRENT_USER"
     }
 
-    fun getCurrentFromRemote(): Single<User>
-    fun signIn(email: String, password: String, token: String?): Single<User>
-    fun signInWithFacebook(): Single<User>
-    fun signUp(user: SignUp.Fields): Single<User>
-    fun sendPasswordRecovery(email: String): Completable
+    fun signIn(classGroup: String, name: String): Single<User>
     fun cacheUser(user: User)
 }

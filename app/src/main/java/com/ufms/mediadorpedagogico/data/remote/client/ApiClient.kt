@@ -24,7 +24,6 @@ import java.text.DateFormat
 
 object ApiClient {
 
-    private const val PLATFORM_CONSTANT = "android"
     private const val apiEndpoint = BuildConfig.API_ENDPOINT
     private lateinit var retrofit: Retrofit
     private lateinit var authInterceptor: AuthInterceptor
@@ -32,21 +31,8 @@ object ApiClient {
 
     private val apiServices: ApiService get() = apiServiceSingleton ?: buildApiServices()
 
-    fun signIn(email: String, password: String, token: String?): Single<ApiUser> {
-        return makeRequest(apiServices.signIn(email, password, token, PLATFORM_CONSTANT))
-    }
-
-    fun signInWithFacebook(accessToken: String): Single<ApiUser> {
-        return makeRequest(apiServices.signInWithFacebook(accessToken))
-    }
-
-    fun signUp(fields: HashMap<String, String?>): Single<ApiUser> {
-        return Single.just(fields).map { buildSignUpMultipartBody(it.toMap()) }
-            .flatMap { makeRequest(apiServices.signUp(it)) }
-    }
-
-    fun sendPasswordRecovery(email: String): Completable {
-        return justVerifyErrors(apiServices.sendPasswordRecovery(email))
+    fun signIn(classKey: String, name: String): Single<ApiUser> {
+        return makeRequest(apiServices.signIn(classKey, name))
     }
 
     fun getListOfHomework(pageNumber: Int): Single<ApiHomeworkContent> {
