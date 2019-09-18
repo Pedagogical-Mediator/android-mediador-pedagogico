@@ -1,7 +1,6 @@
 package com.ufms.mediadorpedagogico.domain.boundary
 
 import com.ufms.mediadorpedagogico.domain.entity.User
-import com.ufms.mediadorpedagogico.domain.interactor.user.SignUp
 import io.reactivex.Completable
 import io.reactivex.Single
 

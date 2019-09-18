@@ -6,7 +6,6 @@ import com.ufms.mediadorpedagogico.data.remote.entity.Fields
 import com.ufms.mediadorpedagogico.domain.boundary.UserRepository
 import com.ufms.mediadorpedagogico.domain.boundary.resources.Cache
 import com.ufms.mediadorpedagogico.domain.entity.User
-import com.ufms.mediadorpedagogico.domain.interactor.user.SignUp
 import io.reactivex.Completable
 import io.reactivex.Single
 
