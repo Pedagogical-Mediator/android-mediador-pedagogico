@@ -35,7 +35,7 @@ class LoginViewModel(
     }
 
     fun onSubmitClicked() {
-        form.useForm(this::submit)?.let { showFieldErrors(it) }
+        form.useForm(this::submit)?.let(::showFieldErrors)
     }
 
     private fun submit(classKey: String, password: String) {

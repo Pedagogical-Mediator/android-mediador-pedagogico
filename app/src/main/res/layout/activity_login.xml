@@ -1,81 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/img_bg">
+            android:layout_height="match_parent">
 
-        <FrameLayout
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <include
+                    android:id="@+id/toolbar_customized"
+                    layout="@layout/toolbar_customized" />
 
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin">
-
-                <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="72dp"
-                        app:srcCompat="@mipmap/ic_launcher"/>
+                    android:layout_margin="@dimen/small"
+                    android:padding="@dimen/big"
+                    android:background="@drawable/card_view">
 
                 <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="48dp"
-                        android:text="@string/activity_login_sign_in_with"
-                        android:textColor="@color/colorLightTextPrimary"
-                        android:textSize="14sp"/>
-
-                <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/group_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:textColorHint="@color/colorLightHint">
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="Insira a chave de acesso"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_layout_class_code"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_class_code">
 
                     <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/text_input_class_code"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/hint_group"
-                            android:textColor="@color/colorLightTextPrimary"/>
+                            android:layout_height="48dp"
+                            android:background="@android:color/transparent"
+                            android:paddingStart="@dimen/normal"
+                            android:paddingEnd="@dimen/normal" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/name_input"
+                <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorLightHint">
+                        android:textSize="20sp"
+                        android:layout_marginTop="@dimen/big"
+                        android:textColor="@color/black"
+                        android:text="Insira seu nome completo"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_layout_name"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_name">
 
                     <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/text_input_name"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/hint_name"
-                            android:inputType="textPersonName"
-                            android:textColor="@color/colorLightTextPrimary"/>
+                            android:layout_height="48dp"
+                            android:background="@android:color/transparent"
+                            android:paddingStart="@dimen/normal"
+                            android:paddingEnd="@dimen/normal" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
+                        android:background="@drawable/card_view_clickable_blue"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:textSize="20sp"
+                        android:paddingTop="@dimen/normal"
+                        android:paddingBottom="@dimen/normal"
+                        android:paddingStart="@dimen/big"
+                        android:paddingEnd="@dimen/big"
                         android:id="@+id/submit_button"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/activity_login_sign_in"/>
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/big"
+                        android:text="@string/activity_login_sign_in" />
             </LinearLayout>
+        </LinearLayout>
 
-            <include
-                    android:id="@+id/placeholder"
-                    layout="@layout/loading_placeholder"
-                    tools:visibility="gone"/>
-        </FrameLayout>
-    </ScrollView>
+        <include
+                android:id="@+id/placeholder"
+                layout="@layout/loading_placeholder"
+                tools:visibility="gone" />
+    </FrameLayout>
 </layout>

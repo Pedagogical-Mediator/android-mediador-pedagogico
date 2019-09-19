@@ -22,7 +22,6 @@ class LoginActivity : BaseActivity() {
     private val viewModel: LoginViewModel by inject()
     private lateinit var binding: ActivityLoginBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         lifecycle.addObserver(viewModel)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
@@ -32,15 +31,19 @@ class LoginActivity : BaseActivity() {
 
     override fun subscribeUi() {
         super.subscribeUi()
-        viewModel.showGroupFieldError.observe(this, this::onNextGroupError)
-        viewModel.showNameFieldError.observe(this, this::onNextNameError)
-        viewModel.goToMain.observe(this, this::onNextGoToMain)
+        with(viewModel) {
+            showGroupFieldError.observe(this@LoginActivity, ::onNextGroupError)
+            showNameFieldError.observe(this@LoginActivity, ::onNextNameError)
+            goToMain.observe(this@LoginActivity, ::onNextGoToMain)
+        }
     }
 
     private fun setupUi() {
-        binding.groupInput.observeChanges(viewModel::onClassKeyChanged)
-        binding.nameInput.observeChanges(viewModel::onNameChanged)
-        binding.submitButton.setOnClickListener(viewModel::onSubmitClicked)
+        with(binding) {
+            textInputClassCode.observeChanges(viewModel::onClassKeyChanged)
+            textInputName.observeChanges(viewModel::onNameChanged)
+            submitButton.setOnClickListener(viewModel::onSubmitClicked)
+        }
     }
 
     private fun onNextGoToMain(shouldGo: Boolean?) {
@@ -49,13 +52,13 @@ class LoginActivity : BaseActivity() {
 
     private fun onNextGroupError(shouldShowError: Boolean?) {
         shouldShowError?.let {
-            binding.groupInput.error = it then getString(R.string.error_invalid_group)
+            binding.textInputClassCode.error = it then getString(R.string.error_invalid_group)
         }
     }
 
     private fun onNextNameError(shouldShowError: Boolean?) {
         shouldShowError?.let {
-            binding.nameInput.error = it then getString(R.string.error_invalid_name)
+            binding.textInputName.error = it then getString(R.string.error_invalid_name)
 
         }
     }

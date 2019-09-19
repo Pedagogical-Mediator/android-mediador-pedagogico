@@ -40,9 +40,10 @@
     <string name="activity_login_sign_in_with">Faça login com</string>
 
     <string name="hint_group">Turma</string>
+    <string name="hint_class_code">Chave de acesso</string>
     <string name="hint_name">Nome</string>
 
-    <string name="activity_login_sign_in">Entrar</string>
+    <string name="activity_login_sign_in">Acessar</string>
     <string name="activity_login_sign_up">Criar uma conta</string>
     <string name="activity_login_forgot_password">Esqueci minha senha</string>
     <string name="activity_login_please_wait_for_result">Aguarde o resultado do login para prosseguir.</string>
