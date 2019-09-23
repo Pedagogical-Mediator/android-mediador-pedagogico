@@ -1,7 +1,6 @@
 package com.ufms.mediadorpedagogico.domain.boundary
 
 import com.ufms.mediadorpedagogico.domain.entity.User
-import io.reactivex.Completable
 import io.reactivex.Single
 
 interface UserRepository {

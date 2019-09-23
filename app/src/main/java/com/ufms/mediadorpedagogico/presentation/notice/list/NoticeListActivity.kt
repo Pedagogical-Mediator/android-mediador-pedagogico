@@ -30,7 +30,11 @@ class NoticeListActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_notice_list)
-        setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_notice_label))
+        setupCustomizedToolbar(
+            binding.toolbarCustomized,
+            true,
+            getString(R.string.activity_notice_label)
+        )
         lifecycle.addObserver(viewModel)
         setupUi()
         setupAdapter()
@@ -65,7 +69,8 @@ class NoticeListActivity : BaseActivity() {
                 super.onScrolled(recyclerView, dx, dy)
                 with(binding.recyclerViewNotice) {
                     val totalItemCount = layoutManager?.itemCount
-                    var lastVisibleItem = (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
+                    var lastVisibleItem =
+                        (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
                     lastVisibleItem = lastVisibleItem?.run { this + 1 }
                     if (totalItemCount == lastVisibleItem && moreNoticesToBeLoaded && !isLoadingMoreNotice) {
                         isLoadingMoreNotice = true

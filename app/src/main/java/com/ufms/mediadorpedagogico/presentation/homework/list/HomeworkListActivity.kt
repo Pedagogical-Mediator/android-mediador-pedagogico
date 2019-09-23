@@ -30,7 +30,11 @@ class HomeworkListActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_homework_list)
-        setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_homework_label))
+        setupCustomizedToolbar(
+            binding.toolbarCustomized,
+            true,
+            getString(R.string.activity_homework_label)
+        )
         lifecycle.addObserver(viewModel)
         setupUi()
         setupAdapter()
@@ -65,7 +69,8 @@ class HomeworkListActivity : BaseActivity() {
                 super.onScrolled(recyclerView, dx, dy)
                 with(binding.recyclerViewHomework) {
                     val totalItemCount = layoutManager?.itemCount
-                    var lastVisibleItem = (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
+                    var lastVisibleItem =
+                        (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
                     lastVisibleItem = lastVisibleItem?.run { this + 1 }
                     if (totalItemCount == lastVisibleItem && moreHomeworksToBeLoaded && !isLoadingMoreHomework) {
                         isLoadingMoreHomework = true

@@ -28,7 +28,7 @@
         <activity
                 android:name=".presentation.main.MainActivity"
                 android:screenOrientation="portrait"
-                android:windowSoftInputMode="adjustPan"/>
+                android:windowSoftInputMode="adjustPan" />
         <activity
                 android:name=".presentation.login.LoginActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
@@ -45,7 +45,7 @@
                 android:configChanges="keyboardHidden|orientation|screenSize"
                 android:label="@string/activity_homework_label"
                 android:screenOrientation="portrait"
-                android:theme="@style/AppThemeSecondary"/>
+                android:theme="@style/AppThemeSecondary" />
         <activity android:name=".presentation.notice.details.NoticeDetailsActivity" />
         <activity android:name=".presentation.notice.list.NoticeListActivity" />
 

@@ -3,6 +3,7 @@ package com.ufms.mediadorpedagogico.presentation.util
 import com.ufms.mediadorpedagogico.data.remote.client.RequestException
 import com.ufms.mediadorpedagogico.domain.boundary.resources.Logger
 import com.ufms.mediadorpedagogico.domain.boundary.resources.StringsProvider
+import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.presentation.util.resources.LoginAction
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.DialogData
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
@@ -13,7 +14,6 @@ class ErrorHandler constructor(
     private val loginAction: LoginAction
 ) {
 
-
     fun handleError(throwable: Throwable, tryAgainAction: (() -> Unit)? = null): Placeholder {
         throwable.printStackTrace()
         return if (throwable is RequestException) {
@@ -23,14 +23,23 @@ class ErrorHandler constructor(
         }
     }
 
-    private fun handleRequestException(exception: RequestException, tryAgainAction: (() -> Unit)? = null): Placeholder {
+    private fun handleRequestException(
+        exception: RequestException,
+        tryAgainAction: (() -> Unit)? = null
+    ): Placeholder {
         return when {
-            exception.isUnprocessableEntity() -> unProcessableEntityErrorData(exception.errorMessage, tryAgainAction)
+            exception.isUnprocessableEntity() -> unProcessableEntityErrorData(
+                exception.errorMessage,
+                tryAgainAction
+            )
             exception.isTimeOutException() -> timeoutErrorData(tryAgainAction)
             exception.isNetworkError() -> httpErrorData(strings.errorNetwork, tryAgainAction)
             exception.isUnauthorizedError() -> unauthorizedErrorData(exception.errorMessage)
             exception.isHttpError() -> when (RequestException.HttpError.getErrorForCode(exception.errorCode)) {
-                RequestException.HttpError.NOT_FOUND -> httpErrorData(strings.errorNotFound, tryAgainAction)
+                RequestException.HttpError.NOT_FOUND -> httpErrorData(
+                    strings.errorNotFound,
+                    tryAgainAction
+                )
                 RequestException.HttpError.TIMEOUT -> timeoutErrorData(tryAgainAction)
                 RequestException.HttpError.INTERNAL_SERVER_ERROR -> httpErrorData(
                     strings.errorServerInternal,
@@ -50,7 +59,10 @@ class ErrorHandler constructor(
         return Placeholder.Action(errorMessage, strings.globalDoLogin, loginAction::execute)
     }
 
-    private fun unProcessableEntityErrorData(errorMessage: String?, tryAgainAction: (() -> Unit)?): Placeholder {
+    private fun unProcessableEntityErrorData(
+        errorMessage: String?,
+        tryAgainAction: (() -> Unit)?
+    ): Placeholder {
         return tryAgainPlaceholder(errorMessage, tryAgainAction)
     }
 
@@ -66,7 +78,10 @@ class ErrorHandler constructor(
         return tryAgainPlaceholder(strings.errorUnknown, tryAgainAction)
     }
 
-    private fun tryAgainPlaceholder(errorMessage: String?, tryAgainAction: (() -> Unit)?): Placeholder {
+    private fun tryAgainPlaceholder(
+        errorMessage: String?,
+        tryAgainAction: (() -> Unit)?
+    ): Placeholder {
         return Placeholder.Action(errorMessage, strings.globalTryAgain, tryAgainAction)
     }
 
@@ -93,6 +108,8 @@ class ErrorHandler constructor(
         val data = getPlaceholder(throwable, retryAction)
         return if (data.message == null) {
             DialogData.error(strings, getUnknownErrorMessage(), onDismiss = onDismiss)
+        } else if (throwable is InvalidFieldsException){
+            DialogData.error(strings, strings.errorInvalidFields, data.buttonText, data.buttonAction)
         } else {
             DialogData.error(strings, data.message, data.buttonText, data.buttonAction)
         }

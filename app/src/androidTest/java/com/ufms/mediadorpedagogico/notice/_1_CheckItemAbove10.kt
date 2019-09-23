@@ -39,7 +39,10 @@ open class _1_CheckItemAbove10 : NoticeInstrumental() {
             onView(withId(R.id.recycler_view_notice))
                 .perform(
                     RecyclerViewActions
-                        .actionOnItemAtPosition<NoticeListViewHolder>(TEST_NOTICE_PER_REQUEST, click())
+                        .actionOnItemAtPosition<NoticeListViewHolder>(
+                            TEST_NOTICE_PER_REQUEST,
+                            click()
+                        )
                 )
             Thread.sleep(1000)
             onView(withId(R.id.text_view_title)).check(matches(withText(containsString(newItem.title))))

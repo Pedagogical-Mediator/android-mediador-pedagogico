@@ -4,16 +4,16 @@ import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
 import io.reactivex.Single
-import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
 
-    @POST("TODO decidir rota") //TODO decidir rota
+    @POST("alunos")
+    @FormUrlEncoded
     fun signIn(
         @Field("chaveDeAcesso") classKey: String,
-        @Field("nomeDoAluno") name: String
+        @Field("nome") name: String
     ): Single<Response<ApiUser>>
 
     /**

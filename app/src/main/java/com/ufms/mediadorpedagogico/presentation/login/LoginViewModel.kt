@@ -53,15 +53,18 @@ class LoginViewModel(
     private fun onFailure(throwable: Throwable) {
         if (throwable is InvalidFieldsException) {
             showFieldErrors(throwable)
-        } else {
-            setDialog(throwable, this::onSubmitClicked)
         }
+//        } else {
+//            setDialog(throwable, this::onSubmitClicked)
+//        }
+        setDialog(throwable, this::onSubmitClicked)
     }
 
     private fun showFieldErrors(e: InvalidFieldsException) {
         for (field in e.getFields()) {
             showFieldError(field)
         }
+        setDialog(e, this::onSubmitClicked)
     }
 
     private fun showFieldError(field: Int) {

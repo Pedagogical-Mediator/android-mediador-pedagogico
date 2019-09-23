@@ -13,7 +13,8 @@ class FormFields {
 
     // validations
 
-    private fun isClassKeyValid(): Boolean = classKey != null && !classKey!!.trim { it <= ' ' }.isEmpty()
+    private fun isClassKeyValid(): Boolean =
+        classKey != null && !classKey!!.trim { it <= ' ' }.isEmpty()
 
     private fun isNameValid(): Boolean = name != null && !name!!.isEmpty()
 

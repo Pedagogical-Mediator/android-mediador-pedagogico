@@ -8,8 +8,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.runner.AndroidJUnit4
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.presentation.main.TEST_HOMEWORK_PER_REQUEST
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewHolder
+import com.ufms.mediadorpedagogico.presentation.main.TEST_HOMEWORK_PER_REQUEST
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -29,7 +29,9 @@ open class _1_CheckItemAbove10 : HomeworkInstrumental() {
         val homeworkList = getHomeworkList()
         if (homeworkList.size > TEST_HOMEWORK_PER_REQUEST - 1) {
             onView(withId(R.id.recycler_view_homework)).perform(
-                RecyclerViewActions.scrollToPosition<HomeworkListViewHolder>(TEST_HOMEWORK_PER_REQUEST - 1)
+                RecyclerViewActions.scrollToPosition<HomeworkListViewHolder>(
+                    TEST_HOMEWORK_PER_REQUEST - 1
+                )
             )
             Thread.sleep(3000)
         }
@@ -39,7 +41,10 @@ open class _1_CheckItemAbove10 : HomeworkInstrumental() {
             onView(withId(R.id.recycler_view_homework))
                 .perform(
                     RecyclerViewActions
-                        .actionOnItemAtPosition<HomeworkListViewHolder>(TEST_HOMEWORK_PER_REQUEST, click())
+                        .actionOnItemAtPosition<HomeworkListViewHolder>(
+                            TEST_HOMEWORK_PER_REQUEST,
+                            click()
+                        )
                 )
             Thread.sleep(1000)
             onView(withId(R.id.text_view_title)).check(matches(withText(containsString(newItem.title))))

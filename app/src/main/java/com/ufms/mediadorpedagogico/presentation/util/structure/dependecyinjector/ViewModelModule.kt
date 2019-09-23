@@ -2,11 +2,11 @@ package com.ufms.mediadorpedagogico.presentation.util.structure.dependecyinjecto
 
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
-import com.ufms.mediadorpedagogico.presentation.main.MainViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
 import com.ufms.mediadorpedagogico.presentation.login.LoginViewModel
+import com.ufms.mediadorpedagogico.presentation.main.MainViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel

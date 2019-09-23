@@ -27,6 +27,7 @@
         problema persistir entre em contato conosco.
     </string>
     <string name="error_timeout">Tempo expirado. Por favor, tente novamente.</string>
+    <string name="error_invalid_fields">Ops, parece que um ou mais campos não foram preenchidos corretamente.</string>
 
     <string name="activity_login_error">Email ou senha errados.</string>
     <string name="global_wait">Aguarde...</string>

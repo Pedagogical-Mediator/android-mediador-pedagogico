@@ -4,11 +4,11 @@
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
                 name="placeholder"
-                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder"/>
+                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
 
         <include
                 android:id="@+id/toolbar_customized"
-                layout="@layout/toolbar_customized"/>
+                layout="@layout/toolbar_customized" />
 
         <LinearLayout
                 android:id="@+id/linear_layout_customized_search"
@@ -37,14 +37,14 @@
                     android:id="@+id/image_view_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search"/>
+                    android:src="@drawable/ic_search" />
 
             <EditText
                     android:id="@+id/edit_text_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/small"
-                    android:fontFamily="@font/carter_one"/>
+                    android:fontFamily="@font/carter_one" />
         </LinearLayout>
 
         <FrameLayout
@@ -61,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
-                    android:paddingBottom="@dimen/semi_huge"/>
+                    android:paddingBottom="@dimen/semi_huge" />
 
             <ProgressBar
                     android:id="@+id/progressBar"
@@ -69,11 +69,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
-                    android:visibility="@{placeholder.progressVisible ? View.VISIBLE : View.GONE}"/>
+                    android:visibility="@{placeholder.progressVisible ? View.VISIBLE : View.GONE}" />
 
             <include
                     android:id="@+id/included_placeholder_no_results"
-                    layout="@layout/no_results_placeholder"/>
+                    layout="@layout/no_results_placeholder" />
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

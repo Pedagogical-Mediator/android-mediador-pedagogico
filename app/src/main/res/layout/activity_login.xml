@@ -18,17 +18,17 @@
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:layout_margin="@dimen/small"
-                    android:padding="@dimen/big"
-                    android:background="@drawable/card_view">
+                    android:background="@drawable/card_view"
+                    android:orientation="vertical"
+                    android:padding="@dimen/big">
 
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:text="Insira a chave de acesso"
                         android:textColor="@color/black"
-                        android:text="Insira a chave de acesso"/>
+                        android:textSize="20sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/text_layout_class_code"
@@ -49,10 +49,10 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
                         android:layout_marginTop="@dimen/big"
+                        android:text="Insira seu nome completo"
                         android:textColor="@color/black"
-                        android:text="Insira seu nome completo"/>
+                        android:textSize="20sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/text_layout_name"
@@ -71,20 +71,20 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                        android:background="@drawable/card_view_clickable_blue"
-                        android:textColor="@color/white"
-                        android:textAllCaps="false"
-                        android:textSize="20sp"
-                        android:paddingTop="@dimen/normal"
-                        android:paddingBottom="@dimen/normal"
-                        android:paddingStart="@dimen/big"
-                        android:paddingEnd="@dimen/big"
                         android:id="@+id/submit_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/big"
-                        android:text="@string/activity_login_sign_in" />
+                        android:background="@drawable/card_view_clickable_blue"
+                        android:paddingStart="@dimen/big"
+                        android:paddingTop="@dimen/normal"
+                        android:paddingEnd="@dimen/big"
+                        android:paddingBottom="@dimen/normal"
+                        android:text="@string/activity_login_sign_in"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
 

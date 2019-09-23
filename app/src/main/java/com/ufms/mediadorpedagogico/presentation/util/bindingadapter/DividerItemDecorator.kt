@@ -5,7 +5,8 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-internal class DividerItemDecorator(private val mDivider: Drawable) : RecyclerView.ItemDecoration() {
+internal class DividerItemDecorator(private val mDivider: Drawable) :
+    RecyclerView.ItemDecoration() {
 
     override fun onDraw(canvas: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         for (i in 0..parent.childCount - 2) {

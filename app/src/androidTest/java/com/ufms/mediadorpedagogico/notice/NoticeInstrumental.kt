@@ -30,6 +30,8 @@ open class NoticeInstrumental : AndroidJUnitRunner() {
             }
         }
 
-    protected fun getNoticeList() = (retrieveBinding().recyclerViewNotice.adapter as NoticeListAdapter).listGet
+    protected fun getNoticeList() =
+        (retrieveBinding().recyclerViewNotice.adapter as NoticeListAdapter).listGet
+
     protected fun retrieveBinding() = activityRule.activity.binding
 }

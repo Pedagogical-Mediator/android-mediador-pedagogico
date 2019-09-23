@@ -1,8 +1,8 @@
 package com.ufms.mediadorpedagogico.presentation.util.structure.navigation
 
 import android.content.Context
-import com.ufms.mediadorpedagogico.presentation.main.MainActivity
 import com.ufms.mediadorpedagogico.presentation.login.LoginActivity
+import com.ufms.mediadorpedagogico.presentation.main.MainActivity
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shouldClearTask
 
 object Navigator {

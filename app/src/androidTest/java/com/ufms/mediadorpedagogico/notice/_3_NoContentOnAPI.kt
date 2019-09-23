@@ -39,7 +39,9 @@ open class _3_NoContentOnAPI : NoticeInstrumental() {
     fun noContentOnAPI() {
         try {
             Thread.sleep(1000)
-            onView(withText(activityRule.activity.getString(R.string.global_try_again))).check(matches(isDisplayed()))
+            onView(withText(activityRule.activity.getString(R.string.global_try_again))).check(
+                matches(isDisplayed())
+            )
             Assert.assertTrue(true)
         } catch (e: AssertionFailedError) {
             Assert.assertTrue(false)

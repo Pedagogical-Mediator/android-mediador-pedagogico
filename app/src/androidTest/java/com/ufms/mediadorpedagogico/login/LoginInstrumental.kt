@@ -1,10 +1,11 @@
-package com.ufms.mediadorpedagogico.homework
+package com.ufms.mediadorpedagogico.login
 
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import androidx.test.runner.AndroidJUnitRunner
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListActivity
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListAdapter
+import com.ufms.mediadorpedagogico.presentation.login.LoginActivity
 import com.ufms.mediadorpedagogico.presentation.util.extensions.hideSoftKeyboard
 import org.junit.Ignore
 import org.junit.Rule
@@ -18,11 +19,11 @@ import org.junit.runner.RunWith
  */
 @RunWith(AndroidJUnit4::class)
 @Ignore("O Pai não precisa de testes")
-open class HomeworkInstrumental : AndroidJUnitRunner() {
+open class LoginInstrumental : AndroidJUnitRunner() {
 
     @get:Rule
-    var activityRule: ActivityTestRule<HomeworkListActivity> =
-        object : ActivityTestRule<HomeworkListActivity>(HomeworkListActivity::class.java) {
+    var activityRule: ActivityTestRule<LoginActivity> =
+        object : ActivityTestRule<LoginActivity>(LoginActivity::class.java) {
 
             override fun afterActivityLaunched() {
                 super.afterActivityLaunched()
@@ -30,8 +31,5 @@ open class HomeworkInstrumental : AndroidJUnitRunner() {
             }
         }
 
-    protected fun getHomeworkList() =
-        (retrieveBinding().recyclerViewHomework.adapter as HomeworkListAdapter).listGet
-
-    protected fun retrieveBinding() = activityRule.activity.binding
+    protected fun _activity() = activityRule.activity
 }

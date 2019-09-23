@@ -15,14 +15,16 @@ fun <T> Single<T>.defaultConsumers(
     onSubscribeCallback: () -> (Unit),
     doAfterTerminatecallback: () -> (Unit)
 ): Single<T> {
-    return this.doOnSubscribe { onSubscribeCallback.invoke() }.doAfterTerminate({ doAfterTerminatecallback.invoke() })
+    return this.doOnSubscribe { onSubscribeCallback.invoke() }
+        .doAfterTerminate({ doAfterTerminatecallback.invoke() })
 }
 
 fun <T> Observable<T>.defaultConsumers(
     onSubscribeCallback: () -> (Unit),
     doAfterTerminatecallback: () -> (Unit)
 ): Observable<T> {
-    return this.doOnSubscribe { onSubscribeCallback.invoke() }.doAfterTerminate({ doAfterTerminatecallback.invoke() })
+    return this.doOnSubscribe { onSubscribeCallback.invoke() }
+        .doAfterTerminate({ doAfterTerminatecallback.invoke() })
 }
 
 fun <T> Observable<T>.defaultSched(schedulerProvider: SchedulerProvider): Observable<T> {
@@ -47,5 +49,6 @@ fun Completable.defaultConsumers(
     onSubscribeCallback: () -> (Unit),
     doAfterTerminatecallback: () -> (Unit)
 ): Completable {
-    return this.doOnSubscribe { onSubscribeCallback.invoke() }.doAfterTerminate({ doAfterTerminatecallback.invoke() })
+    return this.doOnSubscribe { onSubscribeCallback.invoke() }
+        .doAfterTerminate({ doAfterTerminatecallback.invoke() })
 }

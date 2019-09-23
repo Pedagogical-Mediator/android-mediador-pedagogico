@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:maxLength="54"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
                 android:id="@+id/text_view_description"
@@ -28,7 +28,7 @@
                 android:layout_marginTop="4dp"
                 android:maxLength="54"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_view_title"/>
+                app:layout_constraintTop_toBottomOf="@id/text_view_title" />
 
         <TextView
                 android:id="@+id/text_view_date"
@@ -36,6 +36,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_view_description"/>
+                app:layout_constraintTop_toBottomOf="@id/text_view_description" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -39,7 +39,15 @@ open class _2_CheckItemBelow10 : NoticeInstrumental() {
                     )
                 Thread.sleep(1000)
                 onView(withId(R.id.text_view_title)).check(matches(withText(containsString(item.title))))
-                onView(withId(R.id.text_view_description)).check(matches(withText(containsString(item.description))))
+                onView(withId(R.id.text_view_description)).check(
+                    matches(
+                        withText(
+                            containsString(
+                                item.description
+                            )
+                        )
+                    )
+                )
                 break
             }
         }
@@ -47,7 +55,8 @@ open class _2_CheckItemBelow10 : NoticeInstrumental() {
 
     @After
     fun setNoInternet() {
-        val wifiManager = activityRule.activity.getSystemService(Context.WIFI_SERVICE) as WifiManager
+        val wifiManager =
+            activityRule.activity.getSystemService(Context.WIFI_SERVICE) as WifiManager
         wifiManager.isWifiEnabled = false
     }
 }

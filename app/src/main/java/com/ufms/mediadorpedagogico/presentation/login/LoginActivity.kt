@@ -20,7 +20,7 @@ class LoginActivity : BaseActivity() {
     override val baseViewModel: BaseViewModel get() = viewModel
 
     private val viewModel: LoginViewModel by inject()
-    private lateinit var binding: ActivityLoginBinding
+    lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         lifecycle.addObserver(viewModel)

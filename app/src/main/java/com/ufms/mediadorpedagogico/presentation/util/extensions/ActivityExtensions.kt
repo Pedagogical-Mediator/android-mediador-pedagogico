@@ -62,7 +62,11 @@ fun Activity.startEasyImageActivity() {
 fun easyImageWillHandleResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
     val chooserWithGalleryCode =
         Constants.RequestCodes.SOURCE_CHOOSER or Constants.RequestCodes.PICK_PICTURE_FROM_GALLERY
-    return requestCode == chooserWithGalleryCode || EasyImage.willHandleActivityResult(requestCode, resultCode, data)
+    return requestCode == chooserWithGalleryCode || EasyImage.willHandleActivityResult(
+        requestCode,
+        resultCode,
+        data
+    )
 }
 
 fun Activity.handleEasyImageResult(requestCode: Int, resultCode: Int, data: Intent?): Single<File> {
@@ -82,7 +86,11 @@ private fun Activity.emitEasyImageResult(
     data: Intent?
 ) {
     EasyImage.handleActivityResult(requestCode, resultCode, data, this, object : DefaultCallback() {
-        override fun onImagesPicked(imageFiles: List<File>, source: EasyImage.ImageSource, type: Int) {
+        override fun onImagesPicked(
+            imageFiles: List<File>,
+            source: EasyImage.ImageSource,
+            type: Int
+        ) {
             val file = imageFiles[0]
             file.scaleImageDown(1000, 1000)
             emitter.onSuccess(file)
@@ -96,7 +104,11 @@ private fun Activity.emitEasyImageResult(
 
 //Toolbar
 
-fun AppCompatActivity.setupToolbar(toolbar: Toolbar?, showHome: Boolean = true, title: String? = null) {
+fun AppCompatActivity.setupToolbar(
+    toolbar: Toolbar?,
+    showHome: Boolean = true,
+    title: String? = null
+) {
     if (title != null) {
         setupToolbarWithTitle(toolbar, title, showHome)
     } else {
@@ -113,7 +125,11 @@ private fun AppCompatActivity.setupToolbar(toolbar: Toolbar?, showHome: Boolean)
     }
 }
 
-private fun AppCompatActivity.setupToolbarWithTitle(toolbar: Toolbar?, title: String, showHome: Boolean) {
+private fun AppCompatActivity.setupToolbarWithTitle(
+    toolbar: Toolbar?,
+    title: String,
+    showHome: Boolean
+) {
     setSupportActionBar(toolbar)
     supportActionBar?.run {
         toolbar?.title = title
@@ -138,7 +154,8 @@ fun AppCompatActivity.setupCustomizedToolbar(
 
 fun AppCompatActivity.hideSoftKeyboard() {
     currentFocus?.let {
-        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
     }
 }
