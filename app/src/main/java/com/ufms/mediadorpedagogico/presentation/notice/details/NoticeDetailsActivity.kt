@@ -34,7 +34,11 @@ class NoticeDetailsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_notice_details)
-        setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_notice_label))
+        setupCustomizedToolbar(
+            binding.toolbarCustomized,
+            true,
+            getString(R.string.activity_notice_label)
+        )
         lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
@@ -69,7 +73,8 @@ class NoticeDetailsActivity : BaseActivity() {
             imageBase64?.let {
                 try {
                     val decodedString = Base64.decode(it, Base64.DEFAULT)
-                    val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+                    val decodedByte =
+                        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                     binding.imageViewResource.setImageBitmap(decodedByte)
                 } catch (e: Exception) {
                     shortToast(getString(R.string.activity_main_error_image_decode))

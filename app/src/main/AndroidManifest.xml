@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.ufms.mediadorpedagogico">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.ufms.mediadorpedagogico">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
             android:name=".presentation.AppTemplateSlimApplication"
@@ -20,44 +20,38 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".presentation.homework.details.HomeworkDetailsActivity"></activity>
+        <activity android:name=".presentation.homework.details.HomeworkDetailsActivity" />
         <activity
                 android:name=".presentation.landing.SplashActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
-                android:screenOrientation="portrait"></activity>
+                android:screenOrientation="portrait" />
         <activity
-                android:name=".presentation.dashboard.MainActivity"
+                android:name=".presentation.main.MainActivity"
                 android:screenOrientation="portrait"
-                android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+                android:windowSoftInputMode="adjustPan" />
         <activity
                 android:name=".presentation.login.LoginActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
                 android:screenOrientation="portrait"
-                android:windowSoftInputMode="adjustPan"/>
+                android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
                 android:name=".presentation.homework.list.HomeworkListActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
                 android:label="@string/activity_homework_label"
                 android:screenOrientation="portrait"
-                android:theme="@style/AppThemeSecondary">
-        </activity>
-        <activity
-                android:name=".presentation.signup.SignUpActivity"
-                android:configChanges="keyboardHidden|orientation|screenSize"
-                android:label="@string/activity_sign_up"
-                android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.notice.details.NoticeDetailsActivity"/>
-        <activity android:name=".presentation.notice.list.NoticeListActivity"/>
+                android:theme="@style/AppThemeSecondary" />
+        <activity android:name=".presentation.notice.details.NoticeDetailsActivity" />
+        <activity android:name=".presentation.notice.list.NoticeListActivity" />
 
         <meta-data
                 android:name="preloaded_fonts"
-                android:resource="@array/preloaded_fonts"/>
+                android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

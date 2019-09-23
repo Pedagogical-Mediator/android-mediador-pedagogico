@@ -4,31 +4,17 @@ import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
 import io.reactivex.Single
-import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
 
+    @POST("alunos")
     @FormUrlEncoded
-    @POST("users/sign_in")
     fun signIn(
-        @Field("email") email: String,
-        @Field("password") password: String,
-        @Field("token") token: String?,
-        @Field("platform") platform: String
+        @Field("chaveDeAcesso") classKey: String,
+        @Field("nome") name: String
     ): Single<Response<ApiUser>>
-
-    @FormUrlEncoded
-    @POST("auth/facebook")
-    fun signInWithFacebook(@Field("access_token") accessToken: String): Single<Response<ApiUser>>
-
-    @POST("users")
-    fun signUp(@Body requestBody: RequestBody): Single<Response<ApiUser>>
-
-    @FormUrlEncoded
-    @POST("users/recover_password")
-    fun sendPasswordRecovery(@Field("email") email: String): Single<Response<Void>>
 
     /**
      * Homework
@@ -44,4 +30,5 @@ interface ApiService {
 
     @GET("avisos")
     fun getListOfNotices(@Query("page") pageNumber: Int): Single<Response<ApiNoticeContent>>
+
 }

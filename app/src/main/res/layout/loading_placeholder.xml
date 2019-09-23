@@ -3,11 +3,11 @@
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
                 name="placeholder"
-                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder"/>
+                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder" />
     </data>
 
     <LinearLayout
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:visibility="@{placeholder.progressVisible ? View.VISIBLE : View.GONE}"/>
+                android:visibility="@{placeholder.progressVisible ? View.VISIBLE : View.GONE}" />
 
         <TextView
                 android:id="@+id/message_text_view"
@@ -35,7 +35,7 @@
                 android:gravity="center"
                 android:text="@{placeholder.message, default=@string/app_name}"
                 android:textSize="16sp"
-                android:visibility="@{placeholder.messageVisible ? View.VISIBLE : View.GONE}"/>
+                android:visibility="@{placeholder.messageVisible ? View.VISIBLE : View.GONE}" />
 
         <Button
                 android:id="@+id/action_button"
@@ -47,6 +47,6 @@
                 android:text="@{placeholder.buttonText, default=@string/app_name}"
                 android:textAllCaps="true"
                 android:textColor="@color/accent"
-                android:visibility="@{placeholder.buttonVisible ? View.VISIBLE : View.GONE}"/>
+                android:visibility="@{placeholder.buttonVisible ? View.VISIBLE : View.GONE}" />
     </LinearLayout>
 </layout>

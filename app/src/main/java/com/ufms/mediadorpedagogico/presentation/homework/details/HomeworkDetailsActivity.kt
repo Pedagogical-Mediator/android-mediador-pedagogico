@@ -34,7 +34,11 @@ class HomeworkDetailsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_homework_details)
-        setupCustomizedToolbar(binding.toolbarCustomized, true, getString(R.string.activity_homework_label))
+        setupCustomizedToolbar(
+            binding.toolbarCustomized,
+            true,
+            getString(R.string.activity_homework_label)
+        )
         lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
@@ -71,7 +75,8 @@ class HomeworkDetailsActivity : BaseActivity() {
             imageBase64?.let {
                 try {
                     val decodedString = Base64.decode(it, Base64.DEFAULT)
-                    val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+                    val decodedByte =
+                        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                     binding.imageViewResource.setImageBitmap(decodedByte)
                 } catch (e: Exception) {
                     shortToast(getString(R.string.activity_main_error_image_decode))
@@ -84,7 +89,10 @@ class HomeworkDetailsActivity : BaseActivity() {
         const val HOMEWORK_KEY = "HOMEWORK"
 
         fun createIntent(context: Context, homework: Homework): Intent {
-            return Intent(context, HomeworkDetailsActivity::class.java).putExtra(HOMEWORK_KEY, homework)
+            return Intent(context, HomeworkDetailsActivity::class.java).putExtra(
+                HOMEWORK_KEY,
+                homework
+            )
         }
     }
 }

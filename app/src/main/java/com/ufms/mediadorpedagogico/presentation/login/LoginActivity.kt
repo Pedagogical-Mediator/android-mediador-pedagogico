@@ -20,8 +20,7 @@ class LoginActivity : BaseActivity() {
     override val baseViewModel: BaseViewModel get() = viewModel
 
     private val viewModel: LoginViewModel by inject()
-    private lateinit var binding: ActivityLoginBinding
-
+    lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         lifecycle.addObserver(viewModel)
@@ -32,33 +31,34 @@ class LoginActivity : BaseActivity() {
 
     override fun subscribeUi() {
         super.subscribeUi()
-        viewModel.showEmailFieldError.observe(this, this::onNextEmailError)
-        viewModel.showPasswordFieldError.observe(this, this::onNextPasswordError)
-        viewModel.goToMain.observe(this, this::onNextGoToMain)
+        with(viewModel) {
+            showGroupFieldError.observe(this@LoginActivity, ::onNextGroupError)
+            showNameFieldError.observe(this@LoginActivity, ::onNextNameError)
+            goToMain.observe(this@LoginActivity, ::onNextGoToMain)
+        }
     }
 
     private fun setupUi() {
-        binding.emailInput.observeChanges(viewModel::onEmailChanged)
-        binding.passwordInput.observeChanges(viewModel::onPasswordChanged)
-        binding.facebookButton.setOnClickListener(viewModel::onFacebookButtonClicked)
-        binding.googleButton.setOnClickListener(viewModel::onGoogleButtonClicked)
-        binding.registerButton.setOnClickListener(viewModel::onSignUpClicked)
-        binding.submitButton.setOnClickListener(viewModel::onSubmitClicked)
+        with(binding) {
+            textInputClassCode.observeChanges(viewModel::onClassKeyChanged)
+            textInputName.observeChanges(viewModel::onNameChanged)
+            submitButton.setOnClickListener(viewModel::onSubmitClicked)
+        }
     }
 
     private fun onNextGoToMain(shouldGo: Boolean?) {
         shouldGo?.let { Navigator.goToMain(this, true) }
     }
 
-    private fun onNextEmailError(shouldShowError: Boolean?) {
+    private fun onNextGroupError(shouldShowError: Boolean?) {
         shouldShowError?.let {
-            binding.emailInput.error = it then getString(R.string.error_invalid_email)
+            binding.textInputClassCode.error = it then getString(R.string.error_invalid_group)
         }
     }
 
-    private fun onNextPasswordError(shouldShowError: Boolean?) {
+    private fun onNextNameError(shouldShowError: Boolean?) {
         shouldShowError?.let {
-            binding.passwordInput.error = it then getString(R.string.error_invalid_password)
+            binding.textInputName.error = it then getString(R.string.error_invalid_name)
 
         }
     }

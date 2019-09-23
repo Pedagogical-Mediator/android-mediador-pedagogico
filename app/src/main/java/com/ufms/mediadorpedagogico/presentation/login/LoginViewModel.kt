@@ -6,11 +6,9 @@ import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.interactor.user.LoginForm
 import com.ufms.mediadorpedagogico.domain.interactor.user.SignIn
-import com.ufms.mediadorpedagogico.presentation.signup.SignUpNavData
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
-import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
 
 class LoginViewModel(
@@ -18,70 +16,61 @@ class LoginViewModel(
     private val schedulerProvider: SchedulerProvider
 ) : BaseViewModel() {
 
-    val showEmailFieldError: LiveData<Boolean> get() = showEmailFieldErrorLiveData
-    val showPasswordFieldError: LiveData<Boolean> get() = showPasswordFieldErrorLiveData
+    val showGroupFieldError: LiveData<Boolean> get() = showClassKeyFieldErrorLiveData
+    val showNameFieldError: LiveData<Boolean> get() = showNameFieldErrorLiveData
     val goToMain: LiveData<Boolean> get() = goToMainLiveData
 
-    private val showEmailFieldErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
-    private val showPasswordFieldErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
+    private val showClassKeyFieldErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
+    private val showNameFieldErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
     private val goToMainLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
     private var form = LoginForm()
-    private var signInDisposable: Disposable? = null
 
-
-    fun onEmailChanged(email: String) {
-        form.email = email
+    fun onClassKeyChanged(classKey: String) {
+        form.classKey = classKey
     }
 
-    fun onPasswordChanged(password: String) {
-        form.password = password
-    }
-
-    fun onFacebookButtonClicked() {}
-
-    fun onGoogleButtonClicked() {}
-
-    fun onSignUpClicked() {
-        goTo(SignUpNavData())
+    fun onNameChanged(name: String) {
+        form.name = name
     }
 
     fun onSubmitClicked() {
-        form.useForm(this::submit)?.let { showFieldErrors(it) }
+        form.useForm(this::submit)?.let(::showFieldErrors)
     }
 
-    private fun submit(email: String, password: String) {
-        signInDisposable?.dispose()
-        signInDisposable = signIn.default(email, password, null)
+    private fun submit(classKey: String, password: String) {
+        signIn.default(classKey, password)
             .defaultPlaceholders(this::setPlaceholder)
             .defaultSched(schedulerProvider)
             .subscribeBy(this::onFailure) {
-                showEmailFieldErrorLiveData.value = false
-                showPasswordFieldErrorLiveData.value = false
+                showClassKeyFieldErrorLiveData.value = false
+                showNameFieldErrorLiveData.value = false
                 goToMainLiveData.value = true
             }
+            .let(disposables::add)
     }
 
     private fun onFailure(throwable: Throwable) {
         if (throwable is InvalidFieldsException) {
             showFieldErrors(throwable)
-        } else {
-            setDialog(throwable, this::onSubmitClicked)
         }
+//        } else {
+//            setDialog(throwable, this::onSubmitClicked)
+//        }
+        setDialog(throwable, this::onSubmitClicked)
     }
 
     private fun showFieldErrors(e: InvalidFieldsException) {
         for (field in e.getFields()) {
             showFieldError(field)
         }
+        setDialog(e, this::onSubmitClicked)
     }
 
     private fun showFieldError(field: Int) {
         when (field) {
-            InvalidFieldsException.EMAIL -> showEmailFieldErrorLiveData.value = true
-            InvalidFieldsException.PASSWORD -> showPasswordFieldErrorLiveData.value = true
+            InvalidFieldsException.CLASS_KEY -> showClassKeyFieldErrorLiveData.value = true
+            InvalidFieldsException.NAME -> showNameFieldErrorLiveData.value = true
         }
     }
-
-
 }

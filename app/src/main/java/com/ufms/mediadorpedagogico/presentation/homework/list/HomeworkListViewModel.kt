@@ -42,6 +42,7 @@ class HomeworkListViewModel(
             .defaultPlaceholders(this::setPlaceholder)
             .defaultSched(schedulerProvider)
             .subscribeBy(this::onFailure, this::onSuccess)
+            .let(disposables::add)
     }
 
     fun setupOnItemClicked(homework: Homework) {

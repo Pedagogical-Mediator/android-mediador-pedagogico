@@ -27,6 +27,7 @@
         problema persistir entre em contato conosco.
     </string>
     <string name="error_timeout">Tempo expirado. Por favor, tente novamente.</string>
+    <string name="error_invalid_fields">Ops, parece que um ou mais campos não foram preenchidos corretamente.</string>
 
     <string name="activity_login_error">Email ou senha errados.</string>
     <string name="global_wait">Aguarde...</string>
@@ -39,10 +40,11 @@
     <string name="validation_password_confirmation">Confirmação diferente da senha</string>
     <string name="activity_login_sign_in_with">Faça login com</string>
 
-    <string name="hint_user_or_email">Usuário ou email</string>
-    <string name="hint_password">Senha</string>
+    <string name="hint_group">Turma</string>
+    <string name="hint_class_code">Chave de acesso</string>
+    <string name="hint_name">Nome</string>
 
-    <string name="activity_login_sign_in">Entrar</string>
+    <string name="activity_login_sign_in">Acessar</string>
     <string name="activity_login_sign_up">Criar uma conta</string>
     <string name="activity_login_forgot_password">Esqueci minha senha</string>
     <string name="activity_login_please_wait_for_result">Aguarde o resultado do login para prosseguir.</string>
@@ -72,8 +74,8 @@
         o login. Por favor, tente novamente.
     </string>
 
-    <string name="error_invalid_email">Email Inválido</string>
-    <string name="error_invalid_password">Senha Inválida</string>
+    <string name="error_invalid_group">Turma Inválida</string>
+    <string name="error_invalid_name">Nome Inválido</string>
 
     <string name="global_send">Enviar</string>
     <string name="global_pick_avatar_using">Escolher imagem usando:</string>

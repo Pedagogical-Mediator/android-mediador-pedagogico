@@ -7,7 +7,10 @@ import java.security.InvalidParameterException
 
 object InputMask {
 
-    fun apply(textInputLayout: TextInputLayout?, vararg masks: String): BaseMaskTextChangedListener {
+    fun apply(
+        textInputLayout: TextInputLayout?,
+        vararg masks: String
+    ): BaseMaskTextChangedListener {
         return apply(textInputLayout?.editText, *masks)
     }
 

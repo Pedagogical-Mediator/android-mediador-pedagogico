@@ -26,13 +26,19 @@ class HomeworkListViewHolder(
             homework.description?.let {
                 if (it.length > 50) {
                     textViewDescription.text =
-                        root.context.getString(R.string.summarize_three_dots_template, it.slice(0..50))
+                        root.context.getString(
+                            R.string.summarize_three_dots_template,
+                            it.slice(0..50)
+                        )
                 }
             }
             homework.title?.let {
                 if (it.length > 50) {
                     textViewTitle.text =
-                        root.context.getString(R.string.summarize_three_dots_template, it.slice(0..50))
+                        root.context.getString(
+                            R.string.summarize_three_dots_template,
+                            it.slice(0..50)
+                        )
                 }
             }
         }

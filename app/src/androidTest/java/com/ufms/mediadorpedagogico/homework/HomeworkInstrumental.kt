@@ -30,6 +30,8 @@ open class HomeworkInstrumental : AndroidJUnitRunner() {
             }
         }
 
-    protected fun getHomeworkList() = (retrieveBinding().recyclerViewHomework.adapter as HomeworkListAdapter).listGet
+    protected fun getHomeworkList() =
+        (retrieveBinding().recyclerViewHomework.adapter as HomeworkListAdapter).listGet
+
     protected fun retrieveBinding() = activityRule.activity.binding
 }

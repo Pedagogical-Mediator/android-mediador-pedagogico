@@ -17,6 +17,7 @@ interface StringsProvider {
     val errorNotFound: String
     val errorServerInternal: String
     val errorTimeout: String
+    val errorInvalidFields: String
     val waitForResult: String
     val activityRecoverPassword: String
     val activityRecoverPasswordSuccess: String

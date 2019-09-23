@@ -34,7 +34,12 @@ fun TextInputLayout.setError(@StringRes messageId: Int?) {
         val hasErrorWatcher: Boolean? = getTag(R.id.has_error_watcher) as? Boolean
         if (hasErrorWatcher == null || !hasErrorWatcher) {
             editText?.addTextChangedListener(object : SimpleTextWatcher() {
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     error = null
                     editText?.removeTextChangedListener(this)
                     setTag(R.id.has_error_watcher, false)

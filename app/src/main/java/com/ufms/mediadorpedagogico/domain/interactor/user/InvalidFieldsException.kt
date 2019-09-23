@@ -13,11 +13,7 @@ class InvalidFieldsException : Exception() {
     }
 
     companion object {
-        val NAME = 1
-        val EMAIL = 2
-        val PHONE_NUMBER = 3
-        val CPF = 4
-        val PASSWORD = 5
-        val PASSWORD_CONFIRMATION = 6
+        const val CLASS_KEY = 1
+        const val NAME = 2
     }
 }

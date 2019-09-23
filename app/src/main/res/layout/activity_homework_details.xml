@@ -4,15 +4,15 @@
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
                 name="placeholder"
-                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder"/>
+                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder" />
 
         <variable
                 name="homeworkDetails"
-                type="com.ufms.mediadorpedagogico.domain.entity.homework.Homework"/>
+                type="com.ufms.mediadorpedagogico.domain.entity.homework.Homework" />
     </data>
 
     <LinearLayout
@@ -22,7 +22,7 @@
 
         <include
                 android:id="@+id/toolbar_customized"
-                layout="@layout/toolbar_customized"/>
+                layout="@layout/toolbar_customized" />
 
         <ScrollView
                 android:layout_width="match_parent"
@@ -41,35 +41,35 @@
                     tools:context="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsActivity">
 
                 <TextView
-                        style="@style/TextLabelTitleBlackBig"
                         android:id="@+id/text_view_title"
+                        style="@style/TextLabelTitleBlackBig"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{homeworkDetails.title}"
                         android:textAlignment="center"
-                        tools:text="TITULO"/>
+                        tools:text="TITULO" />
 
                 <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/line"
                         android:layout_marginTop="@dimen/tiny"
-                        android:background="@color/black"/>
+                        android:background="@color/black" />
 
                 <TextView
-                        style="@style/TextLabelDescriptionBlackNormal"
                         android:id="@+id/text_view_description"
+                        style="@style/TextLabelDescriptionBlackNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/big"
                         android:text="@{homeworkDetails.description}"
-                        tools:text="DESCRIPTION"/>
+                        tools:text="DESCRIPTION" />
 
                 <ImageView
-                        android:layout_gravity="center_horizontal"
                         android:id="@+id/image_view_resource"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/big"/>
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/big" />
 
                 <androidx.core.widget.NestedScrollView
                         android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recycler_view_link"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent" />
                 </androidx.core.widget.NestedScrollView>
             </LinearLayout>
         </ScrollView>

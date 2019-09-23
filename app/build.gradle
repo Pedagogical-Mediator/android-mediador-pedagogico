@@ -114,4 +114,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
     androidTestImplementation 'com.linkedin.testbutler:test-butler-library:2.0.0'
 
+    //Stetho
+    implementation "com.facebook.stetho:stetho:$stethoVersion"
 }

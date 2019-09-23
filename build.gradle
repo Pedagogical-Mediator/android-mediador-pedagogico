@@ -13,7 +13,7 @@ buildscript {
         // Sdk and tools
         buildToolsVersion = '28.0.3'
         compileSdkVersion = 28
-        minSdkVersion = 22
+        minSdkVersion = 21
         targetSdkVersion = 28
 
         // App dependencies
@@ -27,6 +27,7 @@ buildscript {
         pagingLibVersion = '1.0.1'
         crashlyticsVersion = '1.25.4'
         koinVersion = '2.0.1'
+        stethoVersion = '1.5.1'
     }
     repositories {
         google()

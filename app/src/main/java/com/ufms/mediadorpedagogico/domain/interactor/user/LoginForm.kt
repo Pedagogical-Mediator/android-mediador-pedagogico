@@ -2,19 +2,19 @@ package com.ufms.mediadorpedagogico.domain.interactor.user
 
 
 class LoginForm {
-    var email: String? = null
-    var password: String? = null
+    var classKey: String? = null
+    var name: String? = null
 
-    fun useForm(action: (email: String, password: String) -> Unit): InvalidFieldsException? {
-        email?.let { email ->
-            password?.let { password ->
-                action.invoke(email, password)
+    fun useForm(action: (classGroup: String, name: String) -> Unit): InvalidFieldsException? {
+        classKey?.let { classGroup ->
+            name?.let { name ->
+                action.invoke(classGroup, name)
                 return null
             }
         }
         return InvalidFieldsException().apply {
-            if (email == null) addField(InvalidFieldsException.EMAIL)
-            if (password == null) addField(InvalidFieldsException.PASSWORD)
+            if (classKey == null) addField(InvalidFieldsException.CLASS_KEY)
+            if (name == null) addField(InvalidFieldsException.NAME)
         }
     }
 }

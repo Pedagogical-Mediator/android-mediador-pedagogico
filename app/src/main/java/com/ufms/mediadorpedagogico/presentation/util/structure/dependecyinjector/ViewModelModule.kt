@@ -2,14 +2,13 @@ package com.ufms.mediadorpedagogico.presentation.util.structure.dependecyinjecto
 
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
-import com.ufms.mediadorpedagogico.presentation.dashboard.MainViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
 import com.ufms.mediadorpedagogico.presentation.login.LoginViewModel
+import com.ufms.mediadorpedagogico.presentation.main.MainViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewModel
-import com.ufms.mediadorpedagogico.presentation.signup.SignUpViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -17,7 +16,6 @@ import org.koin.dsl.module
 val viewModelModule = module {
     viewModel { BaseViewModel() }
     viewModel { MainViewModel(get()) }
-    viewModel { SignUpViewModel(get(), get()) }
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get(), get()) }
     viewModel { HomeworkListViewModel(get(), get()) }

@@ -8,7 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.runner.AndroidJUnit4
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.presentation.dashboard.TEST_NOTICE_PER_REQUEST
+import com.ufms.mediadorpedagogico.presentation.main.TEST_NOTICE_PER_REQUEST
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewHolder
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.Test
@@ -39,7 +39,10 @@ open class _1_CheckItemAbove10 : NoticeInstrumental() {
             onView(withId(R.id.recycler_view_notice))
                 .perform(
                     RecyclerViewActions
-                        .actionOnItemAtPosition<NoticeListViewHolder>(TEST_NOTICE_PER_REQUEST, click())
+                        .actionOnItemAtPosition<NoticeListViewHolder>(
+                            TEST_NOTICE_PER_REQUEST,
+                            click()
+                        )
                 )
             Thread.sleep(1000)
             onView(withId(R.id.text_view_title)).check(matches(withText(containsString(newItem.title))))

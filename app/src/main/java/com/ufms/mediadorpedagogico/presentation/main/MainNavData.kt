@@ -1,11 +1,11 @@
-package com.ufms.mediadorpedagogico.presentation.signup
+package com.ufms.mediadorpedagogico.presentation.main
 
 import android.content.Context
 import android.content.Intent
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavData
 
-class SignUpNavData : NavData {
+class MainNavData : NavData {
     override fun createIntent(context: Context): Intent {
-        return SignUpActivity.createIntent(context)
+        return MainActivity.createIntent(context)
     }
 }
