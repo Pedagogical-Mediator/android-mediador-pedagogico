@@ -6,8 +6,8 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.runner.AndroidJUnit4
 import com.ufms.mediadorpedagogico.R
 import org.junit.Test
@@ -40,9 +40,6 @@ open class _1_LoginCorrect : LoginInstrumental() {
         onView(withId(R.id.submit_button))
             .perform(click())
         sleep(5000)
-        onView(withText(_activity().getString(R.string.global_try_again))).check(
-            matches(ViewMatchers.isDisplayed())
-        )
-        // TODO na verdade deveria funcionar né
+        onView(withId(R.id.card_view_notice)).check(matches(isDisplayed()))
     }
 }
