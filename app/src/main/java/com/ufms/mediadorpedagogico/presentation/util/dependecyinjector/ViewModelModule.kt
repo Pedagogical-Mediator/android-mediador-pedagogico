@@ -18,7 +18,7 @@ val viewModelModule = module {
     viewModel { BaseViewModel() }
     viewModel { MainViewModel(get()) }
     viewModel { SplashViewModel(get()) }
-    viewModel { LoginViewModel(get(), get()) }
+    viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { HomeworkListViewModel(get(), get()) }
     viewModel { (homework: Homework) -> HomeworkDetailsViewModel(homework) }
     viewModel { NoticeListViewModel(get(), get()) }

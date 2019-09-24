@@ -17,6 +17,7 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
+import android.net.Uri
 
 class NewsListActivity : BaseActivity() {
 
@@ -51,7 +52,14 @@ class NewsListActivity : BaseActivity() {
     }
 
     private fun setupAdapter() {
-        newsListAdapter = NewsListAdapter(viewModel::setupOnItemClicked)
+        newsListAdapter = NewsListAdapter(::setupOnItemClicked)
+    }
+
+    private fun setupOnItemClicked(news: News) {
+        var url = news.link ?: ""
+        if (!url.startsWith("http://") && !url.startsWith("https://"))
+            url = "http://$url"
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
     }
 
     private fun setupRecycler() {

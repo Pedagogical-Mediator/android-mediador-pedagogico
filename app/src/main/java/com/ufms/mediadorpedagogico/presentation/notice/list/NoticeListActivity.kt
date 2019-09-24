@@ -36,7 +36,6 @@ class NoticeListActivity : BaseActivity() {
             getString(R.string.activity_notice_label)
         )
         lifecycle.addObserver(viewModel)
-        setupUi()
         setupAdapter()
         setupRecycler()
         super.onCreate(savedInstanceState)
@@ -94,10 +93,6 @@ class NoticeListActivity : BaseActivity() {
                 moreNoticesToBeLoaded = false
             }
         }
-    }
-
-    private fun setupUi() {
-        //TODO botar click
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

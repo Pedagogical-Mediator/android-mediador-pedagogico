@@ -30,18 +30,20 @@ class NewsListViewModel(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        loadMoreNews()
+        this.onSuccess(NewsContent(content = listOf(
+            News(id = 1,
+                title = "Titulo",
+                description = "AAAAAAAAAAAAAAA",
+                link = "https://google.com",
+                createdAt = "24/09/2019")
+        )))
     }
 
     fun loadMoreNews() {
-        getNews.execute(pageNumber)
-            .defaultPlaceholders(this::setPlaceholder)
-            .defaultSched(schedulerProvider)
-            .subscribeBy(this::onFailure, this::onSuccess)
-    }
-
-    fun setupOnItemClicked(news: News) {
-        // TODO botar para abrir o browser goTo(NewsDetailsNavData(news))
+//        getNews.execute(pageNumber)
+//            .defaultPlaceholders(this::setPlaceholder)
+//            .defaultSched(schedulerProvider)
+//            .subscribeBy(this::onFailure, this::onSuccess)
     }
 
     private fun onFailure(throwable: Throwable) {
