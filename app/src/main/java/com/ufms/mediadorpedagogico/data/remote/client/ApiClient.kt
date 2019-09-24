@@ -5,6 +5,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.ufms.mediadorpedagogico.BuildConfig
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
+import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -41,6 +42,10 @@ object ApiClient {
 
     fun getListOfNotice(pageNumber: Int): Single<ApiNoticeContent> {
         return makeRequest(apiServices.getListOfNotices(pageNumber))
+    }
+
+    fun getListOfNews(pageNumber: Int): Single<ApiNewsContent> {
+        return makeRequest(apiServices.getListOfNews(pageNumber))
     }
 
     /**

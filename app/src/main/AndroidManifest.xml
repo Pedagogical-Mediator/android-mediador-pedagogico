@@ -48,6 +48,7 @@
                 android:theme="@style/AppThemeSecondary" />
         <activity android:name=".presentation.notice.details.NoticeDetailsActivity" />
         <activity android:name=".presentation.notice.list.NoticeListActivity" />
+        <activity android:name=".presentation.news.NewsListActivity" />
 
         <meta-data
                 android:name="preloaded_fonts"

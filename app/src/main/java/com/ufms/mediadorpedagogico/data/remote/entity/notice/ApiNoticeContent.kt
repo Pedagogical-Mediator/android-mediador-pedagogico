@@ -1,6 +1,7 @@
 package com.ufms.mediadorpedagogico.data.remote.entity.notice
 
 import com.google.gson.annotations.SerializedName
+import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNews
 import com.ufms.mediadorpedagogico.data.remote.mapper.Mapper
 import com.ufms.mediadorpedagogico.domain.entity.notice.NoticeContent
 

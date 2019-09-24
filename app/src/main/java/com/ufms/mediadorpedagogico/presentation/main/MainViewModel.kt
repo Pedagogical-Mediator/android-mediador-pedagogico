@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListNavData
+import com.ufms.mediadorpedagogico.presentation.news.NewsListNavData
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListNavData
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
@@ -37,5 +38,9 @@ class MainViewModel(
 
     fun goToNotice() {
         goTo(NoticeListNavData())
+    }
+
+    fun goToNews() {
+        goTo(NewsListNavData())
     }
 }

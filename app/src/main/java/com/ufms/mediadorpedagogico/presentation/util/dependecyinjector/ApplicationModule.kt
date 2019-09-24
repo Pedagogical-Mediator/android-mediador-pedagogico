@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.util.structure.dependecyinjector
+package com.ufms.mediadorpedagogico.presentation.util.dependecyinjector
 
 import com.ufms.mediadorpedagogico.data.remote.client.ApiClient
 import com.ufms.mediadorpedagogico.data.storage.PreferencesCache

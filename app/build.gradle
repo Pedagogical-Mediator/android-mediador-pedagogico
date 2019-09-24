@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'org.sonarqube'
+apply plugin: 'jacoco-android'
 
 repositories {
     mavenCentral()
@@ -116,4 +118,15 @@ dependencies {
 
     //Stetho
     implementation "com.facebook.stetho:stetho:$stethoVersion"
+    implementation 'com.dicedmelon.gradle:jacoco-android:0.1.4'
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "MyProject"
+        property "sonar.projectKey", "com.example.myproject"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.language", "java"
+        property "sonar.sources", "src/main/"
+    }
 }
