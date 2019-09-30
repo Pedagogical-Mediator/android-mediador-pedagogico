@@ -40,10 +40,10 @@ class NewsListViewModel(
     }
 
     fun loadMoreNews() {
-//        getNews.execute(pageNumber)
-//            .defaultPlaceholders(this::setPlaceholder)
-//            .defaultSched(schedulerProvider)
-//            .subscribeBy(this::onFailure, this::onSuccess)
+        getNews.execute(pageNumber)
+            .defaultPlaceholders(this::setPlaceholder)
+            .defaultSched(schedulerProvider)
+            .subscribeBy(this::onFailure, this::onSuccess)
     }
 
     private fun onFailure(throwable: Throwable) {
