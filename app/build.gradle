@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'org.sonarqube'
+apply plugin: 'jacoco-android'
 
 repositories {
     mavenCentral()
@@ -53,8 +55,23 @@ android {
             applicationIdSuffix ".debug"
             buildConfigField "String", "API_ENDPOINT", "\"$rootProject.ext.apiStaging\""
             resValue "string", "app_name", "\"$rootProject.ext.appName [debug]\""
+            testCoverageEnabled = true
         }
     }
+    testOptions {
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
+
+    }
+}
+
+jacocoAndroidUnitTestReport {
+    csv.enabled false
+    html.enabled false
+    xml.enabled true
 }
 
 dependencies {
@@ -116,4 +133,26 @@ dependencies {
 
     //Stetho
     implementation "com.facebook.stetho:stetho:$stethoVersion"
+    implementation 'com.dicedmelon.gradle:jacoco-android:0.1.4'
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Mediador pedagogico"
+        property "sonar.projectKey", "com.ufms.mediadorpedagogico"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.language", "kotlin"
+        property "sonar.sources", "src/main/"
+        property "sonar.login", "admin"
+        property "sonar.password", "admin"
+
+        property "sonar.sources", "src/main/java"
+        property "sonar.binaries", "build/intermediates/classes/debug"
+        property "sonar.java.binaries", "build/intermediates/classes/debug"
+        property "sonar.java.test.binaries", "build/intermediates/classes/debug"
+
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.junit.reportsPath", "build/test-results/testDebugUnitTest"
+        property "sonar.android.lint.report", "build/reports/lint-results.xml"
+    }
 }

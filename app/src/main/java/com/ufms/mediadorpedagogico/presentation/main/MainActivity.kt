@@ -41,6 +41,7 @@ class MainActivity : BaseActivity() {
         with(binding) {
             cardViewHomework.setOnClickListener(viewModel::goToHomework)
             cardViewNotice.setOnClickListener(viewModel::goToNotice)
+            cardViewNews.setOnClickListener(viewModel::goToNews)
         }
     }
 

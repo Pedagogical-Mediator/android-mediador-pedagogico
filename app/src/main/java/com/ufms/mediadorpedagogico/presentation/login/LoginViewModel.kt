@@ -1,8 +1,11 @@
 package com.ufms.mediadorpedagogico.presentation.login
 
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
+import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.interactor.user.LoginForm
 import com.ufms.mediadorpedagogico.domain.interactor.user.SignIn
@@ -13,7 +16,8 @@ import io.reactivex.rxkotlin.subscribeBy
 
 class LoginViewModel(
     private val signIn: SignIn,
-    private val schedulerProvider: SchedulerProvider
+    private val schedulerProvider: SchedulerProvider,
+    private val getPersistedUser: GetPersistedUser
 ) : BaseViewModel() {
 
     val showGroupFieldError: LiveData<Boolean> get() = showClassKeyFieldErrorLiveData
@@ -38,6 +42,17 @@ class LoginViewModel(
         form.useForm(this::submit)?.let(::showFieldErrors)
     }
 
+    // TODO botar isso aqui numa splash screen
+    // TODO botar isso aqui numa splash screen
+    // TODO botar isso aqui numa splash screen
+    // TODO botar isso aqui numa splash screen
+    // TODO botar isso aqui numa splash screen
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    private fun onCreate() {
+        val a = getPersistedUser.execute()
+        a?.let { goToMainLiveData.value = true }
+    }
+
     private fun submit(classKey: String, password: String) {
         signIn.default(classKey, password)
             .defaultPlaceholders(this::setPlaceholder)
@@ -54,9 +69,6 @@ class LoginViewModel(
         if (throwable is InvalidFieldsException) {
             showFieldErrors(throwable)
         }
-//        } else {
-//            setDialog(throwable, this::onSubmitClicked)
-//        }
         setDialog(throwable, this::onSubmitClicked)
     }
 

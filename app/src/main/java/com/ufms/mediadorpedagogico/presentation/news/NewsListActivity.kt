@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.presentation.notice.list
+package com.ufms.mediadorpedagogico.presentation.news
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityNoticeListBinding
-import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
+import com.ufms.mediadorpedagogico.databinding.ActivityNewsListBinding
+import com.ufms.mediadorpedagogico.domain.entity.news.News
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
@@ -17,23 +17,24 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
+import android.net.Uri
 
-class NoticeListActivity : BaseActivity() {
+class NewsListActivity : BaseActivity() {
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    lateinit var noticeListAdapter: NoticeListAdapter
-    private var moreNoticesToBeLoaded = true
-    private var isLoadingMoreNotice = false
-    lateinit var binding: ActivityNoticeListBinding
-    private val viewModel: NoticeListViewModel by inject()
+    lateinit var newsListAdapter: NewsListAdapter
+    private var moreNewsToBeLoaded = true
+    private var isLoadingMoreNews = false
+    lateinit var binding: ActivityNewsListBinding
+    private val viewModel: NewsListViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_notice_list)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_news_list)
         setupCustomizedToolbar(
             binding.toolbarCustomized,
             true,
-            getString(R.string.activity_notice_label)
+            getString(R.string.activity_news_label)
         )
         lifecycle.addObserver(viewModel)
         setupAdapter()
@@ -44,53 +45,60 @@ class NoticeListActivity : BaseActivity() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@NoticeListActivity, ::onNextPlaceholder)
-            noticeContent.observeEvent(this@NoticeListActivity, ::onNoticeContentLoaded)
-            noContentReturned.observeEvent(this@NoticeListActivity, ::onNoContentReturned)
+            placeholder.observe(this@NewsListActivity, ::onNextPlaceholder)
+            newsContent.observeEvent(this@NewsListActivity, ::onNewsContentLoaded)
+            noContentReturned.observeEvent(this@NewsListActivity, ::onNoContentReturned)
         }
     }
 
     private fun setupAdapter() {
-        noticeListAdapter = NoticeListAdapter(viewModel::setupOnItemClicked)
+        newsListAdapter = NewsListAdapter(::setupOnItemClicked)
+    }
+
+    private fun setupOnItemClicked(news: News) {
+        var url = news.link ?: ""
+        if (!url.startsWith("http://") && !url.startsWith("https://"))
+            url = "http://$url"
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
     }
 
     private fun setupRecycler() {
-        with(binding.recyclerViewNotice) {
-            layoutManager = LinearLayoutManager(this@NoticeListActivity)
-            adapter = noticeListAdapter
-            addOnScrollListener(setLoadMoreNoticesOnScroll())
+        with(binding.recyclerViewNews) {
+            layoutManager = LinearLayoutManager(this@NewsListActivity)
+            adapter = newsListAdapter
+            addOnScrollListener(setLoadMoreNewsOnScroll())
         }
     }
 
-    private fun setLoadMoreNoticesOnScroll(): RecyclerView.OnScrollListener {
+    private fun setLoadMoreNewsOnScroll(): RecyclerView.OnScrollListener {
         return object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                with(binding.recyclerViewNotice) {
+                with(binding.recyclerViewNews) {
                     val totalItemCount = layoutManager?.itemCount
                     var lastVisibleItem =
                         (layoutManager as? LinearLayoutManager)?.findLastVisibleItemPosition()
                     lastVisibleItem = lastVisibleItem?.run { this + 1 }
-                    if (totalItemCount == lastVisibleItem && moreNoticesToBeLoaded && !isLoadingMoreNotice) {
-                        isLoadingMoreNotice = true
-                        viewModel.loadMoreNotice()
+                    if (totalItemCount == lastVisibleItem && moreNewsToBeLoaded && !isLoadingMoreNews) {
+                        isLoadingMoreNews = true
+                        viewModel.loadMoreNews()
                     }
                 }
             }
         }
     }
 
-    private fun onNoticeContentLoaded(noticeContent: List<Notice>?) {
-        noticeContent?.run(noticeListAdapter::setItems)
-        isLoadingMoreNotice = false
+    private fun onNewsContentLoaded(newsContent: List<News>?) {
+        newsContent?.run(newsListAdapter::setItems)
+        isLoadingMoreNews = false
     }
 
     fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
-            if (noticeListAdapter.itemCount == 0) {
+            if (newsListAdapter.itemCount == 0) {
                 binding.includedPlaceholderNoResults.root.setVisible(true)
             } else {
-                moreNoticesToBeLoaded = false
+                moreNewsToBeLoaded = false
             }
         }
     }
@@ -101,7 +109,7 @@ class NoticeListActivity : BaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            return Intent(context, NoticeListActivity::class.java)
+            return Intent(context, NewsListActivity::class.java)
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.notice
+package com.ufms.mediadorpedagogico.news
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
@@ -8,8 +8,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.runner.AndroidJUnit4
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.utils.TEST_NOTICE_PER_REQUEST
-import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewHolder
+import com.ufms.mediadorpedagogico.presentation.news.NewsListViewHolder
+import com.ufms.mediadorpedagogico.utils.TEST_NEWS_PER_REQUEST
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,26 +21,28 @@ import org.junit.runner.RunWith
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-open class _1_CheckItemAbove10 : NoticeInstrumental() {
+open class _1_CheckItemAbove10 : NewsInstrumental() {
 
     @Test
     fun listHasMoreThan10Items() {
         Thread.sleep(3000)
-        val noticeList = getNoticeList()
-        if (noticeList.size > TEST_NOTICE_PER_REQUEST - 1) {
-            onView(withId(R.id.recycler_view_notice)).perform(
-                RecyclerViewActions.scrollToPosition<NoticeListViewHolder>(TEST_NOTICE_PER_REQUEST - 1)
+        val homeworkList = getNewsList()
+        if (homeworkList.size > TEST_NEWS_PER_REQUEST - 1) {
+            onView(withId(R.id.recycler_view_homework)).perform(
+                RecyclerViewActions.scrollToPosition<NewsListViewHolder>(
+                    TEST_NEWS_PER_REQUEST - 1
+                )
             )
             Thread.sleep(3000)
         }
-        val newNoticeList = getNoticeList()
-        if (newNoticeList.size > TEST_NOTICE_PER_REQUEST) {
-            val newItem = newNoticeList[TEST_NOTICE_PER_REQUEST]
-            onView(withId(R.id.recycler_view_notice))
+        val newNewsList = getNewsList()
+        if (newNewsList.size > TEST_NEWS_PER_REQUEST) {
+            val newItem = newNewsList[TEST_NEWS_PER_REQUEST]
+            onView(withId(R.id.recycler_view_homework))
                 .perform(
                     RecyclerViewActions
-                        .actionOnItemAtPosition<NoticeListViewHolder>(
-                            TEST_NOTICE_PER_REQUEST,
+                        .actionOnItemAtPosition<NewsListViewHolder>(
+                            TEST_NEWS_PER_REQUEST,
                             click()
                         )
                 )
