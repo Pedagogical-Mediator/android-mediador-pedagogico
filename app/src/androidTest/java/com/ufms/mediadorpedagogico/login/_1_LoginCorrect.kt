@@ -29,17 +29,17 @@ open class _1_LoginCorrect : LoginInstrumental() {
             .perform(
                 typeText("Meu nome")
             )
-        closeSoftKeyboard()
-        sleep(500)
-        onView(withId(R.id.text_input_class_code))
-            .perform(
-                typeText("Abacaxi")
-            )
-        closeSoftKeyboard()
-
-        onView(withId(R.id.submit_button))
-            .perform(click())
-        sleep(5000)
-        onView(withId(R.id.card_view_notice)).check(matches(isDisplayed()))
+//        closeSoftKeyboard()
+//        sleep(500)
+//        onView(withId(R.id.text_input_class_code))
+//            .perform(
+//                typeText("Abacaxi")
+//            )
+//        closeSoftKeyboard()
+//
+//        onView(withId(R.id.submit_button))
+//            .perform(click())
+//        sleep(5000)
+//        onView(withId(R.id.card_view_notice)).check(matches(isDisplayed()))
     }
 }
