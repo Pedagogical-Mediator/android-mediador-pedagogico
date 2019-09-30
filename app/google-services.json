@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "709391330161",
+    "firebase_url": "https://mediador-pedagogico.firebaseio.com",
+    "project_id": "mediador-pedagogico",
+    "storage_bucket": "mediador-pedagogico.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709391330161:android:48fe545717d50efc9424d0",
+        "android_client_info": {
+          "package_name": "com.ufms.mediadorpedagogico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709391330161-97uhv2p3625s90f29hr1h9cegvvgai5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt_FZzchXBWS3_seVnmwSpx7XlSlqMdR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709391330161-97uhv2p3625s90f29hr1h9cegvvgai5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

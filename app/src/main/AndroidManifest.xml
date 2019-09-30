@@ -9,7 +9,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
+
+
     <application
+
             android:name=".presentation.AppTemplateSlimApplication"
             android:allowBackup="true"
             android:fullBackupContent="false"
@@ -20,6 +23,15 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
+
+        <service
+                android:name=".data.firebase.FirebaseMessagingServiceHandler"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity android:name=".presentation.homework.details.HomeworkDetailsActivity" />
         <activity
                 android:name=".presentation.landing.SplashActivity"
@@ -53,6 +65,10 @@
         <meta-data
                 android:name="preloaded_fonts"
                 android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="TODO botar uma String aqui" />
     </application>
 
 </manifest>
