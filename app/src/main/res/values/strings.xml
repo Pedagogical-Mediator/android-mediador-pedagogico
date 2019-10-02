@@ -94,5 +94,6 @@
     <string name="activity_main_notice">Avisos</string>
     <string name="activity_main_homework">Sala de Aula Invertida</string>
     <string name="activity_main_news">Notícias</string>
+    <string name="activity_main_bullying">Denúncia de Bullying</string>
     <string name="activity_main_error_image_decode">Imagem não pode ser carregada</string>
 </resources>

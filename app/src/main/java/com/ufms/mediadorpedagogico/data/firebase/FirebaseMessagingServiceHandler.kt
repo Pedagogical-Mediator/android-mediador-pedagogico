@@ -1,13 +1,25 @@
 package com.ufms.mediadorpedagogico.data.firebase
 
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.ufms.mediadorpedagogico.R
+import com.ufms.mediadorpedagogico.presentation.main.MainActivity
+import android.app.NotificationChannel
+
 
 class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
 
     override fun onNewToken(p0: String) {
-        FirebaseMessaging.getInstance().subscribeToTopic("Fruta")
+        with(FirebaseMessaging.getInstance()) {
+            subscribeToTopic(KEY_TOPIC_NOTICES)
+            subscribeToTopic(KEY_TOPIC_NEWS)
+        }
     }
 
     /**
@@ -16,18 +28,7 @@ class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         remoteMessage.data.isNotEmpty().let {
             if (it) {
-
-//            val bundle = Bundle()
-//            val data = remoteMessage.data
-//
-//            for (entry in data.entries)
-//                bundle.putString(entry.key, entry.value)
-//
-//            val dataNoticeReceived = thereIsDataFromNotification(bundle)
-//
-//            if (dataNoticeReceived != null) {
-//                createNotification(dataNoticeReceived)
-//            }
+                createNotification(remoteMessage.data["titulo"], remoteMessage.data["descricao"])
             }
         }
     }
@@ -38,27 +39,30 @@ class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
      *
      * @param dataNoticeReceived a notícia que será carregada para exibir todas as suas informações
      * */
-    private fun createNotification(dataNoticeReceived: Any) {
+    private fun createNotification(title: String?, description: String?) {
+        val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        //Dispara o refresh da lista de notícias, caso esteja na tela de listagem
-//        val refreshMessage = Intent(NewNoticeReceiver.REFRESH_ACTION)
-//        refreshMessage.putExtra("tags_notification", dataNoticeReceived)
-//        val wasOnListOfNoticesFragment = LocalBroadcastManager.getInstance(this).sendBroadcast(refreshMessage)
-//
-//
-//        //Se não estava nas telas de listar notícias E notícia contém tag de interesse -> cria a notificação
-//        if (!wasOnListOfNoticesFragment && noticeContainingSelectedTags(dataNoticeReceived.tag)) {
-//            val intent = Intent(this, PostViewAllDetailsActivity::class.java)
-//            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-//            intent.putExtra("selected_notice", dataNoticeReceived)
-//
-//            val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
-//
-//            val notificationBuilder: NotificationCompat.Builder = NotificationCompat.Builder(this, "notif_fire")
-//            notificationBuilder.setContentTitle("Nova notícia - ${dataNoticeReceived.title}").setContentText(dataNoticeReceived.resume).setAutoCancel(true).setSmallIcon(R.mipmap.ic_launcher).setContentIntent(pendingIntent).build()
-//            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-//            notificationManager.notify(0, notificationBuilder.build())
-//        }
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            val importance = NotificationManager.IMPORTANCE_LOW
+            val notificationChannel = NotificationChannel(
+                "notif_fire",
+                "notif_fire",
+                importance
+            )
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
+
+        val notificationBuilder: NotificationCompat.Builder = NotificationCompat.Builder(this, "notif_fire")
+        notificationBuilder
+            .setContentTitle("Novidades chegando - $title")
+            .setContentText("Descricao - $description")
+            .setAutoCancel(true)
+            .setSmallIcon(R.mipmap.ic_launcher).setContentIntent(pendingIntent)
+        notificationManager.notify(0, notificationBuilder.build())
     }
 
     companion object {
@@ -85,5 +89,7 @@ class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
 //                null
 //            }
 //        }
+        const val KEY_TOPIC_NEWS = "Noticias"
+        const val KEY_TOPIC_NOTICES = "Avisos"
     }
 }

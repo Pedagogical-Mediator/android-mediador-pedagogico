@@ -64,6 +64,7 @@
         <activity android:name=".presentation.notice.details.NoticeDetailsActivity" />
         <activity android:name=".presentation.notice.list.NoticeListActivity" />
         <activity android:name=".presentation.news.NewsListActivity" />
+        <activity android:name=".presentation.bullying.BullyingActivity" />
 
         <meta-data
                 android:name="preloaded_fonts"

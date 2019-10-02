@@ -2,11 +2,14 @@ package com.ufms.mediadorpedagogico.presentation.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.FirebaseApp
+import com.google.firebase.messaging.FirebaseMessaging
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.interactor.user.LoginForm
 import com.ufms.mediadorpedagogico.domain.interactor.user.SignIn
+import com.ufms.mediadorpedagogico.domain.util.subscribeToTopic
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
@@ -48,6 +51,7 @@ class LoginViewModel(
                 showClassKeyFieldErrorLiveData.value = false
                 showNameFieldErrorLiveData.value = false
                 goToMainLiveData.value = true
+                subscribeToTopic(classKey)
             }
             .let(disposables::add)
     }
