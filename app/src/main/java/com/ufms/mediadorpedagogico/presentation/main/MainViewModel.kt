@@ -4,6 +4,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
+import com.ufms.mediadorpedagogico.domain.interactor.bullying.GetBullying
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.presentation.bullying.BullyingNavData
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListNavData
