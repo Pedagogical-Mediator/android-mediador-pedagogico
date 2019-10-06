@@ -42,19 +42,19 @@ class MainActivity : BaseActivity() {
             true,
             getString(R.string.activity_homework_label)
         )
-        val navController = findNavController(R.id.main_navigation_fragment)
+//        val navController = findNavController(R.id.main_navigation_fragment)
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupNavigation(navController) //setup navigation
         setupActionBar(navController, appBarConfiguration) // setup action bar
         //hear for event changes
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            val dest: String = try {
-                resources.getResourceName(destination.id)
-            } catch (e: Resources.NotFoundException) {
-                destination.id.toString()
-            }
-        }
+//        navController.addOnDestinationChangedListener { _, destination, _ ->
+//            val dest: String = try {
+//                resources.getResourceName(destination.id)
+//            } catch (e: Resources.NotFoundException) {
+//                destination.id.toString()
+//            }
+//        }
     }
 
     private fun setupActionBar(
@@ -76,16 +76,16 @@ class MainActivity : BaseActivity() {
 //            drawerLayout
 //        )
     }
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val retValue = super.onCreateOptionsMenu(menu)
-        val navigationView = findViewById<NavigationView>(R.id.nav_view)
-        if (navigationView == null) {
-            //android needs to know what menu I need
-            menuInflater.inflate(R.menu.navigation_menu, menu)
-            return true
-        }
-        return retValue
-    }
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        val retValue = super.onCreateOptionsMenu(menu)
+//        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+//        if (navigationView == null) {
+//            //android needs to know what menu I need
+//            menuInflater.inflate(R.menu.navigation_menu, menu)
+//            return true
+//        }
+//        return retValue
+//    }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         //I need to open the drawer onClick
         when (item!!.itemId) {
