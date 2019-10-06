@@ -70,6 +70,8 @@ class NoticeDetailsActivity : BaseActivity() {
         noticeDetails?.run {
             binding.noticeDetails = this
             noticeDetailsAdapter.setItems(links)
+            binding.webviewContent.loadDataWithBaseURL(""
+                , description, "text/html", "UTF-8", "")
             imageBase64?.let {
                 try {
                     val decodedString = Base64.decode(it, Base64.DEFAULT)

@@ -42,7 +42,7 @@ class BullyingActivity : BaseActivity() {
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
-//        placeholder?.let { binding.loadingPlaceholder.placeholder = it }
+        placeholder?.let { binding.loadingPlaceholder.placeholder = it }
     }
 
     companion object {
