@@ -84,6 +84,7 @@
 
     <string name="activity_homework_label">Sala de aula invertida</string>
     <string name="activity_notice_label">Avisos</string>
+    <string name="activity_settings_label">Configurações</string>
     <string name="activity_news_label">Notícias</string>
     <string name="summarize_three_dots_template">%s ...</string>
 
@@ -95,5 +96,6 @@
     <string name="activity_main_homework">Sala de Aula Invertida</string>
     <string name="activity_main_news">Notícias</string>
     <string name="activity_main_bullying">Denúncia de Bullying</string>
+    <string name="activity_main_settings">Configurações</string>
     <string name="activity_main_error_image_decode">Imagem não pode ser carregada</string>
 </resources>
