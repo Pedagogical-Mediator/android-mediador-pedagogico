@@ -98,4 +98,6 @@
     <string name="activity_main_bullying">Denúncia de Bullying</string>
     <string name="activity_main_settings">Configurações</string>
     <string name="activity_main_error_image_decode">Imagem não pode ser carregada</string>
+    <string name="menu_principal">Principal</string>
+    <string name="menu_notices">Menu Lista de notícias</string>
 </resources>

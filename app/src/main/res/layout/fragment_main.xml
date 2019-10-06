@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="@dimen/normal"
-                    tools:context=".presentation.main.MainActivity">
+                    tools:context=".presentation.main.dashboard.DashboardActivity">
 
                 <LinearLayout
                         android:id="@+id/card_view_notice"

@@ -9,7 +9,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.presentation.main.MainActivity
+import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
 import android.app.NotificationChannel
 
 
@@ -52,7 +52,7 @@ class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
             notificationManager.createNotificationChannel(notificationChannel)
         }
 
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, DashboardActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 

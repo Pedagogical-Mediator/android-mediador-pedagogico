@@ -10,12 +10,13 @@
             android:name="com.ufms.mediadorpedagogico.presentation.main.MainFragment"
             android:label="MainFragment"
             tools:layout="@layout/fragment_main">
-<!--        <action-->
-<!--                android:id="@+id/action_menu_item_diet_to_addFoodBottomSheetDialog"-->
-<!--                app:destination="@id/addFoodBottomSheetDialog"-->
-<!--                app:enterAnim="@anim/slide_up"-->
-<!--                app:exitAnim="@anim/slide_down"-->
-<!--                app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--                app:popExitAnim="@anim/slide_down" />-->
+        <action
+                android:id="@+id/action_main_fragment_to_noticeListFragment"
+                app:destination="@id/notice_list_fragment" />
     </fragment>
+    <fragment
+            android:id="@+id/notice_list_fragment"
+            android:name="com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListFragment"
+            android:label="NoticeListFragment"
+            tools:layout="@layout/fragment_notice_list"/>
 </navigation>

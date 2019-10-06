@@ -2,7 +2,7 @@ package com.ufms.mediadorpedagogico.presentation.util.structure.navigation
 
 import android.content.Context
 import com.ufms.mediadorpedagogico.presentation.login.LoginActivity
-import com.ufms.mediadorpedagogico.presentation.main.MainActivity
+import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shouldClearTask
 
 object Navigator {
@@ -15,7 +15,7 @@ object Navigator {
     }
 
     fun goToMain(context: Context, clearTask: Boolean = false) {
-        context.startActivity(MainActivity.createIntent(context).apply { shouldClearTask(clearTask) })
+        context.startActivity(DashboardActivity.createIntent(context).apply { shouldClearTask(clearTask) })
     }
 
     fun goToLogin(context: Context, clearTask: Boolean = false) {
