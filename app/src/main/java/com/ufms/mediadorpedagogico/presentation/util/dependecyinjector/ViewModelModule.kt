@@ -2,6 +2,7 @@ package com.ufms.mediadorpedagogico.presentation.util.dependecyinjector
 
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
+import com.ufms.mediadorpedagogico.presentation.bullying.BullyingViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
@@ -24,4 +25,5 @@ val viewModelModule = module {
     viewModel { NoticeListViewModel(get(), get()) }
     viewModel { (notice: Notice) -> NoticeDetailsViewModel(notice) }
     viewModel { NewsListViewModel(get(), get()) }
+    viewModel { BullyingViewModel(get(), get()) }
 }

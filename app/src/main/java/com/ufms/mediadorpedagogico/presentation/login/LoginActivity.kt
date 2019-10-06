@@ -43,8 +43,16 @@ class LoginActivity : BaseActivity() {
             textInputClassCode.observeChanges(viewModel::onClassKeyChanged)
             textInputName.observeChanges(viewModel::onNameChanged)
             submitButton.setOnClickListener(viewModel::onSubmitClicked)
+            webviewContent.loadDataWithBaseURL(""
+                , "<p>Paragrafo</p>", "text/html", "UTF-8", "")
         }
     }
+
+    /**
+     * TODO Botão de logout
+     * TODO habilitação de notificações
+     *
+     */
 
     private fun onNextGoToMain(shouldGo: Boolean?) {
         shouldGo?.let { Navigator.goToMain(this, true) }

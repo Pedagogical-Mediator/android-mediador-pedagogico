@@ -1,29 +1,26 @@
-package com.ufms.mediadorpedagogico.presentation.main
+package com.ufms.mediadorpedagogico.presentation.bullying
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityMainBinding
+import com.ufms.mediadorpedagogico.databinding.ActivityBullyingBinding
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class MainActivity : BaseActivity() {
+class BullyingActivity : BaseActivity() {
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var binding: ActivityMainBinding
-    private val viewModel: MainViewModel by inject()
+    private lateinit var binding: ActivityBullyingBinding
+    private val viewModel: BullyingViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_bullying)
         lifecycle.addObserver(viewModel)
         setupUi()
         super.onCreate(savedInstanceState)
@@ -32,23 +29,16 @@ class MainActivity : BaseActivity() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@MainActivity, ::onNextPlaceholder)
-            noContentReturned.observeEvent(this@MainActivity, ::onNoContentReturned)
+            placeholder.observe(this@BullyingActivity, ::onNextPlaceholder)
         }
     }
 
     private fun setupUi() {
-        with(binding) {
-            cardViewHomework.setOnClickListener(viewModel::goToHomework)
-            cardViewNotice.setOnClickListener(viewModel::goToNotice)
-            cardViewNews.setOnClickListener(viewModel::goToNews)
-        }
+
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {
-        noContentReturned?.let {
-            binding.includedPlaceholderNoResults.root.setVisible(true)
-        }
+
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
@@ -57,7 +47,7 @@ class MainActivity : BaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            return Intent(context, MainActivity::class.java)
+            return Intent(context, BullyingActivity::class.java)
         }
     }
 }

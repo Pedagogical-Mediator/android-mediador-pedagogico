@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/main_fragment"
+            android:icon="@drawable/selector_button_accent"
+            android:title="@string/menu_principal"/>
+
+    <item android:id="@+id/notice_list_fragment"
+            android:icon="@drawable/selector_button_accent"
+            android:title="@string/menu_notices"/>
+</menu>

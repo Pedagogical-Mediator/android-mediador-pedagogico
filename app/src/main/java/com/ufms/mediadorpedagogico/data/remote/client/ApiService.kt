@@ -1,5 +1,6 @@
 package com.ufms.mediadorpedagogico.data.remote.client
 
+import com.ufms.mediadorpedagogico.data.remote.entity.ApiBullying
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
@@ -39,4 +40,12 @@ interface ApiService {
 
     @GET("noticias")
     fun getListOfNews(@Query("page") pageNumber: Int): Single<Response<ApiNewsContent>>
+
+
+    /**
+     * Bullying
+     * */
+
+    @GET("bullying")
+    fun getBullyingInformation(): Single<Response<ApiBullying>>
 }

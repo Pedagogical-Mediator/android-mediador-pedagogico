@@ -17,7 +17,6 @@ val applicationModule = module {
     factory<StringsProvider> { AndroidStringProvider(get()) }
     factory { SchedulerProvider() }
     factory { LoginAction(get(), get()) }
-    //single(named(NAME_HERE)) {MyObject()}
     factory { AndroidLogger(get()) } bind Logger::class
     factory { PreferencesCache.init(get()) } bind Cache::class
     factory { ErrorHandler(get(), get(), get()) }

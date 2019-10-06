@@ -5,50 +5,51 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
-import androidx.databinding.DataBindingUtil
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityNoticeDetailsBinding
+import com.ufms.mediadorpedagogico.databinding.FragmentNoticeDetailsBinding
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
 import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.DividerItemDecorator
 import com.ufms.mediadorpedagogico.presentation.util.extensions.drawableCompat
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedToolbar
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class NoticeDetailsActivity : BaseActivity() {
+class NoticeDetailsFragment : BaseFragment() {
+    override val toolbarTitle: String
+        get() = getString(R.string.activity_notice_label)
+
+    val args: NoticeDetailsFragmentArgs by navArgs()
 
     override val baseViewModel: BaseViewModel get() = viewModel
-
-    private lateinit var binding: ActivityNoticeDetailsBinding
-    private val viewModel: NoticeDetailsViewModel by viewModel { parametersOf(noticeDetails) }
+    private lateinit var binding: FragmentNoticeDetailsBinding
+    private val viewModel: NoticeDetailsViewModel by viewModel { parametersOf(args.notice) }
     lateinit var noticeDetailsAdapter: NoticeDetailsAdapter
 
-    private val noticeDetails by lazy {
-        (intent.extras?.getSerializable(NOTICE_KEY) as? Notice)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_notice_details)
-        setupCustomizedToolbar(
-            binding.toolbarCustomized,
-            true,
-            getString(R.string.activity_notice_label)
-        )
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentNoticeDetailsBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
-        super.onCreate(savedInstanceState)
+        return binding.root
     }
 
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            noticeContent.observeEvent(this@NoticeDetailsActivity, ::onNoticeDetailsReceived)
+            noticeContent.observeEvent(this@NoticeDetailsFragment, ::onNoticeDetailsReceived)
         }
     }
 
@@ -58,9 +59,9 @@ class NoticeDetailsActivity : BaseActivity() {
 
     private fun setupRecycler() {
         with(binding.recyclerViewLink) {
-            layoutManager = LinearLayoutManager(this@NoticeDetailsActivity)
+            layoutManager = LinearLayoutManager(this@NoticeDetailsFragment.context)
             adapter = noticeDetailsAdapter
-            drawableCompat(R.drawable.recycler_view_divider)?.run {
+            context.drawableCompat(R.drawable.recycler_view_divider)?.run {
                 addItemDecoration(DividerItemDecorator(this))
             }
         }
@@ -70,6 +71,10 @@ class NoticeDetailsActivity : BaseActivity() {
         noticeDetails?.run {
             binding.noticeDetails = this
             noticeDetailsAdapter.setItems(links)
+            binding.webviewContent.loadDataWithBaseURL(
+                ""
+                , description, "text/html", "UTF-8", ""
+            )
             imageBase64?.let {
                 try {
                     val decodedString = Base64.decode(it, Base64.DEFAULT)
@@ -77,7 +82,7 @@ class NoticeDetailsActivity : BaseActivity() {
                         BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                     binding.imageViewResource.setImageBitmap(decodedByte)
                 } catch (e: Exception) {
-                    shortToast(getString(R.string.activity_main_error_image_decode))
+                    context?.shortToast(getString(R.string.activity_main_error_image_decode))
                 }
             }
         }
@@ -87,7 +92,7 @@ class NoticeDetailsActivity : BaseActivity() {
         const val NOTICE_KEY = "NOTICE"
 
         fun createIntent(context: Context, notice: Notice): Intent {
-            return Intent(context, NoticeDetailsActivity::class.java).putExtra(NOTICE_KEY, notice)
+            return Intent(context, NoticeDetailsFragment::class.java).putExtra(NOTICE_KEY, notice)
         }
     }
 }

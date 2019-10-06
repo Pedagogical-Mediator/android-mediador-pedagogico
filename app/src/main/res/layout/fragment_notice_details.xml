@@ -20,17 +20,9 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-        <include
-                android:id="@+id/toolbar_customized"
-                layout="@layout/toolbar_customized" />
-
-        <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/semi_tiny"
                     android:layout_marginTop="@dimen/tiny"
                     android:layout_marginEnd="@dimen/semi_tiny"
@@ -38,7 +30,7 @@
                     android:background="@drawable/card_view"
                     android:orientation="vertical"
                     android:padding="@dimen/normal"
-                    tools:context="com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsActivity">
+                    tools:context="com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsFragment">
 
                 <TextView
                         android:id="@+id/text_view_title"
@@ -54,6 +46,11 @@
                         android:layout_height="@dimen/line"
                         android:layout_marginTop="@dimen/tiny"
                         android:background="@color/black" />
+
+                <WebView
+                        android:id="@+id/webview_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 <TextView
                         android:id="@+id/text_view_description"
@@ -81,7 +78,6 @@
                             android:layout_height="match_parent" />
                 </androidx.core.widget.NestedScrollView>
             </LinearLayout>
-        </ScrollView>
     </LinearLayout>
 </layout>
 

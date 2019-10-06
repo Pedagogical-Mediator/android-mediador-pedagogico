@@ -1,13 +1,7 @@
 package com.ufms.mediadorpedagogico.presentation.util.dependecyinjector
 
-import com.ufms.mediadorpedagogico.data.remote.repository.DefaultHomeworkRepository
-import com.ufms.mediadorpedagogico.data.remote.repository.DefaultNewsRepository
-import com.ufms.mediadorpedagogico.data.remote.repository.DefaultNoticeRepository
-import com.ufms.mediadorpedagogico.data.remote.repository.DefaultUserRepository
-import com.ufms.mediadorpedagogico.domain.boundary.HomeworkRepository
-import com.ufms.mediadorpedagogico.domain.boundary.NewsRepository
-import com.ufms.mediadorpedagogico.domain.boundary.NoticeRepository
-import com.ufms.mediadorpedagogico.domain.boundary.UserRepository
+import com.ufms.mediadorpedagogico.data.remote.repository.*
+import com.ufms.mediadorpedagogico.domain.boundary.*
 import org.koin.dsl.module
 
 val repositoryModule = module {
@@ -15,4 +9,5 @@ val repositoryModule = module {
     factory<HomeworkRepository> { DefaultHomeworkRepository(get()) }
     factory<NoticeRepository> { DefaultNoticeRepository(get()) }
     factory<NewsRepository> { DefaultNewsRepository(get()) }
+    factory<BullyingRepository> { DefaultBullyingRepository(get()) }
 }

@@ -57,9 +57,6 @@ class AndroidLogger constructor(context: Context) : Logger {
     override fun e(tr: Throwable) {
         if (BuildConfig.DEBUG) {
             Log.e(tag, tr.message, tr)
-        } else {
-//             TODO ADD CRASHLYTICS
-//            Crashlytics.log(tr.message)
         }
     }
 }

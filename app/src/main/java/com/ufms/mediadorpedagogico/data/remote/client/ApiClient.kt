@@ -3,6 +3,7 @@ package com.ufms.mediadorpedagogico.data.remote.client
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.ufms.mediadorpedagogico.BuildConfig
+import com.ufms.mediadorpedagogico.data.remote.entity.ApiBullying
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
@@ -46,6 +47,10 @@ object ApiClient {
 
     fun getListOfNews(pageNumber: Int): Single<ApiNewsContent> {
         return makeRequest(apiServices.getListOfNews(pageNumber))
+    }
+
+    fun getBullyingInformation(): Single<ApiBullying> {
+        return makeRequest(apiServices.getBullyingInformation())
     }
 
     /**
