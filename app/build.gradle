@@ -12,9 +12,14 @@ repositories {
 
 android {
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     dataBinding {
         enabled = true
     }
@@ -138,6 +143,8 @@ dependencies {
     //Stetho
     implementation "com.facebook.stetho:stetho:$stethoVersion"
     implementation 'com.dicedmelon.gradle:jacoco-android:0.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
 }
 
 sonarqube {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/dashboard_navigation"
+        app:startDestination="@id/main_fragment">
+
+    <fragment
+            android:id="@+id/main_fragment"
+            android:name="com.ufms.mediadorpedagogico.presentation.main.MainFragment"
+            android:label="MainFragment"
+            tools:layout="@layout/fragment_main">
+<!--        <action-->
+<!--                android:id="@+id/action_menu_item_diet_to_addFoodBottomSheetDialog"-->
+<!--                app:destination="@id/addFoodBottomSheetDialog"-->
+<!--                app:enterAnim="@anim/slide_up"-->
+<!--                app:exitAnim="@anim/slide_down"-->
+<!--                app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
+<!--                app:popExitAnim="@anim/slide_down" />-->
+    </fragment>
+</navigation>
