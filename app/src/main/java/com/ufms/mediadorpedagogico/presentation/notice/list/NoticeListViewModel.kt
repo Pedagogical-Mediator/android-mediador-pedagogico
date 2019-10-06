@@ -9,7 +9,6 @@ import com.ufms.mediadorpedagogico.domain.entity.notice.NoticeContent
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.notice.GetNotice
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
-import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsNavData
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
@@ -42,10 +41,6 @@ class NoticeListViewModel(
             .defaultPlaceholders(this::setPlaceholder)
             .defaultSched(schedulerProvider)
             .subscribeBy(this::onFailure, this::onSuccess)
-    }
-
-    fun setupOnItemClicked(notice: Notice) {
-        goTo(NoticeDetailsNavData(notice))
     }
 
     private fun onFailure(throwable: Throwable) {

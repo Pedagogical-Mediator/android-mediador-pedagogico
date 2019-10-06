@@ -11,6 +11,7 @@ import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
@@ -68,11 +69,5 @@ class MainFragment : BaseFragment() {
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
         placeholder?.let { binding.loadingPlaceholder.placeholder = it }
-    }
-
-    companion object {
-        fun createIntent(context: Context): Intent {
-            return Intent(context, MainFragment::class.java)
-        }
     }
 }

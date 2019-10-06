@@ -18,5 +18,19 @@
             android:id="@+id/notice_list_fragment"
             android:name="com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListFragment"
             android:label="NoticeListFragment"
-            tools:layout="@layout/fragment_notice_list"/>
+            tools:layout="@layout/fragment_notice_list">
+        <action
+                android:id="@+id/action_notice_list_fragment_to_noticeDetailsFragment"
+                app:destination="@id/noticeDetailsFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/noticeDetailsFragment"
+            android:name="com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsFragment"
+            android:label="NoticeDetailsFragment" >
+        <argument
+                android:name="notice"
+                app:argType="com.ufms.mediadorpedagogico.domain.entity.notice.Notice"
+                app:nullable="true"
+                android:defaultValue="@null" />
+    </fragment>
 </navigation>

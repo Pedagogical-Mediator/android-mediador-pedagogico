@@ -30,6 +30,7 @@ abstract class BaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         setupToolbar()
+        subscribeUi()
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 

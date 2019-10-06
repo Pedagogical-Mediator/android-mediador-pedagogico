@@ -3,9 +3,7 @@ package com.ufms.mediadorpedagogico.notice
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import androidx.test.runner.AndroidJUnitRunner
-import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListActivity
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListAdapter
-import com.ufms.mediadorpedagogico.presentation.util.extensions.hideSoftKeyboard
 import org.junit.Ignore
 import org.junit.Rule
 import org.junit.runner.RunWith

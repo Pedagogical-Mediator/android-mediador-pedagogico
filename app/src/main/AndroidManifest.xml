@@ -61,7 +61,7 @@
                 android:label="@string/activity_homework_label"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppThemeSecondary" />
-        <activity android:name=".presentation.notice.details.NoticeDetailsActivity" />
+        <activity android:name=".presentation.notice.details.NoticeDetailsFragment" />
         <activity android:name=".presentation.notice.list.NoticeListActivity" />
         <activity android:name=".presentation.news.NewsListActivity" />
         <activity android:name=".presentation.bullying.BullyingActivity" />

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
@@ -18,6 +19,7 @@ import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
@@ -32,6 +34,7 @@ class NoticeListFragment : BaseFragment() {
     private var isLoadingMoreNotice = false
     lateinit var binding: FragmentNoticeListBinding
     private val viewModel: NoticeListViewModel by inject()
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +46,6 @@ class NoticeListFragment : BaseFragment() {
         lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
-        subscribeUi()
         return binding.root
     }
 
@@ -57,7 +59,7 @@ class NoticeListFragment : BaseFragment() {
     }
 
     private fun setupAdapter() {
-        noticeListAdapter = NoticeListAdapter(viewModel::setupOnItemClicked)
+        noticeListAdapter = NoticeListAdapter(::setupOnItemClicked)
     }
 
     private fun setupRecycler() {
@@ -101,13 +103,11 @@ class NoticeListFragment : BaseFragment() {
         }
     }
 
-    private fun onNextPlaceholder(placeholder: Placeholder?) {
-        placeholder?.let { binding.placeholder = it }
+    private fun setupOnItemClicked(notice: Notice) {
+        navController.navigateSafe(NoticeListFragmentDirections.actionNoticeListFragmentToNoticeDetailsFragment().setNotice(notice))
     }
 
-    companion object {
-        fun createIntent(context: Context): Intent {
-            return Intent(context, NoticeListActivity::class.java)
-        }
+    private fun onNextPlaceholder(placeholder: Placeholder?) {
+        placeholder?.let { binding.placeholder = it }
     }
 }
