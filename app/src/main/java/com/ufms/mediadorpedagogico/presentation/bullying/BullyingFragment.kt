@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentBullyingBinding
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
@@ -15,7 +16,7 @@ import org.koin.android.ext.android.inject
 
 class BullyingFragment : BaseFragment() {
     override val toolbarTitle: String
-        get() = "Bullying"
+        get() = getString(R.string.bullying_fragment_label)
 
     override val baseViewModel: BaseViewModel get() = viewModel
 

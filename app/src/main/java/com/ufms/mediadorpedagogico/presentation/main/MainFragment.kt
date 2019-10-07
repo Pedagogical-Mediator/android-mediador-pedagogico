@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
+import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListFragmentDirections
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
@@ -48,15 +49,23 @@ class MainFragment : BaseFragment() {
 
     private fun setupUi() {
         with(binding) {
-            cardViewHomework.setOnClickListener(viewModel::goToHomework)
+            cardViewHomework.setOnClickListener(::goToHomework)
             cardViewNotice.setOnClickListener(::goToNotice)
-            cardViewNews.setOnClickListener(viewModel::goToNews)
-            cardViewBullying.setOnClickListener(viewModel::goToBullying)
+            cardViewNews.setOnClickListener(::goToNews)
+//            cardViewBullying.setOnClickListener(viewModel::goToBullying)
         }
     }
 
     private fun goToNotice() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToNoticeListFragment())
+    }
+
+    private fun goToNews() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToNewsListFragment())
+    }
+
+    private fun goToHomework() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHomeworkListFragment())
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {

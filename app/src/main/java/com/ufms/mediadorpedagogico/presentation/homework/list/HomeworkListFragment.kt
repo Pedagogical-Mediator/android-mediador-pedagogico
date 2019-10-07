@@ -111,10 +111,4 @@ class HomeworkListFragment : BaseFragment() {
     private fun onNextPlaceholder(placeholder: Placeholder?) {
         placeholder?.let { binding.placeholder = it }
     }
-
-    companion object {
-        fun createIntent(context: Context): Intent {
-            return Intent(context, HomeworkListFragment::class.java)
-        }
-    }
 }

@@ -99,5 +99,7 @@
     <string name="activity_main_settings">Configurações</string>
     <string name="activity_main_error_image_decode">Imagem não pode ser carregada</string>
     <string name="menu_principal">Principal</string>
-    <string name="menu_notices">Menu Lista de notícias</string>
+    <string name="menu_notices">Notícias</string>
+    <string name="menu_homework">Sala de aula invertida</string>
+    <string name="bullying_fragment_label">Bullying</string>
 </resources>

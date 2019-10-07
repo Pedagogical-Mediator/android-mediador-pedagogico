@@ -3,7 +3,7 @@ package com.ufms.mediadorpedagogico.news
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import androidx.test.runner.AndroidJUnitRunner
-import com.ufms.mediadorpedagogico.presentation.news.NewsListActivity
+import com.ufms.mediadorpedagogico.presentation.news.NewsListFragment
 import com.ufms.mediadorpedagogico.presentation.news.NewsListAdapter
 import com.ufms.mediadorpedagogico.presentation.util.extensions.hideSoftKeyboard
 import org.junit.Ignore
@@ -21,8 +21,8 @@ import org.junit.runner.RunWith
 open class NewsInstrumental : AndroidJUnitRunner() {
 
     @get:Rule
-    var activityRule: ActivityTestRule<NewsListActivity> =
-        object : ActivityTestRule<NewsListActivity>(NewsListActivity::class.java) {
+    var activityRule: ActivityTestRule<NewsListFragment> =
+        object : ActivityTestRule<NewsListFragment>(NewsListFragment::class.java) {
 
             override fun afterActivityLaunched() {
                 super.afterActivityLaunched()

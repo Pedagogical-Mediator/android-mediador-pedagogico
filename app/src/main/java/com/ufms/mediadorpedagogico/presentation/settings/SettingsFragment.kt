@@ -32,10 +32,4 @@ class SettingsFragment : BaseFragment() {
         lifecycle.addObserver(viewModel)
         return binding.root
     }
-
-    companion object {
-        fun createIntent(context: Context, notice: Notice): Intent {
-            return Intent(context, SettingsFragment::class.java)
-        }
-    }
 }

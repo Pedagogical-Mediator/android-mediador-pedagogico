@@ -1,53 +1,55 @@
 package com.ufms.mediadorpedagogico.presentation.news
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityNewsListBinding
+import com.ufms.mediadorpedagogico.databinding.FragmentNewsListBinding
 import com.ufms.mediadorpedagogico.domain.entity.news.News
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedToolbar
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class NewsListActivity : BaseActivity() {
+class NewsListFragment : BaseFragment() {
+    override val toolbarTitle: String
+        get() = getString(R.string.activity_news_label)
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
     lateinit var newsListAdapter: NewsListAdapter
     private var moreNewsToBeLoaded = true
     private var isLoadingMoreNews = false
-    lateinit var binding: ActivityNewsListBinding
+    lateinit var binding: FragmentNewsListBinding
     private val viewModel: NewsListViewModel by inject()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_news_list)
-        setupCustomizedToolbar(
-            binding.toolbarCustomized,
-            true,
-            getString(R.string.activity_news_label)
-        )
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentNewsListBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
-        super.onCreate(savedInstanceState)
+        return binding.root
     }
 
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@NewsListActivity, ::onNextPlaceholder)
-            newsContent.observeEvent(this@NewsListActivity, ::onNewsContentLoaded)
-            noContentReturned.observeEvent(this@NewsListActivity, ::onNoContentReturned)
+            placeholder.observe(this@NewsListFragment, ::onNextPlaceholder)
+            newsContent.observeEvent(this@NewsListFragment, ::onNewsContentLoaded)
+            noContentReturned.observeEvent(this@NewsListFragment, ::onNoContentReturned)
         }
     }
 
@@ -64,7 +66,7 @@ class NewsListActivity : BaseActivity() {
 
     private fun setupRecycler() {
         with(binding.recyclerViewNews) {
-            layoutManager = LinearLayoutManager(this@NewsListActivity)
+            layoutManager = LinearLayoutManager(context)
             adapter = newsListAdapter
             addOnScrollListener(setLoadMoreNewsOnScroll())
         }
@@ -105,11 +107,5 @@ class NewsListActivity : BaseActivity() {
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
         placeholder?.let { binding.placeholder = it }
-    }
-
-    companion object {
-        fun createIntent(context: Context): Intent {
-            return Intent(context, NewsListActivity::class.java)
-        }
     }
 }
