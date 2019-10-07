@@ -18,7 +18,7 @@
                 app:destination="@id/homework_list_fragment" />
         <action
                 android:id="@+id/action_main_fragment_to_newsListFragment"
-                app:destination="@id/newsListFragment" />
+                app:destination="@id/news_list_fragment" />
     </fragment>
     <fragment
             android:id="@+id/notice_list_fragment"
@@ -60,7 +60,7 @@
                 android:defaultValue="@null" />
     </fragment>
     <fragment
-            android:id="@+id/newsListFragment"
+            android:id="@+id/news_list_fragment"
             android:name="com.ufms.mediadorpedagogico.presentation.news.NewsListFragment"
             android:label="NewsListFragment"
             tools:layout="@layout/fragment_news_list"/>
