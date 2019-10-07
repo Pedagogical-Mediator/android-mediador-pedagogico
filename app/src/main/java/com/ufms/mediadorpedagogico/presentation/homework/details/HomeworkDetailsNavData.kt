@@ -9,6 +9,6 @@ class HomeworkDetailsNavData(
     val homework: Homework
 ) : NavData {
     override fun createIntent(context: Context): Intent {
-        return HomeworkDetailsActivity.createIntent(context, homework)
+        return HomeworkDetailsFragment.createIntent(context, homework)
     }
 }

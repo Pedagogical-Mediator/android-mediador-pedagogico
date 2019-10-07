@@ -108,8 +108,13 @@ class ErrorHandler constructor(
         val data = getPlaceholder(throwable, retryAction)
         return if (data.message == null) {
             DialogData.error(strings, getUnknownErrorMessage(), onDismiss = onDismiss)
-        } else if (throwable is InvalidFieldsException){
-            DialogData.error(strings, strings.errorInvalidFields, data.buttonText, data.buttonAction)
+        } else if (throwable is InvalidFieldsException) {
+            DialogData.error(
+                strings,
+                strings.errorInvalidFields,
+                data.buttonText,
+                data.buttonAction
+            )
         } else {
             DialogData.error(strings, data.message, data.buttonText, data.buttonAction)
         }

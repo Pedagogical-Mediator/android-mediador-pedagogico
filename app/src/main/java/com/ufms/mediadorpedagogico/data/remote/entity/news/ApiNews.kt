@@ -1,10 +1,8 @@
 package com.ufms.mediadorpedagogico.data.remote.entity.news
 
 import com.google.gson.annotations.SerializedName
-import com.ufms.mediadorpedagogico.data.remote.entity.ApiLink
 import com.ufms.mediadorpedagogico.data.remote.mapper.Mapper
 import com.ufms.mediadorpedagogico.domain.entity.news.News
-import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
 import java.io.Serializable
 
 data class ApiNews(

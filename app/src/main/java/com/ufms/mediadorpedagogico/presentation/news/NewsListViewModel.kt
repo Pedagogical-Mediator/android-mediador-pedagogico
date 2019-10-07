@@ -30,13 +30,19 @@ class NewsListViewModel(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        this.onSuccess(NewsContent(content = listOf(
-            News(id = 1,
-                title = "Titulo",
-                description = "AAAAAAAAAAAAAAA",
-                link = "https://google.com",
-                createdAt = "24/09/2019")
-        )))
+        this.onSuccess(
+            NewsContent(
+                content = listOf(
+                    News(
+                        id = 1,
+                        title = "Titulo",
+                        description = "AAAAAAAAAAAAAAA",
+                        link = "https://google.com",
+                        createdAt = "24/09/2019"
+                    )
+                )
+            )
+        )
     }
 
     fun loadMoreNews() {

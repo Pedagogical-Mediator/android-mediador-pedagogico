@@ -1,7 +1,5 @@
 package com.ufms.mediadorpedagogico.presentation.notice.list
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentNoticeListBinding
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
-import com.ufms.mediadorpedagogico.presentation.main.MainViewModel
-import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
@@ -104,7 +100,11 @@ class NoticeListFragment : BaseFragment() {
     }
 
     private fun setupOnItemClicked(notice: Notice) {
-        navController.navigateSafe(NoticeListFragmentDirections.actionNoticeListFragmentToNoticeDetailsFragment().setNotice(notice))
+        navController.navigateSafe(
+            NoticeListFragmentDirections.actionNoticeListFragmentToNoticeDetailsFragment().setNotice(
+                notice
+            )
+        )
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

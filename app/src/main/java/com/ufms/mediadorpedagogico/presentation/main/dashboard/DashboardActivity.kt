@@ -8,11 +8,12 @@ import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.ui.*
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.onNavDestinationSelected
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityMainBinding
+import com.ufms.mediadorpedagogico.databinding.ActivityDashboardBinding
 import com.ufms.mediadorpedagogico.presentation.main.MainViewModel
-import com.ufms.mediadorpedagogico.presentation.util.extensions.*
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedToolbar
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.ext.android.inject
@@ -21,13 +22,13 @@ class DashboardActivity : BaseActivity() {
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityDashboardBinding
     private val viewModel: MainViewModel by inject()
     private val navController by lazy { findNavController(R.id.main_navigation_fragment) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard)
         lifecycle.addObserver(viewModel)
         setupCustomizedToolbar(
             binding.toolbarCustomized,
@@ -57,7 +58,8 @@ class DashboardActivity : BaseActivity() {
 //            drawerLayout
 //        )
     }
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+    //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        val retValue = super.onCreateOptionsMenu(menu)
 //        val navigationView = findViewById<NavigationView>(R.id.nav_view)
 //        if (navigationView == null) {
@@ -88,7 +90,8 @@ class DashboardActivity : BaseActivity() {
                 binding.toolbarCustomized,
                 true,
                 it
-            ) }
+            )
+        }
     }
 
     companion object {

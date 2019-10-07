@@ -34,11 +34,13 @@ abstract class BaseFragment : Fragment() {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    @CallSuper
     open fun subscribeUi() {
         baseViewModel.dialog.observeEvent(this, ::onNextDialog)
         baseViewModel.goTo.observeEvent(this, ::onNextNavigation)
         baseViewModel.toast.observeEvent(this, ::onNextToast)
     }
+
     private fun onNextToast(text: String?) {
         text?.let {
             context?.shortToast(it)

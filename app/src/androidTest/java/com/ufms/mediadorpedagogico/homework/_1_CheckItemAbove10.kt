@@ -1,6 +1,7 @@
 package com.ufms.mediadorpedagogico.homework
 
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
@@ -25,6 +26,9 @@ open class _1_CheckItemAbove10 : HomeworkInstrumental() {
 
     @Test
     fun listHasMoreThan10Items() {
+        Thread.sleep(3000)
+        activityRule.activity.supportFragmentManager.beginTransaction()
+        onView(withId(R.id.card_view_homework)).perform(click())
         Thread.sleep(3000)
         val homeworkList = getHomeworkList()
         if (homeworkList.size > TEST_HOMEWORK_PER_REQUEST - 1) {

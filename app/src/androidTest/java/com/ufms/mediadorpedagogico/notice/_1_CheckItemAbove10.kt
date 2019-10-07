@@ -8,8 +8,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.runner.AndroidJUnit4
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.utils.TEST_NOTICE_PER_REQUEST
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewHolder
+import com.ufms.mediadorpedagogico.utils.TEST_NOTICE_PER_REQUEST
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.Test
 import org.junit.runner.RunWith

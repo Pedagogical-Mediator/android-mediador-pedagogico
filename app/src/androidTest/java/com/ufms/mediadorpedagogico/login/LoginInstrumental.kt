@@ -3,8 +3,6 @@ package com.ufms.mediadorpedagogico.login
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import androidx.test.runner.AndroidJUnitRunner
-import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListActivity
-import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListAdapter
 import com.ufms.mediadorpedagogico.presentation.login.LoginActivity
 import com.ufms.mediadorpedagogico.presentation.util.extensions.hideSoftKeyboard
 import org.junit.Ignore

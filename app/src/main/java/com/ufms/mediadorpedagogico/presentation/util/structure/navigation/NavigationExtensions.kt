@@ -8,10 +8,10 @@ import androidx.navigation.NavOptions
 import androidx.navigation.Navigator
 
 fun NavController.navigateSafe(
-        @IdRes resId: Int,
-        args: Bundle? = null,
-        navOptions: NavOptions? = null,
-        navExtras: Navigator.Extras? = null
+    @IdRes resId: Int,
+    args: Bundle? = null,
+    navOptions: NavOptions? = null,
+    navExtras: Navigator.Extras? = null
 ) {
     val action = currentDestination?.getAction(resId)
     action?.let {

@@ -3,33 +3,41 @@ package com.ufms.mediadorpedagogico.presentation.bullying
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
-import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityBullyingBinding
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.ufms.mediadorpedagogico.databinding.FragmentBullyingBinding
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class BullyingActivity : BaseActivity() {
+class BullyingFragment : BaseFragment() {
+    override val toolbarTitle: String
+        get() = "Bullying"
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var binding: ActivityBullyingBinding
+    private lateinit var binding: FragmentBullyingBinding
     private val viewModel: BullyingViewModel by inject()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_bullying)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentBullyingBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
         setupUi()
-        super.onCreate(savedInstanceState)
+        return binding.root
     }
 
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@BullyingActivity, ::onNextPlaceholder)
+            placeholder.observe(this@BullyingFragment, ::onNextPlaceholder)
         }
     }
 
@@ -47,7 +55,7 @@ class BullyingActivity : BaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            return Intent(context, BullyingActivity::class.java)
+            return Intent(context, BullyingFragment::class.java)
         }
     }
 }

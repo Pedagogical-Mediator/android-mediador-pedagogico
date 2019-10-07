@@ -15,7 +15,11 @@ object Navigator {
     }
 
     fun goToMain(context: Context, clearTask: Boolean = false) {
-        context.startActivity(DashboardActivity.createIntent(context).apply { shouldClearTask(clearTask) })
+        context.startActivity(DashboardActivity.createIntent(context).apply {
+            shouldClearTask(
+                clearTask
+            )
+        })
     }
 
     fun goToLogin(context: Context, clearTask: Boolean = false) {

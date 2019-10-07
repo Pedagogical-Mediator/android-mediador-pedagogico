@@ -6,6 +6,6 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavDat
 
 class HomeworkListNavData : NavData {
     override fun createIntent(context: Context): Intent {
-        return HomeworkListActivity.createIntent(context)
+        return HomeworkListFragment.createIntent(context)
     }
 }

@@ -2,8 +2,6 @@ package com.ufms.mediadorpedagogico.presentation.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.google.firebase.FirebaseApp
-import com.google.firebase.messaging.FirebaseMessaging
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException

@@ -43,8 +43,10 @@ class LoginActivity : BaseActivity() {
             textInputClassCode.observeChanges(viewModel::onClassKeyChanged)
             textInputName.observeChanges(viewModel::onNameChanged)
             submitButton.setOnClickListener(viewModel::onSubmitClicked)
-            webviewContent.loadDataWithBaseURL(""
-                , "<p>Paragrafo</p>", "text/html", "UTF-8", "")
+            webviewContent.loadDataWithBaseURL(
+                ""
+                , "<p>Paragrafo</p>", "text/html", "UTF-8", ""
+            )
         }
     }
 

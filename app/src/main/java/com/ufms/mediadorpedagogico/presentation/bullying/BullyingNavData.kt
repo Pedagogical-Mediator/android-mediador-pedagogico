@@ -6,6 +6,6 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavDat
 
 class BullyingNavData : NavData {
     override fun createIntent(context: Context): Intent {
-        return BullyingActivity.createIntent(context)
+        return BullyingFragment.createIntent(context)
     }
 }

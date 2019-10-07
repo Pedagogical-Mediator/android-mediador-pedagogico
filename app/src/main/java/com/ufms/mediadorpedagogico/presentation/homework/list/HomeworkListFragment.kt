@@ -3,60 +3,73 @@ package com.ufms.mediadorpedagogico.presentation.homework.list
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.databinding.ActivityHomeworkListBinding
+import com.ufms.mediadorpedagogico.databinding.FragmentHomeworkListBinding
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setupCustomizedToolbar
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class HomeworkListActivity : BaseActivity() {
-
+class HomeworkListFragment : BaseFragment() {
+    override val toolbarTitle: String
+        get() = getString(R.string.activity_homework_label)
     override val baseViewModel: BaseViewModel get() = viewModel
 
     lateinit var homeworkListAdapter: HomeworkListAdapter
     private var moreHomeworksToBeLoaded = true
     private var isLoadingMoreHomework = false
-    lateinit var binding: ActivityHomeworkListBinding
+    lateinit var binding: FragmentHomeworkListBinding
     private val viewModel: HomeworkListViewModel by inject()
+    private val navController by lazy { findNavController() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_homework_list)
-        setupCustomizedToolbar(
-            binding.toolbarCustomized,
-            true,
-            getString(R.string.activity_homework_label)
-        )
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentHomeworkListBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
-        super.onCreate(savedInstanceState)
+        return binding.root
     }
 
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@HomeworkListActivity, ::onNextPlaceholder)
-            homeworkContent.observeEvent(this@HomeworkListActivity, ::onHomeworkContentLoaded)
-            noContentReturned.observeEvent(this@HomeworkListActivity, ::onNoContentReturned)
+            placeholder.observe(this@HomeworkListFragment, ::onNextPlaceholder)
+            homeworkContent.observeEvent(this@HomeworkListFragment, ::onHomeworkContentLoaded)
+            noContentReturned.observeEvent(this@HomeworkListFragment, ::onNoContentReturned)
         }
     }
 
     private fun setupAdapter() {
-        homeworkListAdapter = HomeworkListAdapter(viewModel::setupOnItemClicked)
+        homeworkListAdapter = HomeworkListAdapter(::setupOnItemClicked)
+    }
+
+    private fun setupOnItemClicked(homework: Homework) {
+        navController.navigateSafe(
+            HomeworkListFragmentDirections
+                .actionHomeworkListFragmentToHomeworkDetailsFragment()
+                .setHomework(homework)
+        )
     }
 
     private fun setupRecycler() {
         with(binding.recyclerViewHomework) {
-            layoutManager = LinearLayoutManager(this@HomeworkListActivity)
+            layoutManager = LinearLayoutManager(context)
             adapter = homeworkListAdapter
             addOnScrollListener(setLoadMoreNoticesOnScroll())
         }
@@ -101,7 +114,7 @@ class HomeworkListActivity : BaseActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            return Intent(context, HomeworkListActivity::class.java)
+            return Intent(context, HomeworkListFragment::class.java)
         }
     }
 }

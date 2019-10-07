@@ -38,7 +38,7 @@
                     android:background="@drawable/card_view"
                     android:orientation="vertical"
                     android:padding="@dimen/normal"
-                    tools:context="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsActivity">
+                    tools:context="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsFragment">
 
                 <TextView
                         android:id="@+id/text_view_title"

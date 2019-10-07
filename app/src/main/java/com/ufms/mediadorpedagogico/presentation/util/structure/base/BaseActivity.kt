@@ -2,7 +2,6 @@ package com.ufms.mediadorpedagogico.presentation.util.structure.base
 
 import android.app.Dialog
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
