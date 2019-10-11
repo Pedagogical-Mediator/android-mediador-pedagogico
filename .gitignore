@@ -27,7 +27,7 @@ proguard/
 .idea/
 *.project
 *.classpath
-
+app/lint/
 # NetBeans files
 .nb-gradle
 
