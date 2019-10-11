@@ -89,6 +89,16 @@ kotlinter {
     ignoreFailures = true
 }
 
+task runChecksForDanger() {
+    group = "Reporting"
+    dependsOn 'lintKotlin'
+
+    def file = file("${project.rootDir}/build/reports/ktlint")
+    if (!file.exists()) file.mkdirs()
+    def lintFile = new File("${project.rootDir}/build/reports/lint")
+    if (!lintFile.exists()) lintFile.mkdirs()
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 

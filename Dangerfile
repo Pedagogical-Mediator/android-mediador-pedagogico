@@ -12,6 +12,9 @@ if gitlab.pr_body.length < 5
   fail "Please provide a summary in the Pull Request description"
 end
 
+checkstyle_format.base_path = Dir.pwd
+checkstyle_format.report "app/build/reports/ktlint/ktlint-debug.xml"
+
 # AndroidLint
 android_lint.filtering = true
 android_lint.severity = "Error"
