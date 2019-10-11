@@ -24,6 +24,7 @@ before_script:
 stages:
   - build
   - test
+  - danger
 
 lintDebug:
   stage: build
@@ -42,3 +43,9 @@ debugTests:
   stage: test
   script:
     - ./gradlew -Pci --console=plain :app:testDebug
+
+danger:
+  stage: danger
+  script:
+    - bundle install
+    - bundle exec danger
