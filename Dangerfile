@@ -16,10 +16,9 @@ checkstyle_format.base_path = Dir.pwd
 checkstyle_format.report "app/build/reports/ktlint/main-lint.xml"
 
 # AndroidLint
-Dir["*/build/reports/ktlint/*.xml"].each do |file|
-    android_lint.report_file = file
-    android_lint.filtering = true
-    android_lint.severity = "Error"
-    android_lint.lint(inline_mode: true)
-end
+
+android_lint.report_file = "*/build/reports/ktlint/main-lint.xml"
+android_lint.filtering = true
+android_lint.severity = "Error"
+android_lint.lint(inline_mode: true)
 
