@@ -45,7 +45,6 @@ buildscript {
         classpath "com.dicedmelon.gradle:jacoco-android:0.1.4"
         classpath 'com.google.gms:google-services:4.3.2'
         classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0'
-        classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:3.0.0"
 
     }
 }
@@ -58,6 +57,9 @@ allprojects {
         jcenter()
         maven {
             url 'https://maven.google.com/'
+        }
+        maven {
+            url 'https://plugins.gradle.org/m2/'
         }
     }
 
