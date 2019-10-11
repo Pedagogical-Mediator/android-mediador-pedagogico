@@ -16,7 +16,6 @@ danger:
   script:
     - apt-get --quiet install --yes ruby-bundler
     - apt-get --quiet install --yes ruby-dev
-    - apt-get --quiet install --yes libcurl4-openssl-dev libgnutls28-dev libghc-hsopenssl-dev libghc-hsopenssl-dev
-    - gem install bundler
+    - gem install bundler -v '1.3'
     - bundle install
     - bundle exec danger
