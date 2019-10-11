@@ -8,7 +8,7 @@ warn("PR is classed as Work in Progress") if gitlab.pr_title.include? "[WIP]"
 # Warn when there is a big PR
 warn("Big PR") if git.lines_of_code > 500
 
-if github.pr_body.length < 5
+if gitlab.pr_body.length < 5
   fail "Please provide a summary in the Pull Request description"
 end
 
