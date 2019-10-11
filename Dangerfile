@@ -13,7 +13,7 @@ if gitlab.pr_body.length < 5
 end
 
 checkstyle_format.base_path = Dir.pwd
-checkstyle_format.report "app/build/reports/ktlint/ktlint-debug.xml"
+checkstyle_format.report "app/build/reports/ktlint/main-lint.xml"
 
 # AndroidLint
 android_lint.filtering = true
