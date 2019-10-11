@@ -15,6 +15,7 @@ danger:
   stage: danger
   script:
     - apt-get --quiet install --yes ruby-bundler
+    - apt-get --quiet install --yes ruby-dev
     - gem install bundler
     - bundle install
     - bundle exec danger
