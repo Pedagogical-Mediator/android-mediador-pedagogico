@@ -83,6 +83,7 @@ DEPENDENCIES
   danger-android_lint
   danger-checkstyle_format
   danger-gitlab
+  ox (= 2.11.0)
 
 BUNDLED WITH
    1.17.3
