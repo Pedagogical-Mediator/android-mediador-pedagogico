@@ -16,6 +16,7 @@ danger:
   script:
     - apt-get --quiet install --yes ruby-bundler
     - apt-get --quiet install --yes ruby-dev
+    - apt-get --quiet install --yes build-essential
     - gem install bundler
     - bundle install
     - bundle exec danger
