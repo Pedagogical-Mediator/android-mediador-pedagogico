@@ -45,6 +45,7 @@ buildscript {
         classpath "com.dicedmelon.gradle:jacoco-android:0.1.4"
         classpath 'com.google.gms:google-services:4.3.2'
         classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0'
+        classpath("org.jmailen.gradle:kotlinter-gradle:2.1.1")
 
     }
 }

@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'org.sonarqube'
 //apply plugin: 'jacoco-android'
 apply plugin: 'androidx.navigation.safeargs'
+apply plugin: "org.jmailen.kotlinter"
 
 repositories {
     mavenCentral()
@@ -40,6 +41,8 @@ android {
         versionName rootProject.ext.versionName
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
+
+
     }
 
     lintOptions {
@@ -81,6 +84,10 @@ android {
 //    html.enabled false
 //    xml.enabled true
 //}
+
+kotlinter {
+    ignoreFailures = true
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
