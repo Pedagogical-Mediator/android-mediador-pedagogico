@@ -17,6 +17,5 @@ danger:
     - apt-get --quiet install --yes ruby-bundler
     - apt-get --quiet install --yes ruby-dev
     - gem install bundler
-    - gem install ox -v '2.11.0'
     - bundle install
     - bundle exec danger
