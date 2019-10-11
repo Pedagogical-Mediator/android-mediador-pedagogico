@@ -16,7 +16,7 @@ checkstyle_format.base_path = Dir.pwd
 checkstyle_format.report "app/build/reports/ktlint/main-lint.xml"
 
 # AndroidLint
-android_lint.report_file = Dir["app/build/reports/ktlint/main-lint.xml"][0]
+android_lint.report_file = 'app/build/reports/ktlint/main-lint.xml'
 android_lint.gradle_task = "runChecksForDanger"
 android_lint.filtering = true
 android_lint.severity = "Error"
