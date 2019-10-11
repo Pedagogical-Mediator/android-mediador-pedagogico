@@ -18,7 +18,7 @@ checkstyle_format.base_path = Dir.pwd
 checkstyle_format.report "app/build/reports/ktlint/ktlint-debug.xml"
 
 # AndroidLint
-android_lint.gradle_task = "runChecksForDanger"
 android_lint.filtering = true
 android_lint.severity = "Error"
 android_lint.lint(inline_mode: true)
+android_lint.lint
