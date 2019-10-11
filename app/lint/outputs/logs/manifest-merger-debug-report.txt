@@ -1,0 +1,658 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+MERGED from [androidx.room:room-rxjava2:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ebdd4d55c39384ac7bdc7f3e31f91a5c/room-rxjava2-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.databinding:databinding-adapters:3.5.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6b83f55528e9612643d5dc1357e59804/databinding-adapters-3.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:databinding-runtime:3.5.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/836cc538440acd6b181f0182d98068cf/databinding-runtime-3.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5208c342affa7f7af28d09864a540989/navigation-ui-ktx-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/143d42aac87bffb219d1fcff2b6468f0/jetified-navigation-ui-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/388ce56899eb65898194f7a1c0fbb714/material-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:2:1-23:12
+MERGED from [org.koin:koin-android-viewmodel:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2fb7dbd595434d01a5962c025e13d24d/jetified-koin-android-viewmodel-2.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [org.koin:koin-android-scope:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/20ba1ffb9756ed4c07e9899b3c6efe16/jetified-koin-android-scope-2.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/9a645f427cbcbb5abc5cc692a35c3487/appcompat-1.0.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9eeab475bdc63b469087d88dad35cf/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/cb9ae799ba3e59e9c6deae7ebcffc52f/firebase-analytics-17.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:17:1-37:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/958163fa461056082b80cd6ffd7c8e8b/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.multidex:multidex:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/92f2503902a434ee53a044746aaf31e6/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/870bc4ce9e7b736960a5b7dedc8c7c7c/lifecycle-extensions-2.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/296009a57064d605e61254836e343f8d/jetified-rxpermissions-0.10.2/AndroidManifest.xml:2:1-11:12
+MERGED from [org.koin:koin-android:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecd3551d67d30c35fa31f7149c845e5d/koin-android-2.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.stetho:stetho:1.5.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/59fd0d7cfdfdbce59db864dc20e36a12/jetified-stetho-1.5.1/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9018336ed166da040edf6857585dc1/navigation-fragment-ktx-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/bcb3a885ddddbf1592446eda5f6562ca/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/326ee66889fed204dfeb85fcf149fd83/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/379244ed542fa17989a643ef6efa6221/vectordrawable-animated-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/0e73fab3521544cf3fecef2d5a94fbf5/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/3f66818825e74767b1e3942d9609dea7/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:17:1-55:12
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/46004411876f7622d178cb364af1f7aa/play-services-measurement-sdk-17.2.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c540635574dc41f0b190f46b46dfc10e/play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2733a99bd0311759601b8db8b55d678c/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:2:1-19:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f8b65035a6d79443f0c8e099f480c413/firebase-iid-interop-17.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/935b94ee57607f36d49276c04679318a/play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e6907d9197746baa87875679d9fd309d/firebase-measurement-connector-18.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/b5c02e85a1e949db970389062dc575c5/play-services-measurement-base-17.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a0fc45eaad5740f42bde00bb1bf040be/play-services-ads-identifier-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.navigation:navigation-fragment:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/d204bea189290bb5ef0ca5bc2f25e894/navigation-fragment-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2298f80d2dff9f8b29d0e702721debe0/fragment-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a587d6ff2487c4ba5eeb0b4edf1175ba/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/829a22045c6cba6e12a4442384219445/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5576d67d0adc61b7a3cc0e8b4d6f9527/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/7e140ce6209286e0b46e65c9b364f7e6/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/66f5ac9e839308d71a37db3910f0d5d9/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/13917ed02b9a7dcefdb685843a666f1d/vectordrawable-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c179aa60232b4baeca065a0e13875945/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/78ed3d3d06ba107f16a8eb6c55b26790/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4fa0421720e07a598d135d4eca0fcda0/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4e342df93b56f391ac9ebadca970ed61/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5e3fa2d179f53f0a088dd6c5cadde4c8/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/78f1aee08f8cd376e7e5f6337a660037/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c355233f38ad81ba015113c0a86503ce/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/3b70b1961965fb615f8129103c8dade8/transition-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/879ebd92a753e6e351adaf6313bd7c2f/navigation-runtime-ktx-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/467b2a56a1fff457b68cc2def4586c01/navigation-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/824fdcd5c2a25d5fc3d844d987968d0d/activity-ktx-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6fbb347ef795e8a1182f535975815959/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/487dcd86d015b9c1d923d891fb0719cf/navigation-common-ktx-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/dee34e89bfef34c0e3ceabddd5ba43e7/navigation-common-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/27a8a732abce097523d1f5b2e23e17df/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ce9459066c07540d82ed3cc2b616a2fe/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/97af0dec1f8c56433b1b0abc66464cea/lifecycle-service-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5bc14e9b14489869c08ed5462587aede/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/000958e4467385ce57a37bd728bc8b42/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/7dc0213e3ebcb3d4680029ca7a312a3a/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ec2e9863331a9c72b2708b76590cba10/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/12a3ba931af5aebf63c0815310decabb/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/fd8a43b4df032b9f6332e48a510f089d/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/dbb7c9f328f128e1216501f377ab37fa/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f50ae46ed74bc12ff38fcb5bbf51c1b4/lifecycle-viewmodel-ktx-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/41965438c69a1b80f842fb8fbde144ad/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a302d492c080275994540e571573873b/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.jakewharton.timber:timber:4.4.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/065dd98aaccec113cbf0de92bcd9c806/jetified-timber-4.4.0/AndroidManifest.xml:2:1-10:12
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+	package
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:4:9-46
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:3:9-55
+	android:versionCode
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:1-79:12
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:6:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:7:22-77
+uses-permission#android.permission.CAMERA
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:8:22-62
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:9:5-76
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:9:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:10:5-76
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:10:22-73
+application
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:14:5-77:19
+MERGED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.android.material:material:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/388ce56899eb65898194f7a1c0fbb714/material-1.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/388ce56899eb65898194f7a1c0fbb714/material-1.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:11:5-21:19
+MERGED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:11:5-21:19
+MERGED from [org.koin:koin-android-viewmodel:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2fb7dbd595434d01a5962c025e13d24d/jetified-koin-android-viewmodel-2.0.1/AndroidManifest.xml:7:5-20
+MERGED from [org.koin:koin-android-viewmodel:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2fb7dbd595434d01a5962c025e13d24d/jetified-koin-android-viewmodel-2.0.1/AndroidManifest.xml:7:5-20
+MERGED from [org.koin:koin-android-scope:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/20ba1ffb9756ed4c07e9899b3c6efe16/jetified-koin-android-scope-2.0.1/AndroidManifest.xml:7:5-20
+MERGED from [org.koin:koin-android-scope:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/20ba1ffb9756ed4c07e9899b3c6efe16/jetified-koin-android-scope-2.0.1/AndroidManifest.xml:7:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9eeab475bdc63b469087d88dad35cf/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9eeab475bdc63b469087d88dad35cf/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/cb9ae799ba3e59e9c6deae7ebcffc52f/firebase-analytics-17.2.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/cb9ae799ba3e59e9c6deae7ebcffc52f/firebase-analytics-17.2.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:22:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/870bc4ce9e7b736960a5b7dedc8c7c7c/lifecycle-extensions-2.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/870bc4ce9e7b736960a5b7dedc8c7c7c/lifecycle-extensions-2.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/296009a57064d605e61254836e343f8d/jetified-rxpermissions-0.10.2/AndroidManifest.xml:9:5-20
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/296009a57064d605e61254836e343f8d/jetified-rxpermissions-0.10.2/AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.stetho:stetho:1.5.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/59fd0d7cfdfdbce59db864dc20e36a12/jetified-stetho-1.5.1/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.stetho:stetho:1.5.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/59fd0d7cfdfdbce59db864dc20e36a12/jetified-stetho-1.5.1/AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/46004411876f7622d178cb364af1f7aa/play-services-measurement-sdk-17.2.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/46004411876f7622d178cb364af1f7aa/play-services-measurement-sdk-17.2.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c540635574dc41f0b190f46b46dfc10e/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c540635574dc41f0b190f46b46dfc10e/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f8b65035a6d79443f0c8e099f480c413/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f8b65035a6d79443f0c8e099f480c413/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/935b94ee57607f36d49276c04679318a/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/935b94ee57607f36d49276c04679318a/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e6907d9197746baa87875679d9fd309d/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e6907d9197746baa87875679d9fd309d/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/b5c02e85a1e949db970389062dc575c5/play-services-measurement-base-17.2.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/b5c02e85a1e949db970389062dc575c5/play-services-measurement-base-17.2.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a0fc45eaad5740f42bde00bb1bf040be/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a0fc45eaad5740f42bde00bb1bf040be/play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/27a8a732abce097523d1f5b2e23e17df/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/27a8a732abce097523d1f5b2e23e17df/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ce9459066c07540d82ed3cc2b616a2fe/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ce9459066c07540d82ed3cc2b616a2fe/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:22:5-28:19
+MERGED from [com.jakewharton.timber:timber:4.4.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/065dd98aaccec113cbf0de92bcd9c806/jetified-timber-4.4.0/AndroidManifest.xml:8:5-20
+MERGED from [com.jakewharton.timber:timber:4.4.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/065dd98aaccec113cbf0de92bcd9c806/jetified-timber-4.4.0/AndroidManifest.xml:8:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/27a8a732abce097523d1f5b2e23e17df/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:22:13-39
+	android:label
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:20:13-45
+	android:fullBackupContent
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:18:13-46
+	tools:ignore
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:25:13-52
+	android:roundIcon
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:21:13-58
+	android:icon
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:19:13-47
+	android:allowBackup
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:17:13-39
+	android:theme
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:23:13-44
+	android:usesCleartextTraffic
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:24:13-48
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:16:13-68
+service#com.ufms.mediadorpedagogico.data.firebase.FirebaseMessagingServiceHandler
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:27:9-33:19
+	android:exported
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:29:17-41
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:28:17-78
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:30:13-32:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:31:17-78
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:31:25-75
+activity#com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsFragment
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:35:9-91
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:35:19-88
+activity#com.ufms.mediadorpedagogico.presentation.landing.SplashActivity
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:36:9-46:20
+	android:screenOrientation
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:39:17-53
+	android:configChanges
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:38:17-78
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:37:17-68
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:41:13-45:29
+action#android.intent.action.MAIN
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:42:17-69
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:42:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:44:17-77
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:44:27-74
+activity#com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:47:9-50:59
+	android:screenOrientation
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:49:17-53
+	android:windowSoftInputMode
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:50:17-56
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:48:17-78
+activity#com.ufms.mediadorpedagogico.presentation.login.LoginActivity
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:51:9-57:20
+	android:screenOrientation
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:54:17-53
+	android:windowSoftInputMode
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:55:17-56
+	android:configChanges
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:53:17-78
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:52:17-65
+activity#com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListFragment
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:58:9-63:60
+	android:screenOrientation
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:62:17-53
+	android:label
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:61:17-64
+	android:configChanges
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:60:17-78
+	android:theme
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:63:17-57
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:59:17-80
+activity#com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsFragment
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:64:9-87
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:64:19-84
+activity#com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListActivity
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:65:9-81
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:65:19-78
+activity#com.ufms.mediadorpedagogico.presentation.news.NewsListFragment
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:66:9-72
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:66:19-69
+activity#com.ufms.mediadorpedagogico.presentation.bullying.BullyingFragment
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:67:9-76
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:67:19-73
+activity#com.ufms.mediadorpedagogico.presentation.settings.SettingsFragment
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:68:9-76
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:68:19-73
+meta-data#preloaded_fonts
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:70:9-72:61
+	android:resource
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:72:17-58
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:71:17-47
+meta-data#com.google.firebase.messaging.default_notification_channel_id
+ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:74:9-76:62
+	android:value
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:76:17-59
+	android:name
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml:75:17-93
+uses-sdk
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+MERGED from [androidx.room:room-rxjava2:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ebdd4d55c39384ac7bdc7f3e31f91a5c/room-rxjava2-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-rxjava2:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ebdd4d55c39384ac7bdc7f3e31f91a5c/room-rxjava2-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:databinding-adapters:3.5.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6b83f55528e9612643d5dc1357e59804/databinding-adapters-3.5.0/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-adapters:3.5.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6b83f55528e9612643d5dc1357e59804/databinding-adapters-3.5.0/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.5.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/836cc538440acd6b181f0182d98068cf/databinding-runtime-3.5.0/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.5.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/836cc538440acd6b181f0182d98068cf/databinding-runtime-3.5.0/AndroidManifest.xml:22:5-44
+MERGED from [androidx.navigation:navigation-ui-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5208c342affa7f7af28d09864a540989/navigation-ui-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5208c342affa7f7af28d09864a540989/navigation-ui-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/143d42aac87bffb219d1fcff2b6468f0/jetified-navigation-ui-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/143d42aac87bffb219d1fcff2b6468f0/jetified-navigation-ui-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/388ce56899eb65898194f7a1c0fbb714/material-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/388ce56899eb65898194f7a1c0fbb714/material-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [org.koin:koin-android-viewmodel:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2fb7dbd595434d01a5962c025e13d24d/jetified-koin-android-viewmodel-2.0.1/AndroidManifest.xml:5:5-44
+MERGED from [org.koin:koin-android-viewmodel:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2fb7dbd595434d01a5962c025e13d24d/jetified-koin-android-viewmodel-2.0.1/AndroidManifest.xml:5:5-44
+MERGED from [org.koin:koin-android-scope:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/20ba1ffb9756ed4c07e9899b3c6efe16/jetified-koin-android-scope-2.0.1/AndroidManifest.xml:5:5-44
+MERGED from [org.koin:koin-android-scope:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/20ba1ffb9756ed4c07e9899b3c6efe16/jetified-koin-android-scope-2.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/9a645f427cbcbb5abc5cc692a35c3487/appcompat-1.0.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/9a645f427cbcbb5abc5cc692a35c3487/appcompat-1.0.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9eeab475bdc63b469087d88dad35cf/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9eeab475bdc63b469087d88dad35cf/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/cb9ae799ba3e59e9c6deae7ebcffc52f/firebase-analytics-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/cb9ae799ba3e59e9c6deae7ebcffc52f/firebase-analytics-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/958163fa461056082b80cd6ffd7c8e8b/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/958163fa461056082b80cd6ffd7c8e8b/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [androidx.multidex:multidex:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/92f2503902a434ee53a044746aaf31e6/multidex-2.0.1/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/92f2503902a434ee53a044746aaf31e6/multidex-2.0.1/AndroidManifest.xml:20:5-43
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/870bc4ce9e7b736960a5b7dedc8c7c7c/lifecycle-extensions-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/870bc4ce9e7b736960a5b7dedc8c7c7c/lifecycle-extensions-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/296009a57064d605e61254836e343f8d/jetified-rxpermissions-0.10.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] /home/willshiro/.gradle/caches/transforms-2/files-2.1/296009a57064d605e61254836e343f8d/jetified-rxpermissions-0.10.2/AndroidManifest.xml:5:5-7:41
+MERGED from [org.koin:koin-android:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecd3551d67d30c35fa31f7149c845e5d/koin-android-2.0.1/AndroidManifest.xml:5:5-44
+MERGED from [org.koin:koin-android:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecd3551d67d30c35fa31f7149c845e5d/koin-android-2.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.stetho:stetho:1.5.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/59fd0d7cfdfdbce59db864dc20e36a12/jetified-stetho-1.5.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.stetho:stetho:1.5.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/59fd0d7cfdfdbce59db864dc20e36a12/jetified-stetho-1.5.1/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9018336ed166da040edf6857585dc1/navigation-fragment-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4c9018336ed166da040edf6857585dc1/navigation-fragment-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/bcb3a885ddddbf1592446eda5f6562ca/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/bcb3a885ddddbf1592446eda5f6562ca/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/326ee66889fed204dfeb85fcf149fd83/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/326ee66889fed204dfeb85fcf149fd83/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/379244ed542fa17989a643ef6efa6221/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/379244ed542fa17989a643ef6efa6221/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/0e73fab3521544cf3fecef2d5a94fbf5/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/0e73fab3521544cf3fecef2d5a94fbf5/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/3f66818825e74767b1e3942d9609dea7/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/3f66818825e74767b1e3942d9609dea7/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/46004411876f7622d178cb364af1f7aa/play-services-measurement-sdk-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/46004411876f7622d178cb364af1f7aa/play-services-measurement-sdk-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c540635574dc41f0b190f46b46dfc10e/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c540635574dc41f0b190f46b46dfc10e/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2733a99bd0311759601b8db8b55d678c/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2733a99bd0311759601b8db8b55d678c/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f8b65035a6d79443f0c8e099f480c413/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f8b65035a6d79443f0c8e099f480c413/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/935b94ee57607f36d49276c04679318a/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/935b94ee57607f36d49276c04679318a/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e6907d9197746baa87875679d9fd309d/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e6907d9197746baa87875679d9fd309d/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/b5c02e85a1e949db970389062dc575c5/play-services-measurement-base-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/b5c02e85a1e949db970389062dc575c5/play-services-measurement-base-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a0fc45eaad5740f42bde00bb1bf040be/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a0fc45eaad5740f42bde00bb1bf040be/play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/d204bea189290bb5ef0ca5bc2f25e894/navigation-fragment-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/d204bea189290bb5ef0ca5bc2f25e894/navigation-fragment-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2298f80d2dff9f8b29d0e702721debe0/fragment-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/2298f80d2dff9f8b29d0e702721debe0/fragment-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a587d6ff2487c4ba5eeb0b4edf1175ba/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a587d6ff2487c4ba5eeb0b4edf1175ba/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/829a22045c6cba6e12a4442384219445/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/829a22045c6cba6e12a4442384219445/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5576d67d0adc61b7a3cc0e8b4d6f9527/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5576d67d0adc61b7a3cc0e8b4d6f9527/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/7e140ce6209286e0b46e65c9b364f7e6/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/7e140ce6209286e0b46e65c9b364f7e6/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/66f5ac9e839308d71a37db3910f0d5d9/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/66f5ac9e839308d71a37db3910f0d5d9/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/13917ed02b9a7dcefdb685843a666f1d/vectordrawable-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/13917ed02b9a7dcefdb685843a666f1d/vectordrawable-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c179aa60232b4baeca065a0e13875945/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c179aa60232b4baeca065a0e13875945/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/78ed3d3d06ba107f16a8eb6c55b26790/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/78ed3d3d06ba107f16a8eb6c55b26790/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4fa0421720e07a598d135d4eca0fcda0/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4fa0421720e07a598d135d4eca0fcda0/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4e342df93b56f391ac9ebadca970ed61/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/4e342df93b56f391ac9ebadca970ed61/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5e3fa2d179f53f0a088dd6c5cadde4c8/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5e3fa2d179f53f0a088dd6c5cadde4c8/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/78f1aee08f8cd376e7e5f6337a660037/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/78f1aee08f8cd376e7e5f6337a660037/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c355233f38ad81ba015113c0a86503ce/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/c355233f38ad81ba015113c0a86503ce/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/3b70b1961965fb615f8129103c8dade8/transition-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] /home/willshiro/.gradle/caches/transforms-2/files-2.1/3b70b1961965fb615f8129103c8dade8/transition-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/879ebd92a753e6e351adaf6313bd7c2f/navigation-runtime-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/879ebd92a753e6e351adaf6313bd7c2f/navigation-runtime-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/467b2a56a1fff457b68cc2def4586c01/navigation-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/467b2a56a1fff457b68cc2def4586c01/navigation-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/824fdcd5c2a25d5fc3d844d987968d0d/activity-ktx-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/824fdcd5c2a25d5fc3d844d987968d0d/activity-ktx-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6fbb347ef795e8a1182f535975815959/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6fbb347ef795e8a1182f535975815959/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/487dcd86d015b9c1d923d891fb0719cf/navigation-common-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/487dcd86d015b9c1d923d891fb0719cf/navigation-common-ktx-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/dee34e89bfef34c0e3ceabddd5ba43e7/navigation-common-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/dee34e89bfef34c0e3ceabddd5ba43e7/navigation-common-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/27a8a732abce097523d1f5b2e23e17df/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/27a8a732abce097523d1f5b2e23e17df/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ce9459066c07540d82ed3cc2b616a2fe/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ce9459066c07540d82ed3cc2b616a2fe/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/97af0dec1f8c56433b1b0abc66464cea/lifecycle-service-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/97af0dec1f8c56433b1b0abc66464cea/lifecycle-service-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5bc14e9b14489869c08ed5462587aede/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/5bc14e9b14489869c08ed5462587aede/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/000958e4467385ce57a37bd728bc8b42/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/000958e4467385ce57a37bd728bc8b42/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/7dc0213e3ebcb3d4680029ca7a312a3a/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/7dc0213e3ebcb3d4680029ca7a312a3a/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ec2e9863331a9c72b2708b76590cba10/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ec2e9863331a9c72b2708b76590cba10/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/12a3ba931af5aebf63c0815310decabb/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/12a3ba931af5aebf63c0815310decabb/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/fd8a43b4df032b9f6332e48a510f089d/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/fd8a43b4df032b9f6332e48a510f089d/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/dbb7c9f328f128e1216501f377ab37fa/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/dbb7c9f328f128e1216501f377ab37fa/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f50ae46ed74bc12ff38fcb5bbf51c1b4/lifecycle-viewmodel-ktx-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f50ae46ed74bc12ff38fcb5bbf51c1b4/lifecycle-viewmodel-ktx-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/41965438c69a1b80f842fb8fbde144ad/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/41965438c69a1b80f842fb8fbde144ad/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a302d492c080275994540e571573873b/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a302d492c080275994540e571573873b/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.jakewharton.timber:timber:4.4.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/065dd98aaccec113cbf0de92bcd9c806/jetified-timber-4.4.0/AndroidManifest.xml:6:5-43
+MERGED from [com.jakewharton.timber:timber:4.4.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/065dd98aaccec113cbf0de92bcd9c806/jetified-timber-4.4.0/AndroidManifest.xml:6:5-43
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/willshiro/Desktop/mediador/front-android/app/src/main/AndroidManifest.xml
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.room:room-runtime:2.1.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ead75923e1a9c5250b7fac6a626b9790/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
+provider#pl.aprilapps.easyphotopicker.ExtendedFileProvider
+ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:12:9-20:20
+	android:grantUriPermissions
+		ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:14:13-80
+	android:exported
+		ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:13:13-77
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:17:13-19:53
+	android:resource
+		ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:19:17-50
+	android:name
+		ADDED from [com.github.jkwiecien:EasyImage:2.0.3] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ef4229460a352829eba1a65cf777ae23/jetified-EasyImage-2.0.3/AndroidManifest.xml:18:17-67
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e8651bf2fcc15e26a962797cc4a3aca1/jetified-firebase-messaging-20.0.0/AndroidManifest.xml:29:13-82
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:24:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/6a31006f2845cf28bf59eff3cdb077f7/play-services-measurement-sdk-api-17.2.0/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:25:22-65
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:30:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:34:9-42:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:29:9-37:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/082eeb13e97aec55988d9dedb334979b/play-services-measurement-impl-17.2.0/AndroidManifest.xml:29:9-37:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:36:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:38:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:35:13-100
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:39:13-41:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:40:17-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:40:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:44:9-47:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:46:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:45:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:48:9-52:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:50:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:51:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:52:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/e765fe780e3557b6e3b3c7dd0a7ccfce/play-services-measurement-17.2.0/AndroidManifest.xml:49:13-87
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:29:9-35:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:28:13-84
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/39ab66762aeb8dabb57e93d8150c43df/play-services-measurement-api-17.2.0/AndroidManifest.xml:31:17-139
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/a63be19a017ed623a60acf06d36a5e2e/firebase-iid-20.0.0/AndroidManifest.xml:42:25-78
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:12:9-16:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:14:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:15:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:16:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ecff810e16c1cb5a5856ecc14de7d175/firebase-common-19.0.0/AndroidManifest.xml:13:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/ffd9daf3154ad66c5767be274b8a0661/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/f2f2e23c42858e6181930812581c6992/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/willshiro/.gradle/caches/transforms-2/files-2.1/aa57025c66cf003f3a8afafb1aca8016/lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                            
+
+    
+
+                                           
+
+                 
+                                  
+                                                                                              
+           
+
+    <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true" android:tag="layout/activity_dashboard_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" android:tag="binding_1">
+
+            <include
+                    android:id="@+id/toolbar_customized"
+                    layout="@layout/toolbar_customized" />
+
+            <fragment
+                    android:id="@+id/main_navigation_fragment"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/navigation_component" />
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+                app:menu="@menu/navigation_menu"
+                app:headerLayout="@layout/nav_header"
+                android:id="@+id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+         

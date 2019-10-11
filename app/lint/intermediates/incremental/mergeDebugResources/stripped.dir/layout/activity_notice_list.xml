@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                            
+
+    
+
+                                           
+
+                 
+                                  
+                                                                                              
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:tag="layout/activity_notice_list_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <include
+                android:id="@+id/toolbar_customized"
+                layout="@layout/toolbar_customized" />
+
+        <LinearLayout
+                android:id="@+id/linear_layout_customized_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal"
+                android:layout_marginTop="@dimen/normal"
+                android:layout_marginEnd="@dimen/semi_large"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar_customized">
+
+            <ImageView
+                    android:id="@+id/image_view_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search" />
+
+            <EditText
+                    android:id="@+id/edit_text_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small"
+                    android:fontFamily="@font/carter_one" />
+        </LinearLayout>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linear_layout_customized_search" android:tag="binding_1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="@dimen/semi_huge" />
+
+            <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:tag="binding_2"                                                        />
+
+            <include
+                    android:id="@+id/included_placeholder_no_results"
+                    layout="@layout/no_results_placeholder" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         
