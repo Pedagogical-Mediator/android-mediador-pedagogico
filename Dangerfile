@@ -13,6 +13,11 @@ if gitlab.pr_body.length < 5
 end
 
 # AndroidLint
+gitlab.dismiss_out_of_range_messages
+checkstyle_format.base_path = Dir.pwd
+checkstyle_format.report "app/build/reports/ktlint/ktlint-debug.xml"
+
+# AndroidLint
 android_lint.gradle_task = "runChecksForDanger"
 android_lint.filtering = true
 android_lint.severity = "Error"

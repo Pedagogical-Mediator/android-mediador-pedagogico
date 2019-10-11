@@ -19,4 +19,5 @@ danger:
     - apt-get --quiet install --yes build-essential
     - gem install bundler
     - bundle install
+    - ./gradlew runChecksForDanger
     - bundle exec danger
