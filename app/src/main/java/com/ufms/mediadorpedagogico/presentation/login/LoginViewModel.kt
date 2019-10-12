@@ -55,10 +55,15 @@ class LoginViewModel(
     }
 
     private fun onFailure(throwable: Throwable) {
-        if (throwable is InvalidFieldsException) {
-            showFieldErrors(throwable)
-        }
-        setDialog(throwable, this::onSubmitClicked)
+//        if (throwable is InvalidFieldsException) {
+//            showFieldErrors(throwable)
+//        }
+//        setDialog(throwable, this::onSubmitClicked)
+        // TODO tirar
+        // TODO tirar
+        // TODO tirar
+        // TODO tirar
+        goToMainLiveData.value = true
     }
 
     private fun showFieldErrors(e: InvalidFieldsException) {

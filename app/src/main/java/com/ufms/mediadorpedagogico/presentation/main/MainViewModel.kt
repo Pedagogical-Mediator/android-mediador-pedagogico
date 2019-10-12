@@ -4,13 +4,20 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
+import com.ufms.mediadorpedagogico.data.firebase.FirebaseMessagingServiceHandler
+import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNews
+import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNotices
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
+import com.ufms.mediadorpedagogico.domain.util.subscribeToTopic
+import com.ufms.mediadorpedagogico.presentation.util.extensions.unsafeLet
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 
 class MainViewModel(
-    private val schedulerProvider: SchedulerProvider
+    private val schedulerProvider: SchedulerProvider,
+    private val manageNotices: ManageNotices,
+    private val manageNews: ManageNews
 ) : BaseViewModel() {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
@@ -22,6 +29,16 @@ class MainViewModel(
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
         //TODO buscar dados da escola e turma
+        subscribeToTopics()
+    }
+
+    private fun subscribeToTopics() {
+        unsafeLet(manageNews.isSubscribed(), manageNotices.isSubscribed()) {
+            manageNews.subscribe()
+            manageNotices.subscribe()
+            subscribeToTopic(FirebaseMessagingServiceHandler.KEY_TOPIC_NOTICES)
+            subscribeToTopic(FirebaseMessagingServiceHandler.KEY_TOPIC_NEWS)
+        }
     }
 
     private fun onFailure(throwable: Throwable) {

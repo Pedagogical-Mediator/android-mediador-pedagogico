@@ -6,20 +6,16 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
-import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.ufms.mediadorpedagogico.R
+import com.ufms.mediadorpedagogico.data.storage.PreferencesCache
 import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
-
 
 class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
 
     override fun onNewToken(p0: String) {
-        with(FirebaseMessaging.getInstance()) {
-            subscribeToTopic(KEY_TOPIC_NOTICES)
-            subscribeToTopic(KEY_TOPIC_NEWS)
-        }
+        PreferencesCache.init(applicationContext).set(KEY_TOPIC_TOKEN, p0)
     }
 
     /**
@@ -93,5 +89,6 @@ class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
 //        }
         const val KEY_TOPIC_NEWS = "Noticias"
         const val KEY_TOPIC_NOTICES = "Avisos"
+        const val KEY_TOPIC_TOKEN = "KEY_TOPIC_TOKEN"
     }
 }

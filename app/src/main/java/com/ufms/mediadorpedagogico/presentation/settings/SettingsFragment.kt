@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentSettingsBinding
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.ext.android.inject
@@ -28,5 +29,19 @@ class SettingsFragment : BaseFragment() {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
         return binding.root
+    }
+
+    override fun subscribeUi() {
+        super.subscribeUi()
+        viewModel.subscribedNews.observe(viewLifecycleOwner, ::onSubscribedNews)
+        viewModel.subscribedNotices.observe(viewLifecycleOwner, ::onSubscribedNotices)
+    }
+
+    private fun onSubscribedNews(isSubscribed: Boolean?) {
+        isSubscribed?.let(binding.cmpNews.switchNotification::setChecked)
+    }
+
+    private fun onSubscribedNotices(isSubscribed: Boolean?) {
+        isSubscribed?.let(binding.cmpNotices.switchNotification::setChecked)
     }
 }

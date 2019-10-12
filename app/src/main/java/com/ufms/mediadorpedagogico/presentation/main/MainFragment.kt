@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
-import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListFragmentDirections
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
@@ -55,6 +54,9 @@ class MainFragment : BaseFragment() {
             cardViewSettings.setOnClickListener(::goToSettings)
 //            cardViewBullying.setOnClickListener(viewModel::goToBullying)
         }
+    }
+
+    private fun setupCache(subscribe: Boolean?) {
     }
 
     private fun goToNotice() {

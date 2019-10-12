@@ -18,7 +18,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { BaseViewModel() }
-    viewModel { MainViewModel(get()) }
+    viewModel { MainViewModel(get(), get(), get()) }
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { HomeworkListViewModel(get(), get()) }
@@ -27,5 +27,5 @@ val viewModelModule = module {
     viewModel { (notice: Notice) -> NoticeDetailsViewModel(notice) }
     viewModel { NewsListViewModel(get(), get()) }
     viewModel { BullyingViewModel(get(), get()) }
-    viewModel { SettingsViewModel() }
+    viewModel { SettingsViewModel(get(), get()) }
 }
