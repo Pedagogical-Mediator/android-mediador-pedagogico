@@ -19,6 +19,9 @@
         <action
                 android:id="@+id/action_main_fragment_to_newsListFragment"
                 app:destination="@id/news_list_fragment" />
+        <action
+                android:id="@+id/action_main_fragment_to_settingsFragment"
+                app:destination="@id/settings_fragment" />
     </fragment>
     <fragment
             android:id="@+id/notice_list_fragment"
@@ -64,4 +67,8 @@
             android:name="com.ufms.mediadorpedagogico.presentation.news.NewsListFragment"
             android:label="NewsListFragment"
             tools:layout="@layout/fragment_news_list"/>
+    <fragment
+            android:id="@+id/settings_fragment"
+            android:name="com.ufms.mediadorpedagogico.presentation.settings.SettingsFragment"
+            android:label="SettingsFragment" />
 </navigation>

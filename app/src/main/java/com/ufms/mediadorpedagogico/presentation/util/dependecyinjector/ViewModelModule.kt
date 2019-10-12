@@ -11,6 +11,7 @@ import com.ufms.mediadorpedagogico.presentation.main.MainViewModel
 import com.ufms.mediadorpedagogico.presentation.news.NewsListViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewModel
+import com.ufms.mediadorpedagogico.presentation.settings.SettingsViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -26,4 +27,5 @@ val viewModelModule = module {
     viewModel { (notice: Notice) -> NoticeDetailsViewModel(notice) }
     viewModel { NewsListViewModel(get(), get()) }
     viewModel { BullyingViewModel(get(), get()) }
+    viewModel { SettingsViewModel() }
 }
