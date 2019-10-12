@@ -22,7 +22,7 @@ interface ApiService {
      * Homework
      * */
 
-    @GET("aulas")
+    @GET("aulas/todos")
     fun getListOfHomework(@Query("page") pageNumber: Int): Single<Response<ApiHomeworkContent>>
 
 
