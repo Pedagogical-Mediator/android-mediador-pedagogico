@@ -14,7 +14,7 @@ class ManageNews(
         }
     }
 
-    fun subscribe() {
-        cache.set(KEY_TOPIC_NEWS, true)
+    fun subscribe(shouldSubscribe: Boolean) {
+        cache.set(KEY_TOPIC_NEWS, shouldSubscribe)
     }
 }

@@ -14,10 +14,7 @@ class ManageNotices(
         }
     }
 
-    fun subscribe() {
-        cache.set(
-            KEY_TOPIC_NOTICES,
-            true
-        )
+    fun subscribe(shouldSubscribe: Boolean) {
+        cache.set(KEY_TOPIC_NOTICES, shouldSubscribe)
     }
 }

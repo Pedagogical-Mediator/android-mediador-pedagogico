@@ -8,7 +8,7 @@ import com.ufms.mediadorpedagogico.data.firebase.FirebaseMessagingServiceHandler
 import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNews
 import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNotices
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
-import com.ufms.mediadorpedagogico.domain.util.subscribeToTopic
+import com.ufms.mediadorpedagogico.domain.util.subscriberHandler
 import com.ufms.mediadorpedagogico.presentation.util.extensions.unsafeLet
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
@@ -34,10 +34,10 @@ class MainViewModel(
 
     private fun subscribeToTopics() {
         unsafeLet(manageNews.isSubscribed(), manageNotices.isSubscribed()) {
-            manageNews.subscribe()
-            manageNotices.subscribe()
-            subscribeToTopic(FirebaseMessagingServiceHandler.KEY_TOPIC_NOTICES)
-            subscribeToTopic(FirebaseMessagingServiceHandler.KEY_TOPIC_NEWS)
+            manageNews.subscribe(true)
+            manageNotices.subscribe(true)
+            subscriberHandler(FirebaseMessagingServiceHandler.KEY_TOPIC_NOTICES)
+            subscriberHandler(FirebaseMessagingServiceHandler.KEY_TOPIC_NEWS)
         }
     }
 
