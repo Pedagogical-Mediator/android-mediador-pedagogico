@@ -27,5 +27,5 @@ val viewModelModule = module {
     viewModel { (notice: Notice) -> NoticeDetailsViewModel(notice) }
     viewModel { NewsListViewModel(get(), get()) }
     viewModel { BullyingViewModel(get(), get()) }
-    viewModel { SettingsViewModel(get(), get()) }
+    viewModel { SettingsViewModel(get(), get(), get()) }
 }

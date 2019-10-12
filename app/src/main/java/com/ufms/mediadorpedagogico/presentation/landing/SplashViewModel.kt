@@ -24,7 +24,7 @@ class SplashViewModel(
     private fun checkUser() {
         scheduleCallback(DEFAULT_DELAY_IN_SECONDS) {
             if (getPersistedUser.execute() == null) {
-                goTo(LoginNavData())
+                goTo(LoginNavData(false))
             } else {
                 goTo(MainNavData())
             }

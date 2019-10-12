@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentSettingsBinding
+import com.ufms.mediadorpedagogico.presentation.login.LoginNavData
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.onChecked
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.ext.android.inject
@@ -41,12 +43,14 @@ class SettingsFragment : BaseFragment() {
         super.subscribeUi()
         viewModel.subscribedNews.observe(viewLifecycleOwner, ::onSubscribedNews)
         viewModel.subscribedNotices.observe(viewLifecycleOwner, ::onSubscribedNotices)
+        viewModel.logout.observe(viewLifecycleOwner, ::onLogout)
     }
 
     private fun setupUi() {
         with(binding) {
             cmpNews.switchNotification.onChecked(viewModel::onNewsSwitch)
             cmpNotices.switchNotification.onChecked(viewModel::onNoticesSwitch)
+            buttonLogout.setOnClickListener(viewModel::onLogout)
         }
     }
 
@@ -56,5 +60,8 @@ class SettingsFragment : BaseFragment() {
 
     private fun onSubscribedNotices(isSubscribed: Boolean?) {
         isSubscribed?.let(binding.cmpNotices.switchNotification::setChecked)
+    }
+
+    private fun onLogout(logout: Boolean?) {
     }
 }
