@@ -1,7 +1,5 @@
 package com.ufms.mediadorpedagogico.presentation.notice.details
 
-import android.content.Context
-import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
@@ -85,14 +83,6 @@ class NoticeDetailsFragment : BaseFragment() {
                     context?.shortToast(getString(R.string.activity_main_error_image_decode))
                 }
             }
-        }
-    }
-
-    companion object {
-        const val NOTICE_KEY = "NOTICE"
-
-        fun createIntent(context: Context, notice: Notice): Intent {
-            return Intent(context, NoticeDetailsFragment::class.java).putExtra(NOTICE_KEY, notice)
         }
     }
 }

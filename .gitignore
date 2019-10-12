@@ -27,7 +27,7 @@ proguard/
 .idea/
 *.project
 *.classpath
-
+app/lint/
 # NetBeans files
 .nb-gradle
 
@@ -68,3 +68,5 @@ facebook/src/androidTest/assets/config.json
 gradle-app.setting
 true/crashlytics-build.properties
 true/values/com_crashlytics_build_id.xml
+
+*.lock

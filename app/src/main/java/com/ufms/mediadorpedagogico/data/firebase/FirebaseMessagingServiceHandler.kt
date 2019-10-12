@@ -1,5 +1,6 @@
 package com.ufms.mediadorpedagogico.data.firebase
 
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
@@ -10,7 +11,6 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
-import android.app.NotificationChannel
 
 
 class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
@@ -40,7 +40,8 @@ class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
      * @param dataNoticeReceived a notícia que será carregada para exibir todas as suas informações
      * */
     private fun createNotification(title: String?, description: String?) {
-        val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager: NotificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             val importance = NotificationManager.IMPORTANCE_LOW
@@ -56,7 +57,8 @@ class FirebaseMessagingServiceHandler : FirebaseMessagingService() {
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
-        val notificationBuilder: NotificationCompat.Builder = NotificationCompat.Builder(this, "notif_fire")
+        val notificationBuilder: NotificationCompat.Builder =
+            NotificationCompat.Builder(this, "notif_fire")
         notificationBuilder
             .setContentTitle("Novidades chegando - $title")
             .setContentText("Descricao - $description")

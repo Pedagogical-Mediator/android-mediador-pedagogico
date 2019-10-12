@@ -52,15 +52,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                <TextView
-                        android:id="@+id/text_view_description"
-                        style="@style/TextLabelDescriptionBlackNormal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/big"
-                        android:text="@{noticeDetails.description}"
-                        tools:text="DESCRIPTION" />
-
                 <ImageView
                         android:id="@+id/image_view_resource"
                         android:layout_width="wrap_content"

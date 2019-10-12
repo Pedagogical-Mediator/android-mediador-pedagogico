@@ -7,4 +7,12 @@
     <item android:id="@+id/notice_list_fragment"
             android:icon="@drawable/selector_button_accent"
             android:title="@string/menu_notices"/>
+
+    <item android:id="@+id/homework_list_fragment"
+            android:icon="@drawable/selector_button_accent"
+            android:title="@string/menu_homework"/>
+
+    <item android:id="@+id/news_list_fragment"
+            android:icon="@drawable/selector_button_accent"
+            android:title="@string/menu_news"/>
 </menu>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+
+    
+
+                                           
+
+                 
+                                  
+                                                                                              
+
+                 
+                                    
+                                                                                 
+           
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" android:tag="layout/fragment_notice_details_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/semi_tiny"
+                    android:layout_marginTop="@dimen/tiny"
+                    android:layout_marginEnd="@dimen/semi_tiny"
+                    android:layout_marginBottom="@dimen/semi_tiny"
+                    android:background="@drawable/card_view"
+                    android:orientation="vertical"
+                    android:padding="@dimen/normal"
+                    tools:context="com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsFragment">
+
+                <TextView
+                        android:id="@+id/text_view_title"
+                        style="@style/TextLabelTitleBlackBig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:tag="binding_1"              
+                        android:textAlignment="center"
+                        tools:text="TITULO" />
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line"
+                        android:layout_marginTop="@dimen/tiny"
+                        android:background="@color/black" />
+
+                <WebView
+                        android:id="@+id/webview_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                <ImageView
+                        android:id="@+id/image_view_resource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/big" />
+
+                <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+    </LinearLayout>
+         

@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'org.sonarqube'
 //apply plugin: 'jacoco-android'
 apply plugin: 'androidx.navigation.safeargs'
+apply plugin: "org.jmailen.kotlinter"
 
 repositories {
     mavenCentral()
@@ -40,6 +41,12 @@ android {
         versionName rootProject.ext.versionName
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
+
+
+    }
+
+    lintOptions {
+        xmlReport true
     }
 
     buildTypes {
@@ -77,6 +84,20 @@ android {
 //    html.enabled false
 //    xml.enabled true
 //}
+
+kotlinter {
+    ignoreFailures = true
+}
+
+task runChecksForDanger() {
+    group = "Reporting"
+    dependsOn 'lintKotlin'
+
+    def file = file("${project.rootDir}/build/reports/ktlint")
+    if (!file.exists()) file.mkdirs()
+    def lintFile = new File("${project.rootDir}/build/reports/lint")
+    if (!lintFile.exists()) lintFile.mkdirs()
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

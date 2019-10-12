@@ -9,7 +9,6 @@ import com.ufms.mediadorpedagogico.domain.entity.homework.HomeworkContent
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
-import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsNavData
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
@@ -22,12 +21,10 @@ class HomeworkListViewModel(
 ) : BaseViewModel() {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
-    val goToHomeworkdDetails: LiveData<Boolean> get() = _goToHomeworkdDetails
     val homeworkContent: LiveData<Event<List<Homework>>> get() = _homeworkContent
     val noContentReturned: LiveData<Event<Boolean>> get() = _noContentReturned
 
     private val _errors: MutableLiveData<Event<InvalidFieldsException>> = MutableLiveData()
-    private val _goToHomeworkdDetails: MutableLiveData<Boolean> = MutableLiveData()
     private val _homeworkContent: MutableLiveData<Event<List<Homework>>> = MutableLiveData()
     private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
     private var pageNumber = 0
@@ -43,10 +40,6 @@ class HomeworkListViewModel(
             .defaultSched(schedulerProvider)
             .subscribeBy(this::onFailure, this::onSuccess)
             .let(disposables::add)
-    }
-
-    fun setupOnItemClicked(homework: Homework) {
-        goTo(HomeworkDetailsNavData(homework))
     }
 
     private fun onFailure(throwable: Throwable) {

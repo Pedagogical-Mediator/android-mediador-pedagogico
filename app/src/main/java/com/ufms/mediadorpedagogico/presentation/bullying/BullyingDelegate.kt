@@ -1,10 +1,10 @@
 package com.ufms.mediadorpedagogico.presentation.bullying
 
-class BullyingDelegate (
+class BullyingDelegate(
 
 ) {
 
     fun getBullyingInformation() {
-        
+
     }
 }

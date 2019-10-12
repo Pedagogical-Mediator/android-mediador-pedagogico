@@ -5,9 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
-import com.ufms.mediadorpedagogico.presentation.bullying.BullyingNavData
-import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListNavData
-import com.ufms.mediadorpedagogico.presentation.news.NewsListNavData
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
@@ -30,17 +27,5 @@ class MainViewModel(
     private fun onFailure(throwable: Throwable) {
         setDialog(throwable)
         _noContentReturned.value = Event(true)
-    }
-
-    fun goToHomework() {
-        goTo(HomeworkListNavData())
-    }
-
-    fun goToNews() {
-        goTo(NewsListNavData())
-    }
-
-    fun goToBullying() {
-        goTo(BullyingNavData())
     }
 }

@@ -39,7 +39,5 @@
     <color name="notice_button_background">#FFD035</color>
     <color name="homework_button_background">#4147C7</color>
     <color name="news_button_background">#00A69B</color>
-    <color name="bullying_button_background">#00A7F0</color>
-
-
+    <color name="bullying_button_background">#00A8F3</color>
 </resources>

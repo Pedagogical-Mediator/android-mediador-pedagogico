@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+
+    
+                 
+                                  
+                                
+
+                 
+                           
+                                
+           
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/small"  android:tag="layout/fragment_bullying_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/semi_tiny"
+                        android:layout_marginTop="@dimen/tiny"
+                        android:layout_marginEnd="@dimen/semi_tiny"
+                        android:layout_marginBottom="@dimen/semi_tiny"
+                        android:background="@drawable/card_view"
+                        android:orientation="vertical"
+                        android:padding="@dimen/normal"
+                        tools:context="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsFragment">
+
+                    <TextView
+                            android:id="@+id/text_view_title"
+                            style="@style/TextLabelTitleBlackBig"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Denúncia de Bullying"
+                            android:textAlignment="center" />
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/line"
+                            android:layout_marginTop="@dimen/tiny"
+                            android:background="@color/black" />
+
+                    <LinearLayout
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            android:layout_marginTop="@dimen/large"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/ic_card_view_bullying"
+                            android:gravity="center">
+                        <ImageView
+                                android:layout_width="76dp"
+                                android:layout_height="76dp"
+                                android:src="@mipmap/ic_bullying_round"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                            android:id="@+id/text_view_description"
+                            style="@style/TextLabelDescriptionBlackNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/big"
+                            tools:text="DESCRIPTION" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Link: "/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <include
+                android:id="@+id/loading_placeholder"
+                layout="@layout/loading_placeholder" />
+    </FrameLayout>
+         

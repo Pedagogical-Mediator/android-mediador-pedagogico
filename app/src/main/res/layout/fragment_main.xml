@@ -22,12 +22,6 @@
                 android:background="@color/white_alpha30"
                 android:orientation="vertical">
 
-<!--            <include-->
-<!--                    android:id="@+id/toolbar_main_screen"-->
-<!--                    layout="@layout/toolbar_main_screen"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content" />-->
-
             <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/line"
@@ -54,7 +48,7 @@
                             android:layout_height="80dp"
                             android:background="@drawable/card_view_clickable"
                             android:backgroundTint="@color/notice_button_background"
-                            android:src="@mipmap/ic_notice" />
+                            android:src="@mipmap/ic_notice_round" />
 
                     <TextView
                             style="@style/TextLabelWhateverBoldMainLabel"
@@ -81,7 +75,7 @@
                             android:layout_height="80dp"
                             android:background="@drawable/card_view_clickable"
                             android:backgroundTint="@color/homework_button_background"
-                            android:src="@mipmap/ic_homework" />
+                            android:src="@mipmap/ic_homework_round" />
 
                     <TextView
                             style="@style/TextLabelWhateverBoldMainLabel"
@@ -109,7 +103,7 @@
                             android:layout_height="80dp"
                             android:background="@drawable/card_view_clickable"
                             android:backgroundTint="@color/news_button_background"
-                            android:src="@mipmap/ic_news" />
+                            android:src="@mipmap/ic_news_round" />
 
                     <TextView
                             style="@style/TextLabelWhateverBoldMainLabel"
@@ -136,8 +130,8 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:background="@drawable/card_view_clickable"
-                            android:backgroundTint="@color/news_button_background"
-                            android:src="@mipmap/ic_bullying" />
+                            android:backgroundTint="@color/ic_bullying_background"
+                            android:src="@mipmap/ic_bullying_round" />
 
                     <TextView
                             style="@style/TextLabelWhateverBoldMainLabel"
@@ -164,6 +158,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:background="@drawable/card_view_clickable"
+                            android:backgroundTint="@color/ic_settings_background"
                             android:src="@mipmap/ic_settings" />
 
                     <TextView
