@@ -44,6 +44,7 @@ class HomeworkDetailsFragment : BaseFragment() {
         lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
+        val a = "testing unused"
         return binding.root
     }
 
