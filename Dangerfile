@@ -15,12 +15,6 @@ end
 checkstyle_format.base_path = Dir.pwd
 checkstyle_format.report "app/build/reports/ktlint/main-lint.xml"
 
-# AndroidLint
-android_lint.report_file = 'app/build/reports/ktlint/main-lint.xml'
-android_lint.filtering = true
-android_lint.severity = "Error"
-android_lint.lint
-
 require 'nokogiri'
 
 @doc = Nokogiri::XML(File.open('app/build/reports/ktlint/main-lint.xml'))
