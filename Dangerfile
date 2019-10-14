@@ -23,7 +23,7 @@ android_lint.lint
 
 require 'nokogiri'
 
-@doc = Nokogiri::XML(File.open("main-lint.xml"))
+@doc = Nokogiri::XML(File.open('app/build/reports/ktlint/main-lint.xml'))
 
 @doc.css('file').each do |file|
   file_name = file['name']
