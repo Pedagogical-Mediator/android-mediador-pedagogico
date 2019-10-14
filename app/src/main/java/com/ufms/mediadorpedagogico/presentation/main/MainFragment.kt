@@ -56,6 +56,12 @@ class MainFragment : BaseFragment() {
         }
     }
 
+    /**
+     * TODO arrumar para enviar a turma nas requisições
+     * TODO verificar porque não está abrindo no navegador as notícias
+     * TODO arrumar layout das configurações
+     *
+     * */
     private fun setupCache(subscribe: Boolean?) {
     }
 

@@ -8,7 +8,7 @@ class GetHomework constructor(
     private val repository: HomeworkRepository
 ) {
 
-    fun execute(pageNumber: Int): Single<HomeworkContent> {
-        return repository.getHomeworkList(pageNumber)
+    fun execute(pageNumber: Int, classKey: String): Single<HomeworkContent> {
+        return repository.getHomeworkList(pageNumber, classKey)
     }
 }

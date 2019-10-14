@@ -8,6 +8,7 @@ import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 import com.ufms.mediadorpedagogico.domain.entity.homework.HomeworkContent
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
+import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
@@ -17,7 +18,8 @@ import io.reactivex.rxkotlin.subscribeBy
 
 class HomeworkListViewModel(
     private val schedulerProvider: SchedulerProvider,
-    private val getHomework: GetHomework
+    private val getHomework: GetHomework,
+    private val getPersistedUser: GetPersistedUser
 ) : BaseViewModel() {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
@@ -35,11 +37,14 @@ class HomeworkListViewModel(
     }
 
     fun loadMoreHomework() {
-        getHomework.execute(pageNumber)
-            .defaultPlaceholders(this::setPlaceholder)
-            .defaultSched(schedulerProvider)
-            .subscribeBy(this::onFailure, this::onSuccess)
-            .let(disposables::add)
+        val classKey = getPersistedUser.execute()?.classKey
+        classKey?.let {
+            getHomework.execute(pageNumber, it)
+                .defaultPlaceholders(this::setPlaceholder)
+                .defaultSched(schedulerProvider)
+                .subscribeBy(this::onFailure, this::onSuccess)
+                .let(disposables::add)
+        }
     }
 
     private fun onFailure(throwable: Throwable) {

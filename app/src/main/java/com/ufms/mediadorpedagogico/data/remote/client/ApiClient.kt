@@ -37,8 +37,8 @@ object ApiClient {
         return makeRequest(apiServices.signIn(classKey, name))
     }
 
-    fun getListOfHomework(pageNumber: Int): Single<ApiHomeworkContent> {
-        return makeRequest(apiServices.getListOfHomework(pageNumber))
+    fun getListOfHomework(pageNumber: Int, classKey: String): Single<ApiHomeworkContent> {
+        return makeRequest(apiServices.getListOfHomework(pageNumber, classKey))
     }
 
     fun getListOfNotice(pageNumber: Int): Single<ApiNoticeContent> {
