@@ -7,7 +7,7 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.interactor.user.LoginForm
 import com.ufms.mediadorpedagogico.domain.interactor.user.SignIn
-import com.ufms.mediadorpedagogico.domain.util.subscribeToTopic
+import com.ufms.mediadorpedagogico.domain.util.subscriberHandler
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
@@ -49,7 +49,7 @@ class LoginViewModel(
                 showClassKeyFieldErrorLiveData.value = false
                 showNameFieldErrorLiveData.value = false
                 goToMainLiveData.value = true
-                subscribeToTopic(classKey)
+                subscriberHandler(classKey)
             }
             .let(disposables::add)
     }

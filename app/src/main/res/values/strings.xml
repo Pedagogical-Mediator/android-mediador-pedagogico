@@ -103,4 +103,5 @@
     <string name="menu_homework">Sala de aula invertida</string>
     <string name="bullying_fragment_label">Bullying</string>
     <string name="menu_news">Notícias</string>
+    <string name="menu_settings">Configurações</string>
 </resources>

@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import android.text.Editable
 import android.view.View
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -169,3 +170,7 @@ private fun placeholderOptions(placeholder: Drawable? = null): RequestOptions {
 
 fun ViewDataBinding.setString(resourceId: Int, vararg strings: String) =
     root.context.getString(resourceId, strings).toString()
+
+fun Switch.onChecked(callback: (Boolean) -> Unit) {
+    setOnCheckedChangeListener { _, isChecked ->  callback.invoke(isChecked)}
+}

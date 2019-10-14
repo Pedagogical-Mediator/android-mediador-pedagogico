@@ -72,6 +72,10 @@ class HomeworkDetailsFragment : BaseFragment() {
         homeworkDetails?.run {
             binding.homeworkDetails = this
             homeworkDetailsAdapter.setItems(links)
+            binding.webviewContent.loadDataWithBaseURL(
+                ""
+                , description, "text/html", "UTF-8", ""
+            )
             imageBase64?.let {
                 try {
                     val decodedString = Base64.decode(it, Base64.DEFAULT)

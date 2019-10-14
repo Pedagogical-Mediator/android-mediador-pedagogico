@@ -15,4 +15,8 @@
     <item android:id="@+id/news_list_fragment"
             android:icon="@drawable/selector_button_accent"
             android:title="@string/menu_news"/>
+
+    <item android:id="@+id/settings_fragment"
+            android:icon="@drawable/selector_button_accent"
+            android:title="@string/menu_settings"/>
 </menu>

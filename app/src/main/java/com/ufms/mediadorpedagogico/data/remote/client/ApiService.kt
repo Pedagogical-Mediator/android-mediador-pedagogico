@@ -22,8 +22,9 @@ interface ApiService {
      * Homework
      * */
 
-    @GET("aulas")
-    fun getListOfHomework(@Query("page") pageNumber: Int): Single<Response<ApiHomeworkContent>>
+    @POST("aulas/")
+    @FormUrlEncoded
+    fun getListOfHomework(@Field("page") pageNumber: Int, @Field("chaveDeAcesso") classKey: String): Single<Response<ApiHomeworkContent>>
 
 
     /**

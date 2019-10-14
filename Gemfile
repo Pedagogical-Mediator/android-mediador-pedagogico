@@ -11,3 +11,4 @@ source "https://rubygems.org"
 gem 'danger-gitlab'
 gem "danger-checkstyle_format"
 gem "danger-android_lint"
+gem 'nokogiri'

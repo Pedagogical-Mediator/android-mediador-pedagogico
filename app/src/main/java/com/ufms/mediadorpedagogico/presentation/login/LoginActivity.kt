@@ -10,6 +10,7 @@ import com.ufms.mediadorpedagogico.domain.extensions.then
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeChanges
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
+import com.ufms.mediadorpedagogico.presentation.util.extensions.shouldClearTask
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
@@ -70,8 +71,10 @@ class LoginActivity : BaseActivity() {
     }
 
     companion object {
-        fun createIntent(context: Context): Intent {
-            return Intent(context, LoginActivity::class.java)
+        fun createIntent(context: Context, shouldClearTask: Boolean): Intent {
+            return Intent(context, LoginActivity::class.java).apply {
+                shouldClearTask(shouldClearTask)
+            }
         }
     }
 }

@@ -1,14 +1,15 @@
 package com.ufms.mediadorpedagogico.presentation.settings
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentSettingsBinding
-import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
+import com.ufms.mediadorpedagogico.presentation.login.LoginNavData
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import com.ufms.mediadorpedagogico.presentation.util.extensions.onChecked
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.ext.android.inject
@@ -31,5 +32,36 @@ class SettingsFragment : BaseFragment() {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupUi()
+    }
+
+    override fun subscribeUi() {
+        super.subscribeUi()
+        viewModel.subscribedNews.observe(viewLifecycleOwner, ::onSubscribedNews)
+        viewModel.subscribedNotices.observe(viewLifecycleOwner, ::onSubscribedNotices)
+        viewModel.logout.observe(viewLifecycleOwner, ::onLogout)
+    }
+
+    private fun setupUi() {
+        with(binding) {
+            cmpNews.switchNotification.onChecked(viewModel::onNewsSwitch)
+            cmpNotices.switchNotification.onChecked(viewModel::onNoticesSwitch)
+            buttonLogOut.setOnClickListener(viewModel::onLogout)
+        }
+    }
+
+    private fun onSubscribedNews(isSubscribed: Boolean?) {
+        isSubscribed?.let(binding.cmpNews.switchNotification::setChecked)
+    }
+
+    private fun onSubscribedNotices(isSubscribed: Boolean?) {
+        isSubscribed?.let(binding.cmpNotices.switchNotification::setChecked)
+    }
+
+    private fun onLogout(logout: Boolean?) {
     }
 }

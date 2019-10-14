@@ -9,7 +9,7 @@ data class ApiNews(
     @SerializedName("id") val id: Int?,
     @SerializedName("titulo") val title: String?,
     @SerializedName("descricao") val description: String?,
-    @SerializedName("link") val link: String?,
+    @SerializedName("links") val link: String?,
     @SerializedName("dataDeCriacao") val createdAt: String
 ) : Serializable {
 

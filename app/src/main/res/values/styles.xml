@@ -110,6 +110,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!--
+        BUTTONS
+     -->
+
+    <style name="BorderlessButtonMediumLightGrayAppearance" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/work_sans</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 
     <!--
         ACTIVITY ALL DETAILS
