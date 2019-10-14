@@ -17,6 +17,7 @@ danger:
     - apt-get --quiet install --yes ruby-bundler
     - apt-get --quiet install --yes ruby-dev
     - apt-get --quiet install --yes build-essential
+    - apt-get --quiet install --yes libxslt-dev libxml2-dev
     - gem install bundler
     - bundle install
     - ./gradlew lintKotlin
