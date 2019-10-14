@@ -50,7 +50,7 @@ class SettingsFragment : BaseFragment() {
         with(binding) {
             cmpNews.switchNotification.onChecked(viewModel::onNewsSwitch)
             cmpNotices.switchNotification.onChecked(viewModel::onNoticesSwitch)
-            buttonLogout.setOnClickListener(viewModel::onLogout)
+            buttonLogOut.setOnClickListener(viewModel::onLogout)
         }
     }
 

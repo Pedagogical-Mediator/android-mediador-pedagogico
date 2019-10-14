@@ -10,10 +10,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
+        android:layout_marginTop="@dimen/tiny"
+        android:layout_marginBottom="@dimen/tiny"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            style="@style/TextLabelDescriptionBlackNormal"
             android:id="@+id/text_view_notification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

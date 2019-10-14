@@ -15,6 +15,7 @@ class SignIn(private val repository: UserRepository) {
                 repository.signIn(classKey, name)
             }
             .doAfterSuccess {
+                it.classKey = classKey
                 repository.cacheUser(it)
             }
     }

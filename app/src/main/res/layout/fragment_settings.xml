@@ -16,14 +16,18 @@
         android:id="@+id/constraint_layout_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/normal">
 
         <TextView
+            style="@style/TextLabelTitleBlackSemiBIg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Notificações" />
 
         <View
+            android:layout_marginTop="@dimen/tiny"
+            android:layout_marginBottom="@dimen/tiny"
             android:layout_width="match_parent"
             android:layout_height="@dimen/line"
             android:background="@color/black" />
@@ -44,9 +48,12 @@
             android:background="@color/black" />
 
         <Button
-            android:id="@+id/button_logout"
+            android:id="@+id/button_log_out"
+            style="@style/BorderlessButtonMediumLightGrayAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Deslogar"/>
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/normal"
+            android:text="Sair do aplicativo" />
     </LinearLayout>
 </layout>
