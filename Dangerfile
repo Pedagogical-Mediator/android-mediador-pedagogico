@@ -24,6 +24,5 @@ require 'nokogiri'
   file.css('error').each do |error|
     error_line = error['line']
     error_message = error['message']
-    warn(error_message, file: file_name, line: error_line)
   end
 end
