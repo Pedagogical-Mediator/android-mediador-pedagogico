@@ -28,6 +28,8 @@ stages:
 
 assembleDebug:
   stage: build
+  only:
+    - merge_requests
   script:
     - ./gradlew assembleDebug
   artifacts:
@@ -36,11 +38,15 @@ assembleDebug:
 
 debugTests:
   stage: test
+  only:
+    - merge_requests
   script:
     - ./gradlew -Pci --console=plain :app:testDebug
 
 danger:
   stage: danger
+  only:
+    - merge_requests
   script:
     - apt-get --quiet install --yes ruby-bundler
     - apt-get --quiet install --yes ruby-dev
