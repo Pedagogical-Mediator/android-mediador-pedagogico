@@ -41,8 +41,6 @@ android {
         versionName rootProject.ext.versionName
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
-
-
     }
 
     lintOptions {
@@ -92,6 +90,7 @@ android {
 
 kotlinter {
     ignoreFailures = true
+    disabledRules = ["no-wildcard-imports", "comment-spacing", "final-newline"]
 }
 
 task runChecksForDanger() {
