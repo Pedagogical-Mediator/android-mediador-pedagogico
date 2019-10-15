@@ -30,6 +30,8 @@ class HomeworkListViewModel(
     private val _homeworkContent: MutableLiveData<Event<List<Homework>>> = MutableLiveData()
     private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
     private var pageNumber = 0
+    private var isLoading = false
+    private var thereAreMoreToLoad = true
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
@@ -39,11 +41,14 @@ class HomeworkListViewModel(
     fun loadMoreHomework() {
         val classKey = getPersistedUser.execute()?.classKey
         classKey?.let {
-            getHomework.execute(pageNumber, it)
-                .defaultPlaceholders(this::setPlaceholder)
-                .defaultSched(schedulerProvider)
-                .subscribeBy(this::onFailure, this::onSuccess)
-                .let(disposables::add)
+            if (!isLoading && thereAreMoreToLoad) {
+                isLoading = true
+                getHomework.execute(pageNumber, it)
+                    .defaultPlaceholders(this::setPlaceholder)
+                    .defaultSched(schedulerProvider)
+                    .subscribeBy(this::onFailure, this::onSuccess)
+                    .let(disposables::add)
+            }
         }
     }
 
@@ -54,6 +59,8 @@ class HomeworkListViewModel(
 
     private fun onSuccess(content: HomeworkContent) {
         content.content?.run {
+            isLoading = false
+            thereAreMoreToLoad = size == 10
             if (isEmpty()) {
                 _noContentReturned.value = Event(true)
             } else {
