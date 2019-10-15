@@ -21,12 +21,7 @@ before_script:
   - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
   - set -o pipefail
 
-stages:
-  - build
-  - test
-
 assembleDebug:
-  stage: build
   only:
     - merge_requests
   script:
@@ -36,7 +31,6 @@ assembleDebug:
       - app/build/outputs/
 
 debugTests:
-  stage: test
   only:
     - merge_requests
   script:
