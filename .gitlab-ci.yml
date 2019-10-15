@@ -22,8 +22,6 @@ before_script:
   - set -o pipefail
 
 assembleDebug:
-  only:
-    - merge_requests
   script:
     - ./gradlew assembleDebug
   artifacts:
@@ -31,8 +29,6 @@ assembleDebug:
       - app/build/outputs/
 
 debugTests:
-  only:
-    - merge_requests
   script:
     - ./gradlew -Pci --console=plain :app:testDebug
 
