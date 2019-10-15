@@ -24,7 +24,6 @@ before_script:
 stages:
   - build
   - test
-  - danger
 
 assembleDebug:
   stage: build
@@ -44,7 +43,6 @@ debugTests:
     - ./gradlew -Pci --console=plain :app:testDebug
 
 danger:
-  stage: danger
   only:
     - merge_requests
   script:
