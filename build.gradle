@@ -29,6 +29,8 @@ buildscript {
         koinVersion = '2.0.1'
         stethoVersion = '1.5.1'
         sonarqubeVersion = '2.7.1'
+        junitVersion = '5.3.1'
+
     }
     repositories {
         google()

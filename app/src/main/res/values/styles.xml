@@ -95,6 +95,12 @@
         <item name="android:fontFamily">@font/whateverbold</item>
     </style>
 
+    <style name="TextLabelTitleWhiteBig" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/whateverbold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <!--
         NORMAL TEXTS
     -->

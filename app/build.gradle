@@ -69,6 +69,11 @@ android {
             testCoverageEnabled = true
         }
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
 //    testOptions {
 //        unitTests.all {
 //            jacoco {
@@ -161,6 +166,10 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.2.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
     androidTestImplementation 'com.linkedin.testbutler:test-butler-library:2.0.0'
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testImplementation "org.koin:koin-test:$koinVersion"
 
     //Stetho
     implementation "com.facebook.stetho:stetho:$stethoVersion"
