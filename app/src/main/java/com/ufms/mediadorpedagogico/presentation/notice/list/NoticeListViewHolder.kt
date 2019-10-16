@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ItemListResourceBinding
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
+import com.ufms.mediadorpedagogico.domain.util.removeHtmlTags
+import com.ufms.mediadorpedagogico.domain.util.safeSlice
 
 class NoticeListViewHolder(
     private var binding: ItemListResourceBinding,
@@ -17,29 +19,17 @@ class NoticeListViewHolder(
         with(binding) {
             notice.run {
                 textViewTitle.text = title
-                textViewDescription.text = description
+                textViewDescription.text = description.removeHtmlTags()
                 textViewDate.text = createdAt
                 constraintLayoutItem.setOnClickListener { onItemClickedCallback.invoke(this) }
             }
         }
         with(binding) {
-            notice.description?.let {
-                if (it.length > 50) {
-                    textViewDescription.text =
-                        root.context.getString(
-                            R.string.summarize_three_dots_template,
-                            it.slice(0..50)
-                        )
-                }
+            notice.description.removeHtmlTags().let {
+                textViewDescription.text = it.safeSlice(0, 50)
             }
             notice.title?.let {
-                if (it.length > 50) {
-                    textViewTitle.text =
-                        root.context.getString(
-                            R.string.summarize_three_dots_template,
-                            it.slice(0..50)
-                        )
-                }
+                textViewTitle.text = it.safeSlice(0, 50)
             }
         }
     }

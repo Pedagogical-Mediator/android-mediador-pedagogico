@@ -21,13 +21,7 @@ before_script:
   - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
   - set -o pipefail
 
-stages:
-  - build
-  - test
-  - danger
-
 assembleDebug:
-  stage: build
   script:
     - ./gradlew assembleDebug
   artifacts:
@@ -35,12 +29,12 @@ assembleDebug:
       - app/build/outputs/
 
 debugTests:
-  stage: test
   script:
     - ./gradlew -Pci --console=plain :app:testDebug
 
 danger:
-  stage: danger
+  only:
+    - merge_requests
   script:
     - apt-get --quiet install --yes ruby-bundler
     - apt-get --quiet install --yes ruby-dev

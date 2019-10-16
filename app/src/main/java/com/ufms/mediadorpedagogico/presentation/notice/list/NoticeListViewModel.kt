@@ -30,6 +30,8 @@ class NoticeListViewModel(
     private val _noticeContent: MutableLiveData<Event<List<Notice>>> = MutableLiveData()
     private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
     private var pageNumber = 0
+    private var isLoading = false
+    private var thereAreMoreToLoad = true
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
@@ -37,10 +39,12 @@ class NoticeListViewModel(
     }
 
     fun loadMoreNotice() {
-        getNotice.execute(pageNumber)
-            .defaultPlaceholders(this::setPlaceholder)
-            .defaultSched(schedulerProvider)
-            .subscribeBy(this::onFailure, this::onSuccess)
+        if (!isLoading && thereAreMoreToLoad) {
+            getNotice.execute(pageNumber)
+                .defaultPlaceholders(this::setPlaceholder)
+                .defaultSched(schedulerProvider)
+                .subscribeBy(this::onFailure, this::onSuccess)
+        }
     }
 
     private fun onFailure(throwable: Throwable) {
@@ -50,6 +54,8 @@ class NoticeListViewModel(
 
     private fun onSuccess(content: NoticeContent) {
         content.content?.run {
+            isLoading = false
+            thereAreMoreToLoad = size == 10
             if (isEmpty()) {
                 _noContentReturned.value = Event(true)
             } else {
