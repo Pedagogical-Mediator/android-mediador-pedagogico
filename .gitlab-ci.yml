@@ -21,13 +21,6 @@ before_script:
   - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
   - set -o pipefail
 
-assembleDebug:
-  script:https://gitlab.com/willshiro/app-template-android.git
-    - ./gradlew assembleDebug
-  artifacts:
-    paths:
-      - app/build/outputs/
-
 debugTests:
   script:
     - ./gradlew -Pci --console=plain :app:testDebug
