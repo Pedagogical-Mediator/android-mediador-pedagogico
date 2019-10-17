@@ -9,7 +9,7 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewMode
 class BullyingViewModel(
     private val schedulerProvider: SchedulerProvider,
     private val getBullying: GetBullying
-) : BaseViewModel() {
+) : BaseViewModel(){
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {

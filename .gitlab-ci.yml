@@ -22,7 +22,7 @@ before_script:
   - set -o pipefail
 
 assembleDebug:
-  script:
+  script:https://gitlab.com/willshiro/app-template-android.git
     - ./gradlew assembleDebug
   artifacts:
     paths:

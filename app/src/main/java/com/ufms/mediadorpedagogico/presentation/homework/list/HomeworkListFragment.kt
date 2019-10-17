@@ -46,6 +46,11 @@ class HomeworkListFragment : BaseFragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        val a = ""
+    }
+
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
