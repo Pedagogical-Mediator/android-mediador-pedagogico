@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentNoticeListBinding
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
+import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
@@ -25,7 +23,7 @@ class NoticeListFragment : BaseFragment() {
     override val baseViewModel: BaseViewModel
         get() = viewModel
 
-    lateinit var noticeListAdapter: NoticeListAdapter
+    var noticeListAdapter: NoticeListAdapter? = null
     private var moreNoticesToBeLoaded = true
     private var isLoadingMoreNotice = false
     lateinit var binding: FragmentNoticeListBinding
@@ -40,8 +38,7 @@ class NoticeListFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentNoticeListBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupAdapter()
-        setupRecycler()
+        setupRecyclerView()
         return binding.root
     }
 
@@ -54,15 +51,16 @@ class NoticeListFragment : BaseFragment() {
         }
     }
 
-    private fun setupAdapter() {
-        noticeListAdapter = NoticeListAdapter(::setupOnItemClicked)
-    }
-
-    private fun setupRecycler() {
+    private fun setupRecyclerView() {
+        noticeListAdapter.ifNull {
+            noticeListAdapter = NoticeListAdapter(::setupOnItemClicked)
+        }
         with(binding.recyclerViewNotice) {
-            layoutManager = LinearLayoutManager(this@NoticeListFragment.context)
-            adapter = noticeListAdapter
-            addOnScrollListener(setLoadMoreNoticesOnScroll())
+            if (adapter == null) {
+                layoutManager = LinearLayoutManager(context)
+                adapter = noticeListAdapter
+                addOnScrollListener(setLoadMoreNoticesOnScroll())
+            }
         }
     }
 
@@ -85,13 +83,15 @@ class NoticeListFragment : BaseFragment() {
     }
 
     private fun onNoticeContentLoaded(noticeContent: List<Notice>?) {
-        noticeContent?.run(noticeListAdapter::setItems)
-        isLoadingMoreNotice = false
+        safeLet(noticeContent, noticeListAdapter) { notices, adapter ->
+            adapter.setItems(notices)
+            isLoadingMoreNotice = false
+        }
     }
 
     fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
-            if (noticeListAdapter.itemCount == 0) {
+            if (noticeListAdapter?.itemCount == 0) {
                 binding.includedPlaceholderNoResults.root.setVisible(true)
             } else {
                 moreNoticesToBeLoaded = false

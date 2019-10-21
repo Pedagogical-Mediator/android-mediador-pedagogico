@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentNewsListBinding
 import com.ufms.mediadorpedagogico.domain.entity.news.News
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
+import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
@@ -25,7 +23,7 @@ class NewsListFragment : BaseFragment() {
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    lateinit var newsListAdapter: NewsListAdapter
+    var newsListAdapter: NewsListAdapter? = null
     private var moreNewsToBeLoaded = true
     private var isLoadingMoreNews = false
     lateinit var binding: FragmentNewsListBinding
@@ -39,8 +37,7 @@ class NewsListFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentNewsListBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupAdapter()
-        setupRecycler()
+        setupRecyclerView()
         return binding.root
     }
 
@@ -53,8 +50,17 @@ class NewsListFragment : BaseFragment() {
         }
     }
 
-    private fun setupAdapter() {
-        newsListAdapter = NewsListAdapter(::setupOnItemClicked)
+    private fun setupRecyclerView() {
+        newsListAdapter.ifNull {
+            newsListAdapter = NewsListAdapter(::setupOnItemClicked)
+        }
+        with(binding.recyclerViewNews) {
+            if (adapter == null) {
+                layoutManager = LinearLayoutManager(context)
+                adapter = newsListAdapter
+                addOnScrollListener(setLoadMoreNewsOnScroll())
+            }
+        }
     }
 
     private fun setupOnItemClicked(news: News) {
@@ -62,14 +68,6 @@ class NewsListFragment : BaseFragment() {
         if (!url.startsWith("http://") && !url.startsWith("https://"))
             url = "http://$url"
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-    }
-
-    private fun setupRecycler() {
-        with(binding.recyclerViewNews) {
-            layoutManager = LinearLayoutManager(context)
-            adapter = newsListAdapter
-            addOnScrollListener(setLoadMoreNewsOnScroll())
-        }
     }
 
     private fun setLoadMoreNewsOnScroll(): RecyclerView.OnScrollListener {
@@ -91,13 +89,15 @@ class NewsListFragment : BaseFragment() {
     }
 
     private fun onNewsContentLoaded(newsContent: List<News>?) {
-        newsContent?.run(newsListAdapter::setItems)
-        isLoadingMoreNews = false
+        safeLet(newsContent, newsListAdapter) { news, adapter ->
+            adapter.setItems(news)
+            isLoadingMoreNews = false
+        }
     }
 
     fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
-            if (newsListAdapter.itemCount == 0) {
+            if (newsListAdapter?.itemCount == 0) {
                 binding.includedPlaceholderNoResults.root.setVisible(true)
             } else {
                 moreNewsToBeLoaded = false
