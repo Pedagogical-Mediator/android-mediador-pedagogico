@@ -36,6 +36,10 @@ fun <T1, T2, R> unsafeLet(p1: T1?, p2: T2?, block: () -> R?): R? {
     return if (p1 == null && p2 == null) block() else null
 }
 
+fun <T1> T1.ifNull(block: () -> Unit) {
+    if (this == null) block()
+}
+
 fun File.scaleImageDown(width: Int, height: Int) {
     val boundsOptions = BitmapFactory.Options()
     boundsOptions.inJustDecodeBounds = true

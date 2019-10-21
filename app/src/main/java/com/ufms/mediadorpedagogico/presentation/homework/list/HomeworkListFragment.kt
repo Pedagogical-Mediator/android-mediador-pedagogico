@@ -1,7 +1,5 @@
 package com.ufms.mediadorpedagogico.presentation.homework.list
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentHomeworkListBinding
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
+import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
@@ -26,7 +22,7 @@ class HomeworkListFragment : BaseFragment() {
         get() = getString(R.string.activity_homework_label)
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    lateinit var homeworkListAdapter: HomeworkListAdapter
+    var homeworkListAdapter: HomeworkListAdapter? = null
     private var moreHomeworksToBeLoaded = true
     private var isLoadingMoreHomework = false
     lateinit var binding: FragmentHomeworkListBinding
@@ -41,14 +37,8 @@ class HomeworkListFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentHomeworkListBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupAdapter()
-        setupRecycler()
+        setupRecyclerView()
         return binding.root
-    }
-
-    override fun onResume() {
-        super.onResume()
-        val a = ""
     }
 
     override fun subscribeUi() {
@@ -60,8 +50,17 @@ class HomeworkListFragment : BaseFragment() {
         }
     }
 
-    private fun setupAdapter() {
-        homeworkListAdapter = HomeworkListAdapter(::setupOnItemClicked)
+    private fun setupRecyclerView() {
+        homeworkListAdapter.ifNull {
+            homeworkListAdapter = HomeworkListAdapter(::setupOnItemClicked)
+        }
+        with(binding.recyclerViewHomework) {
+            if (adapter == null) {
+                layoutManager = LinearLayoutManager(context)
+                adapter = homeworkListAdapter
+                addOnScrollListener(setLoadMoreNoticesOnScroll())
+            }
+        }
     }
 
     private fun setupOnItemClicked(homework: Homework) {
@@ -70,14 +69,6 @@ class HomeworkListFragment : BaseFragment() {
                 .actionHomeworkListFragmentToHomeworkDetailsFragment()
                 .setHomework(homework)
         )
-    }
-
-    private fun setupRecycler() {
-        with(binding.recyclerViewHomework) {
-            layoutManager = LinearLayoutManager(context)
-            adapter = homeworkListAdapter
-            addOnScrollListener(setLoadMoreNoticesOnScroll())
-        }
     }
 
     private fun setLoadMoreNoticesOnScroll(): RecyclerView.OnScrollListener {
@@ -99,13 +90,15 @@ class HomeworkListFragment : BaseFragment() {
     }
 
     private fun onHomeworkContentLoaded(homeworkContent: List<Homework>?) {
-        homeworkContent?.run(homeworkListAdapter::setItems)
-        isLoadingMoreHomework = false
+        safeLet(homeworkContent, homeworkListAdapter) { homeworks, adapter ->
+            adapter.setItems(homeworks)
+            isLoadingMoreHomework = false
+        }
     }
 
     fun onNoContentReturned(noContentReturned: Boolean?) {
         noContentReturned?.let {
-            if (homeworkListAdapter.itemCount == 0) {
+            if (homeworkListAdapter?.itemCount == 0) {
                 binding.includedPlaceholderNoResults.root.setVisible(true)
             } else {
                 moreHomeworksToBeLoaded = false
