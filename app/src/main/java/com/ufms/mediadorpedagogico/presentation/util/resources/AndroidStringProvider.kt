@@ -28,6 +28,7 @@ class AndroidStringProvider(context: Context) : StringsProvider {
     override val waitForResult: String get() = res(R.string.global_wait)
     override val activityRecoverPassword: String get() = res(R.string.activity_recover_password)
     override val activityRecoverPasswordSuccess: String get() = res(R.string.activity_recover_password_success)
+    override val errorExpiredClassKey: String get() = res(R.string.error_expired_classkey)
 
 
     override fun errorUnprocessable(errors: String): String =

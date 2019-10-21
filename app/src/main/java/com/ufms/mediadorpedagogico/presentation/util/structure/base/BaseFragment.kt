@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.extensions.showDialog
@@ -39,12 +40,7 @@ abstract class BaseFragment : Fragment() {
         baseViewModel.dialog.observeEvent(this, ::onNextDialog)
         baseViewModel.goTo.observeEvent(this, ::onNextNavigation)
         baseViewModel.toast.observeEvent(this, ::onNextToast)
-    }
-
-    private fun onNextToast(text: String?) {
-        text?.let {
-            context?.shortToast(it)
-        }
+//        baseViewModel.deniedAccess.observeAction(this, ::onDenyAccess)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -62,13 +58,23 @@ abstract class BaseFragment : Fragment() {
         dialog = dialogData?.let { context?.showDialog(it) }
     }
 
-    private fun setupToolbar() {
-        (activity as? DashboardActivity)?.onNextTitle(toolbarTitle)
-    }
-
     private fun onNextNavigation(navData: NavData?) {
         navData?.let {
             Navigator.goTo(this.context, it)
         }
+    }
+
+    private fun onNextToast(text: String?) {
+        text?.let {
+            context?.shortToast(it)
+        }
+    }
+
+    private fun onDenyAccess(shouldDeny: Boolean?) {
+
+    }
+
+    private fun setupToolbar() {
+        (activity as? DashboardActivity)?.onNextTitle(toolbarTitle)
     }
 }

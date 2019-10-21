@@ -17,7 +17,8 @@ class HomeworkDetailsViewModel(
     private val _homeworkContent: MutableLiveData<Event<Homework>> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate() {
+        super.onCreate()
         _homeworkContent.value = Event(homework)
     }
 }

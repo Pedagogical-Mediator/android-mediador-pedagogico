@@ -13,7 +13,7 @@ fun <T> defaultMutableLiveData(t: T?): MutableLiveData<T> {
     return liveData
 }
 
-fun <T> LiveData<T>.observe(owner: LifecycleOwner, observer: (T?) -> Unit) {
+fun <T> LiveData<T>.observeAction(owner: LifecycleOwner, observer: (T?) -> Unit) {
     observe(owner, androidx.lifecycle.Observer { observer(it) })
 }
 

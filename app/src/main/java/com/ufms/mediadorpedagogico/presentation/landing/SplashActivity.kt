@@ -1,7 +1,8 @@
 package com.ufms.mediadorpedagogico.presentation.landing
 
 import android.os.Bundle
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import android.view.MenuItem
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseActivity
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
@@ -20,8 +21,18 @@ class SplashActivity : BaseActivity() {
 
     override fun subscribeUi() {
         super.subscribeUi()
-        viewModel.goToMain.observe(this, ::onNextGoToMainValue)
-        viewModel.goToLogin.observe(this, ::onNextGoToLoginValue)
+        viewModel.goToMain.observeAction(this, ::onNextGoToMainValue)
+        viewModel.goToLogin.observeAction(this, ::onNextGoToLoginValue)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when (item?.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun onNextGoToMainValue(shouldGo: Boolean?) {

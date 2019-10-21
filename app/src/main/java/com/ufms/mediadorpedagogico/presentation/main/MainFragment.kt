@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
@@ -41,7 +41,7 @@ class MainFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@MainFragment, ::onNextPlaceholder)
+            placeholder.observeAction(this@MainFragment, ::onNextPlaceholder)
             noContentReturned.observeEvent(this@MainFragment, ::onNoContentReturned)
         }
     }

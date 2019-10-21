@@ -12,7 +12,8 @@ class BullyingViewModel(
 ) : BaseViewModel(){
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate() {
+        super.onCreate()
         getBullying.execute()
     }
 }

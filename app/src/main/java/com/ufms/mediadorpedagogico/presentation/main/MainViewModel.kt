@@ -27,8 +27,9 @@ class MainViewModel(
     private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate() {
         //TODO buscar dados da escola e turma
+        super.onCreate()
         subscribeToTopics()
     }
 

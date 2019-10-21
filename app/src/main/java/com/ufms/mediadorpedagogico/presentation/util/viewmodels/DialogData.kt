@@ -44,6 +44,25 @@ class DialogData(
         }
 
         fun error(
+            title: String,
+            message: String,
+            confirmButtonText: String? = null,
+            onConfirm: (() -> Unit)? = null,
+            onDismiss: (() -> Unit)? = null,
+            cancelable: Boolean? = false
+        ): DialogData {
+            return DialogData(
+                title,
+                message,
+                confirmButtonText,
+                onConfirm,
+                "",
+                onDismiss,
+                cancelable
+            )
+        }
+
+        fun error(
             strings: StringsProvider,
             message: String,
             confirmButtonText: String? = null,
