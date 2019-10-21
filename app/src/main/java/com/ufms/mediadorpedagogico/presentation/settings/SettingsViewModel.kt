@@ -29,7 +29,8 @@ class SettingsViewModel(
     private val _logout: MutableLiveData<Boolean> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate() {
+        super.onCreate()
         _subscribedNotices.value = manageNotices.isSubscribed()
         _subscribedNews.value = manageNews.isSubscribed()
     }
@@ -42,22 +43,5 @@ class SettingsViewModel(
     fun onNoticesSwitch(check: Boolean) {
         subscriberHandler(KEY_TOPIC_NOTICES, check)
         manageNotices.subscribe(check)
-    }
-
-    fun onLogout() {
-        val token = try {
-            cache.get<String>(KEY_TOPIC_TOKEN, String::class.java)
-        } catch (t: Throwable) {
-            null
-        }
-        cache.clear()
-        cache.set(KEY_TOPIC_TOKEN, token)
-        unsubscribeTopics()
-        goTo(LoginNavData(true))
-    }
-
-    private fun unsubscribeTopics() {
-        subscriberHandler(KEY_TOPIC_NOTICES, false)
-        subscriberHandler(KEY_TOPIC_NEWS, false)
     }
 }

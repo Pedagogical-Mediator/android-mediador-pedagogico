@@ -17,7 +17,8 @@ class NoticeDetailsViewModel(
     private val _noticeContent: MutableLiveData<Event<Notice>> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate() {
+        super.onCreate()
         _noticeContent.value = Event(notice)
     }
 }

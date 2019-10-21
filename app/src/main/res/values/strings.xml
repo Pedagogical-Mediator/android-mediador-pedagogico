@@ -22,6 +22,7 @@
     <string name="error_unauthorized_login_now">Não foi possível completar a operação. Sua sessão expirou. Por favor
         faça login novamente.
     </string>
+    <string name="error_expired_classkey">Sua chave de acesso expirou. Entre com a nova chave de acesso</string>
     <string name="error_not_found">Não encontrado</string>
     <string name="error_server_internal">Não foi possível completar a operação. Tente novamente mais tarde. Se o
         problema persistir entre em contato conosco.

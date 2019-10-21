@@ -34,7 +34,8 @@ class HomeworkListViewModel(
     private var thereAreMoreToLoad = true
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate() {
+        super.onCreate()
         loadMoreHomework()
     }
 

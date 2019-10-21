@@ -21,6 +21,7 @@ interface StringsProvider {
     val waitForResult: String
     val activityRecoverPassword: String
     val activityRecoverPasswordSuccess: String
+    val errorExpiredClassKey: String
 
     fun errorUnprocessable(errors: String): String
 }

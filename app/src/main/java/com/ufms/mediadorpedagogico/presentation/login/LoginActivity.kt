@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ActivityLoginBinding
 import com.ufms.mediadorpedagogico.domain.extensions.then
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeChanges
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shouldClearTask
@@ -33,9 +33,9 @@ class LoginActivity : BaseActivity() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            showGroupFieldError.observe(this@LoginActivity, ::onNextGroupError)
-            showNameFieldError.observe(this@LoginActivity, ::onNextNameError)
-            goToMain.observe(this@LoginActivity, ::onNextGoToMain)
+            showGroupFieldError.observeAction(this@LoginActivity, ::onNextGroupError)
+            showNameFieldError.observeAction(this@LoginActivity, ::onNextNameError)
+            goToMain.observeAction(this@LoginActivity, ::onNextGoToMain)
         }
     }
 

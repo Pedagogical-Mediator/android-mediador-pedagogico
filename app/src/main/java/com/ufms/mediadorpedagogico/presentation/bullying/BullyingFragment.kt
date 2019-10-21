@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentBullyingBinding
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
@@ -38,7 +38,7 @@ class BullyingFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@BullyingFragment, ::onNextPlaceholder)
+            placeholder.observeAction(this@BullyingFragment, ::onNextPlaceholder)
         }
     }
 

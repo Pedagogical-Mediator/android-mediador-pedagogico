@@ -20,8 +20,11 @@ class SplashViewModel(
     private val goToMainLiveData = defaultMutableLiveData(false)
     private val goToLoginLiveData = defaultMutableLiveData(false)
 
+    override val shouldDeny: Boolean
+        get() = false
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    private fun checkUser() {
+    override fun onCreate() {
+        super.onCreate()
         scheduleCallback(DEFAULT_DELAY_IN_SECONDS) {
             if (getPersistedUser.execute() == null) {
                 goTo(LoginNavData(false))

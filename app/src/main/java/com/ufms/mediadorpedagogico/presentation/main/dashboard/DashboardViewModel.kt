@@ -23,7 +23,8 @@ class DashboardViewModel(
     private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate() {
+        super.onCreate()
         //TODO buscar dados da escola e turma
     }
 

@@ -44,7 +44,7 @@ class HomeworkListFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observe(this@HomeworkListFragment, ::onNextPlaceholder)
+            placeholder.observeAction(this@HomeworkListFragment, ::onNextPlaceholder)
             homeworkContent.observeEvent(this@HomeworkListFragment, ::onHomeworkContentLoaded)
             noContentReturned.observeEvent(this@HomeworkListFragment, ::onNoContentReturned)
         }

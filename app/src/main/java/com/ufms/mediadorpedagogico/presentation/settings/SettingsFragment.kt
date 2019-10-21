@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentSettingsBinding
-import com.ufms.mediadorpedagogico.presentation.login.LoginNavData
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observe
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.onChecked
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
@@ -41,9 +40,11 @@ class SettingsFragment : BaseFragment() {
 
     override fun subscribeUi() {
         super.subscribeUi()
-        viewModel.subscribedNews.observe(viewLifecycleOwner, ::onSubscribedNews)
-        viewModel.subscribedNotices.observe(viewLifecycleOwner, ::onSubscribedNotices)
-        viewModel.logout.observe(viewLifecycleOwner, ::onLogout)
+        with(viewModel) {
+            subscribedNews.observeAction(viewLifecycleOwner, ::onSubscribedNews)
+            subscribedNotices.observeAction(viewLifecycleOwner, ::onSubscribedNotices)
+            logout.observeAction(viewLifecycleOwner, ::onLogout)
+        }
     }
 
     private fun setupUi() {

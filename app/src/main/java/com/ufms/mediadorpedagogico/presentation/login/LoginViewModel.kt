@@ -28,6 +28,7 @@ class LoginViewModel(
     private val goToMainLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
     private var form = LoginForm()
+    override val shouldDeny: Boolean = false
 
     fun onClassKeyChanged(classKey: String) {
         form.classKey = classKey

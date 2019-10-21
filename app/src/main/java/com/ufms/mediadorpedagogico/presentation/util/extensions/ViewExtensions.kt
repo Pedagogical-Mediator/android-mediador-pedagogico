@@ -70,6 +70,10 @@ fun View.setOnClickListener(callback: () -> Unit) {
     this.setOnClickListener { callback.invoke() }
 }
 
+fun View.setOnClickListener(callback: (Boolean) -> Unit) {
+    this.setOnClickListener { callback.invoke(true) }
+}
+
 
 // views
 
