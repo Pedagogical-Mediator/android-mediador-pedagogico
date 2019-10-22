@@ -1,7 +1,5 @@
 package com.ufms.mediadorpedagogico.presentation.homework.details
 
-import android.content.Context
-import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64

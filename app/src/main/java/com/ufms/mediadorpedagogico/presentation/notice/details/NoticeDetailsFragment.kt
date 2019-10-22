@@ -1,8 +1,6 @@
 package com.ufms.mediadorpedagogico.presentation.notice.details
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +10,10 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentNoticeDetailsBinding
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
 import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.DividerItemDecorator
+import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.loadHTML
+import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.setImage
 import com.ufms.mediadorpedagogico.presentation.util.extensions.drawableCompat
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -69,20 +68,8 @@ class NoticeDetailsFragment : BaseFragment() {
         noticeDetails?.run {
             binding.noticeDetails = this
             noticeDetailsAdapter.setItems(links)
-            binding.webviewContent.loadDataWithBaseURL(
-                ""
-                , description, "text/html", "UTF-8", ""
-            )
-            imageBase64?.let {
-                try {
-                    val decodedString = Base64.decode(it, Base64.DEFAULT)
-                    val decodedByte =
-                        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
-                    binding.imageViewResource.setImageBitmap(decodedByte)
-                } catch (e: Exception) {
-                    context?.shortToast(getString(R.string.activity_main_error_image_decode))
-                }
-            }
+            binding.webviewContent.loadHTML(description)
+            imageBase64?.run(binding.imageViewResource::setImage)
         }
     }
 }

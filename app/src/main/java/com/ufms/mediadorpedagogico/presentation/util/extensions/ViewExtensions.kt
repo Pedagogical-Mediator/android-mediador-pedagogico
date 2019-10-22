@@ -176,5 +176,5 @@ fun ViewDataBinding.setString(resourceId: Int, vararg strings: String) =
     root.context.getString(resourceId, strings).toString()
 
 fun Switch.onChecked(callback: (Boolean) -> Unit) {
-    setOnCheckedChangeListener { _, isChecked ->  callback.invoke(isChecked)}
+    setOnCheckedChangeListener { _, isChecked -> callback.invoke(isChecked) }
 }

@@ -102,7 +102,9 @@
     <string name="menu_principal">Principal</string>
     <string name="menu_notices">Avisos</string>
     <string name="menu_homework">Sala de aula invertida</string>
-    <string name="bullying_fragment_label">Bullying</string>
     <string name="menu_news">Notícias</string>
     <string name="menu_settings">Configurações</string>
+    <string name="menu_bullying">Denúncia de bullying</string>
+    <string name="bullying_fragment_label">Bullying</string>
+    <string name="bullying_title">Denúncia de Bullying</string>
 </resources>

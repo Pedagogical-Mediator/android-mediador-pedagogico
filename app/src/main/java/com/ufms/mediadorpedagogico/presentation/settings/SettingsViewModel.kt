@@ -6,12 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.data.firebase.FirebaseMessagingServiceHandler.Companion.KEY_TOPIC_NEWS
 import com.ufms.mediadorpedagogico.data.firebase.FirebaseMessagingServiceHandler.Companion.KEY_TOPIC_NOTICES
-import com.ufms.mediadorpedagogico.data.firebase.FirebaseMessagingServiceHandler.Companion.KEY_TOPIC_TOKEN
 import com.ufms.mediadorpedagogico.domain.boundary.resources.Cache
 import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNews
 import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNotices
 import com.ufms.mediadorpedagogico.domain.util.subscriberHandler
-import com.ufms.mediadorpedagogico.presentation.login.LoginNavData
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 
 class SettingsViewModel(

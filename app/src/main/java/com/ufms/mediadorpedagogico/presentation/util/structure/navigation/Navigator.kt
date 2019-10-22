@@ -23,6 +23,10 @@ object Navigator {
     }
 
     fun goToLogin(context: Context, clearTask: Boolean = false) {
-        context.startActivity(LoginActivity.createIntent(context, clearTask).apply { shouldClearTask(clearTask) })
+        context.startActivity(
+            LoginActivity.createIntent(
+                context,
+                clearTask
+            ).apply { shouldClearTask(clearTask) })
     }
 }

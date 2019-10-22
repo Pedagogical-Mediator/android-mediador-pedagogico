@@ -1,74 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/dashboard_navigation"
-        app:startDestination="@id/main_fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_navigation"
+    app:startDestination="@id/main_fragment">
 
     <fragment
-            android:id="@+id/main_fragment"
-            android:name="com.ufms.mediadorpedagogico.presentation.main.MainFragment"
-            android:label="MainFragment"
-            tools:layout="@layout/fragment_main">
+        android:id="@+id/main_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
         <action
-                android:id="@+id/action_main_fragment_to_noticeListFragment"
-                app:destination="@id/notice_list_fragment" />
+            android:id="@+id/action_main_fragment_to_noticeListFragment"
+            app:destination="@id/notice_list_fragment" />
         <action
-                android:id="@+id/action_main_fragment_to_homeworkListFragment"
-                app:destination="@id/homework_list_fragment" />
+            android:id="@+id/action_main_fragment_to_homeworkListFragment"
+            app:destination="@id/homework_list_fragment" />
         <action
-                android:id="@+id/action_main_fragment_to_newsListFragment"
-                app:destination="@id/news_list_fragment" />
+            android:id="@+id/action_main_fragment_to_newsListFragment"
+            app:destination="@id/news_list_fragment" />
         <action
-                android:id="@+id/action_main_fragment_to_settingsFragment"
-                app:destination="@id/settings_fragment" />
+            android:id="@+id/action_main_fragment_to_settingsFragment"
+            app:destination="@id/settings_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_bullyingFragment"
+            app:destination="@id/bullying_fragment" />
     </fragment>
     <fragment
-            android:id="@+id/notice_list_fragment"
-            android:name="com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListFragment"
-            android:label="NoticeListFragment"
-            tools:layout="@layout/fragment_notice_list">
+        android:id="@+id/notice_list_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListFragment"
+        android:label="NoticeListFragment"
+        tools:layout="@layout/fragment_notice_list">
         <action
-                android:id="@+id/action_notice_list_fragment_to_noticeDetailsFragment"
-                app:destination="@id/noticeDetailsFragment" />
+            android:id="@+id/action_notice_list_fragment_to_noticeDetailsFragment"
+            app:destination="@id/noticeDetailsFragment" />
     </fragment>
     <fragment
-            android:id="@+id/noticeDetailsFragment"
-            android:name="com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsFragment"
-            android:label="NoticeDetailsFragment" >
+        android:id="@+id/noticeDetailsFragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsFragment"
+        android:label="NoticeDetailsFragment">
         <argument
-                android:name="notice"
-                app:argType="com.ufms.mediadorpedagogico.domain.entity.notice.Notice"
-                app:nullable="true"
-                android:defaultValue="@null" />
+            android:name="notice"
+            android:defaultValue="@null"
+            app:argType="com.ufms.mediadorpedagogico.domain.entity.notice.Notice"
+            app:nullable="true" />
     </fragment>
     <fragment
-            android:id="@+id/homework_list_fragment"
-            android:name="com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListFragment"
-            android:label="HomeworkListFragment"
-            tools:layout="@layout/fragment_homework_list">
+        android:id="@+id/homework_list_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListFragment"
+        android:label="HomeworkListFragment"
+        tools:layout="@layout/fragment_homework_list">
         <action
-                android:id="@+id/action_homeworkListFragment_to_homeworkDetailsFragment"
-                app:destination="@id/homeworkDetailsFragment" />
+            android:id="@+id/action_homeworkListFragment_to_homeworkDetailsFragment"
+            app:destination="@id/homeworkDetailsFragment" />
     </fragment>
     <fragment
-            android:id="@+id/homeworkDetailsFragment"
-            android:name="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsFragment"
-            android:label="HomeworkDetailsFragment"
-            tools:layout="@layout/fragment_homework_details">
+        android:id="@+id/homeworkDetailsFragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsFragment"
+        android:label="HomeworkDetailsFragment"
+        tools:layout="@layout/fragment_homework_details">
         <argument
-                android:name="homework"
-                app:argType="com.ufms.mediadorpedagogico.domain.entity.homework.Homework"
-                app:nullable="true"
-                android:defaultValue="@null" />
+            android:name="homework"
+            android:defaultValue="@null"
+            app:argType="com.ufms.mediadorpedagogico.domain.entity.homework.Homework"
+            app:nullable="true" />
     </fragment>
     <fragment
-            android:id="@+id/news_list_fragment"
-            android:name="com.ufms.mediadorpedagogico.presentation.news.NewsListFragment"
-            android:label="NewsListFragment"
-            tools:layout="@layout/fragment_news_list"/>
+        android:id="@+id/news_list_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.news.NewsListFragment"
+        android:label="NewsListFragment"
+        tools:layout="@layout/fragment_news_list" />
     <fragment
-            android:id="@+id/settings_fragment"
-            android:name="com.ufms.mediadorpedagogico.presentation.settings.SettingsFragment"
-            android:label="SettingsFragment" />
+        android:id="@+id/settings_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/bullying_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.bullying.BullyingFragment"
+        android:label="BullyingFragment"
+        tools:layout="@layout/fragment_bullying" />
 </navigation>

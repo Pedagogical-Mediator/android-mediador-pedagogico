@@ -27,8 +27,8 @@ class AuthInterceptor : Interceptor {
             }
         }
         val response = chain.proceed(requestBuilder.build())
-        response.headers()?.get(HEADER_TOKEN)?.let { PreferencesCache.set(HEADER_TOKEN, it) }
-        response.headers()?.get(HEADER_EMAIL)?.let { PreferencesCache.set(HEADER_EMAIL, it) }
+        response.headers().get(HEADER_TOKEN)?.let { PreferencesCache.set(HEADER_TOKEN, it) }
+        response.headers().get(HEADER_EMAIL)?.let { PreferencesCache.set(HEADER_EMAIL, it) }
 
         return response
     }

@@ -22,6 +22,7 @@ class SplashViewModel(
 
     override val shouldDeny: Boolean
         get() = false
+
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     override fun onCreate() {
         super.onCreate()
