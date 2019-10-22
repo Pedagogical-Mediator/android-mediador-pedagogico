@@ -97,6 +97,7 @@
     <string name="activity_main_homework">Sala de Aula Invertida</string>
     <string name="activity_main_news">Notícias</string>
     <string name="activity_main_bullying">Denúncia de Bullying</string>
+    <string name="activity_main_guild">Grêmio Estudantil</string>
     <string name="activity_main_settings">Configurações</string>
     <string name="activity_main_error_image_decode">Imagem não pode ser carregada</string>
     <string name="menu_principal">Principal</string>
@@ -105,6 +106,8 @@
     <string name="menu_news">Notícias</string>
     <string name="menu_settings">Configurações</string>
     <string name="menu_bullying">Denúncia de bullying</string>
+    <string name="menu_guild">Grêmio Estudantil</string>
     <string name="bullying_fragment_label">Bullying</string>
+    <string name="guild_fragment_label">Grêmio Estudantil</string>
     <string name="bullying_title">Denúncia de Bullying</string>
 </resources>

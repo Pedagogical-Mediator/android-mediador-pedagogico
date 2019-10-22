@@ -10,4 +10,5 @@ val repositoryModule = module {
     factory<NoticeRepository> { DefaultNoticeRepository(get()) }
     factory<NewsRepository> { DefaultNewsRepository(get()) }
     factory<BullyingRepository> { DefaultBullyingRepository(get()) }
+    factory<GuildRepository> { DefaultGuildRepository(get()) }
 }

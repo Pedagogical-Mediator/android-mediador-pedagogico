@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_main_fragment_to_bullyingFragment"
             app:destination="@id/bullying_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_guildFragment"
+            app:destination="@id/guild_fragment" />
     </fragment>
     <fragment
         android:id="@+id/notice_list_fragment"
@@ -80,4 +83,9 @@
         android:name="com.ufms.mediadorpedagogico.presentation.bullying.BullyingFragment"
         android:label="BullyingFragment"
         tools:layout="@layout/fragment_bullying" />
+    <fragment
+        android:id="@+id/guild_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.guild.GuildFragment"
+        android:label="GuildFragment"
+        tools:layout="@layout/fragment_guild"/>
 </navigation>
