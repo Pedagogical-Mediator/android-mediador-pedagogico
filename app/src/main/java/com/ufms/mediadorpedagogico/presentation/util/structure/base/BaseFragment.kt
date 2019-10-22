@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.extensions.showDialog

@@ -9,7 +9,7 @@ class MultiMaskTextChangedListener(editText: EditText, reversed: Boolean, vararg
 
     private lateinit var masks: MutableList<Pair<Int, String>>
 
-    constructor(editText: EditText, vararg masks: String) : this(editText, false, *masks) {}
+    constructor(editText: EditText, vararg masks: String) : this(editText, false, *masks)
 
     init {
         if (masks.size < 2) {

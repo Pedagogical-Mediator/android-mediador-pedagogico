@@ -52,7 +52,7 @@ class MainFragment : BaseFragment() {
             cardViewNotice.setOnClickListener(::goToNotice)
             cardViewNews.setOnClickListener(::goToNews)
             cardViewSettings.setOnClickListener(::goToSettings)
-//            cardViewBullying.setOnClickListener(viewModel::goToBullying)
+            cardViewBullying.setOnClickListener(::goToBullying)
         }
     }
 
@@ -79,6 +79,10 @@ class MainFragment : BaseFragment() {
 
     private fun goToSettings() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToSettingsFragment())
+    }
+
+    private fun goToBullying() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToBullyingFragment())
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {

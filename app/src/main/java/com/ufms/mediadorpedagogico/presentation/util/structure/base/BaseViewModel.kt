@@ -55,10 +55,14 @@ open class BaseViewModel : LifecycleObserver, KoinComponent, ViewModel() {
     }
 
     fun denyAccess(shouldDeny: Boolean) {
-        dialogLiveData.postValue(Event(
-            DialogData.error(title = "", message = strings.errorExpiredClassKey,
-                onConfirm = ::deny, onDismiss = ::deny)
-        ))
+        dialogLiveData.postValue(
+            Event(
+                DialogData.error(
+                    title = "", message = strings.errorExpiredClassKey,
+                    onConfirm = ::deny, onDismiss = ::deny
+                )
+            )
+        )
     }
 
     fun setPlaceholder(throwable: Throwable, retryAction: (() -> Unit)?) {
@@ -92,7 +96,7 @@ open class BaseViewModel : LifecycleObserver, KoinComponent, ViewModel() {
     @CallSuper
     protected open fun onCreate() {
         val calendar = Calendar.getInstance()
-        if (!calendar.isExpirationDay() && shouldDeny) {
+        if (calendar.isExpirationDay() && shouldDeny) {
             denyAccess(true)
         }
     }
