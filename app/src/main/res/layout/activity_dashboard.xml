@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <import type="android.view.View" />
 
         <variable
-                name="placeholder"
-                type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder" />
+            name="placeholder"
+            type="com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder" />
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout
-            android:id="@+id/drawer_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true">
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <include
-                    android:id="@+id/toolbar_customized"
-                    layout="@layout/toolbar_customized" />
+                android:id="@+id/toolbar_customized"
+                layout="@layout/toolbar_customized" />
 
             <fragment
-                    android:id="@+id/main_navigation_fragment"
-                    android:name="androidx.navigation.fragment.NavHostFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:defaultNavHost="true"
-                    app:navGraph="@navigation/navigation_component" />
+                android:id="@+id/main_navigation_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/navigation_component" />
         </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView
-                app:menu="@menu/navigation_menu"
-                app:headerLayout="@layout/nav_header"
-                android:id="@+id/nav_view"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:fitsSystemWindows="true" />
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/navigation_menu"
+            tools:visibility="gone" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
