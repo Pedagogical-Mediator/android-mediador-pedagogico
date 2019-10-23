@@ -48,7 +48,7 @@ class HomeworkDetailsFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            homeworkContent.observeEvent(this@HomeworkDetailsFragment, ::onHomeworkDetailsReceived)
+            homeworkContent.observeEvent(viewLifecycleOwner, ::onHomeworkDetailsReceived)
         }
     }
 

@@ -45,9 +45,9 @@ class NoticeListFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observeAction(this@NoticeListFragment, ::onNextPlaceholder)
-            noticeContent.observeEvent(this@NoticeListFragment, ::onNoticeContentLoaded)
-            noContentReturned.observeEvent(this@NoticeListFragment, ::onNoContentReturned)
+            placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
+            noticeContent.observeEvent(viewLifecycleOwner, ::onNoticeContentLoaded)
+            noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
     }
 

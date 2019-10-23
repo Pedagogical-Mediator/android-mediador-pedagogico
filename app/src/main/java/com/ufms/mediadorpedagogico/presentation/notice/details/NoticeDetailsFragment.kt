@@ -46,7 +46,7 @@ class NoticeDetailsFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            noticeContent.observeEvent(this@NoticeDetailsFragment, ::onNoticeDetailsReceived)
+            noticeContent.observeEvent(viewLifecycleOwner, ::onNoticeDetailsReceived)
         }
     }
 
@@ -56,7 +56,7 @@ class NoticeDetailsFragment : BaseFragment() {
 
     private fun setupRecycler() {
         with(binding.recyclerViewLink) {
-            layoutManager = LinearLayoutManager(this@NoticeDetailsFragment.context)
+            layoutManager = LinearLayoutManager(context)
             adapter = noticeDetailsAdapter
             context.drawableCompat(R.drawable.recycler_view_divider)?.run {
                 addItemDecoration(DividerItemDecorator(this))
