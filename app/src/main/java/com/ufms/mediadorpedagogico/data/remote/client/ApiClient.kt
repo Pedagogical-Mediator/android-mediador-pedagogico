@@ -3,6 +3,7 @@ package com.ufms.mediadorpedagogico.data.remote.client
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.ufms.mediadorpedagogico.BuildConfig
+import com.ufms.mediadorpedagogico.data.remote.entity.ApiAbout
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiBullying
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiGuild
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
@@ -56,6 +57,10 @@ object ApiClient {
 
     fun getGuildInformation(): Single<ApiGuild> {
         return makeRequest(apiServices.getGuildInformation())
+    }
+
+    fun getAboutInformation(): Single<ApiAbout> {
+        return makeRequest(apiServices.getAboutInformation())
     }
 
     /**

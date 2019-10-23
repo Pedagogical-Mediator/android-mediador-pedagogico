@@ -54,6 +54,7 @@ class MainFragment : BaseFragment() {
             cardViewSettings.setOnClickListener(::goToSettings)
             cardViewBullying.setOnClickListener(::goToBullying)
             cardViewGuild.setOnClickListener(::goToGuild)
+            cardViewAbout.setOnClickListener(::goToAbout)
         }
     }
 
@@ -88,6 +89,10 @@ class MainFragment : BaseFragment() {
 
     private fun goToSettings() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToSettingsFragment())
+    }
+
+    private fun goToAbout() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToAboutFragment())
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {

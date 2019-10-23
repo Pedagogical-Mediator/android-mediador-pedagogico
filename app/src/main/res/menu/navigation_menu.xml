@@ -34,4 +34,9 @@
         android:id="@+id/settings_fragment"
         android:icon="@drawable/selector_button_accent"
         android:title="@string/menu_settings" />
+
+    <item
+        android:id="@+id/about_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/menu_about" />
 </menu>

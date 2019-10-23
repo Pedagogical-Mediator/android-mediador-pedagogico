@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_main_fragment_to_guildFragment"
             app:destination="@id/guild_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_aboutFragment"
+            app:destination="@id/about_fragment" />
     </fragment>
     <fragment
         android:id="@+id/notice_list_fragment"
@@ -88,4 +91,9 @@
         android:name="com.ufms.mediadorpedagogico.presentation.guild.GuildFragment"
         android:label="GuildFragment"
         tools:layout="@layout/fragment_guild"/>
+    <fragment
+        android:id="@+id/about_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.about.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
 </navigation>

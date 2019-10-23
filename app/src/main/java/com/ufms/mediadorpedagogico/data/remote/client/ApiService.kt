@@ -1,5 +1,6 @@
 package com.ufms.mediadorpedagogico.data.remote.client
 
+import com.ufms.mediadorpedagogico.data.remote.entity.ApiAbout
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiBullying
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiGuild
 import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
@@ -57,4 +58,11 @@ interface ApiService {
 
     @GET("gremio")
     fun getGuildInformation(): Single<Response<ApiGuild>>
+
+    /**
+     * About
+     * */
+
+    @GET("escola")
+    fun getAboutInformation(): Single<Response<ApiAbout>>
 }
