@@ -113,8 +113,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large"
-                    android:clickable="false"
-                    android:focusable="false"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="@id/card_view_homework"
                     app:layout_constraintStart_toStartOf="@id/card_view_homework"
@@ -135,6 +135,32 @@
                         android:lines="2"
                         android:text="@string/activity_main_bullying"
                         tools:text="@string/activity_main_bullying" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card_view_guild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/card_view_bullying">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/card_view_clickable"
+                        android:backgroundTint="@color/ic_guild_background"
+                        android:src="@mipmap/ic_guild_foreground" />
+
+                    <TextView
+                        style="@style/TextLabelWhateverBoldMainLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:lines="2"
+                        android:text="@string/activity_main_guild" />
                 </LinearLayout>
 
                 <LinearLayout

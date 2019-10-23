@@ -53,6 +53,7 @@ class MainFragment : BaseFragment() {
             cardViewNews.setOnClickListener(::goToNews)
             cardViewSettings.setOnClickListener(::goToSettings)
             cardViewBullying.setOnClickListener(::goToBullying)
+            cardViewGuild.setOnClickListener(::goToGuild)
         }
     }
 
@@ -77,12 +78,16 @@ class MainFragment : BaseFragment() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHomeworkListFragment())
     }
 
-    private fun goToSettings() {
-        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToSettingsFragment())
-    }
-
     private fun goToBullying() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToBullyingFragment())
+    }
+
+    private fun goToGuild() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToGuildFragment())
+    }
+
+    private fun goToSettings() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToSettingsFragment())
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {

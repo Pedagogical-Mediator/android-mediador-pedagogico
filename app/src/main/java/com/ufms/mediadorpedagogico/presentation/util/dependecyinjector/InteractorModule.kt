@@ -1,6 +1,7 @@
 package com.ufms.mediadorpedagogico.presentation.util.dependecyinjector
 
 import com.ufms.mediadorpedagogico.domain.interactor.bullying.GetBullying
+import com.ufms.mediadorpedagogico.domain.interactor.guild.GetGuild
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
 import com.ufms.mediadorpedagogico.domain.interactor.news.GetNews
 import com.ufms.mediadorpedagogico.domain.interactor.notice.GetNotice
@@ -17,6 +18,7 @@ val interactorModule = module {
     single { GetNotice(get()) }
     single { GetNews(get()) }
     single { GetBullying(get()) }
+    single { GetGuild(get()) }
     single { ManageNews(get()) }
     single { ManageNotices(get()) }
 }
