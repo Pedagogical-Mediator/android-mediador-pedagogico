@@ -34,13 +34,13 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical"
+                    android:background="@drawable/card_view_clickable"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/card_view_clickable"
                         android:src="@drawable/new_notices" />
 
                     <TextView
@@ -57,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
+                    android:background="@drawable/card_view_clickable"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +66,6 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/card_view_clickable"
                         android:src="@drawable/new_homeworks" />
 
                     <TextView
@@ -85,15 +85,14 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:orientation="vertical"
+                    android:background="@drawable/card_view_clickable"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/card_view_clickable"
-                        android:backgroundTint="@color/news_button_background"
-                        android:src="@mipmap/ic_news_round" />
+                        android:src="@drawable/new_news" />
 
                     <TextView
                         style="@style/TextLabelWhateverBoldMainLabel"
@@ -112,13 +111,13 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:orientation="vertical"
+                    android:background="@drawable/card_view_clickable"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/card_view_homework">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/about"
                         android:src="@drawable/new_calendar" />
 
                     <TextView
@@ -138,6 +137,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:orientation="vertical"
+                    android:background="@drawable/card_view_clickable"
                     app:layout_constraintEnd_toEndOf="@id/card_view_homework"
                     app:layout_constraintStart_toStartOf="@id/card_view_homework"
                     app:layout_constraintTop_toBottomOf="@id/card_view_homework">
@@ -145,7 +145,6 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/card_view_clickable"
                         android:backgroundTint="@color/ic_bullying_background"
                         android:src="@mipmap/ic_bullying_round" />
 
