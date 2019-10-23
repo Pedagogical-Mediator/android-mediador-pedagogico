@@ -55,7 +55,7 @@ class HomeworkListFragment : BaseFragment() {
             homeworkListAdapter = HomeworkListAdapter(::setupOnItemClicked)
         }
         with(binding.recyclerViewHomework) {
-            if (adapter == null) {
+            adapter.ifNull {
                 layoutManager = LinearLayoutManager(context)
                 adapter = homeworkListAdapter
                 addOnScrollListener(setLoadMoreNoticesOnScroll())

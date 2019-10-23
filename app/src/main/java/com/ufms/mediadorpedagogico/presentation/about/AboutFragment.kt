@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 
 class AboutFragment : BaseFragment() {
     override val toolbarTitle: String
-        get() = getString(R.string.about_fragment_label)
+        get() = getString(R.string.about)
 
     override val baseViewModel: BaseViewModel get() = viewModel
 

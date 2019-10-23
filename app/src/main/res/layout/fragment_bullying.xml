@@ -38,7 +38,7 @@
                         style="@style/TextLabelTitleBlackBig"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/bullying_title"
+                        android:text="@string/bullying"
                         android:textAlignment="center" />
 
                     <View

@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 
 class BullyingFragment : BaseFragment() {
     override val toolbarTitle: String
-        get() = getString(R.string.bullying_fragment_label)
+        get() = getString(R.string.bullying)
 
     override val baseViewModel: BaseViewModel get() = viewModel
 

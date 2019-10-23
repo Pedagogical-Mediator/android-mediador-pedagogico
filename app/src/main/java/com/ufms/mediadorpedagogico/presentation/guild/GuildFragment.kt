@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 
 class GuildFragment : BaseFragment() {
 
-    override val toolbarTitle: String get() = getString(R.string.guild_fragment_label)
+    override val toolbarTitle: String get() = getString(R.string.guild)
     override val baseViewModel: BaseViewModel get() = viewModel
 
     private lateinit var binding: FragmentGuildBinding

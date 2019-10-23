@@ -81,7 +81,7 @@ class HomeworkDetailsFragment : BaseFragment() {
                         BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                     binding.imageViewResource.setImageBitmap(decodedByte)
                 } catch (e: Exception) {
-                    context?.shortToast(getString(R.string.activity_main_error_image_decode))
+                    context?.shortToast(getString(R.string.error_image_decode))
                 }
             }
         }

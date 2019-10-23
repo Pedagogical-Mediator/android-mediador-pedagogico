@@ -55,17 +55,6 @@
                 android:windowSoftInputMode="adjustPan">
 
         </activity>
-        <activity
-                android:name=".presentation.homework.list.HomeworkListFragment"
-                android:configChanges="keyboardHidden|orientation|screenSize"
-                android:label="@string/activity_homework_label"
-                android:screenOrientation="portrait"
-                android:theme="@style/AppThemeSecondary" />
-        <activity android:name=".presentation.notice.details.NoticeDetailsFragment" />
-        <activity android:name=".presentation.notice.list.NoticeListActivity" />
-        <activity android:name=".presentation.news.NewsListFragment" />
-        <activity android:name=".presentation.bullying.BullyingFragment" />
-        <activity android:name=".presentation.settings.SettingsFragment" />
 
         <meta-data
                 android:name="preloaded_fonts"

@@ -48,8 +48,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="@string/activity_main_notice"
-                        tools:text="Avisos" />
+                        android:text="@string/notice" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -75,8 +74,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:lines="2"
-                        android:text="@string/activity_main_homework"
-                        tools:text="Sala de aula invertida" />
+                        android:text="@string/homework" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -102,7 +100,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="@string/activity_main_news"
+                        android:text="@string/news"
                         tools:text="Notícias" />
                 </LinearLayout>
 
@@ -129,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:lines="2"
-                        android:text="@string/activity_main_calendar" />
+                        android:text="@string/calendar" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -157,8 +155,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:lines="2"
-                        android:text="@string/activity_main_bullying"
-                        tools:text="@string/activity_main_bullying" />
+                        android:text="@string/bullying" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -184,7 +181,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:lines="2"
-                        android:text="@string/activity_main_guild" />
+                        android:text="@string/guild" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -211,7 +208,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:lines="2"
-                        android:text="@string/activity_main_about" />
+                        android:text="@string/about" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -237,8 +234,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="@string/activity_main_settings"
-                        tools:text="@string/activity_main_settings" />
+                        android:text="@string/settings" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

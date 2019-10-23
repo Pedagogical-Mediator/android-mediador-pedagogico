@@ -17,7 +17,7 @@ fun ImageView.setImage(base64: String?) {
             setImageBitmap(decodedByte)
         } catch (e: Exception) {
             context?.run {
-                shortToast(getString(R.string.activity_main_error_image_decode))
+                shortToast(getString(R.string.error_image_decode))
             }
         }
     }
