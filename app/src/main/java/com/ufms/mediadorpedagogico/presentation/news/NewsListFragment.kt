@@ -64,10 +64,7 @@ class NewsListFragment : BaseFragment() {
     }
 
     private fun setupOnItemClicked(news: News) {
-        var url = news.link ?: ""
-        if (!url.startsWith("http://") && !url.startsWith("https://"))
-            url = "http://$url"
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+        loadPage(news.link)
     }
 
     private fun setLoadMoreNewsOnScroll(): RecyclerView.OnScrollListener {

@@ -3,11 +3,13 @@ package com.ufms.mediadorpedagogico.presentation.util.extensions
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.MenuItem
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ToolbarCustomizedBinding
 import io.reactivex.Single
@@ -162,6 +164,15 @@ fun AppCompatActivity.hideSoftKeyboard() {
 
 fun AppCompatActivity.showSoftKeyboard() {
     window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+}
+
+fun Fragment.loadPage(url: String?) {
+    url?.run {
+        var u = this
+        if (!startsWith("http://") && !startsWith("https://"))
+            u = "http://$url"
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(u)))
+    }
 }
 
 // exceptions
