@@ -105,9 +105,12 @@
     <string name="menu_homework">Sala de aula invertida</string>
     <string name="menu_news">Notícias</string>
     <string name="menu_settings">Configurações</string>
-    <string name="menu_bullying">Denúncia de bullying</string>
+    <string name="menu_bullying">Denúncia de Bullying</string>
     <string name="menu_guild">Grêmio Estudantil</string>
+    <string name="menu_about">Sobre a Escola</string>
     <string name="bullying_fragment_label">Bullying</string>
     <string name="guild_fragment_label">Grêmio Estudantil</string>
+    <string name="about_fragment_label">Sobre a Escola</string>
     <string name="bullying_title">Denúncia de Bullying</string>
+    <string name="about_title">Sobre a Escola</string>
 </resources>
