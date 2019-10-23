@@ -1,0 +1,14 @@
+package com.ufms.mediadorpedagogico.domain.interactor.calendar
+
+import com.ufms.mediadorpedagogico.domain.boundary.CalendarRepository
+import com.ufms.mediadorpedagogico.domain.entity.Calendar
+import io.reactivex.Single
+
+class GetCalendar constructor(
+    private val repository: CalendarRepository
+) {
+
+    fun execute(): Single<Calendar> {
+        return repository.getCalendarInformation()
+    }
+}
