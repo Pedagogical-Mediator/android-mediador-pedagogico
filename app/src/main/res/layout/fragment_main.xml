@@ -107,7 +107,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/card_view_about"
+                    android:id="@+id/card_view_calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/large"
@@ -121,7 +121,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:background="@drawable/about"
-                        android:src="@drawable/about" />
+                        android:src="@drawable/new_calendar" />
 
                     <TextView
                         style="@style/TextLabelWhateverBoldMainLabel"
@@ -129,8 +129,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:lines="2"
-                        android:text="@string/activity_main_bullying"
-                        tools:text="@string/activity_main_bullying" />
+                        android:text="@string/activity_main_calendar" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -186,6 +185,33 @@
                         android:gravity="center_horizontal"
                         android:lines="2"
                         android:text="@string/activity_main_guild" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card_view_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@id/card_view_bullying"
+                    app:layout_constraintEnd_toEndOf="@id/card_view_bullying"
+                    app:layout_constraintTop_toBottomOf="@id/card_view_bullying">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/about"
+                        android:src="@drawable/about" />
+
+                    <TextView
+                        style="@style/TextLabelWhateverBoldMainLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:lines="2"
+                        android:text="@string/activity_main_about" />
                 </LinearLayout>
 
                 <LinearLayout

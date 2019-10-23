@@ -98,7 +98,9 @@
     <string name="activity_main_news">Notícias</string>
     <string name="activity_main_bullying">Denúncia de Bullying</string>
     <string name="activity_main_guild">Grêmio Estudantil</string>
+    <string name="activity_main_calendar">Calendário</string>
     <string name="activity_main_settings">Configurações</string>
+    <string name="activity_main_about">Sobre a Escola</string>
     <string name="activity_main_error_image_decode">Imagem não pode ser carregada</string>
     <string name="menu_principal">Principal</string>
     <string name="menu_notices">Avisos</string>

@@ -1,11 +1,14 @@
 package com.ufms.mediadorpedagogico.presentation.main
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
+import com.ufms.mediadorpedagogico.domain.entity.Calendar
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
@@ -41,8 +44,9 @@ class MainFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observeAction(this@MainFragment, ::onNextPlaceholder)
-            noContentReturned.observeEvent(this@MainFragment, ::onNoContentReturned)
+            placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
+            noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
+            calendarReceived.observeAction(viewLifecycleOwner, ::onCalendarReceived)
         }
     }
 
@@ -55,6 +59,7 @@ class MainFragment : BaseFragment() {
             cardViewBullying.setOnClickListener(::goToBullying)
             cardViewGuild.setOnClickListener(::goToGuild)
             cardViewAbout.setOnClickListener(::goToAbout)
+            cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
         }
     }
 
@@ -65,6 +70,13 @@ class MainFragment : BaseFragment() {
      *
      * */
     private fun setupCache(subscribe: Boolean?) {
+    }
+
+    private fun onCalendarReceived(calendar: Calendar?) {
+        var url = calendar?.link ?: ""
+        if (!url.startsWith("http://") && !url.startsWith("https://"))
+            url = "http://$url"
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
     }
 
     private fun goToNotice() {

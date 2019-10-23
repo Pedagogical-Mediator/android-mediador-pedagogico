@@ -1,9 +1,6 @@
 package com.ufms.mediadorpedagogico.data.remote.client
 
-import com.ufms.mediadorpedagogico.data.remote.entity.ApiAbout
-import com.ufms.mediadorpedagogico.data.remote.entity.ApiBullying
-import com.ufms.mediadorpedagogico.data.remote.entity.ApiGuild
-import com.ufms.mediadorpedagogico.data.remote.entity.ApiUser
+import com.ufms.mediadorpedagogico.data.remote.entity.*
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
@@ -65,4 +62,11 @@ interface ApiService {
 
     @GET("escola")
     fun getAboutInformation(): Single<Response<ApiAbout>>
+
+    /**
+     * Calendar
+     * */
+
+    @GET("calendario")
+    fun getCalendar(): Single<Response<ApiCalendar>>
 }
