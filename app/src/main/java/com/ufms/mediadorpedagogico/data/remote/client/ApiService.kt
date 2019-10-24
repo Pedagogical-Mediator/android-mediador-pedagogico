@@ -60,7 +60,7 @@ interface ApiService {
      * About
      * */
 
-    @GET("escola")
+    @GET("escolas")
     fun getAboutInformation(): Single<Response<ApiAbout>>
 
     /**

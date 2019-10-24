@@ -1,6 +1,6 @@
-package com.ufms.mediadorpedagogico.domain
+package com.ufms.mediadorpedagogico.user
 
-import com.ufms.mediadorpedagogico.UserUtilsTest.mockedUser
+import com.ufms.mediadorpedagogico.MocksEntities.mockedUser
 import com.ufms.mediadorpedagogico.domain.boundary.UserRepository.Companion.CURRENT_USER
 import com.ufms.mediadorpedagogico.domain.boundary.resources.Cache
 import com.ufms.mediadorpedagogico.domain.entity.User
