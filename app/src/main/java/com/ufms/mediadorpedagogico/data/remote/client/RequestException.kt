@@ -58,7 +58,7 @@ class RequestException private constructor(
         return isHttpError() && HttpError.getErrorForCode(errorCode) == HttpError.UNPROCESSABLE_ENTITY
     }
 
-    private enum class ErrorType {
+    enum class ErrorType {
         HTTP, NETWORK, UNEXPECTED, TIMEOUT
     }
 
