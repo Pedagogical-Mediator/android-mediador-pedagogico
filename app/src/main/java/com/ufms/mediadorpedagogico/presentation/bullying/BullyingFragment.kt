@@ -32,7 +32,6 @@ class BullyingFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentBullyingBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupUi()
         return binding.root
     }
 
@@ -48,14 +47,6 @@ class BullyingFragment : BaseFragment() {
         bullying?.let {
             binding.bullying = it
         }
-    }
-
-    private fun setupUi() {
-
-    }
-
-    private fun onNoContentReturned(noContentReturned: Boolean?) {
-
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

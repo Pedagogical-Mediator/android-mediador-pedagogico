@@ -25,7 +25,6 @@ interface ApiService {
     @FormUrlEncoded
     fun getListOfHomework(@Field("page") pageNumber: Int, @Field("chaveDeAcesso") classKey: String): Single<Response<ApiHomeworkContent>>
 
-
     /**
      * Notice
      * */
@@ -33,14 +32,12 @@ interface ApiService {
     @GET("avisos")
     fun getListOfNotices(@Query("page") pageNumber: Int): Single<Response<ApiNoticeContent>>
 
-
     /**
      * Notice
      * */
 
     @GET("noticias")
     fun getListOfNews(@Query("page") pageNumber: Int): Single<Response<ApiNewsContent>>
-
 
     /**
      * Bullying

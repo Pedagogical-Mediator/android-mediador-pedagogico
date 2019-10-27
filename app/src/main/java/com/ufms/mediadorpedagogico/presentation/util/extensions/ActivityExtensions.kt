@@ -19,7 +19,6 @@ import pl.aprilapps.easyphotopicker.DefaultCallback
 import pl.aprilapps.easyphotopicker.EasyImage
 import java.io.File
 
-
 private const val STARTED_FOR_RESULT = "STARTED_FOR_RESULT"
 
 // intents

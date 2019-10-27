@@ -32,7 +32,6 @@ class AboutFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentAboutBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupUi()
         return binding.root
     }
 
@@ -48,14 +47,6 @@ class AboutFragment : BaseFragment() {
         about?.let {
             binding.about = it
         }
-    }
-
-    private fun setupUi() {
-
-    }
-
-    private fun onNoContentReturned(noContentReturned: Boolean?) {
-
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

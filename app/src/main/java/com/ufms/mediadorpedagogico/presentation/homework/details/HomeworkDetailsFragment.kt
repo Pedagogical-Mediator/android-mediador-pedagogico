@@ -71,8 +71,7 @@ class HomeworkDetailsFragment : BaseFragment() {
             binding.homeworkDetails = this
             homeworkDetailsAdapter.setItems(links)
             binding.webviewContent.loadDataWithBaseURL(
-                ""
-                , description, "text/html", "UTF-8", ""
+                "", description, "text/html", "UTF-8", ""
             )
             imageBase64?.let {
                 try {
