@@ -46,10 +46,6 @@ class RequestException private constructor(
         return errorType == ErrorType.NETWORK
     }
 
-    fun isUnexpectedError(): Boolean {
-        return errorType == ErrorType.UNEXPECTED
-    }
-
     fun isUnauthorizedError(): Boolean {
         return isHttpError() && HttpError.getErrorForCode(errorCode) == HttpError.UNAUTHORIZED
     }
@@ -58,16 +54,8 @@ class RequestException private constructor(
         return errorType == ErrorType.TIMEOUT || HttpError.getErrorForCode(errorCode) == HttpError.TIMEOUT
     }
 
-    fun isNotFoundException(): Boolean {
-        return isHttpError() && HttpError.getErrorForCode(errorCode) == HttpError.NOT_FOUND
-    }
-
     fun isUnprocessableEntity(): Boolean {
         return isHttpError() && HttpError.getErrorForCode(errorCode) == HttpError.UNPROCESSABLE_ENTITY
-    }
-
-    fun isConflictException(): Boolean {
-        return isHttpError() && HttpError.getErrorForCode(errorCode) == HttpError.CONFLICT
     }
 
     private enum class ErrorType {

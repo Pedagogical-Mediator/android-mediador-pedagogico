@@ -26,10 +26,13 @@ class GuildTests : KoinTest {
     }
 
     @Test
-    fun getAbout() {
+    fun getGuild() {
         val guild = getGuild.execute().blockingGet()
         assertNotNull(guild)
         assertNotNull(guild.id)
+        assertNotNull(guild.description)
+        assertNotNull(guild.image)
+        assertNotNull(guild.link)
     }
 
     @AfterEach

@@ -31,6 +31,9 @@ class AboutTests : KoinTest {
         val about = getAbout.execute().blockingGet()
         assertNotNull(about)
         assertNotNull(about.id)
+        assertNotNull(about.description)
+        assertNotNull(about.image)
+        assertNotNull(about.link)
     }
 
     @AfterEach

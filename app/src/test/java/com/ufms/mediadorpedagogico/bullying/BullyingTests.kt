@@ -1,9 +1,6 @@
 package com.ufms.mediadorpedagogico.bullying
 
-
-import com.ufms.mediadorpedagogico.domain.interactor.about.GetAbout
 import com.ufms.mediadorpedagogico.domain.interactor.bullying.GetBullying
-import com.ufms.mediadorpedagogico.domain.interactor.notice.GetNotice
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.applicationModule
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.interactorModule
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.repositoryModule
@@ -33,6 +30,8 @@ class BullyingTests : KoinTest {
         val bullying = getBullying.execute().blockingGet()
         assertNotNull(bullying)
         assertNotNull(bullying.id)
+        assertNotNull(bullying.description)
+        assertNotNull(bullying.image)
         assertNotNull(bullying.link)
     }
 
