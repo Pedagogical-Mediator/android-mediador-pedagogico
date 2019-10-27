@@ -35,14 +35,6 @@ class DashboardActivity : BaseActivity() {
             true
         )
         setupNavigation(navController)
-        //hear for event changes
-//        navController.addOnDestinationChangedListener { _, destination, _ ->
-//            val dest: String = try {
-//                resources.getResourceName(destination.id)
-//            } catch (e: Resources.NotFoundException) {
-//                destination.id.toString()
-//            }
-//        }
     }
 
     private fun setupNavigation(navController: NavController) {
@@ -51,24 +43,8 @@ class DashboardActivity : BaseActivity() {
         navController.addOnDestinationChangedListener { _, _, _ ->
             supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_white)
         }
-
-//        //fragments load from here but how ?
-//        appBarConfiguration = AppBarConfiguration(
-//            setOf(R.id.fragment1, R.id.fragment2),
-//            drawerLayout
-//        )
     }
 
-    //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        val retValue = super.onCreateOptionsMenu(menu)
-//        val navigationView = findViewById<NavigationView>(R.id.nav_view)
-//        if (navigationView == null) {
-//            //android needs to know what menu I need
-//            menuInflater.inflate(R.menu.navigation_menu, menu)
-//            return true
-//        }
-//        return retValue
-//    }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             android.R.id.home -> binding.drawerLayout.openDrawer(GravityCompat.START)
@@ -76,13 +52,6 @@ class DashboardActivity : BaseActivity() {
         return item?.onNavDestinationSelected(findNavController(R.id.main_navigation_fragment)) ?: false
                 || super.onOptionsItemSelected(item)
     }
-//    override fun onBackPressed() {
-//        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            binding.drawerLayout.closeDrawer(GravityCompat.START)
-//        } else {
-//            super.onBackPressed()
-//        }
-//    }
 
     fun onNextTitle(title: String?) {
         title?.let {

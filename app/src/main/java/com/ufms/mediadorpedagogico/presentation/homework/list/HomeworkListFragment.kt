@@ -22,7 +22,7 @@ class HomeworkListFragment : BaseFragment() {
         get() = getString(R.string.activity_homework_label)
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    var homeworkListAdapter: HomeworkListAdapter? = null
+    private var homeworkListAdapter: HomeworkListAdapter? = null
     private var moreHomeworksToBeLoaded = true
     private var isLoadingMoreHomework = false
     lateinit var binding: FragmentHomeworkListBinding
@@ -44,9 +44,9 @@ class HomeworkListFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observeAction(this@HomeworkListFragment, ::onNextPlaceholder)
-            homeworkContent.observeEvent(this@HomeworkListFragment, ::onHomeworkContentLoaded)
-            noContentReturned.observeEvent(this@HomeworkListFragment, ::onNoContentReturned)
+            placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
+            homeworkContent.observeEvent(viewLifecycleOwner, ::onHomeworkContentLoaded)
+            noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
     }
 
@@ -55,7 +55,7 @@ class HomeworkListFragment : BaseFragment() {
             homeworkListAdapter = HomeworkListAdapter(::setupOnItemClicked)
         }
         with(binding.recyclerViewHomework) {
-            if (adapter == null) {
+            adapter.ifNull {
                 layoutManager = LinearLayoutManager(context)
                 adapter = homeworkListAdapter
                 addOnScrollListener(setLoadMoreNoticesOnScroll())

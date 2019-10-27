@@ -33,14 +33,6 @@ class AuthInterceptor : Interceptor {
         return response
     }
 
-    fun hasHeaders() = try {
-        getTokenFromCache()
-        getClientFromCache()
-        true
-    } catch (e: Cache.NotFoundException) {
-        false
-    }
-
     private fun getTokenFromCache() =
         PreferencesCache.get<String>(HEADER_TOKEN, String::class.java)
 

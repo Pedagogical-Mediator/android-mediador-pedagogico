@@ -1,7 +1,5 @@
 package com.ufms.mediadorpedagogico.presentation.main
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +7,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
 import com.ufms.mediadorpedagogico.domain.entity.Calendar
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
+import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
@@ -73,10 +68,7 @@ class MainFragment : BaseFragment() {
     }
 
     private fun onCalendarReceived(calendar: Calendar?) {
-        var url = calendar?.link ?: ""
-        if (!url.startsWith("http://") && !url.startsWith("https://"))
-            url = "http://$url"
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+        loadPage(calendar?.link)
     }
 
     private fun goToNotice() {

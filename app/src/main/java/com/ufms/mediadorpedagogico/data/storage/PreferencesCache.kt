@@ -11,7 +11,6 @@ object PreferencesCache : Cache {
     private const val PREFS_NAME = "APP_PREFERENCES"
 
     lateinit var sharedPreferences: SharedPreferences
-        private set
 
     fun init(context: Context): Cache {
         sharedPreferences = context.getSharedPreferences(

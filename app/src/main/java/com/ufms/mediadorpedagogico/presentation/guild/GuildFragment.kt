@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 
 class GuildFragment : BaseFragment() {
 
-    override val toolbarTitle: String get() = getString(R.string.guild_fragment_label)
+    override val toolbarTitle: String get() = getString(R.string.guild)
     override val baseViewModel: BaseViewModel get() = viewModel
 
     private lateinit var binding: FragmentGuildBinding
@@ -31,7 +31,6 @@ class GuildFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentGuildBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupUi()
         return binding.root
     }
 
@@ -47,14 +46,6 @@ class GuildFragment : BaseFragment() {
         guild?.let {
             binding.guild = it
         }
-    }
-
-    private fun setupUi() {
-
-    }
-
-    private fun onNoContentReturned(noContentReturned: Boolean?) {
-
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

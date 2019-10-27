@@ -1,7 +1,5 @@
 package com.ufms.mediadorpedagogico.presentation.news
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -44,9 +42,9 @@ class NewsListFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observeAction(this@NewsListFragment, ::onNextPlaceholder)
-            newsContent.observeEvent(this@NewsListFragment, ::onNewsContentLoaded)
-            noContentReturned.observeEvent(this@NewsListFragment, ::onNoContentReturned)
+            placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
+            newsContent.observeEvent(viewLifecycleOwner, ::onNewsContentLoaded)
+            noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
     }
 
@@ -64,10 +62,7 @@ class NewsListFragment : BaseFragment() {
     }
 
     private fun setupOnItemClicked(news: News) {
-        var url = news.link ?: ""
-        if (!url.startsWith("http://") && !url.startsWith("https://"))
-            url = "http://$url"
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+        loadPage(news.link)
     }
 
     private fun setLoadMoreNewsOnScroll(): RecyclerView.OnScrollListener {

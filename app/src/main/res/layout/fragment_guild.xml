@@ -38,7 +38,7 @@
                         style="@style/TextLabelTitleBlackBig"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/guild_fragment_label"
+                        android:text="@string/guild"
                         android:textAlignment="center" />
 
                     <View

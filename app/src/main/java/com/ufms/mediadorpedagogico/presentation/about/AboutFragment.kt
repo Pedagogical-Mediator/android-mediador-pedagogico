@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 
 class AboutFragment : BaseFragment() {
     override val toolbarTitle: String
-        get() = getString(R.string.about_fragment_label)
+        get() = getString(R.string.about)
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
@@ -32,7 +32,6 @@ class AboutFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentAboutBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupUi()
         return binding.root
     }
 
@@ -48,14 +47,6 @@ class AboutFragment : BaseFragment() {
         about?.let {
             binding.about = it
         }
-    }
-
-    private fun setupUi() {
-
-    }
-
-    private fun onNoContentReturned(noContentReturned: Boolean?) {
-
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

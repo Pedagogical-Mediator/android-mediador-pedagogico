@@ -48,7 +48,7 @@ class HomeworkDetailsFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            homeworkContent.observeEvent(this@HomeworkDetailsFragment, ::onHomeworkDetailsReceived)
+            homeworkContent.observeEvent(viewLifecycleOwner, ::onHomeworkDetailsReceived)
         }
     }
 
@@ -71,8 +71,7 @@ class HomeworkDetailsFragment : BaseFragment() {
             binding.homeworkDetails = this
             homeworkDetailsAdapter.setItems(links)
             binding.webviewContent.loadDataWithBaseURL(
-                ""
-                , description, "text/html", "UTF-8", ""
+                "", description, "text/html", "UTF-8", ""
             )
             imageBase64?.let {
                 try {
@@ -81,7 +80,7 @@ class HomeworkDetailsFragment : BaseFragment() {
                         BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                     binding.imageViewResource.setImageBitmap(decodedByte)
                 } catch (e: Exception) {
-                    context?.shortToast(getString(R.string.activity_main_error_image_decode))
+                    context?.shortToast(getString(R.string.error_image_decode))
                 }
             }
         }
