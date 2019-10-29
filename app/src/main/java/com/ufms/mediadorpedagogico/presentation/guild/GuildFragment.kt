@@ -6,22 +6,27 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentGuildBinding
 import com.ufms.mediadorpedagogico.domain.entity.Guild
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class GuildFragment : BaseFragment() {
+class GuildFragment : Base2() {
 
+    override val titleHelp: String get() = getString(R.string.help_guild_title)
+    override val descriptionHelp: String get() = getString(R.string.help_guild_description)
     override val toolbarTitle: String get() = getString(R.string.guild)
     override val baseViewModel: BaseViewModel get() = viewModel
 
-    private lateinit var binding: FragmentGuildBinding
+    private val navController by lazy { findNavController() }
     private val viewModel: GuildViewModel by inject()
+    private lateinit var binding: FragmentGuildBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +45,15 @@ class GuildFragment : BaseFragment() {
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             guildReceived.observeAction((viewLifecycleOwner), ::onGuildReceived)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(
+            GuildFragmentDirections.actionGuildFragmentToHelpBottomSheet(
+                titleHelp,
+                descriptionHelp
+            )
+        )
     }
 
     private fun onGuildReceived(guild: Guild?) {

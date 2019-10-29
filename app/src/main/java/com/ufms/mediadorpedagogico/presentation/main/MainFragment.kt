@@ -1,24 +1,26 @@
 package com.ufms.mediadorpedagogico.presentation.main
 
-import android.content.Context
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
 import com.ufms.mediadorpedagogico.domain.entity.Calendar
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class MainFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = ""
-    override val baseViewModel: BaseViewModel
-        get() = viewModel
+class MainFragment : Base2() {
+    override val titleHelp: String get() = getString(R.string.help_main_title)
+    override val descriptionHelp: String get() = getString(R.string.help_main_description)
+    override val toolbarTitle: String get() = "" // TODO
+    override val baseViewModel: BaseViewModel get() = viewModel
 
     private lateinit var binding: FragmentMainBinding
     private val viewModel: MainViewModel by inject()
@@ -36,25 +38,6 @@ class MainFragment : BaseFragment() {
         return binding.root
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        setHasOptionsMenu(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_question, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_question_mark -> {
-                navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHelpBottomSheet("Ajuda", "Descrição da ajuda"))
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
@@ -62,6 +45,10 @@ class MainFragment : BaseFragment() {
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
             calendarReceived.observeAction(viewLifecycleOwner, ::onCalendarReceived)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHelpBottomSheet(titleHelp, descriptionHelp))
     }
 
     private fun setupUi() {
