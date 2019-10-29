@@ -9,6 +9,7 @@
     <string name="global_yes">Sim</string>
     <string name="global_no">Não</string>
     <string name="global_not_found">Nenhum resultado encontrado</string>
+    <string name="global_question_action">Ajuda</string>
 
     <string name="error_title">Oops!</string>
     <string name="error_unknown">Não foi possível completar a operação. Tente novamente mais tarde. Se o problema

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/big"
+        android:paddingTop="@dimen/small"
+        android:paddingEnd="@dimen/big"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextLabelTitleBlackSemiBIg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Ajuda"/>
+
+        <TextView
+            style="@style/TextDescriptionNormal"
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:maxLines="5"
+            tools:text="Descrição da ajudadadadadaadadaada adadadadadadadad"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_confirm"
+            style="@style/ButtonTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="@dimen/semi_large"
+            android:layout_marginBottom="@dimen/normal"
+            android:paddingTop="@dimen/normal"
+            android:paddingBottom="@dimen/normal"
+            android:theme="@style/AppButtonTheme"
+            android:text="Entendi"/>
+    </LinearLayout>
+</layout>

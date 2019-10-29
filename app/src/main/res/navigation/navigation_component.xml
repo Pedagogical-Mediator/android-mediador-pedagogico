@@ -25,6 +25,18 @@
         <action
             android:id="@+id/action_main_fragment_to_bullyingFragment"
             app:destination="@id/bullying_fragment" />
+<<<<<<< Updated upstream
+=======
+        <action
+            android:id="@+id/action_main_fragment_to_guildFragment"
+            app:destination="@id/guild_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_aboutFragment"
+            app:destination="@id/about_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+>>>>>>> Stashed changes
     </fragment>
     <fragment
         android:id="@+id/notice_list_fragment"
@@ -80,4 +92,29 @@
         android:name="com.ufms.mediadorpedagogico.presentation.bullying.BullyingFragment"
         android:label="BullyingFragment"
         tools:layout="@layout/fragment_bullying" />
+<<<<<<< Updated upstream
+=======
+    <fragment
+        android:id="@+id/guild_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.guild.GuildFragment"
+        android:label="GuildFragment"
+        tools:layout="@layout/fragment_guild"/>
+    <fragment
+        android:id="@+id/about_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.about.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
+    <dialog
+        android:id="@+id/helpBottomSheet"
+        android:name="com.ufms.mediadorpedagogico.presentation.help.HelpBottomSheet"
+        android:label="HelpBottomSheet"
+        tools:layout="@layout/fragment_help">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </dialog>
+>>>>>>> Stashed changes
 </navigation>

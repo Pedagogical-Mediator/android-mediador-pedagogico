@@ -1,10 +1,10 @@
 package com.ufms.mediadorpedagogico.presentation.main
 
+import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.navigation.fragment.findNavController
+import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
@@ -36,6 +36,25 @@ class MainFragment : BaseFragment() {
         lifecycle.addObserver(viewModel)
         setupUi()
         return binding.root
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_question, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_question_mark -> {
+                navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHelpBottomSheet("Ajuda", "Descrição da ajuda"))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun subscribeUi() {
