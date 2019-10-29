@@ -9,6 +9,7 @@
     <string name="global_yes">Sim</string>
     <string name="global_no">Não</string>
     <string name="global_not_found">Nenhum resultado encontrado</string>
+    <string name="global_question_action">Ajuda</string>
 
     <string name="error_title">Oops!</string>
     <string name="error_unknown">Não foi possível completar a operação. Tente novamente mais tarde. Se o problema
@@ -103,4 +104,37 @@
     <string name="about">Sobre a Escola</string>
     <string name="error_image_decode">Imagem não pode ser carregada</string>
     <string name="principal">Principal</string>
+
+    <!--
+        HELP TEXTS
+    -->
+    <string name="help_main_title">TODO help_main_title</string>
+    <string name="help_main_description">TODO help_main_title</string>
+
+    <string name="help_notice_list_title">TODO help_notice_list_title</string>
+    <string name="help_notice_list_description">TODO help_notice_list_title</string>
+
+    <string name="help_notice_details_title">TODO help_notice_details_title</string>
+    <string name="help_notice_details_description">TODO help_notice_details_title</string>
+
+    <string name="help_homework_list_title">TODO help_homework_list_title</string>
+    <string name="help_homework_list_description">TODO help_homework_list_title</string>
+
+    <string name="help_homework_details_title">TODO help_homework_details_title</string>
+    <string name="help_homework_details_description">TODO help_homework_details_title</string>
+
+    <string name="help_news_list_title">TODO help_news_list_title</string>
+    <string name="help_news_list_description">TODO help_news_list_title</string>
+
+    <string name="help_settings_title">TODO help_settings_title</string>
+    <string name="help_settings_description">TODO help_settings_title</string>
+
+    <string name="help_bullying_title">TODO help_bullying_title</string>
+    <string name="help_bullying_description">TODO help_bullying_title</string>
+
+    <string name="help_guild_title">TODO help_guild_title</string>
+    <string name="help_guild_description">TODO help_guild_title</string>
+
+    <string name="help_about_title">TODO help_about_title</string>
+    <string name="help_about_description">TODO help_about_title</string>
 </resources>

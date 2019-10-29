@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_main_fragment_to_aboutFragment"
             app:destination="@id/about_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/notice_list_fragment"
@@ -40,6 +43,9 @@
         <action
             android:id="@+id/action_notice_list_fragment_to_noticeDetailsFragment"
             app:destination="@id/noticeDetailsFragment" />
+        <action
+            android:id="@+id/action_notice_list_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/noticeDetailsFragment"
@@ -50,6 +56,9 @@
             android:defaultValue="@null"
             app:argType="com.ufms.mediadorpedagogico.domain.entity.notice.Notice"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_noticeDetailsFragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/homework_list_fragment"
@@ -59,6 +68,9 @@
         <action
             android:id="@+id/action_homeworkListFragment_to_homeworkDetailsFragment"
             app:destination="@id/homeworkDetailsFragment" />
+        <action
+            android:id="@+id/action_homework_list_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/homeworkDetailsFragment"
@@ -70,30 +82,65 @@
             android:defaultValue="@null"
             app:argType="com.ufms.mediadorpedagogico.domain.entity.homework.Homework"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_homeworkDetailsFragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/news_list_fragment"
         android:name="com.ufms.mediadorpedagogico.presentation.news.NewsListFragment"
         android:label="NewsListFragment"
-        tools:layout="@layout/fragment_news_list" />
+        tools:layout="@layout/fragment_news_list" >
+        <action
+            android:id="@+id/action_news_list_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+    </fragment>
     <fragment
         android:id="@+id/settings_fragment"
         android:name="com.ufms.mediadorpedagogico.presentation.settings.SettingsFragment"
         android:label="SettingsFragment"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+    </fragment>
     <fragment
         android:id="@+id/bullying_fragment"
         android:name="com.ufms.mediadorpedagogico.presentation.bullying.BullyingFragment"
         android:label="BullyingFragment"
-        tools:layout="@layout/fragment_bullying" />
+        tools:layout="@layout/fragment_bullying" >
+        <action
+            android:id="@+id/action_bullying_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+    </fragment>
     <fragment
         android:id="@+id/guild_fragment"
         android:name="com.ufms.mediadorpedagogico.presentation.guild.GuildFragment"
         android:label="GuildFragment"
-        tools:layout="@layout/fragment_guild"/>
+        tools:layout="@layout/fragment_guild">
+        <action
+            android:id="@+id/action_guild_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+    </fragment>
     <fragment
         android:id="@+id/about_fragment"
         android:name="com.ufms.mediadorpedagogico.presentation.about.AboutFragment"
         android:label="AboutFragment"
-        tools:layout="@layout/fragment_about"/>
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_about_fragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/helpBottomSheet"
+        android:name="com.ufms.mediadorpedagogico.presentation.help.HelpBottomSheet"
+        android:label="HelpBottomSheet"
+        tools:layout="@layout/fragment_help">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </dialog>
 </navigation>

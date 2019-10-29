@@ -18,10 +18,11 @@ import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
 class NoticeListFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = getString(R.string.activity_notice_label)
-    override val baseViewModel: BaseViewModel
-        get() = viewModel
+
+    override val titleHelp: String get() = getString(R.string.help_notice_list_title)
+    override val descriptionHelp: String get() = getString(R.string.help_notice_list_description)
+    override val toolbarTitle: String get() = getString(R.string.activity_notice_label)
+    override val baseViewModel: BaseViewModel get() = viewModel
 
     var noticeListAdapter: NoticeListAdapter? = null
     private var moreNoticesToBeLoaded = true
@@ -49,6 +50,10 @@ class NoticeListFragment : BaseFragment() {
             noticeContent.observeEvent(viewLifecycleOwner, ::onNoticeContentLoaded)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(NoticeListFragmentDirections.actionNoticeListFragmentToHelpBottomSheet(titleHelp, descriptionHelp))
     }
 
     private fun setupRecyclerView() {

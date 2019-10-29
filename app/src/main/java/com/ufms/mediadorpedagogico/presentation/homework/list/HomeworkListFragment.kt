@@ -18,14 +18,16 @@ import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
 class HomeworkListFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = getString(R.string.activity_homework_label)
+
+    override val titleHelp: String get() = getString(R.string.help_homework_list_title)
+    override val descriptionHelp: String get() = getString(R.string.help_homework_list_description)
+    override val toolbarTitle: String get() = getString(R.string.activity_homework_label)
     override val baseViewModel: BaseViewModel get() = viewModel
 
+    private lateinit var binding: FragmentHomeworkListBinding
     private var homeworkListAdapter: HomeworkListAdapter? = null
     private var moreHomeworksToBeLoaded = true
     private var isLoadingMoreHomework = false
-    lateinit var binding: FragmentHomeworkListBinding
     private val viewModel: HomeworkListViewModel by inject()
     private val navController by lazy { findNavController() }
 
@@ -48,6 +50,15 @@ class HomeworkListFragment : BaseFragment() {
             homeworkContent.observeEvent(viewLifecycleOwner, ::onHomeworkContentLoaded)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(
+            HomeworkListFragmentDirections.actionHomeworkListFragmentToHelpBottomSheet(
+                titleHelp,
+                descriptionHelp
+            )
+        )
     }
 
     private fun setupRecyclerView() {

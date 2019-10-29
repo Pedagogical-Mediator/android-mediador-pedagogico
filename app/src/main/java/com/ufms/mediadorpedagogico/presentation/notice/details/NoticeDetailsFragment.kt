@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
@@ -16,19 +17,23 @@ import com.ufms.mediadorpedagogico.presentation.util.extensions.drawableCompat
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class NoticeDetailsFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = getString(R.string.activity_notice_label)
+
+    override val titleHelp: String get() = getString(R.string.help_notice_details_title)
+    override val descriptionHelp: String get() = getString(R.string.help_notice_details_description)
+    override val baseViewModel: BaseViewModel get() = viewModel
+    override val toolbarTitle: String get() = getString(R.string.activity_notice_label)
 
     val args: NoticeDetailsFragmentArgs by navArgs()
 
-    override val baseViewModel: BaseViewModel get() = viewModel
     private lateinit var binding: FragmentNoticeDetailsBinding
     private val viewModel: NoticeDetailsViewModel by viewModel { parametersOf(args.notice) }
     lateinit var noticeDetailsAdapter: NoticeDetailsAdapter
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +53,15 @@ class NoticeDetailsFragment : BaseFragment() {
         with(viewModel) {
             noticeContent.observeEvent(viewLifecycleOwner, ::onNoticeDetailsReceived)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(
+            NoticeDetailsFragmentDirections.actionNoticeDetailsFragmentToHelpBottomSheet(
+                titleHelp,
+                descriptionHelp
+            )
+        )
     }
 
     private fun setupAdapter() {

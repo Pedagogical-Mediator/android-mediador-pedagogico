@@ -6,6 +6,7 @@ import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
@@ -17,19 +18,21 @@ import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class HomeworkDetailsFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = getString(R.string.activity_homework_label)
 
+    override val titleHelp: String get() = getString(R.string.help_homework_details_title)
+    override val descriptionHelp: String get() = getString(R.string.help_homework_details_description)
+    override val toolbarTitle: String get() = getString(R.string.activity_homework_label)
     override val baseViewModel: BaseViewModel get() = viewModel
 
     val args: HomeworkDetailsFragmentArgs by navArgs()
     private lateinit var binding: FragmentHomeworkDetailsBinding
     private val viewModel: HomeworkDetailsViewModel by viewModel { parametersOf(args.homework) }
-
+    private val navController by lazy { findNavController() }
     lateinit var homeworkDetailsAdapter: HomeworkDetailsAdapter
 
     override fun onCreateView(
@@ -50,6 +53,10 @@ class HomeworkDetailsFragment : BaseFragment() {
         with(viewModel) {
             homeworkContent.observeEvent(viewLifecycleOwner, ::onHomeworkDetailsReceived)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(HomeworkDetailsFragmentDirections.actionHomeworkDetailsFragmentToHelpBottomSheet(titleHelp, descriptionHelp))
     }
 
     private fun setupAdapter() {

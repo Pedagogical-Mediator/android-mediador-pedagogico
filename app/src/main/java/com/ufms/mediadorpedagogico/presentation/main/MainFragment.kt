@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
 import com.ufms.mediadorpedagogico.domain.entity.Calendar
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
@@ -15,10 +16,10 @@ import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
 class MainFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = ""
-    override val baseViewModel: BaseViewModel
-        get() = viewModel
+    override val titleHelp: String get() = getString(R.string.help_main_title)
+    override val descriptionHelp: String get() = getString(R.string.help_main_description)
+    override val toolbarTitle: String get() = "" // TODO
+    override val baseViewModel: BaseViewModel get() = viewModel
 
     private lateinit var binding: FragmentMainBinding
     private val viewModel: MainViewModel by inject()
@@ -43,6 +44,10 @@ class MainFragment : BaseFragment() {
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
             calendarReceived.observeAction(viewLifecycleOwner, ::onCalendarReceived)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHelpBottomSheet(titleHelp, descriptionHelp))
     }
 
     private fun setupUi() {
