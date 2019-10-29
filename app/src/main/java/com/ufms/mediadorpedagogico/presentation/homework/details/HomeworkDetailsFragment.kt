@@ -16,13 +16,13 @@ import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.DividerItemD
 import com.ufms.mediadorpedagogico.presentation.util.extensions.drawableCompat
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class HomeworkDetailsFragment : Base2() {
+class HomeworkDetailsFragment : BaseFragment() {
 
     override val titleHelp: String get() = getString(R.string.help_homework_details_title)
     override val descriptionHelp: String get() = getString(R.string.help_homework_details_description)

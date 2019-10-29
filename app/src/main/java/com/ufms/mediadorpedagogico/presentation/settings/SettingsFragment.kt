@@ -10,12 +10,12 @@ import com.ufms.mediadorpedagogico.databinding.FragmentSettingsBinding
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.onChecked
 import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import org.koin.android.ext.android.inject
 
-class SettingsFragment : Base2() {
+class SettingsFragment : BaseFragment() {
 
     override val titleHelp: String get() = getString(R.string.help_settings_title)
     override val descriptionHelp: String get() = getString(R.string.help_settings_description)

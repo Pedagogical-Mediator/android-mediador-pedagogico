@@ -15,13 +15,13 @@ import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.loadHTML
 import com.ufms.mediadorpedagogico.presentation.util.bindingadapter.setImage
 import com.ufms.mediadorpedagogico.presentation.util.extensions.drawableCompat
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class NoticeDetailsFragment : Base2() {
+class NoticeDetailsFragment : BaseFragment() {
 
     override val titleHelp: String get() = getString(R.string.help_notice_details_title)
     override val descriptionHelp: String get() = getString(R.string.help_notice_details_description)

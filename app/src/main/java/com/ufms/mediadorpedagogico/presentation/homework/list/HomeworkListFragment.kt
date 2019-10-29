@@ -11,13 +11,13 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentHomeworkListBinding
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class HomeworkListFragment : Base2() {
+class HomeworkListFragment : BaseFragment() {
 
     override val titleHelp: String get() = getString(R.string.help_homework_list_title)
     override val descriptionHelp: String get() = getString(R.string.help_homework_list_description)
