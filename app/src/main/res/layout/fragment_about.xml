@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="about"
+            type="com.ufms.mediadorpedagogico.domain.entity.About" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/small">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/normal"
+                android:background="@drawable/card_view" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/normal"
+                    tools:context="com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsFragment">
+
+                    <TextView
+                        android:id="@+id/text_view_title"
+                        style="@style/TextLabelTitleBlackBig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about"
+                        android:textAlignment="center" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line"
+                        android:layout_marginTop="@dimen/tiny"
+                        android:background="@color/black" />
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/large"
+                        android:src="@drawable/about"
+                        app:makeVisible="@{about.image == null}" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/large"
+                        android:gravity="center"
+                        app:makeVisible="@{about.image != null}">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:setImage="@{about.image}" />
+                    </LinearLayout>
+
+                    <WebView
+                        android:id="@+id/text_view_description"
+                        style="@style/TextLabelDescriptionBlackNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/big"
+                        app:loadHTML="@{about.description}"
+                        tools:text="DESCRIPTION" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{about.link}"
+                        android:autoLink="web"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/loading_placeholder"
+            layout="@layout/loading_placeholder" />
+    </FrameLayout>
+</layout>
+

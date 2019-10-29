@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/main_fragment"
-            android:icon="@drawable/selector_button_accent"
-            android:title="@string/menu_principal"/>
-
-    <item android:id="@+id/notice_list_fragment"
-            android:icon="@drawable/selector_button_accent"
-            android:title="@string/menu_notices"/>
-
-    <item android:id="@+id/homework_list_fragment"
-            android:icon="@drawable/selector_button_accent"
-            android:title="@string/menu_homework"/>
-
-    <item android:id="@+id/news_list_fragment"
-            android:icon="@drawable/selector_button_accent"
-            android:title="@string/menu_news"/>
-
-    <item android:id="@+id/settings_fragment"
-            android:icon="@drawable/selector_button_accent"
-            android:title="@string/menu_settings"/>
-
-    <item android:id="@+id/bullying_fragment"
+    <item
+        android:id="@+id/main_fragment"
         android:icon="@drawable/selector_button_accent"
-        android:title="@string/menu_bullying"/>
+        android:title="@string/principal" />
+
+    <item
+        android:id="@+id/notice_list_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/notice" />
+
+    <item
+        android:id="@+id/homework_list_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/homework" />
+
+    <item
+        android:id="@+id/news_list_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/news" />
+
+    <item
+        android:id="@+id/bullying_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/bullying" />
+
+    <item
+        android:id="@+id/guild_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/guild" />
+
+    <item
+        android:id="@+id/settings_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/settings" />
+
+    <item
+        android:id="@+id/about_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/about" />
 </menu>

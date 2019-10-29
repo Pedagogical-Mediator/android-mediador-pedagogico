@@ -4,14 +4,10 @@ class FormFields {
 
     private val invalidFieldsException: InvalidFieldsException = InvalidFieldsException()
 
-    // getters
-
     var classKey: String? = null
         private set
     var name: String? = null
         private set
-
-    // validations
 
     private fun isClassKeyValid(): Boolean =
         classKey != null && !classKey!!.trim { it <= ' ' }.isEmpty()
@@ -21,11 +17,7 @@ class FormFields {
     val isValid: Boolean
         get() = invalidFieldsException.getFields().isEmpty()
 
-    // other
-
     val exception: InvalidFieldsException get() = invalidFieldsException
-
-    // builders
 
     fun withClassKey(classKey: String): FormFields {
         this.classKey = classKey

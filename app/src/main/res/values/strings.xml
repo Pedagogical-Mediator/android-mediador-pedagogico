@@ -94,18 +94,14 @@
     <!--
         MAIN ACTIVITY
     -->
-    <string name="activity_main_notice">Avisos</string>
-    <string name="activity_main_homework">Sala de Aula Invertida</string>
-    <string name="activity_main_news">Notícias</string>
-    <string name="activity_main_bullying">Denúncia de Bullying</string>
-    <string name="activity_main_settings">Configurações</string>
-    <string name="activity_main_error_image_decode">Imagem não pode ser carregada</string>
-    <string name="menu_principal">Principal</string>
-    <string name="menu_notices">Avisos</string>
-    <string name="menu_homework">Sala de aula invertida</string>
-    <string name="menu_news">Notícias</string>
-    <string name="menu_settings">Configurações</string>
-    <string name="menu_bullying">Denúncia de bullying</string>
-    <string name="bullying_fragment_label">Bullying</string>
-    <string name="bullying_title">Denúncia de Bullying</string>
+    <string name="notice">Avisos</string>
+    <string name="homework">Sala de Aula Invertida</string>
+    <string name="news">Notícias</string>
+    <string name="bullying">Denúncia de Bullying</string>
+    <string name="guild">Grêmio Estudantil</string>
+    <string name="calendar">Calendário</string>
+    <string name="settings">Configurações</string>
+    <string name="about">Sobre a Escola</string>
+    <string name="error_image_decode">Imagem não pode ser carregada</string>
+    <string name="principal">Principal</string>
 </resources>

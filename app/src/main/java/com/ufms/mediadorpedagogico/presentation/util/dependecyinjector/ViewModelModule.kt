@@ -2,7 +2,10 @@ package com.ufms.mediadorpedagogico.presentation.util.dependecyinjector
 
 import com.ufms.mediadorpedagogico.domain.entity.homework.Homework
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
+import com.ufms.mediadorpedagogico.presentation.about.AboutViewModel
 import com.ufms.mediadorpedagogico.presentation.bullying.BullyingViewModel
+import com.ufms.mediadorpedagogico.presentation.guild.GuildViewModel
+import com.ufms.mediadorpedagogico.presentation.guild.delegate.GuildDelegate
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
@@ -18,7 +21,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { BaseViewModel() }
-    viewModel { MainViewModel(get(), get(), get()) }
+    viewModel { MainViewModel(get(), get(), get(), get()) }
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { HomeworkListViewModel(get(), get(), get()) }
@@ -28,4 +31,6 @@ val viewModelModule = module {
     viewModel { NewsListViewModel(get(), get()) }
     viewModel { BullyingViewModel(get()) }
     viewModel { SettingsViewModel(get(), get(), get()) }
+    viewModel { GuildViewModel(get()) }
+    viewModel { AboutViewModel(get()) }
 }

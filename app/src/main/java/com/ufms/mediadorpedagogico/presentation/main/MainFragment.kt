@@ -6,10 +6,8 @@ import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
+import com.ufms.mediadorpedagogico.domain.entity.Calendar
+import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
@@ -60,8 +58,9 @@ class MainFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            placeholder.observeAction(this@MainFragment, ::onNextPlaceholder)
-            noContentReturned.observeEvent(this@MainFragment, ::onNoContentReturned)
+            placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
+            noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
+            calendarReceived.observeAction(viewLifecycleOwner, ::onCalendarReceived)
         }
     }
 
@@ -72,6 +71,9 @@ class MainFragment : BaseFragment() {
             cardViewNews.setOnClickListener(::goToNews)
             cardViewSettings.setOnClickListener(::goToSettings)
             cardViewBullying.setOnClickListener(::goToBullying)
+            cardViewGuild.setOnClickListener(::goToGuild)
+            cardViewAbout.setOnClickListener(::goToAbout)
+            cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
         }
     }
 
@@ -82,6 +84,10 @@ class MainFragment : BaseFragment() {
      *
      * */
     private fun setupCache(subscribe: Boolean?) {
+    }
+
+    private fun onCalendarReceived(calendar: Calendar?) {
+        loadPage(calendar?.link)
     }
 
     private fun goToNotice() {
@@ -96,12 +102,20 @@ class MainFragment : BaseFragment() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHomeworkListFragment())
     }
 
+    private fun goToBullying() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToBullyingFragment())
+    }
+
+    private fun goToGuild() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToGuildFragment())
+    }
+
     private fun goToSettings() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToSettingsFragment())
     }
 
-    private fun goToBullying() {
-        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToBullyingFragment())
+    private fun goToAbout() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToAboutFragment())
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {

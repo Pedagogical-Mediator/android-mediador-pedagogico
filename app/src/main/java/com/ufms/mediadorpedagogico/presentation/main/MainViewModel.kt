@@ -5,10 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import com.ufms.mediadorpedagogico.data.firebase.FirebaseMessagingServiceHandler
+import com.ufms.mediadorpedagogico.domain.entity.Calendar
 import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNews
 import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNotices
 import com.ufms.mediadorpedagogico.domain.interactor.user.InvalidFieldsException
 import com.ufms.mediadorpedagogico.domain.util.subscriberHandler
+import com.ufms.mediadorpedagogico.presentation.calendar.delegate.CalendarDelegate
 import com.ufms.mediadorpedagogico.presentation.util.extensions.unsafeLet
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
@@ -17,8 +19,9 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewMode
 class MainViewModel(
     private val schedulerProvider: SchedulerProvider,
     private val manageNotices: ManageNotices,
-    private val manageNews: ManageNews
-) : BaseViewModel() {
+    private val manageNews: ManageNews,
+    calendarDelegate: CalendarDelegate
+) : BaseViewModel(), CalendarDelegate by calendarDelegate  {
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
     val noContentReturned: LiveData<Event<Boolean>> get() = _noContentReturned
@@ -31,6 +34,10 @@ class MainViewModel(
         //TODO buscar dados da escola e turma
         super.onCreate()
         subscribeToTopics()
+    }
+
+    fun onCalendarClicked() {
+        getCalendar({}, {}, ::setPlaceholder)
     }
 
     private fun subscribeToTopics() {

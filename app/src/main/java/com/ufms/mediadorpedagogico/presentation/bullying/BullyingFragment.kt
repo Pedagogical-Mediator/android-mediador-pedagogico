@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 
 class BullyingFragment : BaseFragment() {
     override val toolbarTitle: String
-        get() = getString(R.string.bullying_fragment_label)
+        get() = getString(R.string.bullying)
 
     override val baseViewModel: BaseViewModel get() = viewModel
 
@@ -32,7 +32,6 @@ class BullyingFragment : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentBullyingBinding.inflate(inflater, container, false)
         lifecycle.addObserver(viewModel)
-        setupUi()
         return binding.root
     }
 
@@ -48,14 +47,6 @@ class BullyingFragment : BaseFragment() {
         bullying?.let {
             binding.bullying = it
         }
-    }
-
-    private fun setupUi() {
-
-    }
-
-    private fun onNoContentReturned(noContentReturned: Boolean?) {
-
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
