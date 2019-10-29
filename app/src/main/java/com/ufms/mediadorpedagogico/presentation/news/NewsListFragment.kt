@@ -4,28 +4,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentNewsListBinding
 import com.ufms.mediadorpedagogico.domain.entity.news.News
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
-import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class NewsListFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = getString(R.string.activity_news_label)
+class NewsListFragment : Base2() {
 
+    override val titleHelp: String get() = getString(R.string.help_news_list_title)
+    override val descriptionHelp: String get() = getString(R.string.help_news_list_description)
+    override val toolbarTitle: String get() = getString(R.string.activity_news_label)
     override val baseViewModel: BaseViewModel get() = viewModel
 
     var newsListAdapter: NewsListAdapter? = null
     private var moreNewsToBeLoaded = true
     private var isLoadingMoreNews = false
-    lateinit var binding: FragmentNewsListBinding
+    private lateinit var binding: FragmentNewsListBinding
     private val viewModel: NewsListViewModel by inject()
+    private val navController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,6 +50,15 @@ class NewsListFragment : BaseFragment() {
             newsContent.observeEvent(viewLifecycleOwner, ::onNewsContentLoaded)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(
+            NewsListFragmentDirections.actionNewsListFragmentToHelpBottomSheet(
+                titleHelp,
+                descriptionHelp
+            )
+        )
     }
 
     private fun setupRecyclerView() {

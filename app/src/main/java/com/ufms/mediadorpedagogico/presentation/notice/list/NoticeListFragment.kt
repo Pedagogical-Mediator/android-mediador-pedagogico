@@ -11,17 +11,19 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentNoticeListBinding
 import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
+import com.ufms.mediadorpedagogico.presentation.util.structure.base.Base2
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
-class NoticeListFragment : BaseFragment() {
-    override val toolbarTitle: String
-        get() = getString(R.string.activity_notice_label)
-    override val baseViewModel: BaseViewModel
-        get() = viewModel
+class NoticeListFragment : Base2() {
+
+    override val titleHelp: String get() = getString(R.string.help_notice_list_title)
+    override val descriptionHelp: String get() = getString(R.string.help_notice_list_description)
+    override val toolbarTitle: String get() = getString(R.string.activity_notice_label)
+    override val baseViewModel: BaseViewModel get() = viewModel
 
     var noticeListAdapter: NoticeListAdapter? = null
     private var moreNoticesToBeLoaded = true
@@ -49,6 +51,10 @@ class NoticeListFragment : BaseFragment() {
             noticeContent.observeEvent(viewLifecycleOwner, ::onNoticeContentLoaded)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
+    }
+
+    override fun openHelp() {
+        navController.navigateSafe(NoticeListFragmentDirections.actionNoticeListFragmentToHelpBottomSheet(titleHelp, descriptionHelp))
     }
 
     private fun setupRecyclerView() {
