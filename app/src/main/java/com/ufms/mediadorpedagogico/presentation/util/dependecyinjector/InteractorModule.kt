@@ -5,6 +5,8 @@ import com.ufms.mediadorpedagogico.domain.interactor.bullying.GetBullying
 import com.ufms.mediadorpedagogico.domain.interactor.calendar.GetCalendar
 import com.ufms.mediadorpedagogico.domain.interactor.guild.GetGuild
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
+import com.ufms.mediadorpedagogico.domain.interactor.library.GetLibResources
+import com.ufms.mediadorpedagogico.domain.interactor.library.GetTopic
 import com.ufms.mediadorpedagogico.domain.interactor.news.GetNews
 import com.ufms.mediadorpedagogico.domain.interactor.notice.GetNotice
 import com.ufms.mediadorpedagogico.domain.interactor.notification.ManageNews
@@ -23,6 +25,8 @@ val interactorModule = module {
     single { GetGuild(get()) }
     single { GetAbout(get()) }
     single { GetCalendar(get()) }
+    single { GetTopic(get()) }
+    single { GetLibResources(get()) }
     single { ManageNews(get()) }
     single { ManageNotices(get()) }
 }

@@ -9,6 +9,7 @@ import com.ufms.mediadorpedagogico.presentation.guild.delegate.GuildDelegate
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
+import com.ufms.mediadorpedagogico.presentation.library.topic.TopicViewModel
 import com.ufms.mediadorpedagogico.presentation.login.LoginViewModel
 import com.ufms.mediadorpedagogico.presentation.main.MainViewModel
 import com.ufms.mediadorpedagogico.presentation.news.NewsListViewModel
@@ -33,4 +34,5 @@ val viewModelModule = module {
     viewModel { SettingsViewModel(get(), get(), get()) }
     viewModel { GuildViewModel(get()) }
     viewModel { AboutViewModel(get()) }
+    viewModel { TopicViewModel() }
 }
