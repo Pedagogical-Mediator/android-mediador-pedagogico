@@ -66,4 +66,15 @@ interface ApiService {
 
     @GET("calendario")
     fun getCalendar(): Single<Response<ApiCalendar>>
+
+
+    /**
+     * Library
+     * */
+
+    @GET("topicos")
+    fun getTopics(): Single<Response<List<ApiTopic>>>
+
+    @GET("itens")
+    fun getLibResources(): Single<Response<List<ApiLibResource>>>
 }

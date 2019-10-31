@@ -64,6 +64,14 @@ object ApiClient {
         return makeRequest(apiServices.getCalendar())
     }
 
+    fun getTopics(): Single<List<ApiTopic>> {
+        return makeRequest(apiServices.getTopics())
+    }
+
+    fun getLibResources(): Single<List<ApiLibResource>> {
+        return makeRequest(apiServices.getLibResources())
+    }
+
     /**
      *
      * - ApiService, Retrofit, AuthInterceptor builders
