@@ -38,7 +38,6 @@ class HomeworkListFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentHomeworkListBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         setupRecyclerView()
         return binding.root
     }

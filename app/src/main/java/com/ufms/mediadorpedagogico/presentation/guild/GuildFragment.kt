@@ -35,7 +35,6 @@ class GuildFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentGuildBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         return binding.root
     }
 

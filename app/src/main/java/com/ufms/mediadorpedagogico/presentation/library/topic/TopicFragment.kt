@@ -46,7 +46,6 @@ class TopicFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentTopicsBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         setupUi()
         setupAdapter()
         return binding.root
@@ -55,7 +54,6 @@ class TopicFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            topics.observeEvent(viewLifecycleOwner, ::onTopics)
             topics.observeEvent(viewLifecycleOwner, ::onTopics)
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)

@@ -33,7 +33,6 @@ class SettingsFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         return binding.root
     }
 

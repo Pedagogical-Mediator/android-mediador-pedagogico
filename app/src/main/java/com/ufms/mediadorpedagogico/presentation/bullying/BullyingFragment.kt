@@ -35,7 +35,6 @@ class BullyingFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentBullyingBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         return binding.root
     }
 

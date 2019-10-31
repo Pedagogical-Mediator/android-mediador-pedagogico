@@ -42,7 +42,6 @@ class HomeworkDetailsFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentHomeworkDetailsBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         setupAdapter()
         setupRecycler()
         return binding.root

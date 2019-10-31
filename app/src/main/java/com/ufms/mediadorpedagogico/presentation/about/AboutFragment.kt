@@ -34,7 +34,6 @@ class AboutFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentAboutBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         return binding.root
     }
 
