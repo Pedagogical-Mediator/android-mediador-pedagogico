@@ -60,6 +60,7 @@ class MainFragment : BaseFragment() {
             cardViewGuild.setOnClickListener(::goToGuild)
             cardViewAbout.setOnClickListener(::goToAbout)
             cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
+            cardViewLibrary.setOnClickListener(::goToLibrary)
         }
     }
 
@@ -102,6 +103,10 @@ class MainFragment : BaseFragment() {
 
     private fun goToAbout() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToAboutFragment())
+    }
+
+    private fun goToLibrary() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToTopicFragment())
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {

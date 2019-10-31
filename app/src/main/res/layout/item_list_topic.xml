@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="topic"
+            type="com.ufms.mediadorpedagogico.domain.entity.Topic" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_item"
         android:layout_width="match_parent"
@@ -19,8 +26,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLength="54"
-            tools:text="Item legal"
+            android:text="@{topic.name}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Item legal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

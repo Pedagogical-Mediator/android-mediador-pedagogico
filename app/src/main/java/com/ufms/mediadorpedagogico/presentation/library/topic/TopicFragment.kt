@@ -5,16 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentTopicsBinding
+import com.ufms.mediadorpedagogico.domain.entity.Topic
+import com.ufms.mediadorpedagogico.presentation.util.extensions.ifNull
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
+import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
+import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
-import org.koin.android.viewmodel.ext.android.viewModel
 
-class TopicFragment: BaseFragment() {
-    override val baseViewModel: BaseViewModel
-        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+class TopicFragment : BaseFragment() {
+    override val baseViewModel: BaseViewModel get() = viewModel
     override val toolbarTitle: String get() = getString(R.string.topics)
     override val titleHelp: String get() = getString(R.string.library_topics_title)
     override val descriptionHelp: String get() = getString(R.string.library_topics_description)
@@ -22,9 +28,15 @@ class TopicFragment: BaseFragment() {
     private val viewModel: TopicViewModel by inject()
     private val navController by lazy { findNavController() }
     private lateinit var binding: FragmentTopicsBinding
+    private var topicAdapter: TopicAdapter? = null
 
     override fun openHelp() {
-        // TODO abrir o fragmento de help
+        navController.navigateSafe(
+            TopicFragmentDirections.actionTopicFragmentToHelpBottomSheet(
+                titleHelp,
+                descriptionHelp
+            )
+        )
     }
 
     override fun onCreateView(
@@ -34,11 +46,51 @@ class TopicFragment: BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentTopicsBinding.inflate(inflater, container, false)
+        lifecycle.addObserver(viewModel)
         setupUi()
+        setupAdapter()
         return binding.root
+    }
+
+    override fun subscribeUi() {
+        super.subscribeUi()
+        with(viewModel) {
+            topics.observeEvent(viewLifecycleOwner, ::onTopics)
+            topics.observeEvent(viewLifecycleOwner, ::onTopics)
+            placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
+            noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
+        }
     }
 
     private fun setupUi() {
 
+    }
+
+    private fun onTopics(topics: List<Topic>?) {
+        topics?.let {
+            topicAdapter?.run {
+                setItems(it)
+            }
+        }
+    }
+
+    private fun setupAdapter() {
+        topicAdapter.ifNull {
+            topicAdapter = TopicAdapter(viewModel::onTopicClick)
+            binding.topicsList.adapter.ifNull {
+                binding.topicsList.apply {
+                    adapter = topicAdapter
+                    layoutManager = LinearLayoutManager(context)
+                }
+            }
+        }
+    }
+
+    fun onNoContentReturned(unit: Unit?) {
+        binding.includedPlaceholderNoResults.root.setVisible(true)
+    }
+
+    private fun onNextPlaceholder(placeholder: Placeholder?) {
+        placeholder?.let { binding.includedLoadingPlaceholder.placeholder = it }
     }
 }

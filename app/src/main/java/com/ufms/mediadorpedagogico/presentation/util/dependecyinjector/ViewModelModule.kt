@@ -34,5 +34,5 @@ val viewModelModule = module {
     viewModel { SettingsViewModel(get(), get(), get()) }
     viewModel { GuildViewModel(get()) }
     viewModel { AboutViewModel(get()) }
-    viewModel { TopicViewModel() }
+    viewModel { TopicViewModel(get()) }
 }
