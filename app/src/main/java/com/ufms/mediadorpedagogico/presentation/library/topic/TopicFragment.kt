@@ -20,6 +20,7 @@ import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import org.koin.android.ext.android.inject
 
 class TopicFragment : BaseFragment() {
+
     override val baseViewModel: BaseViewModel get() = viewModel
     override val toolbarTitle: String get() = getString(R.string.topics)
     override val titleHelp: String get() = getString(R.string.library_topics_title)
@@ -46,7 +47,6 @@ class TopicFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentTopicsBinding.inflate(inflater, container, false)
-        setupUi()
         setupAdapter()
         return binding.root
     }
@@ -58,10 +58,6 @@ class TopicFragment : BaseFragment() {
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
-    }
-
-    private fun setupUi() {
-
     }
 
     private fun onTopics(topics: List<Topic>?) {
