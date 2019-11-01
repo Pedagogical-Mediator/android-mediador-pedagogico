@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.domain.entity.Topic
 
 class TopicAdapter(
-    private val onItemClick: (Int) -> Unit
+    private val onItemClick: (Topic) -> Unit
 ) : RecyclerView.Adapter<TopicViewHolder>() {
 
     private var topics = listOf<Topic>()

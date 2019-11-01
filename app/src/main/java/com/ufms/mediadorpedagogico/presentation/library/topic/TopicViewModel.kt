@@ -9,10 +9,6 @@ class TopicViewModel(
     libraryDelegate: LibraryDelegate
 ) : BaseViewModel(), LibraryDelegate by libraryDelegate {
 
-    internal fun onTopicClick(id: Int) {
-        getLibResources(id, {}, {}, ::setPlaceholder)
-    }
-
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     override fun onCreate() {
         super.onCreate()

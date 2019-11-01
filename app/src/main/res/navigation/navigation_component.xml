@@ -154,5 +154,23 @@
         <action
             android:id="@+id/action_topicFragment_to_helpBottomSheet"
             app:destination="@id/helpBottomSheet" />
+        <action
+            android:id="@+id/action_topic_fragment_to_libResourceFragment"
+            app:destination="@id/libResourceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libResourceFragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.library.libresource.LibResourceFragment"
+        android:label="LibResourceFragment"
+        tools:layout="@layout/fragment_libresources">
+        <argument
+            android:name="topicId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_libResourceFragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
 </navigation>

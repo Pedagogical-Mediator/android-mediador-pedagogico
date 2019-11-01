@@ -9,10 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentTopicsBinding
 import com.ufms.mediadorpedagogico.domain.entity.Topic
-import com.ufms.mediadorpedagogico.presentation.util.extensions.ifNull
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
-import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
-import com.ufms.mediadorpedagogico.presentation.util.extensions.setVisible
+import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
@@ -70,7 +67,7 @@ class TopicFragment : BaseFragment() {
 
     private fun setupAdapter() {
         topicAdapter.ifNull {
-            topicAdapter = TopicAdapter(viewModel::onTopicClick)
+            topicAdapter = TopicAdapter(::goToLibResources)
             binding.topicsList.adapter.ifNull {
                 binding.topicsList.apply {
                     adapter = topicAdapter
@@ -82,6 +79,17 @@ class TopicFragment : BaseFragment() {
 
     fun onNoContentReturned(unit: Unit?) {
         binding.includedPlaceholderNoResults.root.setVisible(true)
+    }
+
+    fun goToLibResources(topic: Topic) {
+        safeLet(topic.id, topic.name) { _id, _name ->
+            navController.navigateSafe(
+                TopicFragmentDirections.actionTopicFragmentToLibResourceFragment(
+                    _id,
+                    _name
+                )
+            )
+        }
     }
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {

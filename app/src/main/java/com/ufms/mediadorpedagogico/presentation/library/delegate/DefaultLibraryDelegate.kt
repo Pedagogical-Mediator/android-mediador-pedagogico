@@ -51,7 +51,21 @@ class DefaultLibraryDelegate(
             .execute(id)
             .defaultSched(schedulerProvider)
             .defaultPlaceholders(placeholderAction)
-            .subscribeBy(onFailure) {
+            .subscribeBy({
+                // TODO tirar
+                // TODO tirar
+                // TODO tirar
+                // TODO tirar
+                // TODO tirar
+                _libResources.value = Event(
+                    listOf(
+                        LibResource(id = 1, topicId = 1, name = "Teste nome1", link = "google1.com"),
+                        LibResource(id = 2, topicId = 2, name = "Teste nome2", link = "google2.com"),
+                        LibResource(id = 3, topicId = 3, name = "Teste nome3", link = "google3.com"),
+                        LibResource(id = 4, topicId = 4, name = "Teste nome4", link = "google4.com")
+                    )
+                )
+            }) {
                 if (it.isEmpty()) {
                     _noContentReturned.value = Event(Unit)
                 } else {
