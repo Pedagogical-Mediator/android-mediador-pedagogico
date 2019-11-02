@@ -2,6 +2,9 @@ package com.ufms.mediadorpedagogico.data.remote.client
 
 import com.ufms.mediadorpedagogico.data.remote.entity.*
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
+import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibContent
+import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibResource
+import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiTopic
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
 import io.reactivex.Single
@@ -76,5 +79,5 @@ interface ApiService {
     fun getTopics(): Single<Response<List<ApiTopic>>>
 
     @GET("itens")
-    fun getLibResources(): Single<Response<List<ApiLibResource>>>
+    fun getLibResources(@Query("page") pageNumber: Int, @Query("idDoTopico") topicId: Int): Single<Response<ApiLibContent>>
 }

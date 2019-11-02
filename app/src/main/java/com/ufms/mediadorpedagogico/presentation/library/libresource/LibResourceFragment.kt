@@ -9,7 +9,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentLibresourcesBinding
-import com.ufms.mediadorpedagogico.domain.entity.LibResource
+import com.ufms.mediadorpedagogico.domain.entity.library.LibResource
 import com.ufms.mediadorpedagogico.presentation.util.extensions.ifNull
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent

@@ -1,8 +1,8 @@
 package com.ufms.mediadorpedagogico.presentation.library.delegate
 
 import androidx.lifecycle.LiveData
-import com.ufms.mediadorpedagogico.domain.entity.LibResource
-import com.ufms.mediadorpedagogico.domain.entity.Topic
+import com.ufms.mediadorpedagogico.domain.entity.library.LibResource
+import com.ufms.mediadorpedagogico.domain.entity.library.Topic
 import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 

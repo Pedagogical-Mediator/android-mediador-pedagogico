@@ -2,7 +2,7 @@ package com.ufms.mediadorpedagogico.presentation.library.topic
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ufms.mediadorpedagogico.domain.entity.Topic
+import com.ufms.mediadorpedagogico.domain.entity.library.Topic
 
 class TopicAdapter(
     private val onItemClick: (Topic) -> Unit

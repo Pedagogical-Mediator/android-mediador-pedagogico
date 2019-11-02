@@ -8,7 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentTopicsBinding
-import com.ufms.mediadorpedagogico.domain.entity.Topic
+import com.ufms.mediadorpedagogico.domain.entity.library.Topic
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel

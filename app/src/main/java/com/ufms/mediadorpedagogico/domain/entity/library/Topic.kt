@@ -1,4 +1,4 @@
-package com.ufms.mediadorpedagogico.domain.entity
+package com.ufms.mediadorpedagogico.domain.entity.library
 
 import java.io.Serializable
 

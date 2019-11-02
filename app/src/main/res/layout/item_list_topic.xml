@@ -7,7 +7,7 @@
 
         <variable
             name="topic"
-            type="com.ufms.mediadorpedagogico.domain.entity.Topic" />
+            type="com.ufms.mediadorpedagogico.domain.entity.library.Topic" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

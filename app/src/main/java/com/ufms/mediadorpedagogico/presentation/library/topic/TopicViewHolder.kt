@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.databinding.ItemListTopicBinding
-import com.ufms.mediadorpedagogico.domain.entity.Topic
+import com.ufms.mediadorpedagogico.domain.entity.library.Topic
 
 class TopicViewHolder(
     private val binding: ItemListTopicBinding,

@@ -2,8 +2,9 @@ package com.ufms.mediadorpedagogico.presentation.library.delegate
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ufms.mediadorpedagogico.domain.entity.LibResource
-import com.ufms.mediadorpedagogico.domain.entity.Topic
+import com.ufms.mediadorpedagogico.domain.entity.library.LibContent
+import com.ufms.mediadorpedagogico.domain.entity.library.LibResource
+import com.ufms.mediadorpedagogico.domain.entity.library.Topic
 import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.library.GetLibResources
 import com.ufms.mediadorpedagogico.domain.interactor.library.GetTopic
@@ -26,6 +27,9 @@ class DefaultLibraryDelegate(
     private val _topics = MutableLiveData<Event<List<Topic>>>()
     private val _libResources = MutableLiveData<Event<List<LibResource>>>()
     private val _noContentReturned = MutableLiveData<Event<Unit>>()
+    private var pageNumber = 0
+    private var isLoading = false
+    private var thereAreMoreToLoad = true
 
     override fun getTopics(
         onSuccess: (List<Topic>) -> Unit,
@@ -47,30 +51,26 @@ class DefaultLibraryDelegate(
         onFailure: (Throwable) -> Unit,
         placeholderAction: (Placeholder) -> Unit
     ) {
-        getLibResources
-            .execute(id)
-            .defaultSched(schedulerProvider)
-            .defaultPlaceholders(placeholderAction)
-            .subscribeBy({
-                // TODO tirar
-                // TODO tirar
-                // TODO tirar
-                // TODO tirar
-                // TODO tirar
-                _libResources.value = Event(
-                    listOf(
-                        LibResource(id = 1, topicId = 1, name = "Teste nome1", link = "google1.com"),
-                        LibResource(id = 2, topicId = 2, name = "Teste nome2", link = "google2.com"),
-                        LibResource(id = 3, topicId = 3, name = "Teste nome3", link = "google3.com"),
-                        LibResource(id = 4, topicId = 4, name = "Teste nome4", link = "google4.com")
-                    )
-                )
-            }) {
-                if (it.isEmpty()) {
-                    _noContentReturned.value = Event(Unit)
-                } else {
-                    _libResources.value = Event(it)
-                }
+        if (!isLoading && thereAreMoreToLoad) {
+            isLoading = true
+            getLibResources
+                .execute(pageNumber, id)
+                .defaultSched(schedulerProvider)
+                .defaultPlaceholders(placeholderAction)
+                .subscribeBy(onFailure, ::onLibResourcesSuccess)
+        }
+    }
+
+    private fun onLibResourcesSuccess(libContent: LibContent?) {
+        libContent?.content?.run {
+            isLoading = false
+            thereAreMoreToLoad = size == 10
+            if (isEmpty()) {
+                _noContentReturned.value = Event(Unit)
+            } else {
+                _libResources.value = Event(this)
             }
+        }
+        pageNumber++
     }
 }

@@ -2,7 +2,7 @@ package com.ufms.mediadorpedagogico.presentation.library.libresource
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ufms.mediadorpedagogico.domain.entity.LibResource
+import com.ufms.mediadorpedagogico.domain.entity.library.LibResource
 
 class LibResourceAdapter : RecyclerView.Adapter<LibResourceViewHolder>() {
 

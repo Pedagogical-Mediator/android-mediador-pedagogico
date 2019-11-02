@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ufms.mediadorpedagogico.databinding.ItemListLibResourceBinding
-import com.ufms.mediadorpedagogico.domain.entity.LibResource
+import com.ufms.mediadorpedagogico.domain.entity.library.LibResource
 
 class LibResourceViewHolder(
     private val binding: ItemListLibResourceBinding
