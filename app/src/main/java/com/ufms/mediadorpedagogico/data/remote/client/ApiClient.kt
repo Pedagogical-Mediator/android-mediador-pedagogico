@@ -5,6 +5,9 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.ufms.mediadorpedagogico.BuildConfig
 import com.ufms.mediadorpedagogico.data.remote.entity.*
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
+import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibContent
+import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibResource
+import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiTopic
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
 import io.reactivex.Completable
@@ -62,6 +65,14 @@ object ApiClient {
 
     fun getCalendar(): Single<ApiCalendar> {
         return makeRequest(apiServices.getCalendar())
+    }
+
+    fun getTopics(): Single<List<ApiTopic>> {
+        return makeRequest(apiServices.getTopics())
+    }
+
+    fun getLibResources(pageNumber: Int, topicId: Int): Single<ApiLibContent> {
+        return makeRequest(apiServices.getLibResources(pageNumber, topicId))
     }
 
     /**

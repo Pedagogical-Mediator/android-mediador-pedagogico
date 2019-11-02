@@ -34,6 +34,7 @@ abstract class BaseFragment : Fragment() {
     ): View? {
         setupToolbar()
         subscribeUi()
+        lifecycle.addObserver(baseViewModel)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 

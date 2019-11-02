@@ -104,6 +104,7 @@
     <string name="about">Sobre a Escola</string>
     <string name="error_image_decode">Imagem não pode ser carregada</string>
     <string name="principal">Principal</string>
+    <string name="topics">Biblioteca</string>
 
     <!--
         HELP TEXTS
@@ -117,7 +118,7 @@
     <string name="help_notice_details_title">TODO help_notice_details_title</string>
     <string name="help_notice_details_description">TODO help_notice_details_title</string>
 
-    <string name="help_homework_list_title">TODO help_homework_list_title</string>
+    <string name="help_homework_list_title">Listagem da Sala de Aula Invertida</string>
     <string name="help_homework_list_description">TODO help_homework_list_title</string>
 
     <string name="help_homework_details_title">TODO help_homework_details_title</string>
@@ -137,4 +138,10 @@
 
     <string name="help_about_title">TODO help_about_title</string>
     <string name="help_about_description">TODO help_about_title</string>
+
+    <string name="library_topics_title">TODO library_topics_title</string>
+    <string name="library_topics_description">TODO library_topics_title</string>
+
+    <string name="library_libresources_title">TODO library_libresources_title</string>
+    <string name="library_libresources_description">TODO library_libresources_title</string>
 </resources>

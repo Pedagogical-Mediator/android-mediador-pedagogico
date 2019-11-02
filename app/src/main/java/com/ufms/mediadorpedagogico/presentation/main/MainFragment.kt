@@ -32,7 +32,6 @@ class MainFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentMainBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         setupUi()
         return binding.root
     }
@@ -60,6 +59,7 @@ class MainFragment : BaseFragment() {
             cardViewGuild.setOnClickListener(::goToGuild)
             cardViewAbout.setOnClickListener(::goToAbout)
             cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
+            cardViewLibrary.setOnClickListener(::goToLibrary)
         }
     }
 
@@ -102,6 +102,10 @@ class MainFragment : BaseFragment() {
 
     private fun goToAbout() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToAboutFragment())
+    }
+
+    private fun goToLibrary() {
+        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToTopicFragment())
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {

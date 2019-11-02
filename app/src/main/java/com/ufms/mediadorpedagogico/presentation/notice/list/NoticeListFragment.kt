@@ -38,7 +38,6 @@ class NoticeListFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentNoticeListBinding.inflate(inflater, container, false)
-        lifecycle.addObserver(viewModel)
         setupRecyclerView()
         return binding.root
     }

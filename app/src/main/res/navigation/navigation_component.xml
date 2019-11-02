@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_main_fragment_to_helpBottomSheet"
             app:destination="@id/helpBottomSheet" />
+        <action
+            android:id="@+id/action_main_fragment_to_topicFragment"
+            app:destination="@id/topic_fragment" />
     </fragment>
     <fragment
         android:id="@+id/notice_list_fragment"
@@ -143,4 +146,31 @@
             android:name="description"
             app:argType="string" />
     </dialog>
+    <fragment
+        android:id="@+id/topic_fragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.library.topic.TopicFragment"
+        android:label="TopicFragment"
+        tools:layout="@layout/fragment_topics">
+        <action
+            android:id="@+id/action_topicFragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+        <action
+            android:id="@+id/action_topic_fragment_to_libResourceFragment"
+            app:destination="@id/libResourceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libResourceFragment"
+        android:name="com.ufms.mediadorpedagogico.presentation.library.libresource.LibResourceFragment"
+        android:label="LibResourceFragment"
+        tools:layout="@layout/fragment_libresources">
+        <argument
+            android:name="topicId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_libResourceFragment_to_helpBottomSheet"
+            app:destination="@id/helpBottomSheet" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>

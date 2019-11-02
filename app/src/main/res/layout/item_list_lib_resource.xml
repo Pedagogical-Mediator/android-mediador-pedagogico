@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="libResource"
+            type="com.ufms.mediadorpedagogico.domain.entity.library.LibResource" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginBottom="@dimen/small"
+        android:minHeight="@dimen/large"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_link_name"
+            style="@style/TextLabelDescriptionBlackBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{libResource.name}" />
+
+        <TextView
+            android:id="@+id/text_view_link"
+            style="@style/TextLabelDescriptionBlackNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="@{libResource.link}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line"
+            android:layout_marginStart="@dimen/huge"
+            android:layout_marginEnd="@dimen/huge"
+            android:background="@color/black"/>
+    </LinearLayout>
+</layout>
