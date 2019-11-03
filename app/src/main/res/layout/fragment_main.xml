@@ -145,8 +145,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:backgroundTint="@color/ic_bullying_background"
-                        android:src="@mipmap/ic_bullying_round" />
+                        android:src="@drawable/new_bullying" />
 
                     <TextView
                         style="@style/TextLabelWhateverBoldMainLabel"
@@ -171,8 +170,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:background="@drawable/card_view_clickable"
-                        android:backgroundTint="@color/ic_guild_background"
-                        android:src="@mipmap/ic_guild_foreground" />
+                        android:src="@drawable/new_guild" />
 
                     <TextView
                         style="@style/TextLabelWhateverBoldMainLabel"
@@ -223,8 +221,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/about"
-                        android:src="@drawable/about" />
+                        android:src="@drawable/new_about" />
 
                     <TextView
                         style="@style/TextLabelWhateverBoldMainLabel"

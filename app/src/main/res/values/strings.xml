@@ -109,39 +109,39 @@
     <!--
         HELP TEXTS
     -->
-    <string name="help_main_title">TODO help_main_title</string>
-    <string name="help_main_description">TODO help_main_title</string>
+    <string name="help_main_title">Tela principal</string>
+    <string name="help_main_description">Aqui é onde são acessadas as outras partes do aplicativo</string>
 
-    <string name="help_notice_list_title">TODO help_notice_list_title</string>
-    <string name="help_notice_list_description">TODO help_notice_list_title</string>
+    <string name="help_notice_list_title">Avisos</string>
+    <string name="help_notice_list_description">Aqui é onde você encontra os avisos da escola</string>
 
-    <string name="help_notice_details_title">TODO help_notice_details_title</string>
-    <string name="help_notice_details_description">TODO help_notice_details_title</string>
+    <string name="help_notice_details_title">Avisos - Detalhes</string>
+    <string name="help_notice_details_description">Aqui é onde você encontra os  detalhes do Aviso escolhido</string>
 
     <string name="help_homework_list_title">Listagem da Sala de Aula Invertida</string>
-    <string name="help_homework_list_description">TODO help_homework_list_title</string>
+    <string name="help_homework_list_description">Aqui está listado todo o material disponibilizado pelo professor</string>
 
-    <string name="help_homework_details_title">TODO help_homework_details_title</string>
-    <string name="help_homework_details_description">TODO help_homework_details_title</string>
+    <string name="help_homework_details_title">Sala de aula invertida - Material</string>
+    <string name="help_homework_details_description">Aqui é onde você encontra detalhes do material escolhido</string>
 
-    <string name="help_news_list_title">TODO help_news_list_title</string>
-    <string name="help_news_list_description">TODO help_news_list_title</string>
+    <string name="help_news_list_title">Noticias</string>
+    <string name="help_news_list_description">Aqui é onde você encontra as notícias da escola</string>
 
-    <string name="help_settings_title">TODO help_settings_title</string>
-    <string name="help_settings_description">TODO help_settings_title</string>
+    <string name="help_settings_title">Configurações</string>
+    <string name="help_settings_description">Aqui é onde configura-se as notificações e sai do aplicativo</string>
 
-    <string name="help_bullying_title">TODO help_bullying_title</string>
-    <string name="help_bullying_description">TODO help_bullying_title</string>
+    <string name="help_bullying_title">Denúncia de bullying</string>
+    <string name="help_bullying_description">Aqui é possível realizar uma denúncia anônima de bullying</string>
 
-    <string name="help_guild_title">TODO help_guild_title</string>
-    <string name="help_guild_description">TODO help_guild_title</string>
+    <string name="help_guild_title">Grêmio</string>
+    <string name="help_guild_description">Aqui é onde você encontra uma votação para o grêmio escolar</string>
 
-    <string name="help_about_title">TODO help_about_title</string>
-    <string name="help_about_description">TODO help_about_title</string>
+    <string name="help_about_title">Sobre a escola</string>
+    <string name="help_about_description">Aqui é onde você encontra informações sobre a escola</string>
 
-    <string name="library_topics_title">TODO library_topics_title</string>
-    <string name="library_topics_description">TODO library_topics_title</string>
+    <string name="library_topics_title">Biblioteca</string>
+    <string name="library_topics_description">Aqui é onde você encontra Podcasts, downloads e vídeos interessantes</string>
 
-    <string name="library_libresources_title">TODO library_libresources_title</string>
-    <string name="library_libresources_description">TODO library_libresources_title</string>
+    <string name="library_libresources_title">Biblioteca</string>
+    <string name="library_libresources_description">Aqui é onde você encontra Podcasts, downloads e vídeos interessantes</string>
 </resources>
