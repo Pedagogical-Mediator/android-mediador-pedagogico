@@ -39,40 +39,40 @@ object ApiClient {
         return makeRequest(apiServices.signIn(classKey, name))
     }
 
-    fun getListOfHomework(pageNumber: Int, classKey: String): Single<ApiHomeworkContent> {
-        return makeRequest(apiServices.getListOfHomework(pageNumber, classKey))
+    fun getListOfHomework(id: Int,pageNumber: Int, classKey: String): Single<ApiHomeworkContent> {
+        return makeRequest(apiServices.getListOfHomework(id, pageNumber, classKey))
     }
 
-    fun getListOfNotice(pageNumber: Int): Single<ApiNoticeContent> {
-        return makeRequest(apiServices.getListOfNotices(pageNumber))
+    fun getListOfNotice(id: Int,pageNumber: Int): Single<ApiNoticeContent> {
+        return makeRequest(apiServices.getListOfNotices(id, pageNumber))
     }
 
-    fun getListOfNews(pageNumber: Int): Single<ApiNewsContent> {
-        return makeRequest(apiServices.getListOfNews(pageNumber))
+    fun getListOfNews(id: Int,pageNumber: Int): Single<ApiNewsContent> {
+        return makeRequest(apiServices.getListOfNews(id, pageNumber))
     }
 
-    fun getBullyingInformation(): Single<ApiBullying> {
-        return makeRequest(apiServices.getBullyingInformation())
+    fun getBullyingInformation(id: Int): Single<ApiBullying> {
+        return makeRequest(apiServices.getBullyingInformation(id))
     }
 
-    fun getGuildInformation(): Single<ApiGuild> {
-        return makeRequest(apiServices.getGuildInformation())
+    fun getGuildInformation(id: Int): Single<ApiGuild> {
+        return makeRequest(apiServices.getGuildInformation(id))
     }
 
-    fun getAboutInformation(): Single<ApiAbout> {
-        return makeRequest(apiServices.getAboutInformation())
+    fun getAboutInformation(id: Int): Single<ApiAbout> {
+        return makeRequest(apiServices.getAboutInformation(id))
     }
 
-    fun getCalendar(): Single<ApiCalendar> {
-        return makeRequest(apiServices.getCalendar())
+    fun getCalendar(id: Int): Single<ApiCalendar> {
+        return makeRequest(apiServices.getCalendar(id))
     }
 
-    fun getTopics(): Single<List<ApiTopic>> {
-        return makeRequest(apiServices.getTopics())
+    fun getTopics(id: Int): Single<List<ApiTopic>> {
+        return makeRequest(apiServices.getTopics(id))
     }
 
-    fun getLibResources(pageNumber: Int, topicId: Int): Single<ApiLibContent> {
-        return makeRequest(apiServices.getLibResources(pageNumber, topicId))
+    fun getLibResources(id: Int, pageNumber: Int, topicId: Int): Single<ApiLibContent> {
+        return makeRequest(apiServices.getLibResources(id, pageNumber, topicId))
     }
 
     /**

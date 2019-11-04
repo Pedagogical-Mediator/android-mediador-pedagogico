@@ -14,4 +14,6 @@ class GetPersistedUser(
             null
         }
     }
+
+    fun getUserId() = execute()?.id?.toInt() ?: -1
 }

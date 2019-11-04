@@ -18,15 +18,15 @@ import org.koin.dsl.module
 val interactorModule = module {
     single { GetPersistedUser(get()) }
     single { SignIn(get()) }
-    single { GetHomework(get()) }
-    single { GetNotice(get()) }
-    single { GetNews(get()) }
-    single { GetBullying(get()) }
-    single { GetGuild(get()) }
-    single { GetAbout(get()) }
-    single { GetCalendar(get()) }
-    single { GetTopic(get()) }
-    single { GetLibResources(get()) }
+    single { GetHomework(get(), get()) }
+    single { GetNotice(get(), get()) }
+    single { GetNews(get(), get()) }
+    single { GetBullying(get(), get()) }
+    single { GetGuild(get(), get()) }
+    single { GetAbout(get(), get()) }
+    single { GetCalendar(get(), get()) }
+    single { GetTopic(get(), get()) }
+    single { GetLibResources(get(), get()) }
     single { ManageNews(get()) }
     single { ManageNotices(get()) }
 }
