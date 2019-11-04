@@ -94,6 +94,7 @@
     <!--
         MAIN ACTIVITY
     -->
+    <string name="main">Colégio Machado de Assis</string>
     <string name="notice">Avisos</string>
     <string name="homework">Sala de Aula Invertida</string>
     <string name="news">Notícias</string>
