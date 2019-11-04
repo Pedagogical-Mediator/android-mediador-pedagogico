@@ -52,14 +52,13 @@
                         android:layout_height="96dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/large"
-                        android:background="@drawable/ic_card_view_bullying"
                         android:gravity="center"
                         app:makeVisible="@{guild.image == null}">
 
                         <ImageView
                             android:layout_width="76dp"
                             android:layout_height="76dp"
-                            android:src="@mipmap/ic_bullying_round" />
+                            android:src="@drawable/new_guild" />
                     </LinearLayout>
 
                     <LinearLayout

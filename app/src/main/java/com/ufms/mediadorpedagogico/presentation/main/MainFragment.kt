@@ -41,7 +41,7 @@ class MainFragment : BaseFragment() {
         with(viewModel) {
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
-            calendarReceived.observeAction(viewLifecycleOwner, ::onCalendarReceived)
+            calendarReceived.observeEvent(viewLifecycleOwner, ::onCalendarReceived)
         }
     }
 
