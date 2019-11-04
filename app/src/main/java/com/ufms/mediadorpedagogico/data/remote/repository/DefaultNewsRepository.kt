@@ -7,7 +7,7 @@ import com.ufms.mediadorpedagogico.domain.boundary.NewsRepository
 class DefaultNewsRepository(
     private val apiClient: ApiClient
 ) : NewsRepository {
-    override fun getNewsContentList(pageNumber: Int) = apiClient.getListOfNews(pageNumber).map(
+    override fun getNewsContentList(id: Int, pageNumber: Int) = apiClient.getListOfNews(id, pageNumber).map(
         ApiNewsContent.ApiContentNewsToContentNews::transform
     )
 }

@@ -10,8 +10,8 @@ class DefaultBullyingRepository(
     private val apiClient: ApiClient
 ) : BullyingRepository {
 
-    override fun getBullyingInformation(): Single<Bullying> {
-        return apiClient.getBullyingInformation().map(ApiBullying.ApiBullyingToBullying::transform)
+    override fun getBullyingInformation(id: Int): Single<Bullying> {
+        return apiClient.getBullyingInformation(id).map(ApiBullying.ApiBullyingToBullying::transform)
     }
 }
 

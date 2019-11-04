@@ -3,7 +3,6 @@ package com.ufms.mediadorpedagogico.data.remote.client
 import com.ufms.mediadorpedagogico.data.remote.entity.*
 import com.ufms.mediadorpedagogico.data.remote.entity.homework.ApiHomeworkContent
 import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibContent
-import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibResource
 import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiTopic
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
@@ -26,49 +25,67 @@ interface ApiService {
 
     @POST("aulas/")
     @FormUrlEncoded
-    fun getListOfHomework(@Field("page") pageNumber: Int, @Field("chaveDeAcesso") classKey: String): Single<Response<ApiHomeworkContent>>
+    fun getListOfHomework(
+        @Field("idDoAluno") id: Int,
+        @Field("page") pageNumber: Int,
+        @Field("chaveDeAcesso") classKey: String
+    ): Single<Response<ApiHomeworkContent>>
 
     /**
      * Notice
      * */
 
     @GET("avisos")
-    fun getListOfNotices(@Query("page") pageNumber: Int): Single<Response<ApiNoticeContent>>
+    fun getListOfNotices(
+        @Query("idDoAluno") id: Int,
+        @Query("page") pageNumber: Int
+    ): Single<Response<ApiNoticeContent>>
 
     /**
      * Notice
      * */
 
     @GET("noticias")
-    fun getListOfNews(@Query("page") pageNumber: Int): Single<Response<ApiNewsContent>>
+    fun getListOfNews(
+        @Query("page") pageNumber: Int,
+        @Query("idDoAluno") id: Int
+    ): Single<Response<ApiNewsContent>>
 
     /**
      * Bullying
      * */
 
     @GET("bullying")
-    fun getBullyingInformation(): Single<Response<ApiBullying>>
+    fun getBullyingInformation(
+        @Query("idDoAluno") id: Int
+    ): Single<Response<ApiBullying>>
 
     /**
      * Guild
      * */
 
     @GET("gremio")
-    fun getGuildInformation(): Single<Response<ApiGuild>>
+    fun getGuildInformation(
+        @Query("idDoAluno") id: Int
+    ): Single<Response<ApiGuild>>
 
     /**
      * About
      * */
 
-    @GET("escolas")
-    fun getAboutInformation(): Single<Response<ApiAbout>>
+    @GET("escola")
+    fun getAboutInformation(
+        @Query("idDoAluno") id: Int
+    ): Single<Response<ApiAbout>>
 
     /**
      * Calendar
      * */
 
     @GET("calendario")
-    fun getCalendar(): Single<Response<ApiCalendar>>
+    fun getCalendar(
+        @Query("idDoAluno") id: Int
+    ): Single<Response<ApiCalendar>>
 
 
     /**
@@ -76,8 +93,14 @@ interface ApiService {
      * */
 
     @GET("topicos")
-    fun getTopics(): Single<Response<List<ApiTopic>>>
+    fun getTopics(
+        @Query("idDoAluno") id: Int
+    ): Single<Response<List<ApiTopic>>>
 
     @GET("itens")
-    fun getLibResources(@Query("page") pageNumber: Int, @Query("idDoTopico") topicId: Int): Single<Response<ApiLibContent>>
+    fun getLibResources(
+        @Query("idDoAluno") id: Int,
+        @Query("page") pageNumber: Int,
+        @Query("idDoTopico") topicId: Int
+    ): Single<Response<ApiLibContent>>
 }

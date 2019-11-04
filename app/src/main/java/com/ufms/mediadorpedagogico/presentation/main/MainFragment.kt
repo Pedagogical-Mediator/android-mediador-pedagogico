@@ -18,7 +18,7 @@ import org.koin.android.ext.android.inject
 class MainFragment : BaseFragment() {
     override val titleHelp: String get() = getString(R.string.help_main_title)
     override val descriptionHelp: String get() = getString(R.string.help_main_description)
-    override val toolbarTitle: String get() = "" // TODO
+    override val toolbarTitle: String get() = getString(R.string.main)
     override val baseViewModel: BaseViewModel get() = viewModel
 
     private lateinit var binding: FragmentMainBinding
@@ -41,7 +41,7 @@ class MainFragment : BaseFragment() {
         with(viewModel) {
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
-            calendarReceived.observeAction(viewLifecycleOwner, ::onCalendarReceived)
+            calendarReceived.observeEvent(viewLifecycleOwner, ::onCalendarReceived)
         }
     }
 

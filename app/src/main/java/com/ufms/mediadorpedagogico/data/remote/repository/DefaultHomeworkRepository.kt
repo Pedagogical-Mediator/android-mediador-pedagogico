@@ -7,8 +7,8 @@ import com.ufms.mediadorpedagogico.domain.boundary.HomeworkRepository
 class DefaultHomeworkRepository(
     private val apiClient: ApiClient
 ) : HomeworkRepository {
-    override fun getHomeworkList(pageNumber: Int, classKey: String) =
-        apiClient.getListOfHomework(pageNumber, classKey).map(
+    override fun getHomeworkList(id: Int, pageNumber: Int, classKey: String) =
+        apiClient.getListOfHomework(id, pageNumber, classKey).map(
             ApiHomeworkContent.ApiContentHomeworkToContentHomework::transform
         )
 }

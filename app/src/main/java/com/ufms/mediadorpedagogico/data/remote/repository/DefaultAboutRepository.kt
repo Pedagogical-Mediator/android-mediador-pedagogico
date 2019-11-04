@@ -10,8 +10,8 @@ class DefaultAboutRepository(
     private val apiClient: ApiClient
 ) : AboutRepository {
 
-    override fun getAboutInformation(): Single<About> {
-        return apiClient.getAboutInformation().map(ApiAbout.ApiAboutToAbout::transform)
+    override fun getAboutInformation(id: Int): Single<About> {
+        return apiClient.getAboutInformation(id).map(ApiAbout.ApiAboutToAbout::transform)
     }
 }
 

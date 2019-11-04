@@ -7,6 +7,7 @@ import com.ufms.mediadorpedagogico.domain.extensions.defaultSched
 import com.ufms.mediadorpedagogico.domain.interactor.calendar.GetCalendar
 import com.ufms.mediadorpedagogico.presentation.util.extensions.defaultPlaceholders
 import com.ufms.mediadorpedagogico.presentation.util.resources.SchedulerProvider
+import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 import io.reactivex.rxkotlin.subscribeBy
 
@@ -15,9 +16,9 @@ class DefaultCalendarDelegate constructor(
     private val schedulerProvider: SchedulerProvider
 ) : CalendarDelegate {
 
-    override val calendarReceived: LiveData<Calendar> get() = calendarReceivedLiveData
+    override val calendarReceived: LiveData<Event<Calendar>> get() = calendarReceivedLiveData
 
-    private val calendarReceivedLiveData = MutableLiveData<Calendar>()
+    private val calendarReceivedLiveData = MutableLiveData<Event<Calendar>>()
 
     override fun getCalendar(
         onSuccess: (Calendar) -> Unit,
@@ -27,7 +28,7 @@ class DefaultCalendarDelegate constructor(
         getCalendar.execute().defaultSched(schedulerProvider)
             .defaultPlaceholders(placeholderPlacerAction)
             .subscribeBy(onFailure) {
-                calendarReceivedLiveData.value = it
+                calendarReceivedLiveData.value = Event(it)
                 onSuccess.invoke(it)
             }
     }
