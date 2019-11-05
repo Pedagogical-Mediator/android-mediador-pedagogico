@@ -32,7 +32,6 @@ class MainFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentMainBinding.inflate(inflater, container, false)
-        setupUi()
         return binding.root
     }
 
@@ -42,14 +41,21 @@ class MainFragment : BaseFragment() {
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
             calendarReceived.observeEvent(viewLifecycleOwner, ::onCalendarReceived)
+            playTour.observeEvent(viewLifecycleOwner, ::hasAlreadyPlayed)
         }
     }
 
     override fun openHelp() {
-        navController.navigateSafe(MainFragmentDirections.actionMainFragmentToHelpBottomSheet(titleHelp, descriptionHelp))
+        navController.navigateSafe(
+            MainFragmentDirections.actionMainFragmentToHelpBottomSheet(
+                titleHelp,
+                descriptionHelp
+            )
+        )
     }
 
     private fun setupUi() {
+        viewModel.tourWasPlayed()
         with(binding) {
             cardViewHomework.setOnClickListener(::goToHomework)
             cardViewNotice.setOnClickListener(::goToNotice)
@@ -63,17 +69,18 @@ class MainFragment : BaseFragment() {
         }
     }
 
-    /**
-     * TODO arrumar para enviar a turma nas requisições
-     * TODO verificar porque não está abrindo no navegador as notícias
-     * TODO arrumar layout das configurações
-     *
-     * */
-    private fun setupCache(subscribe: Boolean?) {
-    }
-
     private fun onCalendarReceived(calendar: Calendar?) {
         loadPage(calendar?.link)
+    }
+
+    private fun hasAlreadyPlayed(playTour: Boolean?) {
+        playTour?.let {
+            if (it) {
+                setupUi()
+            } else {
+                activity?.let { MainTourHelper.setupMainTour(binding, it, ::setupUi) }
+            }
+        }
     }
 
     private fun goToNotice() {
@@ -116,5 +123,9 @@ class MainFragment : BaseFragment() {
 
     private fun onNextPlaceholder(placeholder: Placeholder?) {
         placeholder?.let { binding.loadingPlaceholder.placeholder = it }
+    }
+
+    companion object {
+        const val HELP_WIDTH = 400
     }
 }
