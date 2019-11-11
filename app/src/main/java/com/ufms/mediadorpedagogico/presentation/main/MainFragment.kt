@@ -65,12 +65,13 @@ class MainFragment : BaseFragment() {
             cardViewGuild.setOnClickListener(::goToGuild)
             cardViewAbout.setOnClickListener(::goToAbout)
             cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
+//            cardViewCalendar.setOnClickListener(::goToCalendar)
             cardViewLibrary.setOnClickListener(::goToLibrary)
         }
     }
 
     private fun onCalendarReceived(calendar: Calendar?) {
-        loadPage(calendar?.link)
+        calendar?.link?.run(::goToCalendar)
     }
 
     private fun hasAlreadyPlayed(playTour: Boolean?) {
@@ -113,6 +114,14 @@ class MainFragment : BaseFragment() {
 
     private fun goToLibrary() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToTopicFragment())
+    }
+
+    private fun goToCalendar(link: String) {
+        navController.navigateSafe(
+            MainFragmentDirections.actionMainFragmentToWebViewFragment(
+                link,""
+            )
+        )
     }
 
     private fun onNoContentReturned(noContentReturned: Boolean?) {
