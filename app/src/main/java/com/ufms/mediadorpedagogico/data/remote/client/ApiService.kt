@@ -103,4 +103,11 @@ interface ApiService {
         @Query("page") pageNumber: Int,
         @Query("idDoTopico") topicId: Int
     ): Single<Response<ApiLibContent>>
+
+    /**
+     * Teachers
+     * */
+
+    @GET("professores")
+    fun getTeachers(): Single<Response<List<ApiTeacher>>>
 }

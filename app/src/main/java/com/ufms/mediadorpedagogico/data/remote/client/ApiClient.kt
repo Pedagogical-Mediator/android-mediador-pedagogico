@@ -10,6 +10,7 @@ import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibResource
 import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiTopic
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
+import com.ufms.mediadorpedagogico.domain.entity.Teacher
 import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.SingleTransformer
@@ -73,6 +74,10 @@ object ApiClient {
 
     fun getLibResources(id: Int, pageNumber: Int, topicId: Int): Single<ApiLibContent> {
         return makeRequest(apiServices.getLibResources(id, pageNumber, topicId))
+    }
+
+    fun getTeachers(): Single<List<ApiTeacher>> {
+        return makeRequest(apiServices.getTeachers())
     }
 
     /**
