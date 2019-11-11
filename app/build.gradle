@@ -9,7 +9,12 @@ apply plugin: "org.jmailen.kotlinter"
 
 repositories {
     mavenCentral()
-    maven { url "https://jitpack.io" }
+    maven {
+        url "https://jitpack.io"
+    }
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
 }
 
 android {
@@ -155,6 +160,10 @@ dependencies {
 
     implementation "org.koin:koin-core:$koinVersion"
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
+
+    compile ('com.github.worker8:tourguide:2.0.0-SNAPSHOT@aar') {
+        transitive=true
+    }
 
     // Testing
     androidTestImplementation "org.koin:koin-test:$koinVersion"

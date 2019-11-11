@@ -18,12 +18,13 @@ import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsView
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewModel
 import com.ufms.mediadorpedagogico.presentation.settings.SettingsViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
+import com.ufms.mediadorpedagogico.presentation.webview.WebViewViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { BaseViewModel() }
-    viewModel { MainViewModel(get(), get(), get(), get()) }
+    viewModel { MainViewModel(get(), get(), get(), get(), get()) }
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { HomeworkListViewModel(get(), get(), get()) }
@@ -37,4 +38,5 @@ val viewModelModule = module {
     viewModel { AboutViewModel(get()) }
     viewModel { TopicViewModel(get()) }
     viewModel { (id: Int) -> LibResourceViewModel(id, get()) }
+    viewModel { WebViewViewModel() }
 }
