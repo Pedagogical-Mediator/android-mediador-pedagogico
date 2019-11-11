@@ -11,6 +11,7 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentAboutBinding
 import com.ufms.mediadorpedagogico.domain.entity.About
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeAction
+import com.ufms.mediadorpedagogico.presentation.util.extensions.setOnClickListener
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
@@ -34,6 +35,7 @@ class AboutFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentAboutBinding.inflate(inflater, container, false)
+        setupUi()
         return binding.root
     }
 
@@ -47,6 +49,14 @@ class AboutFragment : BaseFragment() {
 
     override fun openHelp() {
         navController.navigateSafe(AboutFragmentDirections.actionAboutFragmentToHelpBottomSheet(titleHelp, descriptionHelp))
+    }
+
+    private fun setupUi() {
+        binding.teachersButton.setOnClickListener(::goToTeachers)
+    }
+
+    private fun goToTeachers() {
+        navController.navigateSafe(AboutFragmentDirections.actionAboutFragmentToTeacherListFragment())
     }
 
     private fun onAboutReceived(about: About?) {

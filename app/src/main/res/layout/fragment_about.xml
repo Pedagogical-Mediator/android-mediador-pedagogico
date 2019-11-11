@@ -83,6 +83,14 @@
                         android:layout_height="wrap_content"
                         android:text="@{about.link}"
                         android:autoLink="web"/>
+
+                    <Button
+                        android:id="@+id/teachers_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Professores"
+                        android:background="@color/primary"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

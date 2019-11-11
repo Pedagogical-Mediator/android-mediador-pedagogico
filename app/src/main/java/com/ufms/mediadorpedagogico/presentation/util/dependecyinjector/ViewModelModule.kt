@@ -5,7 +5,6 @@ import com.ufms.mediadorpedagogico.domain.entity.notice.Notice
 import com.ufms.mediadorpedagogico.presentation.about.AboutViewModel
 import com.ufms.mediadorpedagogico.presentation.bullying.BullyingViewModel
 import com.ufms.mediadorpedagogico.presentation.guild.GuildViewModel
-import com.ufms.mediadorpedagogico.presentation.guild.delegate.GuildDelegate
 import com.ufms.mediadorpedagogico.presentation.homework.details.HomeworkDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.homework.list.HomeworkListViewModel
 import com.ufms.mediadorpedagogico.presentation.landing.SplashViewModel
@@ -17,6 +16,7 @@ import com.ufms.mediadorpedagogico.presentation.news.NewsListViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.details.NoticeDetailsViewModel
 import com.ufms.mediadorpedagogico.presentation.notice.list.NoticeListViewModel
 import com.ufms.mediadorpedagogico.presentation.settings.SettingsViewModel
+import com.ufms.mediadorpedagogico.presentation.teacher.TeacherListViewModel
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
 import com.ufms.mediadorpedagogico.presentation.webview.WebViewViewModel
 import org.koin.android.viewmodel.dsl.viewModel
@@ -39,4 +39,5 @@ val viewModelModule = module {
     viewModel { TopicViewModel(get()) }
     viewModel { (id: Int) -> LibResourceViewModel(id, get()) }
     viewModel { WebViewViewModel() }
+    viewModel { TeacherListViewModel(get(), get()) }
 }
