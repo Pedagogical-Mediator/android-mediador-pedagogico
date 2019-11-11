@@ -19,7 +19,7 @@ class TeacherListFragment : BaseFragment() {
 
     override val titleHelp: String get() = getString(R.string.help_homework_list_title)
     override val descriptionHelp: String get() = getString(R.string.help_homework_list_description)
-    override val toolbarTitle: String get() = getString(R.string.activity_homework_label)
+    override val toolbarTitle: String get() = getString(R.string.teachers)
     override val baseViewModel: BaseViewModel get() = viewModel
 
     private lateinit var binding: FragmentTeachersBinding
