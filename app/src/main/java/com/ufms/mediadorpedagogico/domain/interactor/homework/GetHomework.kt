@@ -7,7 +7,7 @@ import io.reactivex.Single
 
 class GetHomework constructor(
     private val repository: HomeworkRepository,
-    private val persistedUser: GetPersistedUser
+    val persistedUser: GetPersistedUser
 ) {
 
     fun execute(pageNumber: Int, classKey: String): Single<HomeworkContent> {

@@ -10,8 +10,8 @@ class DefaultGuildRepository(
     private val apiClient: ApiClient
 ) : GuildRepository {
 
-    override fun getGuildInformation(id: Int): Single<Guild> {
-        return apiClient.getGuildInformation(id).map(ApiGuild.ApiGuildToGuild::transform)
+    override fun getGuildInformation(): Single<Guild> {
+        return apiClient.getGuildInformation().map(ApiGuild.ApiGuildToGuild::transform)
     }
 }
 

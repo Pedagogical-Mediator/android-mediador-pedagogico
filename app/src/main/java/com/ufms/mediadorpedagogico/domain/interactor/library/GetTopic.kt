@@ -6,11 +6,10 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetTopic(
-    private val libraryRepository: LibraryRepository,
-    private val persistedUser: GetPersistedUser
+    private val libraryRepository: LibraryRepository
 ) {
 
     fun execute(): Single<List<Topic>> {
-        return libraryRepository.getTopics(persistedUser.getUserId())
+        return libraryRepository.getTopics()
     }
 }

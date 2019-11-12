@@ -6,11 +6,9 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetAbout constructor(
-    private val repository: AboutRepository,
-    private val persistedUser: GetPersistedUser
-) {
+    private val repository: AboutRepository) {
 
     fun execute(): Single<About> {
-        return repository.getAboutInformation(persistedUser.getUserId())
+        return repository.getAboutInformation()
     }
 }

@@ -4,5 +4,5 @@ import com.ufms.mediadorpedagogico.domain.entity.notice.NoticeContent
 import io.reactivex.Single
 
 interface NoticeRepository {
-    fun getNoticeList(id: Int, pageNumber: Int): Single<NoticeContent>
+    fun getNoticeList(pageNumber: Int): Single<NoticeContent>
 }

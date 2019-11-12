@@ -6,11 +6,10 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetGuild constructor(
-    private val repository: GuildRepository,
-    private val persistedUser: GetPersistedUser
+    private val repository: GuildRepository
 ) {
 
     fun execute(): Single<Guild> {
-        return repository.getGuildInformation(persistedUser.getUserId())
+        return repository.getGuildInformation()
     }
 }

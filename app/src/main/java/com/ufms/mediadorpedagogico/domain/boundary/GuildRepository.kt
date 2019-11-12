@@ -4,5 +4,5 @@ import com.ufms.mediadorpedagogico.domain.entity.Guild
 import io.reactivex.Single
 
 interface GuildRepository {
-    fun getGuildInformation(id: Int): Single<Guild>
+    fun getGuildInformation(): Single<Guild>
 }

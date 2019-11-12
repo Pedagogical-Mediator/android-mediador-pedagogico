@@ -6,11 +6,10 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetNotice constructor(
-    private val repository: NoticeRepository,
-    private val persistedUser: GetPersistedUser
+    private val repository: NoticeRepository
 ) {
 
     fun execute(pageNumber: Int): Single<NoticeContent> {
-        return repository.getNoticeList(persistedUser.getUserId(), pageNumber)
+        return repository.getNoticeList(pageNumber)
     }
 }

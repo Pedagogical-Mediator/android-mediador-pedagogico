@@ -11,9 +11,3 @@ fun <T> Single<T>.defaultPlaceholders(placeholderPlacerAction: (Placeholder) -> 
         { placeholderPlacerAction(Placeholder.Loading()) },
         { placeholderPlacerAction(Placeholder.HideAll) })
 }
-
-fun <T> Observable<T>.defaultPlaceholders(placeholderPlacerAction: (Placeholder) -> (Unit)): Observable<T> {
-    return this.defaultConsumers(
-        { placeholderPlacerAction(Placeholder.Loading()) },
-        { placeholderPlacerAction(Placeholder.HideAll) })
-}

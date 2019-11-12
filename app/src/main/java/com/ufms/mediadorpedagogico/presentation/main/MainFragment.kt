@@ -41,7 +41,7 @@ class MainFragment : BaseFragment() {
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
             calendarReceived.observeEvent(viewLifecycleOwner, ::onCalendarReceived)
-            playTour.observeEvent(viewLifecycleOwner, ::hasAlreadyPlayed)
+            playTour.observeAction(viewLifecycleOwner, ::hasAlreadyPlayed)
         }
     }
 

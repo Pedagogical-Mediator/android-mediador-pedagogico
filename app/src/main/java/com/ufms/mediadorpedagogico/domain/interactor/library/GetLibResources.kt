@@ -7,10 +7,9 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetLibResources(
-    private val libraryRepository: LibraryRepository,
-    private val persistedUser: GetPersistedUser
+    private val libraryRepository: LibraryRepository
 ) {
     fun execute(pageNumber: Int, topicId: Int): Single<LibContent> {
-        return libraryRepository.getLibResources(persistedUser.getUserId(), pageNumber, topicId)
+        return libraryRepository.getLibResources(pageNumber, topicId)
     }
 }

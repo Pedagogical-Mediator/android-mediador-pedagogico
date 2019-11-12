@@ -39,17 +39,17 @@ class TeacherListViewModel(
             .defaultSched(schedulerProvider)
             .defaultPlaceholders(::setPlaceholder)
             .subscribeBy(::onFailure) {
-//                _teachers.value = Event(it)
-                _teachers.value = Event(
-                    listOf(
-                        Teacher(
-                            id = 1,
-                            name = "Professor",
-                            subjects = listOf("Matemática", "Português"),
-                            description = "Descrição"
-                        )
-                    )
-                )
+                _teachers.value = Event(it)
+//                _teachers.value = Event(
+//                    listOf(
+//                        Teacher(
+//                            id = 1,
+//                            name = "Professor",
+//                            subjects = listOf("Matemática", "Português"),
+//                            description = "Descrição"
+//                        )
+//                    )
+//                )
             }
     }
 

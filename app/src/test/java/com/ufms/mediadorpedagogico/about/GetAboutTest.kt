@@ -3,6 +3,7 @@ package com.ufms.mediadorpedagogico.about
 import com.ufms.mediadorpedagogico.MocksEntities.mockedAbout
 import com.ufms.mediadorpedagogico.domain.boundary.AboutRepository
 import com.ufms.mediadorpedagogico.domain.interactor.about.GetAbout
+import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 import junit.framework.Assert.assertNull
 import org.junit.Before

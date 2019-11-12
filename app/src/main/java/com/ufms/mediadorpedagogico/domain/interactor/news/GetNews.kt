@@ -6,11 +6,10 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetNews constructor(
-    private val repository: NewsRepository,
-    private val persistedUser: GetPersistedUser
+    private val repository: NewsRepository
 ) {
 
     fun execute(pageNumber: Int): Single<NewsContent> {
-        return repository.getNewsContentList(persistedUser.getUserId(), pageNumber)
+        return repository.getNewsContentList(pageNumber)
     }
 }
