@@ -7,7 +7,7 @@ import com.ufms.mediadorpedagogico.presentation.util.structure.arch.Event
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.Placeholder
 
 interface LibraryDelegate {
-    val topics: LiveData<Event<List<Topic>>>
+    val topics: LiveData<List<Topic>>
     val libResources: LiveData<Event<List<LibResource>>>
     val noContentReturned: LiveData<Event<Unit>>
 

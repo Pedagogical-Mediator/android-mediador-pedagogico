@@ -51,7 +51,7 @@ class TopicFragment : BaseFragment() {
     override fun subscribeUi() {
         super.subscribeUi()
         with(viewModel) {
-            topics.observeEvent(viewLifecycleOwner, ::onTopics)
+            topics.observeAction(viewLifecycleOwner, ::onTopics)
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
         }
@@ -68,11 +68,11 @@ class TopicFragment : BaseFragment() {
     private fun setupAdapter() {
         topicAdapter.ifNull {
             topicAdapter = TopicAdapter(::goToLibResources)
-            binding.topicsList.adapter.ifNull {
-                binding.topicsList.apply {
-                    adapter = topicAdapter
-                    layoutManager = LinearLayoutManager(context)
-                }
+        }
+        binding.topicsList.adapter.ifNull {
+            binding.topicsList.apply {
+                adapter = topicAdapter
+                layoutManager = LinearLayoutManager(context)
             }
         }
     }

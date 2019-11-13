@@ -20,11 +20,11 @@ class DefaultLibraryDelegate(
     private val schedulerProvider: SchedulerProvider
 ) : LibraryDelegate {
 
-    override val topics: LiveData<Event<List<Topic>>> get() = _topics
+    override val topics: LiveData<List<Topic>> get() = _topics
     override val libResources: LiveData<Event<List<LibResource>>> get() = _libResources
     override val noContentReturned: LiveData<Event<Unit>> get() = _noContentReturned
 
-    private val _topics = MutableLiveData<Event<List<Topic>>>()
+    private val _topics = MutableLiveData<List<Topic>>()
     private val _libResources = MutableLiveData<Event<List<LibResource>>>()
     private val _noContentReturned = MutableLiveData<Event<Unit>>()
     private var pageNumber = 0
@@ -41,7 +41,7 @@ class DefaultLibraryDelegate(
             .defaultSched(schedulerProvider)
             .defaultPlaceholders(placeholderAction)
             .subscribeBy(onFailure) {
-                _topics.value = Event(it)
+                _topics.value = it
             }
     }
 

@@ -8,6 +8,7 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.ItemListResourceBinding
 import com.ufms.mediadorpedagogico.databinding.ItemListTeacherBinding
 import com.ufms.mediadorpedagogico.domain.entity.Teacher
+import com.ufms.mediadorpedagogico.domain.util.removeHtmlTags
 
 class TeacherListViewHolder(
     private var binding: ItemListTeacherBinding
@@ -16,7 +17,7 @@ class TeacherListViewHolder(
     fun setupBinding(teacher: Teacher) {
         with(binding) {
             textViewName.text = teacher.name
-            textViewDescription.text = teacher.description
+            textViewDescription.text = teacher.description.removeHtmlTags()
             textViewSubjects.text = teacher.subjects?.joinToString()
         }
     }

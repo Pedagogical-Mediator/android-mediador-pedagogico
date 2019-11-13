@@ -27,18 +27,18 @@ class MainViewModel(
 
     val errors: LiveData<Event<InvalidFieldsException>> get() = _errors
     val noContentReturned: LiveData<Event<Boolean>> get() = _noContentReturned
-    val playTour: LiveData<Boolean> get() = _playTour
+    val playTour: LiveData<Event<Boolean>> get() = _playTour
 
     private val _errors: MutableLiveData<Event<InvalidFieldsException>> = MutableLiveData()
     private val _noContentReturned: MutableLiveData<Event<Boolean>> = MutableLiveData()
-    private val _playTour: MutableLiveData<Boolean> = MutableLiveData()
+    private val _playTour: MutableLiveData<Event<Boolean>> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     override fun onCreate() {
         //TODO buscar dados da escola e turma
         super.onCreate()
         subscribeToTopics()
-        _playTour.value = helpManager.isFirstTime()
+        _playTour.value = Event(helpManager.isFirstTime())
     }
 
     fun onCalendarClicked() {
