@@ -149,4 +149,12 @@
 
     <string name="library_libresources_title">Biblioteca</string>
     <string name="library_libresources_description">Aqui é onde você encontra Podcasts, downloads e vídeos interessantes</string>
+
+    <string name="sunday">Domingo</string>
+    <string name="monday">Segunda-feira</string>
+    <string name="tuesday">Terça-feira</string>
+    <string name="wednesday">Quarta-feira</string>
+    <string name="thursday">Quinta-feira</string>
+    <string name="friday">Sexta-feira</string>
+    <string name="saturday">Sábado</string>
 </resources>

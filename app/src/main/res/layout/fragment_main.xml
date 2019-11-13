@@ -22,6 +22,18 @@
             android:background="@color/white_alpha30"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/today_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/whateverbold"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="Dia de hoje"
+                android:background="@color/primary"/>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

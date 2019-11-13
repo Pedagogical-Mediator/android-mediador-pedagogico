@@ -34,7 +34,7 @@ open class BaseViewModel : LifecycleObserver, KoinComponent, ViewModel() {
     private val placeholderLiveData = MutableLiveData<Placeholder>()
     private val errorHandler: ErrorHandler by inject()
     private val cache: Cache by inject()
-    private val strings: StringsProvider by inject()
+    protected val strings: StringsProvider by inject()
 
     protected val disposables: CompositeDisposable = CompositeDisposable()
 

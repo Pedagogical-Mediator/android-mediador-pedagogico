@@ -43,6 +43,7 @@ class MainFragment : BaseFragment() {
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
             calendarReceived.observeEvent(viewLifecycleOwner, ::onCalendarReceived)
             playTour.observeEvent(viewLifecycleOwner, ::hasAlreadyPlayed)
+            today.observeAction(viewLifecycleOwner, ::onToday)
         }
     }
 
@@ -68,6 +69,10 @@ class MainFragment : BaseFragment() {
             cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
             cardViewLibrary.setOnClickListener(::goToLibrary)
         }
+    }
+
+    private fun onToday(today: String?) {
+        binding.todayText.text = today
     }
 
     private fun onCalendarReceived(calendar: Calendar?) {

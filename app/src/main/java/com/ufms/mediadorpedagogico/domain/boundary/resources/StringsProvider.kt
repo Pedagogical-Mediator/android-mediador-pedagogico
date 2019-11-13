@@ -22,6 +22,13 @@ interface StringsProvider {
     val activityRecoverPassword: String
     val activityRecoverPasswordSuccess: String
     val errorExpiredClassKey: String
+    val sunday: String
+    val monday: String
+    val tuesday: String
+    val wednesday: String
+    val thursday: String
+    val friday: String
+    val saturday: String
 
     fun errorUnprocessable(errors: String): String
 }
