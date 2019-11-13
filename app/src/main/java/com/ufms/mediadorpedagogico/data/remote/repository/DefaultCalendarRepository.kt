@@ -10,8 +10,8 @@ class DefaultCalendarRepository(
     private val apiClient: ApiClient
 ) : CalendarRepository {
 
-    override fun getCalendarInformation(id: Int): Single<Calendar> {
-        return apiClient.getCalendar(id).map(ApiCalendar.ApiCalendarToCalendar::transform)
+    override fun getCalendarInformation(): Single<Calendar> {
+        return apiClient.getCalendar().map(ApiCalendar.ApiCalendarToCalendar::transform)
     }
 }
 

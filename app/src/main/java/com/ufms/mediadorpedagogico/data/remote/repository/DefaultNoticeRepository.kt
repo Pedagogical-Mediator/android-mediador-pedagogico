@@ -7,7 +7,7 @@ import com.ufms.mediadorpedagogico.domain.boundary.NoticeRepository
 class DefaultNoticeRepository(
     private val apiClient: ApiClient
 ) : NoticeRepository {
-    override fun getNoticeList(id: Int, pageNumber: Int) = apiClient.getListOfNotice(id, pageNumber).map(
+    override fun getNoticeList(pageNumber: Int) = apiClient.getListOfNotice(pageNumber).map(
         ApiNoticeContent.ApiContentNoticeToContentNotice::transform
     )
 }

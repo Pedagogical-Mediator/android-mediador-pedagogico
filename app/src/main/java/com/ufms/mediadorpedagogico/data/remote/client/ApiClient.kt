@@ -10,6 +10,7 @@ import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiLibResource
 import com.ufms.mediadorpedagogico.data.remote.entity.library.ApiTopic
 import com.ufms.mediadorpedagogico.data.remote.entity.news.ApiNewsContent
 import com.ufms.mediadorpedagogico.data.remote.entity.notice.ApiNoticeContent
+import com.ufms.mediadorpedagogico.domain.entity.Teacher
 import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.SingleTransformer
@@ -43,36 +44,40 @@ object ApiClient {
         return makeRequest(apiServices.getListOfHomework(id, pageNumber, classKey))
     }
 
-    fun getListOfNotice(id: Int,pageNumber: Int): Single<ApiNoticeContent> {
-        return makeRequest(apiServices.getListOfNotices(id, pageNumber))
+    fun getListOfNotice(pageNumber: Int): Single<ApiNoticeContent> {
+        return makeRequest(apiServices.getListOfNotices(pageNumber))
     }
 
-    fun getListOfNews(id: Int,pageNumber: Int): Single<ApiNewsContent> {
-        return makeRequest(apiServices.getListOfNews(id, pageNumber))
+    fun getListOfNews(pageNumber: Int): Single<ApiNewsContent> {
+        return makeRequest(apiServices.getListOfNews(pageNumber))
     }
 
-    fun getBullyingInformation(id: Int): Single<ApiBullying> {
-        return makeRequest(apiServices.getBullyingInformation(id))
+    fun getBullyingInformation(): Single<ApiBullying> {
+        return makeRequest(apiServices.getBullyingInformation())
     }
 
-    fun getGuildInformation(id: Int): Single<ApiGuild> {
-        return makeRequest(apiServices.getGuildInformation(id))
+    fun getGuildInformation(): Single<ApiGuild> {
+        return makeRequest(apiServices.getGuildInformation())
     }
 
-    fun getAboutInformation(id: Int): Single<ApiAbout> {
-        return makeRequest(apiServices.getAboutInformation(id))
+    fun getAboutInformation(): Single<ApiAbout> {
+        return makeRequest(apiServices.getAboutInformation())
     }
 
-    fun getCalendar(id: Int): Single<ApiCalendar> {
-        return makeRequest(apiServices.getCalendar(id))
+    fun getCalendar(): Single<ApiCalendar> {
+        return makeRequest(apiServices.getCalendar())
     }
 
-    fun getTopics(id: Int): Single<List<ApiTopic>> {
-        return makeRequest(apiServices.getTopics(id))
+    fun getTopics(): Single<List<ApiTopic>> {
+        return makeRequest(apiServices.getTopics())
     }
 
-    fun getLibResources(id: Int, pageNumber: Int, topicId: Int): Single<ApiLibContent> {
-        return makeRequest(apiServices.getLibResources(id, pageNumber, topicId))
+    fun getLibResources( pageNumber: Int, topicId: Int): Single<ApiLibContent> {
+        return makeRequest(apiServices.getLibResources(pageNumber, topicId))
+    }
+
+    fun getTeachers(): Single<List<ApiTeacher>> {
+        return makeRequest(apiServices.getTeachers())
     }
 
     /**
@@ -148,29 +153,5 @@ object ApiClient {
         return request.compose(verifyResponseException())
             .compose(verifyRequestException())
             .compose(unwrap())
-    }
-
-    private fun <T> justVerifyErrors(request: Single<Response<T>>): Completable {
-        return request.compose(verifyResponseException())
-            .compose(verifyRequestException())
-            .ignoreElement()
-    }
-
-    private fun buildSignUpMultipartBody(fields: Map<String, String?>): MultipartBody {
-        val builder = MultipartBody.Builder().setType(MultipartBody.FORM)
-        for ((key, value) in fields) {
-            if ("avatar" == key) {
-                if (value == null) continue
-                val file = File(value)
-                builder.addFormDataPart(
-                    key,
-                    file.name,
-                    RequestBody.create(MediaType.parse("image/*"), file)
-                )
-            } else {
-                value?.let { builder.addFormDataPart(key, value) }
-            }
-        }
-        return builder.build()
     }
 }

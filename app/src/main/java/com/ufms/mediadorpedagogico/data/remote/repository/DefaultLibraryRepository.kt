@@ -14,11 +14,11 @@ class DefaultLibraryRepository(
     private val apiClient: ApiClient
 ): LibraryRepository {
 
-    override fun getTopics(id: Int): Single<List<Topic>> {
-        return apiClient.getTopics(id).map(ApiTopic.ApiTopicToTopic::transform)
+    override fun getTopics(): Single<List<Topic>> {
+        return apiClient.getTopics().map(ApiTopic.ApiTopicToTopic::transform)
     }
 
-    override fun getLibResources(id: Int, pageNumber: Int, topicId: Int): Single<LibContent> {
-        return apiClient.getLibResources(id, pageNumber, topicId).map(ApiLibContent.ApiLibContentToLibContent::transform)
+    override fun getLibResources(pageNumber: Int, topicId: Int): Single<LibContent> {
+        return apiClient.getLibResources(pageNumber, topicId).map(ApiLibContent.ApiLibContentToLibContent::transform)
     }
 }

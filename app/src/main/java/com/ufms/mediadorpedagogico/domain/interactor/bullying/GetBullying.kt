@@ -6,11 +6,10 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetBullying constructor(
-    private val repository: BullyingRepository,
-    private val persistedUser: GetPersistedUser
+    private val repository: BullyingRepository
 ) {
 
     fun execute(): Single<Bullying> {
-        return repository.getBullyingInformation(persistedUser.getUserId())
+        return repository.getBullyingInformation()
     }
 }

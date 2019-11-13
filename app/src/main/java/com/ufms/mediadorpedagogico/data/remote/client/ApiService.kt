@@ -37,7 +37,6 @@ interface ApiService {
 
     @GET("avisos")
     fun getListOfNotices(
-        @Query("idDoAluno") id: Int,
         @Query("page") pageNumber: Int
     ): Single<Response<ApiNoticeContent>>
 
@@ -47,8 +46,7 @@ interface ApiService {
 
     @GET("noticias")
     fun getListOfNews(
-        @Query("page") pageNumber: Int,
-        @Query("idDoAluno") id: Int
+        @Query("page") pageNumber: Int
     ): Single<Response<ApiNewsContent>>
 
     /**
@@ -56,36 +54,28 @@ interface ApiService {
      * */
 
     @GET("bullying")
-    fun getBullyingInformation(
-        @Query("idDoAluno") id: Int
-    ): Single<Response<ApiBullying>>
+    fun getBullyingInformation(): Single<Response<ApiBullying>>
 
     /**
      * Guild
      * */
 
     @GET("gremio")
-    fun getGuildInformation(
-        @Query("idDoAluno") id: Int
-    ): Single<Response<ApiGuild>>
+    fun getGuildInformation(): Single<Response<ApiGuild>>
 
     /**
      * About
      * */
 
     @GET("escola")
-    fun getAboutInformation(
-        @Query("idDoAluno") id: Int
-    ): Single<Response<ApiAbout>>
+    fun getAboutInformation(): Single<Response<ApiAbout>>
 
     /**
      * Calendar
      * */
 
     @GET("calendario")
-    fun getCalendar(
-        @Query("idDoAluno") id: Int
-    ): Single<Response<ApiCalendar>>
+    fun getCalendar(): Single<Response<ApiCalendar>>
 
 
     /**
@@ -93,14 +83,18 @@ interface ApiService {
      * */
 
     @GET("topicos")
-    fun getTopics(
-        @Query("idDoAluno") id: Int
-    ): Single<Response<List<ApiTopic>>>
+    fun getTopics(): Single<Response<List<ApiTopic>>>
 
     @GET("itens")
     fun getLibResources(
-        @Query("idDoAluno") id: Int,
         @Query("page") pageNumber: Int,
         @Query("idDoTopico") topicId: Int
     ): Single<Response<ApiLibContent>>
+
+    /**
+     * Teachers
+     * */
+
+    @GET("professores")
+    fun getTeachers(): Single<Response<List<ApiTeacher>>>
 }

@@ -18,37 +18,3 @@ fun <T> Single<T>.defaultConsumers(
     return this.doOnSubscribe { onSubscribeCallback.invoke() }
         .doAfterTerminate({ doAfterTerminatecallback.invoke() })
 }
-
-fun <T> Observable<T>.defaultConsumers(
-    onSubscribeCallback: () -> (Unit),
-    doAfterTerminatecallback: () -> (Unit)
-): Observable<T> {
-    return this.doOnSubscribe { onSubscribeCallback.invoke() }
-        .doAfterTerminate({ doAfterTerminatecallback.invoke() })
-}
-
-fun <T> Observable<T>.defaultSched(schedulerProvider: SchedulerProvider): Observable<T> {
-    return this.subscribeOn(schedulerProvider.io()).observeOn(schedulerProvider.main())
-}
-
-fun <T> PublishSubject<T>.defaultSched(schedulerProvider: SchedulerProvider): Observable<T> {
-    return this.subscribeOn(schedulerProvider.io()).observeOn(schedulerProvider.main())
-}
-
-fun Completable.defaultSched(schedulerProvider: SchedulerProvider): Completable {
-    return this.subscribeOn(schedulerProvider.io()).observeOn(schedulerProvider.main())
-}
-
-fun Completable.defaultPlaceholders(placeholderPlacerAction: (Placeholder) -> (Unit)): Completable {
-    return this.defaultConsumers(
-        { placeholderPlacerAction(Placeholder.Loading()) },
-        { placeholderPlacerAction(Placeholder.HideAll) })
-}
-
-fun Completable.defaultConsumers(
-    onSubscribeCallback: () -> (Unit),
-    doAfterTerminatecallback: () -> (Unit)
-): Completable {
-    return this.doOnSubscribe { onSubscribeCallback.invoke() }
-        .doAfterTerminate({ doAfterTerminatecallback.invoke() })
-}

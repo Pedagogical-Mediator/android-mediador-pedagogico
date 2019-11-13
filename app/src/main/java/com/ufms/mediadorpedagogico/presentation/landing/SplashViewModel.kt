@@ -28,8 +28,7 @@ class SplashViewModel(
         super.onCreate()
         scheduleCallback(DEFAULT_DELAY_IN_SECONDS) {
             if (getPersistedUser.execute() == null) {
-                goTo(MainNavData())
-//                goTo(LoginNavData(false))
+                goTo(LoginNavData(false))
             } else {
                 goTo(MainNavData())
             }

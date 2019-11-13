@@ -44,11 +44,6 @@ class LoginActivity : BaseActivity() {
             textInputClassCode.observeChanges(viewModel::onClassKeyChanged)
             textInputName.observeChanges(viewModel::onNameChanged)
             submitButton.setOnClickListener(viewModel::onSubmitClicked)
-            binding.teste.settings.javaScriptEnabled = true
-//            binding.teste.loadDataWithBaseURL(
-//                "", "<iframe src=\"https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FCampo_Grande&amp;src=bWVkaWFkb3JwZWRhZ29naWNvZmFicmljYUBnbWFpbC5jb20&amp;color=%2322AA99&amp;showTz=0&amp;showCalendars=0&amp;showTabs=0&amp;mode=WEEK\" style=\"border-width:0\" width=\"800\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe>", "text/html", "UTF-8", ""
-//            )
-
         }
     }
 

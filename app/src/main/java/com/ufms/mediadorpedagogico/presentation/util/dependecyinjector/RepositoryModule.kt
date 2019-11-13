@@ -14,4 +14,5 @@ val repositoryModule = module {
     factory<AboutRepository> { DefaultAboutRepository(get()) }
     factory<CalendarRepository> { DefaultCalendarRepository(get()) }
     factory<LibraryRepository> { DefaultLibraryRepository(get()) }
+    factory<TeacherRepository> { DefaultTeacherRepository(get()) }
 }

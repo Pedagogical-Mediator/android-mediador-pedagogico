@@ -1,18 +1,23 @@
 package com.ufms.mediadorpedagogico.homework
 
+import com.ufms.mediadorpedagogico.MocksEntities
 import com.ufms.mediadorpedagogico.domain.interactor.homework.GetHomework
+import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
+import com.ufms.mediadorpedagogico.domain.interactor.user.SignIn
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.applicationModule
-import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.interactorModule
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.repositoryModule
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.viewModelModule
+import io.reactivex.Single
 import junit.framework.Assert.assertNotNull
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
+import org.koin.dsl.module
 import org.koin.test.KoinTest
 import org.koin.test.inject
+import org.mockito.Mockito
 
 class _2_RequestSecondPageHomework : KoinTest {
 
@@ -20,14 +25,28 @@ class _2_RequestSecondPageHomework : KoinTest {
 
     @BeforeEach
     fun before() {
+        val mockedPersistedUser = Mockito.mock(GetPersistedUser::class.java)
+        Mockito.`when`(mockedPersistedUser.getUserId())
+            .thenReturn(3)
+        val interactorTestModule = module {
+            single { SignIn(get()) }
+            single { GetHomework(get(), mockedPersistedUser) }
+        }
         startKoin {
-            modules(listOf(interactorModule, repositoryModule, applicationModule, viewModelModule))
+            modules(
+                listOf(
+                    interactorTestModule,
+                    repositoryModule,
+                    applicationModule,
+                    viewModelModule
+                )
+            )
         }
     }
 
     @Test
     fun getHomework() {
-        val homework = getHomework.execute(1, "Abacaxi").blockingGet()
+        val homework = getHomework.execute(1, "terceiro").blockingGet()
         homework?.content?.isNotEmpty()?.let {
             if (it) {
                 assertNotNull(homework.content?.get(0)?.id)

@@ -6,11 +6,10 @@ import com.ufms.mediadorpedagogico.domain.interactor.user.GetPersistedUser
 import io.reactivex.Single
 
 class GetCalendar constructor(
-    private val repository: CalendarRepository,
-    private val persistedUser: GetPersistedUser
+    private val repository: CalendarRepository
 ) {
 
     fun execute(): Single<Calendar> {
-        return repository.getCalendarInformation(persistedUser.getUserId())
+        return repository.getCalendarInformation()
     }
 }

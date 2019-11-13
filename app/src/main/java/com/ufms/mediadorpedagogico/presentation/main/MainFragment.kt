@@ -32,6 +32,7 @@ class MainFragment : BaseFragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentMainBinding.inflate(inflater, container, false)
+        setupUi()
         return binding.root
     }
 
@@ -65,7 +66,6 @@ class MainFragment : BaseFragment() {
             cardViewGuild.setOnClickListener(::goToGuild)
             cardViewAbout.setOnClickListener(::goToAbout)
             cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
-//            cardViewCalendar.setOnClickListener(::goToCalendar)
             cardViewLibrary.setOnClickListener(::goToLibrary)
         }
     }
