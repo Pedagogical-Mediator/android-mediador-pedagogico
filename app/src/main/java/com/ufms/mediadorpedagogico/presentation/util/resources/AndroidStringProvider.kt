@@ -6,6 +6,20 @@ import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.domain.boundary.resources.StringsProvider
 
 class AndroidStringProvider(context: Context) : StringsProvider {
+    override val sunday: String
+        get() = res(R.string.sunday)
+    override val monday: String
+        get() = res(R.string.monday)
+    override val tuesday: String
+        get() = res(R.string.tuesday)
+    override val wednesday: String
+        get() = res(R.string.wednesday)
+    override val thursday: String
+        get() = res(R.string.thursday)
+    override val friday: String
+        get() = res(R.string.friday)
+    override val saturday: String
+        get() = res(R.string.saturday)
 
     private val context = context.applicationContext
 

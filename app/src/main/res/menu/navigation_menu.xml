@@ -21,6 +21,11 @@
         android:title="@string/news" />
 
     <item
+        android:id="@+id/calendar_fragment"
+        android:icon="@drawable/selector_button_accent"
+        android:title="@string/calendar" />
+
+    <item
         android:id="@+id/bullying_fragment"
         android:icon="@drawable/selector_button_accent"
         android:title="@string/bullying" />

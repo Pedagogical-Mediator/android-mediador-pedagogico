@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ufms.mediadorpedagogico.R
 import com.ufms.mediadorpedagogico.databinding.FragmentMainBinding
-import com.ufms.mediadorpedagogico.domain.entity.Calendar
 import com.ufms.mediadorpedagogico.presentation.util.extensions.*
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseFragment
 import com.ufms.mediadorpedagogico.presentation.util.structure.base.BaseViewModel
@@ -41,8 +40,8 @@ class MainFragment : BaseFragment() {
         with(viewModel) {
             placeholder.observeAction(viewLifecycleOwner, ::onNextPlaceholder)
             noContentReturned.observeEvent(viewLifecycleOwner, ::onNoContentReturned)
-            calendarReceived.observeEvent(viewLifecycleOwner, ::onCalendarReceived)
             playTour.observeEvent(viewLifecycleOwner, ::hasAlreadyPlayed)
+            today.observeAction(viewLifecycleOwner, ::onToday)
         }
     }
 
@@ -65,13 +64,13 @@ class MainFragment : BaseFragment() {
             cardViewBullying.setOnClickListener(::goToBullying)
             cardViewGuild.setOnClickListener(::goToGuild)
             cardViewAbout.setOnClickListener(::goToAbout)
-            cardViewCalendar.setOnClickListener(viewModel::onCalendarClicked)
+            cardViewCalendar.setOnClickListener(::goToCalendar)
             cardViewLibrary.setOnClickListener(::goToLibrary)
         }
     }
 
-    private fun onCalendarReceived(calendar: Calendar?) {
-        calendar?.link?.run(::goToCalendar)
+    private fun onToday(today: String?) {
+        binding.todayText.text = today
     }
 
     private fun hasAlreadyPlayed(playTour: Boolean?) {
@@ -116,11 +115,9 @@ class MainFragment : BaseFragment() {
         navController.navigateSafe(MainFragmentDirections.actionMainFragmentToTopicFragment())
     }
 
-    private fun goToCalendar(link: String) {
+    private fun goToCalendar() {
         navController.navigateSafe(
-            MainFragmentDirections.actionMainFragmentToWebViewFragment(
-                link,""
-            )
+            MainFragmentDirections.actionMainFragmentToWebViewFragment()
         )
     }
 
