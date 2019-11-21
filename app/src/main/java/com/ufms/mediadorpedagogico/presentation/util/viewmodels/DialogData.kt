@@ -13,26 +13,6 @@ class DialogData(
 ) {
     companion object {
 
-        fun confirm(
-            title: String,
-            message: String,
-            onConfirm: () -> Unit,
-            confirmButtonText: String? = null,
-            cancelable: Boolean? = true
-        ): DialogData {
-            return DialogData(title, message, confirmButtonText, onConfirm, null, null, cancelable)
-        }
-
-        fun dismiss(
-            title: String,
-            message: String,
-            onDismiss: () -> Unit,
-            dismissButtonText: String? = null,
-            cancelable: Boolean? = true
-        ): DialogData {
-            return DialogData(title, message, null, null, dismissButtonText, onDismiss, cancelable)
-        }
-
         fun message(
             title: String,
             message: String,
@@ -76,25 +56,6 @@ class DialogData(
                 confirmButtonText,
                 onConfirm,
                 null,
-                onDismiss,
-                cancelable
-            )
-        }
-
-        fun yesOrNo(
-            strings: StringsProvider,
-            title: String,
-            message: String,
-            onConfirm: () -> Unit,
-            onDismiss: (() -> Unit)? = null,
-            cancelable: Boolean? = true
-        ): DialogData {
-            return DialogData(
-                title,
-                message,
-                strings.globalYes,
-                onConfirm,
-                strings.globalNo,
                 onDismiss,
                 cancelable
             )
