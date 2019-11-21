@@ -37,9 +37,11 @@ abstract class BaseFragment : Fragment() {
 
     @CallSuper
     open fun subscribeUi() {
-        baseViewModel.dialog.observeEvent(this, ::onNextDialog)
-        baseViewModel.goTo.observeEvent(this, ::onNextNavigation)
-        baseViewModel.toast.observeEvent(this, ::onNextToast)
+        with(baseViewModel) {
+            dialog.observeEvent(viewLifecycleOwner, ::onNextDialog)
+            goTo.observeEvent(viewLifecycleOwner, ::onNextNavigation)
+            toast.observeEvent(viewLifecycleOwner, ::onNextToast)
+        }
     }
 
 
