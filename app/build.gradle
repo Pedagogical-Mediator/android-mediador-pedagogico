@@ -75,6 +75,9 @@ android {
 
     testOptions {
         unitTests.returnDefaultValues = true
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 
 //    testOptions {
@@ -161,18 +164,16 @@ dependencies {
     implementation "org.koin:koin-core:$koinVersion"
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
 
-    compile ('com.github.worker8:tourguide:2.0.0-SNAPSHOT@aar') {
-        transitive=true
+    compile('com.github.worker8:tourguide:2.0.0-SNAPSHOT@aar') {
+        transitive = true
     }
 
     // Testing
     androidTestImplementation "org.koin:koin-test:$koinVersion"
 
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
-    androidTestImplementation 'com.linkedin.testbutler:test-butler-library:2.0.0'
+    testImplementation 'androidx.test:core:1.2.0'
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
@@ -182,7 +183,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.7.22'
     // required if you want to use Mockito for Android tests
     testImplementation 'org.assertj:assertj-core:3.12.2'
-
+    testImplementation 'org.robolectric:robolectric:4.3'
 
     //Stetho
     implementation "com.facebook.stetho:stetho:$stethoVersion"
