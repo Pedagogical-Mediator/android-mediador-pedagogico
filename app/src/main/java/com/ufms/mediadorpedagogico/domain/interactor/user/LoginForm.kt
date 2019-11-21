@@ -1,6 +1,5 @@
 package com.ufms.mediadorpedagogico.domain.interactor.user
 
-
 class LoginForm {
     var classKey: String? = null
     var name: String? = null

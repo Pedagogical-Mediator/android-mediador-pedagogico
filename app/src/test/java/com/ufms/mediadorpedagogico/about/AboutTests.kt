@@ -1,7 +1,6 @@
 package com.ufms.mediadorpedagogico.about
 
 import com.ufms.mediadorpedagogico.domain.interactor.about.GetAbout
-import com.ufms.mediadorpedagogico.domain.interactor.notice.GetNotice
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.applicationModule
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.interactorModule
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.repositoryModule
