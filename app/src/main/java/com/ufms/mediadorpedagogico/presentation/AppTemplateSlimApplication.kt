@@ -1,7 +1,7 @@
 package com.ufms.mediadorpedagogico.presentation
 
 import androidx.multidex.MultiDexApplication
-import com.facebook.stetho.Stetho
+//import com.facebook.stetho.Stetho
 import com.ufms.mediadorpedagogico.presentation.util.dependecyinjector.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -14,7 +14,7 @@ class AppTemplateSlimApplication : MultiDexApplication() {
         startKoin {
             androidLogger()
             androidContext(this@AppTemplateSlimApplication)
-            Stetho.initializeWithDefaults(this@AppTemplateSlimApplication)
+//            Stetho.initializeWithDefaults(this@AppTemplateSlimApplication)
             modules(
                 listOf(
                     interactorModule,

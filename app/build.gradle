@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'org.sonarqube'
-//apply plugin: 'jacoco-android'
+apply plugin: "com.vanniktech.android.junit.jacoco"
 apply plugin: 'androidx.navigation.safeargs'
 apply plugin: "org.jmailen.kotlinter"
 
@@ -90,10 +90,24 @@ android {
 //    }
 }
 
-//jacocoAndroidUnitTestReport {
-//    csv.enabled false
-//    html.enabled false
-//    xml.enabled true
+//jacoco {
+//    toolVersion = "0.8.4"
+//}
+//
+//task jacocoTestReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+//
+//    reports {
+//        xml.enabled = true
+//        html.enabled = true
+//    }
+//
+//    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+//    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
+//    def mainSrc = "${project.projectDir}/src/main/java"
+//
+//    sourceDirectories = files([mainSrc])
+//    classDirectories = files([debugTree])
+//    executionData = files("${buildDir}/jacoco/testDebugUnitTest.exec")
 //}
 
 kotlinter {
@@ -159,7 +173,7 @@ dependencies {
     implementation 'com.github.jkwiecien:EasyImage:2.0.3'
 
     //rx permissions
-    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+//    implementation 'com.github.tbruyelle:rxpermissions:.10.2'
 
     implementation "org.koin:koin-core:$koinVersion"
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
@@ -169,10 +183,42 @@ dependencies {
     }
 
     // Testing
-    androidTestImplementation "org.koin:koin-test:$koinVersion"
+    androidTestImplementation ("org.koin:koin-test:$koinVersion") { exclude group: 'org.mockito' }
+
+    androidTestImplementation 'androidx.test:core:1.2.0'
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test:monitor:1.2.0'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+//    androidTestImplementation 'androidx.test.ext:truth:1.2.0'
+//    androidTestImplementation 'com.google.truth:truth:0.42'
+
+    androidTestImplementation 'com.google.code.findbugs:jsr305:2.0.1'
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-accessibility:3.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-web:3.2.0'
+    androidTestImplementation 'androidx.test.espresso.idling:idling-concurrent:3.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
+
+    debugImplementation 'androidx.fragment:fragment-testing:1.2.0-rc02'
+
+    androidTestImplementation 'org.mockito:mockito-android:3.1.0'
+
+    // The following Espresso dependency can be either "implementation"
+    // or "androidTestImplementation", depending on whether you want the
+    // dependency to appear on your APK's compile classpath or the test APK
+    // classpath.
+
+
+
+
+
+
     testImplementation 'androidx.test:core:1.2.0'
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
@@ -186,7 +232,6 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:4.3'
 
     //Stetho
-    implementation "com.facebook.stetho:stetho:$stethoVersion"
     implementation 'com.dicedmelon.gradle:jacoco-android:0.1.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
