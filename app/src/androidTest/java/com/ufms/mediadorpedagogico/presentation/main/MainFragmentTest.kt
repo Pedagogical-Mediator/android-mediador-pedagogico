@@ -28,7 +28,7 @@ class MainFragmentTest {
     }
 
     @Test
-    fun changeText_sameActivity() {
+    fun openScreen() {
         val scenario = launchFragmentInContainer<MainFragment>(null, R.style.AppTheme)
         val navController = mock(NavController::class.java)
         Espresso.onView(ViewMatchers.withId(R.id.card_view_homework))
