@@ -73,10 +73,6 @@ open class BaseViewModel : LifecycleObserver, KoinComponent, ViewModel() {
         dialogLiveData.postValue(Event(dialogData))
     }
 
-    fun setToast(message: String) {
-        toastLiveData.postValue(Event(message))
-    }
-
     fun setDialog(
         throwable: Throwable, retryAction: (() -> Unit)? = null, onDismiss: (() -> Unit)? = null
     ) {

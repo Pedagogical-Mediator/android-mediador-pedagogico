@@ -6,16 +6,13 @@ import android.os.Bundle
 import android.view.*
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
 import com.ufms.mediadorpedagogico.R
-import com.ufms.mediadorpedagogico.presentation.main.MainFragmentDirections
 import com.ufms.mediadorpedagogico.presentation.main.dashboard.DashboardActivity
 import com.ufms.mediadorpedagogico.presentation.util.extensions.observeEvent
 import com.ufms.mediadorpedagogico.presentation.util.extensions.shortToast
 import com.ufms.mediadorpedagogico.presentation.util.extensions.showDialog
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.NavData
 import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.Navigator
-import com.ufms.mediadorpedagogico.presentation.util.structure.navigation.navigateSafe
 import com.ufms.mediadorpedagogico.presentation.util.viewmodels.DialogData
 
 abstract class BaseFragment : Fragment() {
@@ -40,10 +37,11 @@ abstract class BaseFragment : Fragment() {
 
     @CallSuper
     open fun subscribeUi() {
-        baseViewModel.dialog.observeEvent(this, ::onNextDialog)
-        baseViewModel.goTo.observeEvent(this, ::onNextNavigation)
-        baseViewModel.toast.observeEvent(this, ::onNextToast)
-//        baseViewModel.deniedAccess.observeAction(this, ::onDenyAccess)
+        with(baseViewModel) {
+            dialog.observeEvent(viewLifecycleOwner, ::onNextDialog)
+            goTo.observeEvent(viewLifecycleOwner, ::onNextNavigation)
+            toast.observeEvent(viewLifecycleOwner, ::onNextToast)
+        }
     }
 
 
@@ -83,10 +81,6 @@ abstract class BaseFragment : Fragment() {
         text?.let {
             context?.shortToast(it)
         }
-    }
-
-    private fun onDenyAccess(shouldDeny: Boolean?) {
-
     }
 
     private fun setupToolbar() {
